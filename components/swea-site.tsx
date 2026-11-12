@@ -39,24 +39,6 @@ const navigation: { id: PageId; label: string; badge?: string }[] = [
   { id: "kontakt", label: "Fernzugriff & Kontakt" },
 ]
 
-function SectionIntro({
-  eyebrow,
-  title,
-  children,
-}: {
-  eyebrow: string
-  title: string
-  children?: React.ReactNode
-}) {
-  return (
-    <div className="section-intro">
-      <span className="eyebrow">{eyebrow}</span>
-      <h2>{title}</h2>
-      {children ? <div className="section-lead">{children}</div> : null}
-    </div>
-  )
-}
-
 function Header() {
   return (
     <header className="site-header">
@@ -543,14 +525,62 @@ function EdvView() {
   )
 }
 
+function SectionIntro({
+  eyebrow,
+  title,
+  children,
+}: {
+  eyebrow: string
+  title: string
+  children?: React.ReactNode
+}) {
+  return (
+    <div className="section-intro">
+      <span className="eyebrow">{eyebrow}</span>
+      <h2>{title}</h2>
+      {children ? <div className="section-lead">{children}</div> : null}
+    </div>
+  )
+}
+
 function WellbeingSection() {
   return (
     <section className="section section-wellbeing" id="waldbaden">
-      <div className="wellbeing-top page-wrap">
-        <SectionIntro eyebrow="EDV-Erholung" title="Weniger Tempo. Mehr bei sich.">
-          Im anspruchsvollen EDV-Alltag braucht es Momente zum Innehalten. Mit Achtsamkeit und Waldbaden entstehen neue Wege, Stress zu bewältigen und Entschleunigung in den Alltag mitzunehmen.
-        </SectionIntro>
-        <div className="appointment-note"><span className="appointment-dot" /><div><strong>Waldbaden-Termine</strong><p>Nächster Termin auf Anfrage – auch individuelle Buchungen und Kleingruppen bis 8 Personen, etwa für Geburtstage oder Teambuilding.</p></div></div>
+      <div className="page-wrap grid items-center gap-8 md:grid-cols-[1.05fr_0.95fr] md:gap-10 lg:gap-14">
+        <figure className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-emerald-950 shadow-xl md:aspect-[4/5]">
+          <Image
+            alt="Wald und Streuobstwiesen am Frauenberg in Schorndorf"
+            className="object-cover"
+            fill
+            sizes="(max-width: 767px) 100vw, 50vw"
+            src="/swea/waldbaden-frauenberg.jpg"
+          />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-emerald-950/85 via-emerald-950/5 to-transparent" />
+          <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-5 text-white sm:p-6">
+            <span className="flex items-center gap-2 text-sm font-semibold"><MapPin aria-hidden="true" size={16} /> Frauenberg · Schorndorf</span>
+            <span className="text-xs leading-5 text-white/85">
+              Foto: <a href="https://commons.wikimedia.org/wiki/File:Autumn_Frauenberg_Schorndorf_2014.jpg" rel="noreferrer" target="_blank">Maxim Beniashvili / Wikimedia Commons</a>
+              {" · "}<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noreferrer" target="_blank">CC BY-SA 4.0</a> · Web-Zuschnitt
+            </span>
+          </figcaption>
+        </figure>
+
+        <div className="rounded-[1.75rem] border border-emerald-950/10 bg-[#fffdf8] p-6 shadow-sm sm:p-8">
+          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-emerald-900"><Leaf aria-hidden="true" size={14} /> Waldbaden &amp; Achtsamkeit</span>
+          <h2 className="mt-5 text-3xl font-semibold tracking-tight text-emerald-950 sm:text-4xl">Mit Shinrin-Yoku im Wald ankommen.</h2>
+          <p className="mt-4 text-base leading-7 text-stone-700">Shinrin-Yoku – das bewusste Eintauchen in die Atmosphäre des Waldes – lädt dazu ein, mit allen Sinnen langsamer zu werden. In achtsamen Übungen nehmen wir die Natur wahr und schaffen Raum für Ruhe, neue Klarheit und Abstand vom Alltag.</p>
+          <p className="mt-3 text-sm leading-6 text-stone-600">Uwe Christian ist zertifizierter Kursleiter bei der Akademie für Waldbaden. Mit seiner Qualifikation in Outdoor-Erste-Hilfe ist er auf die besonderen Anforderungen geführter Angebote in der Natur vorbereitet.</p>
+
+          <dl className="mt-6 divide-y divide-emerald-950/10 rounded-xl border border-emerald-950/10 bg-[#f4f2e9] px-4 sm:px-5">
+            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Gruppen</dt><dd className="text-sm leading-6 text-stone-700">Kleine Gruppen mit maximal 8 Personen</dd></div>
+            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Zielgruppe</dt><dd className="text-sm leading-6 text-stone-700">Für Anfänger, Einzelpersonen und Firmen/Teams</dd></div>
+            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Leitung</dt><dd className="text-sm leading-6 text-stone-700">Zertifizierter Kursleiter mit Outdoor-Erste-Hilfe</dd></div>
+          </dl>
+
+          <button className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-emerald-800 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-800 focus-visible:ring-offset-2 sm:w-auto" data-page-nav="kontakt" type="button">
+            Unverbindlichen Termin anfragen <ArrowRight aria-hidden="true" size={17} />
+          </button>
+        </div>
       </div>
 
       <div className="page-wrap wellbeing-grid">
