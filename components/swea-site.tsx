@@ -6,6 +6,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
+  ChevronDown,
   Clock3,
   Code2,
   ExternalLink,
@@ -31,21 +32,66 @@ import { SiteInteractions } from "@/components/site-interactions"
 
 const antonIconSrc = "/swea/anton.jpg"
 
-type PageId = "start" | "edv" | "studio" | "waldbaden" | "kontakt"
+type PageId = "start" | "edv" | "studio" | "waldbaden" | "about" | "kontakt"
 
-const navigation: { id: PageId; label: string; badge?: string }[] = [
-  { id: "start", label: "Startseite" },
-  { id: "edv", label: "EDV & IT-Service" },
-  { id: "studio", label: "KI-Studio", badge: "Aktion" },
-  { id: "waldbaden", label: "Waldbaden" },
-  { id: "kontakt", label: "Fernzugriff & Kontakt" },
+type NavigationLink = {
+  label: string
+  page: PageId
+  targetId: string
+}
+
+type NavigationItem = NavigationLink & {
+  children?: NavigationLink[]
+}
+
+const navigation: NavigationItem[] = [
+  { page: "start", label: "Startseite", targetId: "start" },
+  {
+    page: "edv",
+    label: "IT & EDV-Service",
+    targetId: "dienstleistungen",
+    children: [
+      { page: "edv", label: "Computerhilfe", targetId: "computerhilfe" },
+      { page: "edv", label: "Netzwerke", targetId: "netzwerke" },
+      { page: "edv", label: "Datenrettung", targetId: "datenrettung" },
+    ],
+  },
+  {
+    page: "studio",
+    label: "KI-Studio",
+    targetId: "ki-studio-title",
+    children: [
+      { page: "studio", label: "KI-Angebote", targetId: "ki-studio-title" },
+      { page: "studio", label: "Saisonale Angebote & Aktionen", targetId: "weihnachtsgeschenke" },
+    ],
+  },
+  {
+    page: "waldbaden",
+    label: "Waldbaden",
+    targetId: "kursdetails",
+    children: [
+      { page: "waldbaden", label: "Termine anfragen", targetId: "termine" },
+      { page: "waldbaden", label: "Kursdetails", targetId: "kursdetails" },
+    ],
+  },
+  {
+    page: "about",
+    label: "Über SWEA",
+    targetId: "ueber-swea",
+    children: [
+      { page: "about", label: "Person", targetId: "about-person" },
+      { page: "about", label: "Arbeitsweise", targetId: "about-arbeitsweise" },
+      { page: "about", label: "Erfahrung", targetId: "about-erfahrung" },
+    ],
+  },
+  { page: "kontakt", label: "Kontakt", targetId: "kontakt" },
 ]
 
 function Header() {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <button aria-label="SWEA – zur Startseite" className="brand brand-button" data-page-nav="start" type="button">
+        <button aria-label="SWEA – zur Startseite" className="brand brand-button" data-page-nav="start" data-nav-top data-target-id="start" type="button">
           <span className="brand-mark"><Image alt="" fill priority sizes="39px" src={antonIconSrc} /></span>
           <span className="brand-copy">
             <strong>SWEA</strong>
@@ -53,18 +99,31 @@ function Header() {
             <small>Uwe Christian · Schorndorf</small>
           </span>
         </button>
-        <button aria-expanded="false" aria-label="Menü öffnen" className="mobile-menu-toggle" data-menu-toggle type="button">
+        <button aria-controls="primary-navigation" aria-expanded="false" aria-label="Menü öffnen" className="mobile-menu-toggle" data-menu-toggle type="button">
           <Menu aria-hidden="true" data-menu-icon="open" size={22} />
           <X aria-hidden="true" data-menu-icon="close" size={22} />
         </button>
-        <nav aria-label="Hauptnavigation" className="main-nav">
-          {navigation.map((item) => (
-            <button aria-current={item.id === "start" ? "page" : undefined} className={item.id === "start" ? "is-active" : ""} data-page-nav={item.id} key={item.id} type="button">
-              <span>{item.label}</span>
-              {item.badge ? <span className="nav-badge">{item.badge}</span> : null}
+        <nav aria-label="Hauptnavigation" className="main-nav" id="primary-navigation">
+          {navigation.map((item) => item.children ? (
+            <details className="nav-dropdown" data-nav-group={item.page} key={item.page}>
+              <summary className="nav-trigger inline-flex cursor-pointer items-center gap-1.5 rounded-md px-2 py-2 text-[13px] font-semibold text-emerald-950 transition hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700">
+                {item.label}<ChevronDown aria-hidden="true" size={15} />
+              </summary>
+              <div className="nav-submenu">
+                {item.children.map((child) => (
+                  <button className="nav-submenu-link" data-nav-subitem data-page-nav={child.page} data-target-id={child.targetId} key={child.targetId} type="button">{child.label}</button>
+                ))}
+              </div>
+            </details>
+          ) : (
+            <button aria-current={item.page === "start" ? "page" : undefined} className="nav-link inline-flex items-center rounded-md px-2 py-2 text-[13px] font-semibold text-emerald-950 transition hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-nav-top data-page-nav={item.page} data-target-id={item.targetId} key={item.page} type="button">
+              {item.label}
             </button>
           ))}
         </nav>
+        <button className="header-contact-cta inline-flex min-h-10 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-emerald-800 px-3 text-xs font-semibold text-white transition hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 sm:px-4 sm:text-sm" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+          Kontakt<ArrowRight aria-hidden="true" size={15} />
+        </button>
       </div>
     </header>
   )
@@ -452,7 +511,7 @@ function ServicesSection() {
               <div><h3 className="text-xl font-semibold text-slate-900" id="private-services-title">Privatkunden</h3><p className="text-sm text-slate-600">Hilfe für Ihre Technik zu Hause</p></div>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
-              <article className={cardClass}>
+              <article className={cardClass} id="computerhilfe">
                 <span className={iconClass}><MonitorCog aria-hidden="true" size={21} /></span>
                 <h4 className="mt-4 font-semibold text-slate-900">Computerhilfe &amp; Windows</h4>
                 <p className="mt-2 text-sm leading-6 text-slate-600">Fehlerbehebung vor Ort – verständlich erklärt und persönlich begleitet.</p>
@@ -462,7 +521,7 @@ function ServicesSection() {
                 <h4 className="mt-4 font-semibold text-slate-900">WLAN &amp; Heimnetzwerke</h4>
                 <p className="mt-2 text-sm leading-6 text-slate-600">Stabile Verbindungen, passende Router und besserer Empfang im ganzen Zuhause.</p>
               </article>
-              <article className={cardClass}>
+              <article className={cardClass} id="datenrettung">
                 <span className={iconClass}><HardDrive aria-hidden="true" size={21} /></span>
                 <h4 className="mt-4 font-semibold text-slate-900">Datenrettung</h4>
                 <p className="mt-2 text-sm leading-6 text-slate-600">Professionelle Partner-Lösungen mit Erfolgsquoten von bis zu 90% – nach Prüfung des jeweiligen Datenträgers.</p>
@@ -481,7 +540,7 @@ function ServicesSection() {
               <div><h3 className="text-xl font-semibold text-slate-900" id="business-services-title">Unternehmen</h3><p className="text-sm text-slate-600">Technik, die mit Ihrem Betrieb wächst</p></div>
             </div>
             <div className="grid gap-3">
-              <article className={`${cardClass} border-emerald-200`}>
+              <article className={`${cardClass} border-emerald-200`} id="netzwerke">
                 <div className="flex items-start gap-4">
                   <span className={iconClass}><Router aria-hidden="true" size={21} /></span>
                   <div><h4 className="font-semibold text-slate-900">Netzwerkinfrastruktur</h4><p className="mt-2 text-sm leading-6 text-slate-600">Bestehende Telefon- oder Satellitenleitungen clever weiternutzen und darüber leistungsstarke Netzwerke bis in den Gigabit-Bereich realisieren.</p></div>
@@ -573,13 +632,13 @@ function WellbeingSection() {
           <p className="mt-4 text-base leading-7 text-stone-700">Shinrin-Yoku – das bewusste Eintauchen in die Atmosphäre des Waldes – lädt dazu ein, mit allen Sinnen langsamer zu werden. In achtsamen Übungen nehmen wir die Natur wahr und schaffen Raum für Ruhe, neue Klarheit und Abstand vom Alltag.</p>
           <p className="mt-3 text-sm leading-6 text-stone-600">Uwe Christian ist zertifizierter Kursleiter bei der Akademie für Waldbaden. Mit seiner Qualifikation in Outdoor-Erste-Hilfe ist er auf die besonderen Anforderungen geführter Angebote in der Natur vorbereitet.</p>
 
-          <dl className="mt-6 divide-y divide-emerald-950/10 rounded-xl border border-emerald-950/10 bg-[#f4f2e9] px-4 sm:px-5">
+          <dl className="mt-6 divide-y divide-emerald-950/10 rounded-xl border border-emerald-950/10 bg-[#f4f2e9] px-4 sm:px-5" id="kursdetails">
             <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Gruppen</dt><dd className="text-sm leading-6 text-stone-700">Kleine Gruppen mit maximal 8 Personen</dd></div>
             <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Zielgruppe</dt><dd className="text-sm leading-6 text-stone-700">Für Anfänger, Einzelpersonen und Firmen/Teams</dd></div>
             <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Leitung</dt><dd className="text-sm leading-6 text-stone-700">Zertifizierter Kursleiter mit Outdoor-Erste-Hilfe</dd></div>
           </dl>
 
-          <button className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-emerald-800 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-800 focus-visible:ring-offset-2 sm:w-auto" data-page-nav="kontakt" type="button">
+          <button className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-emerald-800 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-800 focus-visible:ring-offset-2 sm:w-auto" data-page-nav="kontakt" data-target-id="kontakt" id="termine" type="button">
             Unverbindlichen Termin anfragen <ArrowRight aria-hidden="true" size={17} />
           </button>
         </div>
@@ -777,32 +836,80 @@ function LegalSection() {
   )
 }
 
+function AboutSection() {
+  const cardClass = "scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+
+  return (
+    <section aria-labelledby="about-title" className="section bg-[#f8f7f2]" id="ueber-swea">
+      <div className="page-wrap">
+        <div className="mb-10 max-w-3xl">
+          <span className="eyebrow">Über SWEA · Schorndorf</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="about-title">Persönlich beraten. Verständlich begleiten.</h2>
+          <p className="mt-4 text-base leading-7 text-slate-600">SWEA verbindet persönlichen IT-Service mit kreativen digitalen Angeboten und achtsamer Zeit in der Natur.</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          <article className={cardClass} id="about-person">
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">Person</span>
+            <h3 className="mt-3 text-lg font-semibold text-slate-900">Uwe Christian</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Ihr direkter Ansprechpartner in Schorndorf – vom ersten Gespräch bis zur passenden Unterstützung.</p>
+          </article>
+          <article className={cardClass} id="about-arbeitsweise">
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">Arbeitsweise</span>
+            <h3 className="mt-3 text-lg font-semibold text-slate-900">Klar, persönlich, lösungsorientiert</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Erst verstehen, dann verständlich erklären und gemeinsam praktikable nächste Schritte finden.</p>
+          </article>
+          <article className={cardClass} id="about-erfahrung">
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">Erfahrung</span>
+            <h3 className="mt-3 text-lg font-semibold text-slate-900">Technik und Natur im Blick</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Von Computerhilfe, Netzwerken und Webprojekten bis zum zertifizierten Waldbaden mit Outdoor-Erste-Hilfe.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Footer() {
   return (
     <footer className="site-footer">
-      <div className="page-wrap footer-main">
-        <div className="footer-profile">
-          <button aria-label="SWEA – zur Startseite" className="brand brand-button footer-brand" data-page-nav="start" type="button">
+      <div className="page-wrap grid gap-8 border-b border-stone-300 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:grid-cols-[minmax(180px,.85fr)_minmax(0,2fr)_minmax(180px,.85fr)]">
+        <div>
+          <button aria-label="SWEA – zur Startseite" className="brand brand-button footer-brand" data-page-nav="start" data-target-id="start" type="button">
             <span className="brand-mark"><Image alt="" fill sizes="34px" src={antonIconSrc} /></span>
             <span className="brand-copy"><strong>SWEA</strong><span aria-hidden="true" className="brand-divider">|</span><small>Uwe Christian · Schorndorf</small></span>
           </button>
-          <p>Persönlicher IT-Service und Achtsamkeit in der Natur.</p>
+          <p className="mt-3 max-w-xs text-sm leading-6 text-slate-600">Persönlicher IT-Service und Achtsamkeit in der Natur.</p>
         </div>
-        <nav aria-label="Fußnavigation" className="footer-links">
+        <nav aria-label="Fußnavigation" className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3">
           {navigation.map((item) => (
-            <button data-page-nav={item.id} key={item.id} type="button">{item.label}</button>
+            <div key={item.page}>
+              <button className="mb-2 text-left text-sm font-semibold text-emerald-950 transition hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav={item.page} data-target-id={item.targetId} type="button">
+                {item.label}
+              </button>
+              {item.children ? (
+                <ul className="grid list-none gap-1.5 p-0">
+                  {item.children.map((child) => (
+                    <li key={child.targetId}>
+                      <button className="text-left text-xs leading-5 text-slate-600 transition hover:text-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav={child.page} data-target-id={child.targetId} type="button">{child.label}</button>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
           ))}
-          <button data-page-nav="kontakt" data-target-id="impressum" type="button">Impressum</button>
         </nav>
-        <div className="footer-contact">
+        <address className="flex flex-col items-start gap-2 not-italic text-sm text-slate-600">
           <span className="eyebrow">Direktkontakt</span>
-          <a href="mailto:edv@swea.de">edv@swea.de</a>
-          <a href="mailto:wb@swea.de">wb@swea.de</a>
-          <a href="tel:+497181253148">07181 / 253148</a>
+          <a className="font-medium text-emerald-900 hover:text-emerald-700" href="mailto:edv@swea.de">edv@swea.de</a>
+          <a className="font-medium text-emerald-900 hover:text-emerald-700" href="mailto:wb@swea.de">wb@swea.de</a>
+          <a className="font-medium text-emerald-900 hover:text-emerald-700" href="tel:+497181253148">07181 / 253148</a>
           <span>Freiburgstr. 12 · 73614 Schorndorf</span>
-        </div>
+        </address>
       </div>
-      <div className="page-wrap footer-bottom"><span>© 2026 Uwe Christian · www.swea.de</span></div>
+      <div className="page-wrap footer-bottom">
+        <span>© 2026 Uwe Christian · www.swea.de</span>
+        <button className="text-xs font-semibold text-emerald-900 transition hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav="kontakt" data-target-id="impressum" type="button">Impressum</button>
+      </div>
     </footer>
   )
 }
@@ -816,6 +923,7 @@ export function SweaSite() {
         <div className="site-page-view" data-page-view="edv" hidden><EdvView /></div>
         <div className="site-page-view" data-page-view="studio" hidden><KIStudioShowcase /><HolidayGiftSection /><AlternativeMotifsSection /><AIExamplesCarousel /></div>
         <div className="site-page-view" data-page-view="waldbaden" hidden><WellbeingSection /></div>
+        <div className="site-page-view" data-page-view="about" hidden><AboutSection /></div>
         <div className="site-page-view" data-page-view="kontakt" hidden><RemoteSection /><ContactSection /><LegalSection /></div>
       </main>
       <Footer />
