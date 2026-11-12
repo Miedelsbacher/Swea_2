@@ -108,7 +108,7 @@ function Header() {
         <nav aria-label="Hauptnavigation" className="main-nav" id="primary-navigation">
           {navigation.map((item) => item.children ? (
             <details className="nav-dropdown" data-nav-group={item.page} key={item.page}>
-              <summary className="nav-trigger inline-flex cursor-pointer items-center gap-1.5 rounded-md px-2 py-2 text-[13px] font-semibold text-emerald-950 transition hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700">
+              <summary className="nav-trigger inline-flex cursor-pointer items-center gap-1.5 rounded-md px-2 py-2 text-[13px] font-semibold text-area-deep transition hover:bg-area-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary">
                 {item.label}<ChevronDown aria-hidden="true" size={15} />
               </summary>
               <div className="nav-submenu">
@@ -118,12 +118,12 @@ function Header() {
               </div>
             </details>
           ) : (
-            <button aria-current={item.page === "start" ? "page" : undefined} className="nav-link inline-flex items-center rounded-md px-2 py-2 text-[13px] font-semibold text-emerald-950 transition hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-nav-top data-page-nav={item.page} data-target-id={item.targetId} key={item.page} type="button">
+            <button aria-current={item.page === "start" ? "page" : undefined} className="nav-link inline-flex items-center rounded-md px-2 py-2 text-[13px] font-semibold text-area-deep transition hover:bg-area-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-nav-top data-page-nav={item.page} data-target-id={item.targetId} key={item.page} type="button">
               {item.label}
             </button>
           ))}
         </nav>
-        <button className="header-contact-cta inline-flex min-h-10 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-emerald-800 px-3 text-xs font-semibold text-white transition hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 sm:px-4 sm:text-sm" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+        <button className="header-contact-cta inline-flex min-h-10 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-area-primary px-3 text-xs font-semibold text-white transition hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2 sm:px-4 sm:text-sm" data-page-nav="kontakt" data-target-id="kontakt" type="button">
           Kontakt<ArrowRight aria-hidden="true" size={15} />
         </button>
       </div>
@@ -206,12 +206,12 @@ Ein Mann von Tat und Begeisterung!`
 function QuickLinks() {
   return (
     <section aria-label="Unsere Bereiche" className="quick-links page-wrap" id="bereiche">
-      <button className="quick-link" data-page-nav="edv" type="button">
+      <button className="quick-link brand-area brand-area-technik" data-page-nav="edv" type="button">
         <span className="quick-link-icon"><MonitorCog aria-hidden="true" size={21} /></span>
         <span><strong>EDV-Dienstleistungen:</strong><small>Technik, die den Alltag leichter macht</small></span>
         <ArrowUpRight aria-hidden="true" className="quick-arrow" size={18} />
       </button>
-      <button className="quick-link" data-page-nav="waldbaden" type="button">
+      <button className="quick-link brand-area brand-area-natur" data-page-nav="waldbaden" type="button">
         <span className="quick-link-icon quick-link-nature"><Leaf aria-hidden="true" size={21} /></span>
         <span><strong>EDV-Erholung:</strong><small>Achtsamkeit und Waldbaden</small></span>
         <ArrowUpRight aria-hidden="true" className="quick-arrow" size={18} />
@@ -226,7 +226,7 @@ function HomeView() {
       <Hero />
       <QuickLinks />
       <section aria-labelledby="seasonal-action-title" className="seasonal-action-wrap page-wrap">
-        <div className="seasonal-action-card">
+        <div className="seasonal-action-card brand-area brand-area-ki">
           <div className="seasonal-action-content">
             <div className="seasonal-action-copy">
               <span className="seasonal-action-badge">EDV-Sparte · Saisonales KI-Special</span>
@@ -288,25 +288,25 @@ function HomeView() {
 }
 
 function KIStudioShowcase() {
-  const cardClass = "flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-lg"
-  const inquiryClass = "ki-studio-inquiry mt-auto inline-flex w-full items-center justify-center gap-2 rounded-lg bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2"
+  const cardClass = "flex h-full flex-col overflow-hidden rounded-2xl border border-area-border bg-area-surface shadow-sm transition-shadow hover:shadow-lg"
+  const inquiryClass = "ki-studio-inquiry mt-auto inline-flex w-full items-center justify-center gap-2 rounded-lg bg-area-deep px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-area-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2"
 
   return (
-    <section aria-labelledby="ki-studio-title" className="bg-slate-100/80 py-14 sm:py-20">
+    <section aria-labelledby="ki-studio-title" className="bg-area-soft py-14 sm:py-20">
       <div className="page-wrap">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
           <span className="eyebrow">KI-Studio · Schorndorf</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="ki-studio-title">
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-studio-title">
             KI-Studio – Kreative Ideen, individuell umgesetzt.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-area-muted">
             Personalisierte Medienproduktion von Uwe Christian in Schorndorf.
           </p>
         </div>
 
         <div className="grid items-stretch gap-5 md:grid-cols-3 md:gap-6">
           <article className={cardClass}>
-            <div className="relative aspect-[16/10] overflow-hidden bg-slate-200">
+            <div className="relative aspect-[16/10] overflow-hidden bg-area-subtle">
               <Image
                 alt="Beispiel eines individuell gestalteten KI-Porträts im Märchenwald"
                 className="object-cover transition-transform duration-500 hover:scale-105"
@@ -314,14 +314,14 @@ function KIStudioShowcase() {
                 sizes="(max-width: 767px) 100vw, 33vw"
                 src="/swea/ai-examples/elf-portrait.jpeg"
               />
-              <span className="absolute right-3 top-3 rounded-full bg-white/95 px-3 py-1.5 text-sm font-semibold text-emerald-900 shadow-sm">
+              <span className="absolute right-3 top-3 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">
                 Ab 30 €
               </span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
-              <div className="mb-3 flex items-center gap-2 text-emerald-800"><ImageIcon aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bild &amp; Design</span></div>
-              <h3 className="text-xl font-semibold text-slate-900">KI-Bilder &amp; Porträts</h3>
-              <p className="mb-6 mt-2 text-sm leading-6 text-slate-600">Personalisierte Porträts, Motive mit Familie oder Haustieren und individuelle Lieblingsbilder – abgestimmt auf Ihre Idee.</p>
+              <div className="mb-3 flex items-center gap-2 text-area-primary"><ImageIcon aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bild &amp; Design</span></div>
+              <h3 className="text-xl font-semibold text-area-deep">KI-Bilder &amp; Porträts</h3>
+              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Personalisierte Porträts, Motive mit Familie oder Haustieren und individuelle Lieblingsbilder – abgestimmt auf Ihre Idee.</p>
               <a className={inquiryClass} href="mailto:edv@swea.de?subject=Kreativprojekt%3A%20KI-Bilder%20%26%20Portr%C3%A4ts" aria-label="Kreativprojekt anfragen: KI-Bilder und Porträts">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
               </a>
@@ -329,7 +329,7 @@ function KIStudioShowcase() {
           </article>
 
           <article className={cardClass}>
-            <div className="relative aspect-[16/10] overflow-hidden bg-slate-950">
+            <div className="relative aspect-[16/10] overflow-hidden bg-area-deep">
               <video
                 aria-label="Beispiel eines personalisierten KI-Videoclips"
                 className="h-full w-full object-cover"
@@ -342,9 +342,9 @@ function KIStudioShowcase() {
               </video>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
-              <div className="mb-3 flex items-center gap-2 text-emerald-800"><Video aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bewegtbild</span></div>
-              <h3 className="text-xl font-semibold text-slate-900">KI-Videos</h3>
-              <p className="mb-6 mt-2 text-sm leading-6 text-slate-600">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
+              <div className="mb-3 flex items-center gap-2 text-area-primary"><Video aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bewegtbild</span></div>
+              <h3 className="text-xl font-semibold text-area-deep">KI-Videos</h3>
+              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
               <a className={inquiryClass} href="mailto:edv@swea.de?subject=Kreativprojekt%3A%20KI-Videos" aria-label="Kreativprojekt anfragen: KI-Videos">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
               </a>
@@ -352,25 +352,25 @@ function KIStudioShowcase() {
           </article>
 
           <article className={cardClass}>
-            <div className="flex aspect-[16/10] flex-col justify-between bg-slate-900 p-5 text-white sm:p-6">
+            <div className="flex aspect-[16/10] flex-col justify-between bg-area-deep p-5 text-white sm:p-6">
               <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-slate-200"><Music2 aria-hidden="true" size={17} /> SWEA Audio Studio</span>
-                <span className="rounded-full bg-emerald-400/15 px-2.5 py-1 text-xs font-medium text-emerald-200">Hörprobe</span>
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-white/80"><Music2 aria-hidden="true" size={17} /> SWEA Audio Studio</span>
+                <span className="rounded-full bg-area-accent/15 px-2.5 py-1 text-xs font-medium text-area-accent-light">Hörprobe</span>
               </div>
               <div aria-hidden="true" className="flex h-12 items-center justify-center gap-1.5">
                 {[18, 30, 22, 40, 27, 36, 16, 31, 44, 23, 34, 18, 39, 25, 15, 32, 21, 40, 27, 16, 34, 23, 38, 19].map((height, index) => (
-                  <span className="w-1 rounded-full bg-emerald-300/80" key={index} style={{ height }} />
+                  <span className="w-1 rounded-full bg-area-accent-light/80" key={index} style={{ height }} />
                 ))}
               </div>
-              <audio aria-label="KI-generierter Song als Hörprobe" className="w-full accent-emerald-400" controls preload="metadata">
+              <audio aria-label="KI-generierter Song als Hörprobe" className="w-full accent-area-accent" controls preload="metadata">
                 <source src="/swea/recording-03_13.mp3" type="audio/mpeg" />
                 Ihr Browser unterstützt die Audiowiedergabe nicht.
               </audio>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
-              <div className="mb-3 flex items-center gap-2 text-emerald-800"><Music2 aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Audio &amp; Musik</span></div>
-              <h3 className="text-xl font-semibold text-slate-900">Individuelle Songs &amp; Jingles</h3>
-              <p className="mb-6 mt-2 text-sm leading-6 text-slate-600">Persönliche Songs, kleine Jingles und Musikgeschenke – hören Sie in eine echte Hörprobe rein.</p>
+              <div className="mb-3 flex items-center gap-2 text-area-primary"><Music2 aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Audio &amp; Musik</span></div>
+              <h3 className="text-xl font-semibold text-area-deep">Individuelle Songs &amp; Jingles</h3>
+              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Persönliche Songs, kleine Jingles und Musikgeschenke – hören Sie in eine echte Hörprobe rein.</p>
               <a className={inquiryClass} href="mailto:edv@swea.de?subject=Kreativprojekt%3A%20Songs%20%26%20Jingles" aria-label="Kreativprojekt anfragen: Songs und Jingles">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
               </a>
@@ -494,17 +494,17 @@ function AlternativeMotifsSection() {
 }
 
 function ServicesSection() {
-  const cardClass = "flex h-full scroll-mt-24 flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-6"
-  const iconClass = "grid size-12 shrink-0 place-items-center rounded-xl bg-emerald-50 text-emerald-800"
-  const actionClass = "mt-auto inline-flex min-h-11 w-fit items-center gap-2 rounded-lg px-3 pt-6 text-sm font-semibold text-emerald-900 transition-colors hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2"
+  const cardClass = "flex h-full scroll-mt-24 flex-col rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-6"
+  const iconClass = "grid size-12 shrink-0 place-items-center rounded-xl bg-area-soft text-area-primary"
+  const actionClass = "mt-auto inline-flex min-h-11 w-fit items-center gap-2 rounded-lg px-3 pt-6 text-sm font-semibold text-area-deep transition-colors hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2"
 
   return (
     <section aria-labelledby="edv-services-title" className="section section-services" id="dienstleistungen">
       <div className="page-wrap">
         <div className="mb-9 max-w-3xl">
           <span className="eyebrow">EDV-Hilfe für Zuhause · Schorndorf &amp; Umgebung</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="edv-services-title">Technikhilfe für Zuhause – persönlich und verständlich</h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">Für Privatpersonen, Hausbesitzer und Haushalte in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="edv-services-title">Technikhilfe für Zuhause – persönlich und verständlich</h2>
+          <p className="mt-4 text-base leading-7 text-area-muted">Für Privatpersonen, Hausbesitzer und Haushalte in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
         </div>
 
         <div className="grid items-stretch gap-4 sm:grid-cols-2">
@@ -512,11 +512,11 @@ function ServicesSection() {
             <div className="mb-5 flex items-start gap-4">
               <span className={iconClass}><MonitorCog aria-hidden="true" size={22} /></span>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">PC &amp; Windows</p>
-                <h3 className="mt-1 text-lg font-semibold leading-snug text-slate-900">Computerhilfe &amp; Windows-Probleme</h3>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">PC &amp; Windows</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Computerhilfe &amp; Windows-Probleme</h3>
               </div>
             </div>
-            <p className="text-sm leading-6 text-slate-600">Schnelle, geduldige Hilfe bei PC-Störungen, Windows-Fehlern und Installationen. Direkt bei Ihnen vor Ort oder, wenn es passt, per Fernzugriff.</p>
+            <p className="text-sm leading-6 text-area-muted">Schnelle, geduldige Hilfe bei PC-Störungen, Windows-Fehlern und Installationen. Direkt bei Ihnen vor Ort oder, wenn es passt, per Fernzugriff.</p>
             <button aria-label="Computerproblem schildern" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Problem schildern <ArrowRight aria-hidden="true" size={16} /></button>
           </article>
 
@@ -524,11 +524,11 @@ function ServicesSection() {
             <div className="mb-5 flex items-start gap-4">
               <span className={iconClass}><Wifi aria-hidden="true" size={22} /></span>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">WLAN im ganzen Haus</p>
-                <h3 className="mt-1 text-lg font-semibold leading-snug text-slate-900">WLAN &amp; Heimnetzwerke</h3>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">WLAN im ganzen Haus</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">WLAN &amp; Heimnetzwerke</h3>
               </div>
             </div>
-            <p className="text-sm leading-6 text-slate-600">Router einrichten, Funklöcher schließen und Geräte zuverlässig verbinden. Vorhandene Leitungen und Kabel lassen sich oft clever weiternutzen – für eine starke Verbindung im ganzen Zuhause.</p>
+            <p className="text-sm leading-6 text-area-muted">Router einrichten, Funklöcher schließen und Geräte zuverlässig verbinden. Vorhandene Leitungen und Kabel lassen sich oft clever weiternutzen – für eine starke Verbindung im ganzen Zuhause.</p>
             <button aria-label="WLAN- oder Netzwerkproblem schildern" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Problem schildern <ArrowRight aria-hidden="true" size={16} /></button>
           </article>
 
@@ -536,11 +536,11 @@ function ServicesSection() {
             <div className="mb-5 flex items-start gap-4">
               <span className={iconClass}><HardDrive aria-hidden="true" size={22} /></span>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">Kostenlose Ersteinschätzung</p>
-                <h3 className="mt-1 text-lg font-semibold leading-snug text-slate-900">Datenrettung</h3>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Kostenlose Ersteinschätzung</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Datenrettung</h3>
               </div>
             </div>
-            <p className="text-sm leading-6 text-slate-600">Verlorene Daten von Festplatten, USB-Sticks und Handys einschätzen lassen. Sie erfahren unverbindlich, welche nächsten Schritte für Ihr Gerät sinnvoll sind.</p>
+            <p className="text-sm leading-6 text-area-muted">Verlorene Daten von Festplatten, USB-Sticks und Handys einschätzen lassen. Sie erfahren unverbindlich, welche nächsten Schritte für Ihr Gerät sinnvoll sind.</p>
             <button aria-label="Datenrettung anfragen" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Ersteinschätzung anfragen <ArrowRight aria-hidden="true" size={16} /></button>
           </article>
 
@@ -548,21 +548,21 @@ function ServicesSection() {
             <div className="mb-5 flex items-start gap-4">
               <span className={iconClass}><Smartphone aria-hidden="true" size={22} /></span>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">Alltag &amp; Zuhause</p>
-                <h3 className="mt-1 text-lg font-semibold leading-snug text-slate-900">Smartphones, Tablets &amp; Smart Home</h3>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Alltag &amp; Zuhause</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Smartphones, Tablets &amp; Smart Home</h3>
               </div>
             </div>
-            <p className="text-sm leading-6 text-slate-600">Geduldige Unterstützung beim Einrichten, Verbinden und Bedienen Ihrer Geräte des täglichen Lebens – von Smartphone und Tablet bis zu Smart-Home-Geräten.</p>
+            <p className="text-sm leading-6 text-area-muted">Geduldige Unterstützung beim Einrichten, Verbinden und Bedienen Ihrer Geräte des täglichen Lebens – von Smartphone und Tablet bis zu Smart-Home-Geräten.</p>
             <button aria-label="Hilfe zu Smartphone, Tablet oder Smart Home anfragen" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Hilfe anfragen <ArrowRight aria-hidden="true" size={16} /></button>
           </article>
         </div>
 
-        <div className="mt-7 flex flex-col items-start justify-between gap-4 rounded-2xl bg-slate-900 px-6 py-5 text-white sm:flex-row sm:items-center sm:px-8">
+        <div className="mt-7 flex flex-col items-start justify-between gap-4 rounded-2xl bg-area-deep px-6 py-5 text-white sm:flex-row sm:items-center sm:px-8">
           <div>
             <h3 className="text-lg font-semibold">Sie brauchen Unterstützung bei Ihrer Technik?</h3>
-            <p className="mt-1 text-sm leading-6 text-slate-300">Schildern Sie kurz Ihr Problem – wir besprechen gemeinsam den passenden nächsten Schritt.</p>
+            <p className="mt-1 text-sm leading-6 text-white/80">Schildern Sie kurz Ihr Problem – wir besprechen gemeinsam den passenden nächsten Schritt.</p>
           </div>
-          <button className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" data-page-nav="kontakt" data-target-id="kontakt" type="button">Jetzt Hilfe anfordern <ArrowRight aria-hidden="true" size={17} /></button>
+          <button className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-area-accent px-5 py-2.5 text-sm font-semibold text-area-accent-foreground transition-colors hover:bg-area-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent" data-page-nav="kontakt" data-target-id="kontakt" type="button">Jetzt Hilfe anfordern <ArrowRight aria-hidden="true" size={17} /></button>
         </div>
       </div>
     </section>
@@ -586,31 +586,31 @@ function DataRecoverySection() {
   ]
 
   return (
-    <section aria-labelledby="datenrettung-title" className="section bg-slate-50" id="datenrettung">
+    <section aria-labelledby="datenrettung-title" className="section bg-area-soft" id="datenrettung">
       <div className="page-wrap grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start lg:gap-12">
         <div className="max-w-2xl">
           <span className="eyebrow">Datenrettung</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="datenrettung-title">
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="datenrettung-title">
             Professionelle Datenrettung – Wenn es brenzlig wird.
           </h2>
-          <p className="mt-4 text-base leading-7 text-slate-700">
+          <p className="mt-4 text-base leading-7 text-area-muted">
             Bei unterstützten Datenträgern und geeigneten Schadensbildern können unsere spezialisierten Partner Erfolgsquoten von bis zu 90 % erreichen. Das beschreibt die Möglichkeiten unserer Partner in passenden Fällen – es ist keine Garantie für den Erfolg beim einzelnen Gerät. Die tatsächliche Erfolgsaussicht klärt die Diagnose.
           </p>
-          <p className="mt-3 text-sm leading-6 text-slate-600">
+          <p className="mt-3 text-sm leading-6 text-area-muted">
             Ob Festplatte, USB-Stick oder Handy: Sie erhalten eine klare Einschätzung, bevor Sie über weitere Schritte entscheiden.
           </p>
         </div>
 
-        <aside aria-labelledby="datenrettung-warning-title" className="rounded-3xl border border-amber-200 bg-amber-50 p-5 shadow-sm sm:p-7">
+        <aside aria-labelledby="datenrettung-warning-title" className="rounded-3xl border border-warning-border bg-warning-soft p-5 shadow-sm sm:p-7">
           <div className="flex items-start gap-4">
-            <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-amber-100 text-amber-900">
+            <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-warning-subtle text-warning-foreground">
               <HardDrive aria-hidden="true" size={21} />
             </span>
             <div>
-              <h3 className="text-lg font-semibold leading-snug text-slate-900 sm:text-xl" id="datenrettung-warning-title">
+              <h3 className="text-lg font-semibold leading-snug text-area-deep sm:text-xl" id="datenrettung-warning-title">
                 Datenträger defekt? Erst einmal nichts weiter ausprobieren.
               </h3>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-area-muted">
                 Weitere Startversuche, Reparaturprogramme oder das Öffnen des Geräts können den Schaden verschlimmern. Lassen Sie den Datenträger möglichst unverändert.
               </p>
             </div>
@@ -618,19 +618,19 @@ function DataRecoverySection() {
 
           <ol aria-label="Ablauf der Datenrettung" className="mt-6 grid gap-3">
             {steps.map((step, index) => (
-              <li className="flex gap-3 rounded-xl border border-amber-100 bg-white p-4" key={step.title}>
-                <span aria-hidden="true" className="grid size-8 shrink-0 place-items-center rounded-full bg-amber-100 text-sm font-bold text-amber-950">
+              <li className="flex gap-3 rounded-xl border border-warning-border bg-area-surface p-4" key={step.title}>
+                <span aria-hidden="true" className="grid size-8 shrink-0 place-items-center rounded-full bg-warning-subtle text-sm font-bold text-warning-deep">
                   {index + 1}
                 </span>
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-900">{step.title}</h4>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">{step.description}</p>
+                  <h4 className="text-sm font-semibold text-area-deep">{step.title}</h4>
+                  <p className="mt-1 text-sm leading-6 text-area-muted">{step.description}</p>
                 </div>
               </li>
             ))}
           </ol>
 
-          <button className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-emerald-800 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+          <button className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" data-page-nav="kontakt" data-target-id="kontakt" type="button">
             Datenträger prüfen lassen <ArrowRight aria-hidden="true" size={17} />
           </button>
         </aside>
@@ -664,33 +664,33 @@ function WebsiteDesignSection() {
   ]
 
   return (
-    <section aria-labelledby="webseiten-webdesign-title" className="section bg-emerald-50/60" id="webseiten-webdesign">
+    <section aria-labelledby="webseiten-webdesign-title" className="section bg-area-soft/60" id="webseiten-webdesign">
       <div className="page-wrap grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
         <div className="max-w-2xl">
           <span className="eyebrow">Webseiten &amp; Webdesign</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="webseiten-webdesign-title">
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="webseiten-webdesign-title">
             Ihre Website. Persönlich geplant und professionell umgesetzt.
           </h2>
-          <p className="mt-4 text-base leading-7 text-slate-700">
+          <p className="mt-4 text-base leading-7 text-area-muted">
             Von der ersten Idee über Domain, E-Mail und Gestaltung bis zur fertigen Website – und langfristige Betreuung.
           </p>
-          <p className="mt-4 max-w-xl text-sm leading-6 text-slate-600">
+          <p className="mt-4 max-w-xl text-sm leading-6 text-area-muted">
             Alles aus einer Hand: Uwe Christian begleitet Sie persönlich durch jeden Schritt. Sie behalten einen festen Ansprechpartner und müssen sich nicht mit technischen Details beschäftigen.
           </p>
-          <button className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-emerald-800 px-5 text-sm font-semibold text-white transition hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+          <button className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 text-sm font-semibold text-white transition hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" data-page-nav="kontakt" data-target-id="kontakt" type="button">
             Website-Projekt besprechen <ArrowRight aria-hidden="true" size={17} />
           </button>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2">
           {benefits.map(({ icon: Icon, title, description }) => (
-            <article className="flex h-full gap-3 rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm sm:p-5" key={title}>
-              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-emerald-50 text-emerald-800">
+            <article className="flex h-full gap-3 rounded-2xl border border-area-border bg-area-surface p-4 shadow-sm sm:p-5" key={title}>
+              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-area-soft text-area-primary">
                 <Icon aria-hidden="true" size={20} />
               </span>
               <div>
-                <h3 className="text-sm font-semibold text-slate-900">{title}</h3>
-                <p className="mt-1.5 text-sm leading-6 text-slate-600">{description}</p>
+                <h3 className="text-sm font-semibold text-area-deep">{title}</h3>
+                <p className="mt-1.5 text-sm leading-6 text-area-muted">{description}</p>
               </div>
             </article>
           ))}
@@ -707,7 +707,7 @@ function EdvView() {
       <DataRecoverySection />
       <WebsiteDesignSection />
       <RemoteSection />
-      <section className="page-wrap ki-crosslink" aria-labelledby="ki-crosslink-title">
+      <section className="page-wrap ki-crosslink brand-area brand-area-ki" aria-labelledby="ki-crosslink-title">
         <div>
           <span className="eyebrow">KI-Studio &amp; Aktionen</span>
           <h2 id="ki-crosslink-title">Kreative Ideen für Menschen und Familien.</h2>
@@ -741,7 +741,7 @@ function WellbeingSection() {
   return (
     <section className="section section-wellbeing" id="waldbaden">
       <div className="page-wrap grid items-center gap-8 md:grid-cols-[1.05fr_0.95fr] md:gap-10 lg:gap-14">
-        <figure className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-emerald-950 shadow-xl md:aspect-[4/5]">
+        <figure className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-area-deep shadow-xl md:aspect-[4/5]">
           <Image
             alt="Wald und Streuobstwiesen am Frauenberg in Schorndorf"
             className="object-cover"
@@ -749,7 +749,7 @@ function WellbeingSection() {
             sizes="(max-width: 767px) 100vw, 50vw"
             src="/swea/waldbaden-frauenberg.jpg"
           />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-emerald-950/85 via-emerald-950/5 to-transparent" />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-area-deep/85 via-area-deep/5 to-transparent" />
           <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-5 text-white sm:p-6">
             <span className="flex items-center gap-2 text-sm font-semibold"><MapPin aria-hidden="true" size={16} /> Frauenberg · Schorndorf</span>
             <span className="text-xs leading-5 text-white/85">
@@ -759,19 +759,19 @@ function WellbeingSection() {
           </figcaption>
         </figure>
 
-        <div className="rounded-[1.75rem] border border-emerald-950/10 bg-[#fffdf8] p-6 shadow-sm sm:p-8">
-          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-emerald-900"><Leaf aria-hidden="true" size={14} /> Waldbaden &amp; Achtsamkeit</span>
-          <h2 className="mt-5 text-3xl font-semibold tracking-tight text-emerald-950 sm:text-4xl">Mit Shinrin-Yoku im Wald ankommen.</h2>
-          <p className="mt-4 text-base leading-7 text-stone-700">Shinrin-Yoku – das bewusste Eintauchen in die Atmosphäre des Waldes – lädt dazu ein, mit allen Sinnen langsamer zu werden. In achtsamen Übungen nehmen wir die Natur wahr und schaffen Raum für Ruhe, neue Klarheit und Abstand vom Alltag.</p>
-          <p className="mt-3 text-sm leading-6 text-stone-600">Uwe Christian ist zertifizierter Kursleiter bei der Akademie für Waldbaden. Mit seiner Qualifikation in Outdoor-Erste-Hilfe ist er auf die besonderen Anforderungen geführter Angebote in der Natur vorbereitet.</p>
+        <div className="rounded-[1.75rem] border border-area-deep/10 bg-earth-soft p-6 shadow-sm sm:p-8">
+          <span className="inline-flex items-center gap-2 rounded-full bg-area-subtle px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-area-deep"><Leaf aria-hidden="true" size={14} /> Waldbaden &amp; Achtsamkeit</span>
+          <h2 className="mt-5 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl">Mit Shinrin-Yoku im Wald ankommen.</h2>
+          <p className="mt-4 text-base leading-7 text-earth-deep">Shinrin-Yoku – das bewusste Eintauchen in die Atmosphäre des Waldes – lädt dazu ein, mit allen Sinnen langsamer zu werden. In achtsamen Übungen nehmen wir die Natur wahr und schaffen Raum für Ruhe, neue Klarheit und Abstand vom Alltag.</p>
+          <p className="mt-3 text-sm leading-6 text-earth-muted">Uwe Christian ist zertifizierter Kursleiter bei der Akademie für Waldbaden. Mit seiner Qualifikation in Outdoor-Erste-Hilfe ist er auf die besonderen Anforderungen geführter Angebote in der Natur vorbereitet.</p>
 
-          <dl className="mt-6 divide-y divide-emerald-950/10 rounded-xl border border-emerald-950/10 bg-[#f4f2e9] px-4 sm:px-5" id="kursdetails">
-            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Gruppen</dt><dd className="text-sm leading-6 text-stone-700">Kleine Gruppen mit maximal 8 Personen</dd></div>
-            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Zielgruppe</dt><dd className="text-sm leading-6 text-stone-700">Für Einsteiger, Einzelpersonen sowie Freundes- und Familiengruppen</dd></div>
-            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Leitung</dt><dd className="text-sm leading-6 text-stone-700">Zertifizierter Kursleiter mit Outdoor-Erste-Hilfe</dd></div>
+          <dl className="mt-6 divide-y divide-area-deep/10 rounded-xl border border-area-deep/10 bg-earth-subtle px-4 sm:px-5" id="kursdetails">
+            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-area-deep">Gruppen</dt><dd className="text-sm leading-6 text-earth-deep">Kleine Gruppen mit maximal 8 Personen</dd></div>
+            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-area-deep">Zielgruppe</dt><dd className="text-sm leading-6 text-earth-deep">Für Einsteiger, Einzelpersonen sowie Freundes- und Familiengruppen</dd></div>
+            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-area-deep">Leitung</dt><dd className="text-sm leading-6 text-earth-deep">Zertifizierter Kursleiter mit Outdoor-Erste-Hilfe</dd></div>
           </dl>
 
-          <button className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-emerald-800 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-800 focus-visible:ring-offset-2 sm:w-auto" data-page-nav="kontakt" data-target-id="kontakt" id="termine" type="button">
+          <button className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-area-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2 sm:w-auto" data-page-nav="kontakt" data-target-id="kontakt" id="termine" type="button">
             Unverbindlichen Termin anfragen <ArrowRight aria-hidden="true" size={17} />
           </button>
         </div>
@@ -840,43 +840,43 @@ function RemoteSection() {
       <div className="page-wrap">
         <div className="mb-8 max-w-3xl">
           <span className="eyebrow">IT-Support · Ihre Sicherheit</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="remote-access-title">Sicherheit &amp; Fernzugriff</h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">Wenn Hilfe aus der Ferne sinnvoll ist, stimmen wir den Ablauf vorher gemeinsam ab. Sie öffnen das vereinbarte Programm und entscheiden selbst, wann eine Sitzung beginnt und endet.</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="remote-access-title">Sicherheit &amp; Fernzugriff</h2>
+          <p className="mt-4 text-base leading-7 text-area-muted">Wenn Hilfe aus der Ferne sinnvoll ist, stimmen wir den Ablauf vorher gemeinsam ab. Sie öffnen das vereinbarte Programm und entscheiden selbst, wann eine Sitzung beginnt und endet.</p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:items-start">
-          <aside aria-labelledby="remote-steps-title" className="rounded-2xl border border-emerald-200 bg-white p-5 shadow-sm sm:p-6">
+          <aside aria-labelledby="remote-steps-title" className="rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm sm:p-6">
             <div className="flex items-start gap-3">
-              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-emerald-50 text-emerald-800"><ShieldCheck aria-hidden="true" size={20} /></span>
-              <h3 className="pt-1 text-lg font-semibold text-slate-900" id="remote-steps-title">So läuft eine Fernsitzung ab</h3>
+              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-area-soft text-area-primary"><ShieldCheck aria-hidden="true" size={20} /></span>
+              <h3 className="pt-1 text-lg font-semibold text-area-deep" id="remote-steps-title">So läuft eine Fernsitzung ab</h3>
             </div>
             <ol className="mt-5 grid gap-4">
               {steps.map((step, index) => (
                 <li className="flex gap-3" key={step.title}>
-                  <span aria-hidden="true" className="grid size-7 shrink-0 place-items-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-900">{index + 1}</span>
+                  <span aria-hidden="true" className="grid size-7 shrink-0 place-items-center rounded-full bg-area-subtle text-sm font-bold text-area-deep">{index + 1}</span>
                   <div>
-                    <h4 className="text-sm font-semibold text-slate-900">{step.title}</h4>
-                    <p className="mt-1 text-sm leading-6 text-slate-600">{step.description}</p>
+                    <h4 className="text-sm font-semibold text-area-deep">{step.title}</h4>
+                    <p className="mt-1 text-sm leading-6 text-area-muted">{step.description}</p>
                   </div>
                 </li>
               ))}
             </ol>
-            <p className="mt-5 rounded-xl bg-emerald-950 p-4 text-sm font-semibold leading-6 text-white">Fernzugriffe erfolgen ausschließlich nach vorheriger Absprache und Ihrer ausdrücklichen Zustimmung. Sie behalten jederzeit die volle Kontrolle über Ihren Computer.</p>
+            <p className="mt-5 rounded-xl bg-area-deep p-4 text-sm font-semibold leading-6 text-white">Fernzugriffe erfolgen ausschließlich nach vorheriger Absprache und Ihrer ausdrücklichen Zustimmung. Sie behalten jederzeit die volle Kontrolle über Ihren Computer.</p>
           </aside>
 
           <div>
-            <h3 className="text-lg font-semibold text-slate-900">Mögliche Fernzugriff-Programme</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Nutzen Sie nur das Programm, das wir vorher gemeinsam vereinbart haben. Laden Sie es selbst über die jeweilige Originalseite herunter.</p>
+            <h3 className="text-lg font-semibold text-area-deep">Mögliche Fernzugriff-Programme</h3>
+            <p className="mt-2 text-sm leading-6 text-area-muted">Nutzen Sie nur das Programm, das wir vorher gemeinsam vereinbart haben. Laden Sie es selbst über die jeweilige Originalseite herunter.</p>
             <div className="mt-4 grid gap-3">
               {options.map((option) => (
-                <a className="group flex flex-col rounded-xl border border-slate-200 bg-white p-4 transition hover:border-emerald-300 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" href={option.url} key={option.name} rel="noopener noreferrer" target="_blank">
-                  <h4 className="text-sm font-semibold text-slate-900">{option.name}</h4>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">{option.description}</p>
-                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800">{option.label} <ExternalLink aria-hidden="true" size={14} /></span>
+                <a className="group flex flex-col rounded-xl border border-area-border bg-area-surface p-4 transition hover:border-area-accent hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href={option.url} key={option.name} rel="noopener noreferrer" target="_blank">
+                  <h4 className="text-sm font-semibold text-area-deep">{option.name}</h4>
+                  <p className="mt-1 text-sm leading-6 text-area-muted">{option.description}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-area-primary">{option.label} <ExternalLink aria-hidden="true" size={14} /></span>
                 </a>
               ))}
             </div>
-            <p className="mt-3 text-xs leading-5 text-slate-500">Beenden Sie die Sitzung nach der Unterstützung. Dauerhafte Zugänge werden nicht ohne Ihre ausdrückliche Absprache eingerichtet.</p>
+            <p className="mt-3 text-xs leading-5 text-area-muted">Beenden Sie die Sitzung nach der Unterstützung. Dauerhafte Zugänge werden nicht ohne Ihre ausdrückliche Absprache eingerichtet.</p>
           </div>
         </div>
       </div>
@@ -890,35 +890,35 @@ function ContactSection() {
       <div className="page-wrap grid items-start gap-8 md:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div className="flex flex-col gap-7">
           <div>
-            <span className="inline-flex rounded-full border border-emerald-200/25 bg-emerald-100/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-100">Kontakt in Schorndorf</span>
+            <span className="inline-flex rounded-full border border-area-border/25 bg-area-subtle/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/80">Kontakt in Schorndorf</span>
             <h2 id="contact-title" className="mt-4 max-w-lg text-3xl font-semibold tracking-tight text-white sm:text-4xl">Lassen Sie uns ins Gespräch kommen.</h2>
-            <p className="mt-3 max-w-lg text-sm leading-7 text-emerald-50/75">Ob IT-Frage, Webprojekt oder Waldbaden – Sie erreichen Uwe Christian direkt.</p>
+            <p className="mt-3 max-w-lg text-sm leading-7 text-white/75">Ob IT-Frage, Webprojekt oder Waldbaden – Sie erreichen Uwe Christian direkt.</p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
-            <a href="tel:+497181253148" className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.06] p-4 transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-200">
-              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-emerald-100/10 text-emerald-100"><Phone aria-hidden="true" size={18} /></span>
-              <span className="min-w-0"><span className="block text-xs text-emerald-100/70">Telefon</span><span className="block break-words text-sm font-semibold text-white">+49 7181 253148</span></span>
+            <a href="tel:+497181253148" className="group flex items-center gap-3 rounded-xl border border-white/10 bg-area-surface/[0.06] p-4 transition hover:bg-area-surface/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-accent">
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-area-subtle/10 text-white/80"><Phone aria-hidden="true" size={18} /></span>
+              <span className="min-w-0"><span className="block text-xs text-white/70">Telefon</span><span className="block break-words text-sm font-semibold text-white">+49 7181 253148</span></span>
             </a>
-            <a href="mailto:edv@swea.de" className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.06] p-4 transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-200">
-              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-emerald-100/10 text-emerald-100"><Mail aria-hidden="true" size={18} /></span>
-              <span className="min-w-0"><span className="block text-xs text-emerald-100/70">E-Mail</span><span className="block break-words text-sm font-semibold text-white">edv@swea.de</span></span>
+            <a href="mailto:edv@swea.de" className="group flex items-center gap-3 rounded-xl border border-white/10 bg-area-surface/[0.06] p-4 transition hover:bg-area-surface/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-accent">
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-area-subtle/10 text-white/80"><Mail aria-hidden="true" size={18} /></span>
+              <span className="min-w-0"><span className="block text-xs text-white/70">E-Mail</span><span className="block break-words text-sm font-semibold text-white">edv@swea.de</span></span>
             </a>
           </div>
 
-          <div className="flex items-start gap-3 rounded-xl border border-emerald-100/10 bg-emerald-950/25 p-4 text-emerald-50/85">
-            <Clock3 aria-hidden="true" className="mt-0.5 shrink-0 text-emerald-200" size={18} />
+          <div className="flex items-start gap-3 rounded-xl border border-area-border/10 bg-area-deep/25 p-4 text-white/85">
+            <Clock3 aria-hidden="true" className="mt-0.5 shrink-0 text-area-accent-light" size={18} />
             <div><p className="text-sm font-semibold text-white">Erreichbarkeit</p><p className="mt-1 text-sm leading-6">Nach Vereinbarung. Wenn Sie uns telefonisch nicht erreichen, hinterlassen Sie gern eine Nachricht – wir rufen zurück.</p></div>
           </div>
 
-          <div className="flex items-start gap-3 border-l-2 border-emerald-200/65 pl-4 text-sm leading-6 text-emerald-50/80">
-            <MapPin aria-hidden="true" className="mt-1 shrink-0 text-emerald-200" size={18} />
+          <div className="flex items-start gap-3 border-l-2 border-area-border/65 pl-4 text-sm leading-6 text-white/80">
+            <MapPin aria-hidden="true" className="mt-1 shrink-0 text-area-accent-light" size={18} />
             <p>Direkter Kontakt zu Uwe Christian – ohne anonyme Hotline und unnötige Umwege in Schorndorf.</p>
           </div>
         </div>
 
         <form
-          className="grid gap-5 rounded-2xl border border-slate-200 bg-white p-5 text-slate-900 shadow-2xl shadow-black/10 sm:p-8"
+          className="grid gap-5 rounded-2xl border border-area-border bg-area-surface p-5 text-area-deep shadow-2xl shadow-black/10 sm:p-8"
           onSubmit={(event) => {
             event.preventDefault()
             const formData = new FormData(event.currentTarget)
@@ -933,25 +933,25 @@ function ContactSection() {
           }}
         >
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-800">Schreiben Sie uns</span>
-            <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900">Was können wir für Sie tun?</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Wählen Sie ein Thema und schildern Sie kurz Ihr Anliegen.</p>
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-area-primary">Schreiben Sie uns</span>
+            <h3 className="mt-2 text-2xl font-semibold tracking-tight text-area-deep">Was können wir für Sie tun?</h3>
+            <p className="mt-2 text-sm leading-6 text-area-muted">Wählen Sie ein Thema und schildern Sie kurz Ihr Anliegen.</p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm font-medium text-slate-800">
+            <label className="grid gap-2 text-sm font-medium text-area-deep">
               <span>Name</span>
-              <input className="min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/20" name="name" type="text" autoComplete="name" placeholder="Ihr Name" required />
+              <input className="min-h-11 w-full rounded-lg border border-area-border bg-area-surface px-3 text-sm outline-none transition placeholder:text-area-muted focus:border-area-primary focus:ring-2 focus:ring-area-primary/20" name="name" type="text" autoComplete="name" placeholder="Ihr Name" required />
             </label>
-            <label className="grid gap-2 text-sm font-medium text-slate-800">
+            <label className="grid gap-2 text-sm font-medium text-area-deep">
               <span>E-Mail</span>
-              <input className="min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/20" name="email" type="email" autoComplete="email" placeholder="name@beispiel.de" required />
+              <input className="min-h-11 w-full rounded-lg border border-area-border bg-area-surface px-3 text-sm outline-none transition placeholder:text-area-muted focus:border-area-primary focus:ring-2 focus:ring-area-primary/20" name="email" type="email" autoComplete="email" placeholder="name@beispiel.de" required />
             </label>
           </div>
 
-          <label className="grid gap-2 text-sm font-medium text-slate-800">
+          <label className="grid gap-2 text-sm font-medium text-area-deep">
             <span>Bereich</span>
-            <select className="min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/20" name="interest" defaultValue="" required>
+            <select className="min-h-11 w-full rounded-lg border border-area-border bg-area-surface px-3 text-sm outline-none transition focus:border-area-primary focus:ring-2 focus:ring-area-primary/20" name="interest" defaultValue="" required>
               <option value="" disabled>Bitte wählen</option>
               <option value="IT-Service">IT-Service</option>
               <option value="Datenrettung">Datenrettung</option>
@@ -961,14 +961,14 @@ function ContactSection() {
             </select>
           </label>
 
-          <label className="grid gap-2 text-sm font-medium text-slate-800">
+          <label className="grid gap-2 text-sm font-medium text-area-deep">
             <span>Nachricht</span>
-            <textarea className="min-h-32 w-full resize-y rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm leading-6 outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/20" name="message" placeholder="Worum geht es?" maxLength={5000} required />
+            <textarea className="min-h-32 w-full resize-y rounded-lg border border-area-border bg-area-surface px-3 py-3 text-sm leading-6 outline-none transition placeholder:text-area-muted focus:border-area-primary focus:ring-2 focus:ring-area-primary/20" name="message" placeholder="Worum geht es?" maxLength={5000} required />
           </label>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs leading-5 text-slate-500">Beim Absenden öffnet sich Ihr E-Mail-Programm mit den Angaben.</p>
-            <button className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-emerald-800 px-5 text-sm font-semibold text-white transition hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2" type="submit">Nachricht senden <ArrowRight aria-hidden="true" size={16} /></button>
+            <p className="text-xs leading-5 text-area-muted">Beim Absenden öffnet sich Ihr E-Mail-Programm mit den Angaben.</p>
+            <button className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 text-sm font-semibold text-white transition hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" type="submit">Nachricht senden <ArrowRight aria-hidden="true" size={16} /></button>
           </div>
         </form>
       </div>
@@ -982,7 +982,7 @@ function LegalSection() {
       <div className="legal-heading"><span className="eyebrow">Rechtliches · Platzhalter</span><h2 id="legal-title">Impressum nach MStV – wird aktualisiert</h2></div>
       <div className="legal-grid">
         <div className="legal-details">
-          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs leading-5 text-amber-950" role="note">Die Anbieter- und Verantwortlichkeitsangaben werden im Hinblick auf die Anforderungen des MStV geprüft und aktualisiert. Dies ist noch keine abschließend geprüfte Fassung.</div>
+          <div className="mb-4 rounded-xl border border-warning-border bg-warning-soft p-3 text-xs leading-5 text-warning-deep" role="note">Die Anbieter- und Verantwortlichkeitsangaben werden im Hinblick auf die Anforderungen des MStV geprüft und aktualisiert. Dies ist noch keine abschließend geprüfte Fassung.</div>
           <h3>Angaben gemäß § 5 DDG</h3>
           <p>Uwe Christian<br />Freiburgstr. 12<br />73614 Schorndorf</p>
           <div className="legal-contact-line"><span>Telefon</span><div><a href="tel:+497181253148">+49 7181 253148</a></div></div>
@@ -1000,15 +1000,15 @@ function LegalSection() {
           <p>Urheber und Bildquelle: Uwe Christian. Alle Bilder stehen unter Copyright: Uwe Christian.</p>
         </div>
         <div className="grid gap-4 md:col-span-2 md:grid-cols-2">
-          <article className="rounded-xl border border-slate-200 bg-white p-5" id="datenschutzerklaerung">
+          <article className="rounded-xl border border-area-border bg-area-surface p-5" id="datenschutzerklaerung">
             <h3>Datenschutzerklärung</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Platzhalter für den vollständigen Rechtstext. Die Aktualisierung soll Vercel-Hosting sowie externe Medien und eingebundene Dienste berücksichtigen.</p>
-            <p className="mt-3 text-xs font-semibold text-amber-800">Noch keine vollständige Datenschutzerklärung.</p>
+            <p className="mt-2 text-sm leading-6 text-area-muted">Platzhalter für den vollständigen Rechtstext. Die Aktualisierung soll Vercel-Hosting sowie externe Medien und eingebundene Dienste berücksichtigen.</p>
+            <p className="mt-3 text-xs font-semibold text-warning-foreground">Noch keine vollständige Datenschutzerklärung.</p>
           </article>
-          <article className="rounded-xl border border-slate-200 bg-white p-5" id="agb-individualprodukte">
+          <article className="rounded-xl border border-area-border bg-area-surface p-5" id="agb-individualprodukte">
             <h3>AGB für individuell angefertigte Produkte</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Platzhalter für Bedingungen zu individuell angefertigten Produkten und personalisierten Bestellungen. Der vollständige Rechtstext wird ergänzt und geprüft.</p>
-            <p className="mt-3 text-xs font-semibold text-amber-800">Noch keine verbindlichen Produktbedingungen.</p>
+            <p className="mt-2 text-sm leading-6 text-area-muted">Platzhalter für Bedingungen zu individuell angefertigten Produkten und personalisierten Bestellungen. Der vollständige Rechtstext wird ergänzt und geprüft.</p>
+            <p className="mt-3 text-xs font-semibold text-warning-foreground">Noch keine verbindlichen Produktbedingungen.</p>
           </article>
         </div>
       </div>
@@ -1017,31 +1017,31 @@ function LegalSection() {
 }
 
 function AboutSection() {
-  const cardClass = "scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+  const cardClass = "scroll-mt-24 rounded-2xl border border-area-border bg-area-surface p-6 shadow-sm"
 
   return (
-    <section aria-labelledby="about-title" className="section bg-[#f8f7f2]" id="ueber-swea">
+    <section aria-labelledby="about-title" className="section bg-area-soft" id="ueber-swea">
       <div className="page-wrap">
         <div className="mb-10 max-w-3xl">
           <span className="eyebrow">Über SWEA · Schorndorf</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="about-title">Persönlich beraten. Verständlich begleiten.</h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">SWEA verbindet persönlichen IT-Service mit kreativen digitalen Angeboten und achtsamer Zeit in der Natur.</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="about-title">Persönlich beraten. Verständlich begleiten.</h2>
+          <p className="mt-4 text-base leading-7 text-area-muted">SWEA verbindet persönlichen IT-Service mit kreativen digitalen Angeboten und achtsamer Zeit in der Natur.</p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           <article className={cardClass} id="about-person">
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">Person</span>
-            <h3 className="mt-3 text-lg font-semibold text-slate-900">Uwe Christian</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Ihr direkter Ansprechpartner in Schorndorf – vom ersten Gespräch bis zur passenden Unterstützung.</p>
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Person</span>
+            <h3 className="mt-3 text-lg font-semibold text-area-deep">Uwe Christian</h3>
+            <p className="mt-2 text-sm leading-6 text-area-muted">Ihr direkter Ansprechpartner in Schorndorf – vom ersten Gespräch bis zur passenden Unterstützung.</p>
           </article>
           <article className={cardClass} id="about-arbeitsweise">
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">Arbeitsweise</span>
-            <h3 className="mt-3 text-lg font-semibold text-slate-900">Klar, persönlich, lösungsorientiert</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Erst verstehen, dann verständlich erklären und gemeinsam praktikable nächste Schritte finden.</p>
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Arbeitsweise</span>
+            <h3 className="mt-3 text-lg font-semibold text-area-deep">Klar, persönlich, lösungsorientiert</h3>
+            <p className="mt-2 text-sm leading-6 text-area-muted">Erst verstehen, dann verständlich erklären und gemeinsam praktikable nächste Schritte finden.</p>
           </article>
           <article className={cardClass} id="about-erfahrung">
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">Erfahrung</span>
-            <h3 className="mt-3 text-lg font-semibold text-slate-900">Technik und Natur im Blick</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Von Computerhilfe, Netzwerken und Webprojekten bis zum zertifizierten Waldbaden mit Outdoor-Erste-Hilfe.</p>
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Erfahrung</span>
+            <h3 className="mt-3 text-lg font-semibold text-area-deep">Technik und Natur im Blick</h3>
+            <p className="mt-2 text-sm leading-6 text-area-muted">Von Computerhilfe, Netzwerken und Webprojekten bis zum zertifizierten Waldbaden mit Outdoor-Erste-Hilfe.</p>
           </article>
         </div>
       </div>
@@ -1052,25 +1052,25 @@ function AboutSection() {
 function Footer() {
   return (
     <footer className="site-footer">
-      <div className="page-wrap grid gap-8 border-b border-stone-300 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:grid-cols-[minmax(180px,.85fr)_minmax(0,2fr)_minmax(180px,.85fr)]">
+      <div className="page-wrap grid gap-8 border-b border-brand-border py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:grid-cols-[minmax(180px,.85fr)_minmax(0,2fr)_minmax(180px,.85fr)]">
         <div>
           <button aria-label="SWEA – zur Startseite" className="brand brand-button footer-brand" data-page-nav="start" data-target-id="start" type="button">
             <span className="brand-mark"><Image alt="" fill sizes="34px" src={antonIconSrc} /></span>
             <span className="brand-copy"><strong>SWEA</strong><span aria-hidden="true" className="brand-divider">|</span><small>Uwe Christian · Schorndorf</small></span>
           </button>
-          <p className="mt-3 max-w-xs text-sm leading-6 text-slate-600">Persönlicher IT-Service und Achtsamkeit in der Natur.</p>
+          <p className="mt-3 max-w-xs text-sm leading-6 text-area-muted">Persönlicher IT-Service und Achtsamkeit in der Natur.</p>
         </div>
         <nav aria-label="Fußnavigation" className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3">
           {navigation.map((item) => (
             <div key={item.page}>
-              <button className="mb-2 text-left text-sm font-semibold text-emerald-950 transition hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav={item.page} data-target-id={item.targetId} type="button">
+              <button className="mb-2 text-left text-sm font-semibold text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-page-nav={item.page} data-target-id={item.targetId} type="button">
                 {item.label}
               </button>
               {item.children ? (
                 <ul className="grid list-none gap-1.5 p-0">
                   {item.children.map((child) => (
                     <li key={child.targetId}>
-                      <button className="text-left text-xs leading-5 text-slate-600 transition hover:text-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav={child.page} data-target-id={child.targetId} type="button">{child.label}</button>
+                      <button className="text-left text-xs leading-5 text-area-muted transition hover:text-area-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-page-nav={child.page} data-target-id={child.targetId} type="button">{child.label}</button>
                     </li>
                   ))}
                 </ul>
@@ -1078,20 +1078,20 @@ function Footer() {
             </div>
           ))}
         </nav>
-        <address className="flex flex-col items-start gap-2 not-italic text-sm text-slate-600">
+        <address className="flex flex-col items-start gap-2 not-italic text-sm text-area-muted">
           <span className="eyebrow">Direktkontakt</span>
-          <a className="font-medium text-emerald-900 hover:text-emerald-700" href="mailto:edv@swea.de">edv@swea.de</a>
-          <a className="font-medium text-emerald-900 hover:text-emerald-700" href="mailto:wb@swea.de">wb@swea.de</a>
-          <a className="font-medium text-emerald-900 hover:text-emerald-700" href="tel:+497181253148">07181 / 253148</a>
+          <a className="font-medium text-area-deep hover:text-area-primary-hover" href="mailto:edv@swea.de">edv@swea.de</a>
+          <a className="font-medium text-area-deep hover:text-area-primary-hover" href="mailto:wb@swea.de">wb@swea.de</a>
+          <a className="font-medium text-area-deep hover:text-area-primary-hover" href="tel:+497181253148">07181 / 253148</a>
           <span>Freiburgstr. 12 · 73614 Schorndorf</span>
         </address>
       </div>
       <div className="page-wrap footer-bottom flex-col items-start sm:flex-row sm:items-center">
         <span>© 2026 Uwe Christian · www.swea.de</span>
         <nav aria-label="Rechtliche Informationen" className="flex flex-wrap gap-x-4 gap-y-2">
-          <button className="text-xs font-semibold text-emerald-900 transition hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav="kontakt" data-target-id="impressum" type="button">Impressum nach MStV</button>
-          <button className="text-xs font-semibold text-emerald-900 transition hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav="kontakt" data-target-id="datenschutzerklaerung" type="button">Datenschutzerklärung</button>
-          <button className="text-xs font-semibold text-emerald-900 transition hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav="kontakt" data-target-id="agb-individualprodukte" type="button">AGB für individuelle Produkte</button>
+          <button className="text-xs font-semibold text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-page-nav="kontakt" data-target-id="impressum" type="button">Impressum nach MStV</button>
+          <button className="text-xs font-semibold text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-page-nav="kontakt" data-target-id="datenschutzerklaerung" type="button">Datenschutzerklärung</button>
+          <button className="text-xs font-semibold text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-page-nav="kontakt" data-target-id="agb-individualprodukte" type="button">AGB für individuelle Produkte</button>
         </nav>
       </div>
     </footer>
@@ -1103,12 +1103,12 @@ export function SweaSite() {
     <SiteInteractions>
       <Header />
       <main id="main-content">
-        <div className="site-page-view" data-page-view="start"><HomeView /></div>
-        <div className="site-page-view" data-page-view="edv" hidden><EdvView /></div>
-        <div className="site-page-view" data-page-view="studio" hidden><KIStudioShowcase /><HolidayGiftSection /><AlternativeMotifsSection /><AIExamplesCarousel /></div>
-        <div className="site-page-view" data-page-view="waldbaden" hidden><WellbeingSection /></div>
-        <div className="site-page-view" data-page-view="about" hidden><AboutSection /></div>
-        <div className="site-page-view" data-page-view="kontakt" hidden><ContactSection /><LegalSection /></div>
+        <div className="site-page-view brand-area brand-area-base" data-page-view="start"><HomeView /></div>
+        <div className="site-page-view brand-area brand-area-technik" data-page-view="edv" hidden><EdvView /></div>
+        <div className="site-page-view brand-area brand-area-ki" data-page-view="studio" hidden><KIStudioShowcase /><HolidayGiftSection /><AlternativeMotifsSection /><AIExamplesCarousel /></div>
+        <div className="site-page-view brand-area brand-area-natur" data-page-view="waldbaden" hidden><WellbeingSection /></div>
+        <div className="site-page-view brand-area brand-area-base" data-page-view="about" hidden><AboutSection /></div>
+        <div className="site-page-view brand-area brand-area-base" data-page-view="kontakt" hidden><ContactSection /><LegalSection /></div>
       </main>
       <Footer />
     </SiteInteractions>
