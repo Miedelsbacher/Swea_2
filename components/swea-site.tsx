@@ -531,7 +531,7 @@ function ServicesSection() {
             <button aria-label="WLAN- oder Netzwerkproblem schildern" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Problem schildern <ArrowRight aria-hidden="true" size={16} /></button>
           </article>
 
-          <article className={cardClass} id="datenrettung">
+          <article className={cardClass} id="datenrettung-karte">
             <div className="mb-5 flex items-start gap-4">
               <span className={iconClass}><HardDrive aria-hidden="true" size={22} /></span>
               <div>
@@ -563,6 +563,76 @@ function ServicesSection() {
           </div>
           <button className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" data-page-nav="kontakt" data-target-id="kontakt" type="button">Jetzt Hilfe anfordern <ArrowRight aria-hidden="true" size={17} /></button>
         </div>
+      </div>
+    </section>
+  )
+}
+
+function DataRecoverySection() {
+  const steps = [
+    {
+      title: "Kostenlose Ersteinschätzung",
+      description: "Sie schildern kurz, was passiert ist und welcher Datenträger betroffen ist.",
+    },
+    {
+      title: "Unverbindliche Diagnose",
+      description: "Spezialisierte Partner prüfen den Schaden und die Möglichkeiten – ohne Verpflichtung.",
+    },
+    {
+      title: "Beratung zum weiteren Vorgehen",
+      description: "Sie erhalten eine klare Empfehlung und können anschließend in Ruhe entscheiden.",
+    },
+  ]
+
+  return (
+    <section aria-labelledby="datenrettung-title" className="section bg-slate-50" id="datenrettung">
+      <div className="page-wrap grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start lg:gap-12">
+        <div className="max-w-2xl">
+          <span className="eyebrow">Datenrettung</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="datenrettung-title">
+            Professionelle Datenrettung – Wenn es brenzlig wird.
+          </h2>
+          <p className="mt-4 text-base leading-7 text-slate-700">
+            Bei unterstützten Datenträgern und geeigneten Schadensbildern können unsere spezialisierten Partner Erfolgsquoten von bis zu 90 % erreichen. Das beschreibt die Möglichkeiten unserer Partner in passenden Fällen – es ist keine Garantie für den Erfolg beim einzelnen Gerät. Die tatsächliche Erfolgsaussicht klärt die Diagnose.
+          </p>
+          <p className="mt-3 text-sm leading-6 text-slate-600">
+            Ob Festplatte, USB-Stick oder Handy: Sie erhalten eine klare Einschätzung, bevor Sie über weitere Schritte entscheiden.
+          </p>
+        </div>
+
+        <aside aria-labelledby="datenrettung-warning-title" className="rounded-3xl border border-amber-200 bg-amber-50 p-5 shadow-sm sm:p-7">
+          <div className="flex items-start gap-4">
+            <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-amber-100 text-amber-900">
+              <HardDrive aria-hidden="true" size={21} />
+            </span>
+            <div>
+              <h3 className="text-lg font-semibold leading-snug text-slate-900 sm:text-xl" id="datenrettung-warning-title">
+                Datenträger defekt? Erst einmal nichts weiter ausprobieren.
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Weitere Startversuche, Reparaturprogramme oder das Öffnen des Geräts können den Schaden verschlimmern. Lassen Sie den Datenträger möglichst unverändert.
+              </p>
+            </div>
+          </div>
+
+          <ol aria-label="Ablauf der Datenrettung" className="mt-6 grid gap-3">
+            {steps.map((step, index) => (
+              <li className="flex gap-3 rounded-xl border border-amber-100 bg-white p-4" key={step.title}>
+                <span aria-hidden="true" className="grid size-8 shrink-0 place-items-center rounded-full bg-amber-100 text-sm font-bold text-amber-950">
+                  {index + 1}
+                </span>
+                <div>
+                  <h4 className="text-sm font-semibold text-slate-900">{step.title}</h4>
+                  <p className="mt-1 text-sm leading-6 text-slate-600">{step.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <button className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-emerald-800 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+            Datenträger prüfen lassen <ArrowRight aria-hidden="true" size={17} />
+          </button>
+        </aside>
       </div>
     </section>
   )
@@ -633,6 +703,7 @@ function EdvView() {
   return (
     <>
       <ServicesSection />
+      <DataRecoverySection />
       <WebsiteDesignSection />
       <section className="page-wrap ki-crosslink" aria-labelledby="ki-crosslink-title">
         <div>
@@ -847,6 +918,7 @@ function ContactSection() {
             <select className="min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/20" name="interest" defaultValue="" required>
               <option value="" disabled>Bitte wählen</option>
               <option value="IT-Service">IT-Service</option>
+              <option value="Datenrettung">Datenrettung</option>
               <option value="Webseiten &amp; Webdesign">Webseiten &amp; Webdesign</option>
               <option value="KI-Studio">KI-Studio</option>
               <option value="Waldbaden">Waldbaden</option>
