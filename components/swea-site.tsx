@@ -242,6 +242,101 @@ function HomeView() {
   )
 }
 
+function KIStudioShowcase() {
+  const cardClass = "flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-lg"
+  const inquiryClass = "ki-studio-inquiry mt-auto inline-flex w-full items-center justify-center gap-2 rounded-lg bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2"
+
+  return (
+    <section aria-labelledby="ki-studio-title" className="bg-slate-100/80 py-14 sm:py-20">
+      <div className="page-wrap">
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+          <span className="eyebrow">KI-Studio · Schorndorf</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="ki-studio-title">
+            KI-Studio – Kreative Ideen, individuell umgesetzt.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600">
+            Personalisierte Medienproduktion von Uwe Christian in Schorndorf.
+          </p>
+        </div>
+
+        <div className="grid items-stretch gap-5 md:grid-cols-3 md:gap-6">
+          <article className={cardClass}>
+            <div className="relative aspect-[16/10] overflow-hidden bg-slate-200">
+              <Image
+                alt="Beispiel eines individuell gestalteten KI-Porträts im Märchenwald"
+                className="object-cover transition-transform duration-500 hover:scale-105"
+                fill
+                sizes="(max-width: 767px) 100vw, 33vw"
+                src="/swea/ai-examples/elf-portrait.jpeg"
+              />
+              <span className="absolute right-3 top-3 rounded-full bg-white/95 px-3 py-1.5 text-sm font-semibold text-emerald-900 shadow-sm">
+                Ab 30 €
+              </span>
+            </div>
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <div className="mb-3 flex items-center gap-2 text-emerald-800"><ImageIcon aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bild &amp; Design</span></div>
+              <h3 className="text-xl font-semibold text-slate-900">KI-Bilder &amp; Porträts</h3>
+              <p className="mb-6 mt-2 text-sm leading-6 text-slate-600">Personalisierte Porträts, individuelle Unternehmensmotive und maßgeschneiderte Logos – abgestimmt auf Ihre Idee.</p>
+              <a className={inquiryClass} href="mailto:edv@swea.de?subject=Kreativprojekt%3A%20KI-Bilder%20%26%20Portr%C3%A4ts" aria-label="Kreativprojekt anfragen: KI-Bilder und Porträts">
+                Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
+              </a>
+            </div>
+          </article>
+
+          <article className={cardClass}>
+            <div className="relative aspect-[16/10] overflow-hidden bg-slate-950">
+              <video
+                aria-label="Beispiel eines personalisierten KI-Videoclips"
+                className="h-full w-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+              >
+                <source src="/swea/ai-examples/video-cf140fc6.mp4" type="video/mp4" />
+                Ihr Browser unterstützt die Videowiedergabe nicht.
+              </video>
+            </div>
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <div className="mb-3 flex items-center gap-2 text-emerald-800"><Video aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bewegtbild</span></div>
+              <h3 className="text-xl font-semibold text-slate-900">KI-Videos</h3>
+              <p className="mb-6 mt-2 text-sm leading-6 text-slate-600">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
+              <a className={inquiryClass} href="mailto:edv@swea.de?subject=Kreativprojekt%3A%20KI-Videos" aria-label="Kreativprojekt anfragen: KI-Videos">
+                Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
+              </a>
+            </div>
+          </article>
+
+          <article className={cardClass}>
+            <div className="flex aspect-[16/10] flex-col justify-between bg-slate-900 p-5 text-white sm:p-6">
+              <div className="flex items-center justify-between">
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-slate-200"><Music2 aria-hidden="true" size={17} /> SWEA Audio Studio</span>
+                <span className="rounded-full bg-emerald-400/15 px-2.5 py-1 text-xs font-medium text-emerald-200">Hörprobe</span>
+              </div>
+              <div aria-hidden="true" className="flex h-12 items-center justify-center gap-1.5">
+                {[18, 30, 22, 40, 27, 36, 16, 31, 44, 23, 34, 18, 39, 25, 15, 32, 21, 40, 27, 16, 34, 23, 38, 19].map((height, index) => (
+                  <span className="w-1 rounded-full bg-emerald-300/80" key={index} style={{ height }} />
+                ))}
+              </div>
+              <audio aria-label="KI-generierter Song als Hörprobe" className="w-full accent-emerald-400" controls preload="metadata">
+                <source src="/swea/recording-03_13.mp3" type="audio/mpeg" />
+                Ihr Browser unterstützt die Audiowiedergabe nicht.
+              </audio>
+            </div>
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <div className="mb-3 flex items-center gap-2 text-emerald-800"><Music2 aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Audio &amp; Musik</span></div>
+              <h3 className="text-xl font-semibold text-slate-900">Individuelle Songs &amp; Jingles</h3>
+              <p className="mb-6 mt-2 text-sm leading-6 text-slate-600">Persönliche Musikgeschenke und unverwechselbares Audio-Branding für Ihr Unternehmen – hören Sie in eine echte Hörprobe rein.</p>
+              <a className={inquiryClass} href="mailto:edv@swea.de?subject=Kreativprojekt%3A%20Songs%20%26%20Jingles" aria-label="Kreativprojekt anfragen: Songs und Jingles">
+                Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function HolidayGiftSection() {
   return (
     <section aria-labelledby="holiday-gift-title" className="holiday-gift-section" id="weihnachtsgeschenke">
@@ -624,7 +719,7 @@ export function SweaSite() {
       <main id="main-content">
         <div className="site-page-view" data-page-view="start"><HomeView /></div>
         <div className="site-page-view" data-page-view="edv" hidden><EdvView /></div>
-        <div className="site-page-view" data-page-view="studio" hidden><HolidayGiftSection /><AlternativeMotifsSection /><AIExamplesCarousel /></div>
+        <div className="site-page-view" data-page-view="studio" hidden><KIStudioShowcase /><HolidayGiftSection /><AlternativeMotifsSection /><AIExamplesCarousel /></div>
         <div className="site-page-view" data-page-view="waldbaden" hidden><WellbeingSection /></div>
         <div className="site-page-view" data-page-view="kontakt" hidden><RemoteSection /><ContactSection /><LegalSection /></div>
       </main>
