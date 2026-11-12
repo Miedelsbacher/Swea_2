@@ -354,83 +354,78 @@ function AlternativeMotifsSection() {
 }
 
 function ServicesSection() {
+  const cardClass = "rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6"
+  const iconClass = "grid size-11 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-800"
+
   return (
     <section className="section section-services" id="dienstleistungen">
       <div className="page-wrap">
-        <SectionIntro eyebrow="EDV-Dienstleistungen" title="IT, die für Sie arbeitet.">
-          EDV-Service, IT-Support und Computerhilfe in Schorndorf, Miedelsbach und Umgebung. Wir unterstützen Privatpersonen und Unternehmen bei Computerproblemen, Netzwerk- und WLAN-Einrichtung, Hardware-Kaufberatung, mobilen Endgeräten und Datensicherung.
-        </SectionIntro>
+        <div className="mb-10 max-w-3xl">
+          <span className="eyebrow">EDV-Dienstleistungen · Schorndorf</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Persönlicher IT-Service &amp; Support in Schorndorf</h2>
+          <p className="mt-4 text-base leading-7 text-slate-600">Praktische, persönliche Unterstützung für zu Hause und im Unternehmen – von der schnellen Computerhilfe bis zu individuellen IT-Lösungen.</p>
+        </div>
 
-        <div className="service-grid">
-          <article className="service-card service-card-featured">
-            <div className="service-card-top"><span className="service-icon"><Router aria-hidden="true" size={21} /></span></div>
-            <h3>Infrastrukturprojekte</h3>
-            <p>Verbindungsprobleme im Haus? Kein Empfang im WLAN? Wir haben viel Erfahrung damit, auf bestehenden Leitungen wie Satelliten- oder Telefonleitungen aufzusetzen und darüber Netzwerke bis in den Gigabit-Bereich zu ermöglichen.</p>
-            <p>Wir kennen WLAN-Geräte, Router und Access Points verschiedener Hersteller, um das vorhandene Netz zu ergänzen, zu verstärken oder zu ersetzen.</p>
-            <div className="service-detail"><Wifi aria-hidden="true" size={16} /><span>WLAN, Haus- und Garten-Automatisierung sowie WLAN-fähige Schalter und Messgeräte – wir beraten Sie gerne.</span></div>
-          </article>
-
-          <article className="service-card">
-            <div className="service-card-top"><span className="service-icon"><MonitorCog aria-hidden="true" size={21} /></span></div>
-            <h3>EDV-Service</h3>
-            <p>Hilfe vor Ort oder per Fernzugriff – verständlich und persönlich.</p>
-            <ul className="check-list">
-              <li><Check aria-hidden="true" size={16} />Probleme mit Windows und Windows-Software lösen</li>
-              <li><Check aria-hidden="true" size={16} />Beratung beim Neukauf</li>
-              <li><Check aria-hidden="true" size={16} />Unterstützung bei mobilen Endgeräten</li>
-              <li><Check aria-hidden="true" size={16} />Cloud-Datensicherung und Datensicherheit</li>
-              <li><Check aria-hidden="true" size={16} />Hilfe bei Datenverlust oder Datenträgerausfall</li>
-            </ul>
-          </article>
-
-          <article className="service-card service-card-wide">
-            <div className="service-card-top"><span className="service-icon"><Code2 aria-hidden="true" size={21} /></span></div>
-            <h3>Webseitenerstellung &amp; Webdesign</h3>
-            <p>Rundum-Service von der Beratung zum Provider über Domain-Namensgebung und Reservierung bis zur E-Mail-Anbindung und zur Erstellung responsiver HTML-Webseiten für Browser, Tablet und Handy.</p>
-            <p>Als Tool zur Erstellung setzen wir auf flexible KI-Lösungen für Webseitengenerierung, Änderungen, Erstellung von Elementen wie Bilder und Filme, selbstverständlich auf Basis Ihrer Vorgaben und Daten.</p>
-            <p>Standardmäßig entstehen Seiten ohne PHP-Basis, die somit üblicherweise sehr sicher gegen Angriffe aus dem Internet sind.</p>
-            <p>Externe Tools wie Buchungsportale lassen sich bei Bedarf einbinden. Übliche Dinge wie Bilder-Diashows, Eventlistings und Onlineshops sind machbar.</p>
-            <p>Sprechen Sie uns auf die Möglichkeiten an. Wir beraten umfassend auf Basis unserer jahrzehntelangen Erfahrung.</p>
-            <div className="projects-block">
-              <span className="eyebrow">Webseiten-Referenzprojekte</span>
-              <div className="project-links">
-                <a href="https://burg-waldenstein.de/" rel="noopener noreferrer" target="_blank">Hotel Garni &amp; Events Burg Waldenstein <ExternalLink aria-hidden="true" size={13} /></a>
-                <a href="https://mrvermietung.com/" rel="noopener noreferrer" target="_blank">MR-Vermietung, Rudersberg <ExternalLink aria-hidden="true" size={13} /></a>
-                <a href="https://pferdefahrpraxis.de/" rel="noopener noreferrer" target="_blank">Pferdefahrpraxis Altdorf <ExternalLink aria-hidden="true" size={13} /></a>
-                <a href="https://www.miedelsbach.de" rel="noopener noreferrer" target="_blank">Miedelsbach, Ortsteil von Schorndorf <ExternalLink aria-hidden="true" size={13} /></a>
-              </div>
+        <div className="grid items-start gap-7 lg:grid-cols-2 lg:gap-8">
+          <section aria-labelledby="private-services-title" className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 sm:p-7">
+            <div className="mb-5 flex items-center gap-3 border-b border-slate-200 pb-5">
+              <span className="grid size-11 place-items-center rounded-full bg-white text-slate-700 shadow-sm"><MonitorCog aria-hidden="true" size={21} /></span>
+              <div><h3 className="text-xl font-semibold text-slate-900" id="private-services-title">Privatkunden</h3><p className="text-sm text-slate-600">Hilfe für Ihre Technik zu Hause</p></div>
             </div>
-          </article>
-
-          <article className="service-card">
-            <div className="service-card-top"><span className="service-icon"><Smartphone aria-hidden="true" size={21} /></span></div>
-            <h3>Individualprogrammierung</h3>
-            <p>Passende kleine Lösungen für Ihre Arbeitsabläufe.</p>
-            <ul className="check-list">
-              <li><Check aria-hidden="true" size={16} />Access-Anwendungen, zum Beispiel LexWare-Daten per REST-API in Access importieren und für die weitere Bearbeitung bereitstellen</li>
-              <li><Check aria-hidden="true" size={16} />Word- und Excel-Makros</li>
-            </ul>
-          </article>
-
-          <article className="service-card recovery-card">
-            <div className="service-card-top"><span className="service-icon"><HardDrive aria-hidden="true" size={21} /></span></div>
-            <h3>Datenrettung &amp; Wiederherstellung</h3>
-            <p>Erstanalyse und möglicherweise Soforthilfe direkt über uns – etwa mit einer Softwarelösung. Wenn weitere Unterstützung nötig ist, bieten wir gemeinsam mit einem der weltweit führenden Partner die Analyse von Datenträgern aller Art: von SD-Karten und Handys bis zu RAID-Systemen.</p>
-            <ul className="check-list compact-list">
-              <li><Check aria-hidden="true" size={16} />Kostenloser, unverbindlicher Diagnoseservice</li>
-              <li><Check aria-hidden="true" size={16} />Übersicht der rekonstruierbaren Daten und Diagnosebericht vor Ihrer Entscheidung</li>
-              <li><Check aria-hidden="true" size={16} />Erfolgsquote des Partners: bis zu 90%</li>
-              <li><Check aria-hidden="true" size={16} />Faire Preise, auch für Privatpersonen; Analyse gratis</li>
-              <li><Check aria-hidden="true" size={16} />Staffelpreise je nach Datenträger-Art und Dringlichkeit</li>
-            </ul>
-            <div className="partner-inline">
-              <span>Als Partnerunternehmen können wir günstige Preise an Sie weitergeben.</span>
-              <a aria-label="DatenPhoenix Website öffnen" href="http://www.datenphoenix.de/" rel="noreferrer" target="_blank">
-                <Image alt="DatenPhoenix – Partner für Datenrettung" height={50} src="/swea/datenphoenix.svg" width={142} />
-                <ExternalLink aria-hidden="true" size={14} />
-              </a>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <article className={cardClass}>
+                <span className={iconClass}><MonitorCog aria-hidden="true" size={21} /></span>
+                <h4 className="mt-4 font-semibold text-slate-900">Computerhilfe &amp; Windows</h4>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Fehlerbehebung vor Ort – verständlich erklärt und persönlich begleitet.</p>
+              </article>
+              <article className={cardClass}>
+                <span className={iconClass}><Wifi aria-hidden="true" size={21} /></span>
+                <h4 className="mt-4 font-semibold text-slate-900">WLAN &amp; Heimnetzwerke</h4>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Stabile Verbindungen, passende Router und besserer Empfang im ganzen Zuhause.</p>
+              </article>
+              <article className={cardClass}>
+                <span className={iconClass}><HardDrive aria-hidden="true" size={21} /></span>
+                <h4 className="mt-4 font-semibold text-slate-900">Datenrettung</h4>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Professionelle Partner-Lösungen mit Erfolgsquoten von bis zu 90% – nach Prüfung des jeweiligen Datenträgers.</p>
+              </article>
+              <article className={cardClass}>
+                <span className={iconClass}><Smartphone aria-hidden="true" size={21} /></span>
+                <h4 className="mt-4 font-semibold text-slate-900">Smartphones &amp; Tablets</h4>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Unterstützung bei Einrichtung, Bedienung, Datenübertragung und Problemen.</p>
+              </article>
             </div>
-          </article>
+          </section>
+
+          <section aria-labelledby="business-services-title" className="rounded-2xl border border-emerald-900/10 bg-emerald-50/60 p-5 sm:p-7">
+            <div className="mb-5 flex items-center gap-3 border-b border-emerald-900/10 pb-5">
+              <span className="grid size-11 place-items-center rounded-full bg-white text-emerald-800 shadow-sm"><Router aria-hidden="true" size={21} /></span>
+              <div><h3 className="text-xl font-semibold text-slate-900" id="business-services-title">Unternehmen</h3><p className="text-sm text-slate-600">Technik, die mit Ihrem Betrieb wächst</p></div>
+            </div>
+            <div className="grid gap-3">
+              <article className={`${cardClass} border-emerald-200`}>
+                <div className="flex items-start gap-4">
+                  <span className={iconClass}><Router aria-hidden="true" size={21} /></span>
+                  <div><h4 className="font-semibold text-slate-900">Netzwerkinfrastruktur</h4><p className="mt-2 text-sm leading-6 text-slate-600">Bestehende Telefon- oder Satellitenleitungen clever weiternutzen und darüber leistungsstarke Netzwerke bis in den Gigabit-Bereich realisieren.</p></div>
+                </div>
+                <figure className="mt-5 flex min-h-40 flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-emerald-800/30 bg-gradient-to-br from-slate-100 to-emerald-100/70 px-4 py-6 text-center">
+                  <Router aria-hidden="true" className="text-emerald-800" size={26} />
+                  <figcaption className="text-sm font-medium text-slate-700">Platz für ein Vor-Ort-Foto</figcaption>
+                  <p className="text-xs text-slate-500">Verkabelung oder Hardware-Installation</p>
+                </figure>
+              </article>
+              <article className={cardClass}>
+                <div className="flex items-start gap-4"><span className={iconClass}><Code2 aria-hidden="true" size={21} /></span><div><h4 className="font-semibold text-slate-900">Individuelle Webentwicklung</h4><p className="mt-2 text-sm leading-6 text-slate-600">Responsive Webseiten und passgenaue digitale Lösungen – abgestimmt auf Ihre Anforderungen.</p></div></div>
+              </article>
+              <article className={cardClass}>
+                <div className="flex items-start gap-4"><span className={iconClass}><ImageIcon aria-hidden="true" size={21} /></span><div><h4 className="font-semibold text-slate-900">KI-Studio-Lösungen</h4><p className="mt-2 text-sm leading-6 text-slate-600">Kreative KI-Bilder, Videos und individuelle Inhalte für Ihren professionellen Auftritt.</p></div></div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <div className="mt-8 flex flex-col items-start justify-between gap-4 rounded-xl bg-slate-900 px-6 py-5 text-white sm:flex-row sm:items-center sm:px-8">
+          <div><h3 className="text-lg font-semibold">Sie haben eine Frage oder ein konkretes IT-Problem?</h3><p className="mt-1 text-sm text-slate-300">Beschreiben Sie kurz, wobei Sie Unterstützung brauchen.</p></div>
+          <button className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" data-page-nav="kontakt" type="button">IT-Problem schildern <ArrowRight aria-hidden="true" size={17} /></button>
         </div>
       </div>
     </section>
