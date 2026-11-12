@@ -96,25 +96,20 @@ function Hero() {
           <span className="eyebrow eyebrow-light"><span className="status-dot" /> EDV-Service &amp; Waldbaden · Schorndorf</span>
           <h1>Technik, die hilft.<br /><em>Ruhe, die bleibt.</em></h1>
           <p className="hero-description">
-            Persönliche IT-Unterstützung für Zuhause und Unternehmen – und neue Kraft durch Achtsamkeit in der Natur.
+            Persönlicher IT-Service, Computerhilfe, Netzwerke &amp; Webdesign – sowie neue Kraft durch Waldbaden in Schorndorf.
           </p>
           <div className="hero-actions">
-            <button className="button button-light" data-page-nav="edv" type="button">IT-Leistungen entdecken <ArrowRight aria-hidden="true" size={17} /></button>
-            <button className="button button-outline-light" data-page-nav="waldbaden" type="button">Waldbaden genießen</button>
+            <button className="button button-light" data-page-nav="edv" type="button">SWEA Technik entdecken <ArrowRight aria-hidden="true" size={17} /></button>
+            <button className="button button-outline-light" data-page-nav="waldbaden" type="button">SWEA Natur entdecken</button>
           </div>
           <div className="hero-proof"><MapPin aria-hidden="true" size={16} /> Persönlich für Sie da in Schorndorf und Umgebung</div>
         </div>
-        <div className="hero-visual" aria-label="Die zwei Bereiche von SWEA">
-          <button aria-label="EDV-Service ansehen" className="hero-image-card hero-image-it" data-page-nav="edv" type="button">
-            <div className="image-card-caption"><span>Technik</span><ArrowUpRight aria-hidden="true" size={16} /></div>
-            <Image alt="Uwe Christian – EDV-Dienstleistungen" src="/swea/edv-large.png" width={1024} height={680} priority />
-          </button>
-          <button aria-label="Waldbaden ansehen" className="hero-image-card hero-image-nature" data-page-nav="waldbaden" type="button">
-            <div className="image-card-caption"><span>Achtsamkeit</span><ArrowUpRight aria-hidden="true" size={16} /></div>
-            <Image alt="Uwe Christian – EDV-Erholung und Achtsamkeit" src="/swea/waldbaden-large.png" width={1024} height={680} />
-          </button>
-          <div className="hero-note"><Leaf aria-hidden="true" size={17} /><span>Digital gut aufgestellt.<br />Im Alltag wieder durchatmen.</span></div>
-        </div>
+        <figure className="hero-visual">
+          <div className="hero-portrait-frame">
+            <Image alt="Uwe Christian, persönlicher IT-Serviceanbieter in Schorndorf" src="/swea/uwe-christian-portrait.png" fill priority sizes="(max-width: 700px) 100vw, 46vw" />
+          </div>
+          <figcaption className="hero-note"><span className="hero-note-mark"><Check aria-hidden="true" size={15} /></span><span><strong>Uwe Christian</strong><br />Ihr persönlicher Ansprechpartner</span></figcaption>
+        </figure>
       </div>
       <a aria-label="Weiter zu den Leistungen" className="hero-scroll" href="#bereiche"><ArrowDown aria-hidden="true" size={18} /></a>
     </section>
