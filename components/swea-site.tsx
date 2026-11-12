@@ -6,6 +6,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
+  Clock3,
   Code2,
   ExternalLink,
   HardDrive,
@@ -15,6 +16,7 @@ import {
   Video,
   Leaf,
   MapPin,
+  Mail,
   Menu,
   MonitorCog,
   Phone,
@@ -658,27 +660,90 @@ function RemoteSection() {
 
 function ContactSection() {
   return (
-    <section className="section section-contact" id="kontakt">
-      <div className="page-wrap contact-layout">
-        <div className="contact-intro">
-          <span className="eyebrow eyebrow-light">Kontakt</span>
-          <h2>Am besten direkt per E-Mail.</h2>
-          <p>Bitte nehmen Sie am besten per Mail Kontakt auf. Wählen Sie den passenden Bereich – wir melden uns bei Ihnen.</p>
-          <div className="contact-address"><MapPin aria-hidden="true" size={17} /><span>Freiburgstr. 12<br />73614 Schorndorf</span></div>
+    <section className="section section-contact" id="kontakt" aria-labelledby="contact-title">
+      <div className="page-wrap grid items-start gap-8 md:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+        <div className="flex flex-col gap-7">
+          <div>
+            <span className="inline-flex rounded-full border border-emerald-200/25 bg-emerald-100/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-100">Kontakt in Schorndorf</span>
+            <h2 id="contact-title" className="mt-4 max-w-lg text-3xl font-semibold tracking-tight text-white sm:text-4xl">Lassen Sie uns ins Gespräch kommen.</h2>
+            <p className="mt-3 max-w-lg text-sm leading-7 text-emerald-50/75">Ob IT-Frage, Webprojekt oder Waldbaden – Sie erreichen Uwe Christian direkt.</p>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            <a href="tel:+497181253148" className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.06] p-4 transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-200">
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-emerald-100/10 text-emerald-100"><Phone aria-hidden="true" size={18} /></span>
+              <span className="min-w-0"><span className="block text-xs text-emerald-100/70">Telefon</span><span className="block break-words text-sm font-semibold text-white">+49 7181 253148</span></span>
+            </a>
+            <a href="mailto:edv@swea.de" className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.06] p-4 transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-200">
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-emerald-100/10 text-emerald-100"><Mail aria-hidden="true" size={18} /></span>
+              <span className="min-w-0"><span className="block text-xs text-emerald-100/70">E-Mail</span><span className="block break-words text-sm font-semibold text-white">edv@swea.de</span></span>
+            </a>
+          </div>
+
+          <div className="flex items-start gap-3 rounded-xl border border-emerald-100/10 bg-emerald-950/25 p-4 text-emerald-50/85">
+            <Clock3 aria-hidden="true" className="mt-0.5 shrink-0 text-emerald-200" size={18} />
+            <div><p className="text-sm font-semibold text-white">Erreichbarkeit</p><p className="mt-1 text-sm leading-6">Nach Vereinbarung. Wenn Sie uns telefonisch nicht erreichen, hinterlassen Sie gern eine Nachricht – wir rufen zurück.</p></div>
+          </div>
+
+          <div className="flex items-start gap-3 border-l-2 border-emerald-200/65 pl-4 text-sm leading-6 text-emerald-50/80">
+            <MapPin aria-hidden="true" className="mt-1 shrink-0 text-emerald-200" size={18} />
+            <p>Direkter Kontakt zu Uwe Christian – ohne anonyme Hotline und unnötige Umwege in Schorndorf.</p>
+          </div>
         </div>
-        <div className="contact-options">
-          <article className="contact-card">
-            <span className="contact-card-icon"><MonitorCog aria-hidden="true" size={19} /></span>
-            <span className="eyebrow">EDV-Dienstleistungen</span>
-            <div className="contact-method"><a href="mailto:edv@swea.de">edv@swea.de</a></div>
-          </article>
-          <article className="contact-card">
-            <span className="contact-card-icon contact-card-icon-leaf"><Leaf aria-hidden="true" size={19} /></span>
-            <span className="eyebrow">EDV-Erholung &amp; Waldbaden</span>
-            <div className="contact-method"><a href="mailto:wb@swea.de">wb@swea.de</a></div>
-          </article>
-          <div className="contact-phone-note"><Phone aria-hidden="true" size={17} /><p>Telefonisch erreichen Sie uns gegebenenfalls über den Anrufbeantworter. Wir rufen zurück. Die Kontaktdaten finden Sie im Impressum.</p><a href="#impressum">Zum Impressum <ArrowRight aria-hidden="true" size={14} /></a></div>
-        </div>
+
+        <form
+          className="grid gap-5 rounded-2xl border border-slate-200 bg-white p-5 text-slate-900 shadow-2xl shadow-black/10 sm:p-8"
+          onSubmit={(event) => {
+            event.preventDefault()
+            const formData = new FormData(event.currentTarget)
+            const name = String(formData.get("name"))
+            const email = String(formData.get("email"))
+            const interest = String(formData.get("interest"))
+            const message = String(formData.get("message"))
+            const recipient = interest === "Waldbaden" ? "wb@swea.de" : "edv@swea.de"
+            const subject = encodeURIComponent(`SWEA-Anfrage: ${interest}`)
+            const body = encodeURIComponent(`Name: ${name}\nE-Mail: ${email}\nBereich: ${interest}\n\n${message}`)
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`
+          }}
+        >
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-800">Schreiben Sie uns</span>
+            <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900">Was können wir für Sie tun?</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Wählen Sie ein Thema und schildern Sie kurz Ihr Anliegen.</p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="grid gap-2 text-sm font-medium text-slate-800">
+              <span>Name</span>
+              <input className="min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/20" name="name" type="text" autoComplete="name" placeholder="Ihr Name" required />
+            </label>
+            <label className="grid gap-2 text-sm font-medium text-slate-800">
+              <span>E-Mail</span>
+              <input className="min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/20" name="email" type="email" autoComplete="email" placeholder="name@beispiel.de" required />
+            </label>
+          </div>
+
+          <label className="grid gap-2 text-sm font-medium text-slate-800">
+            <span>Bereich</span>
+            <select className="min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/20" name="interest" defaultValue="" required>
+              <option value="" disabled>Bitte wählen</option>
+              <option value="IT-Service">IT-Service</option>
+              <option value="Webdesign">Webdesign</option>
+              <option value="KI-Studio">KI-Studio</option>
+              <option value="Waldbaden">Waldbaden</option>
+            </select>
+          </label>
+
+          <label className="grid gap-2 text-sm font-medium text-slate-800">
+            <span>Nachricht</span>
+            <textarea className="min-h-32 w-full resize-y rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm leading-6 outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/20" name="message" placeholder="Worum geht es?" maxLength={5000} required />
+          </label>
+
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-xs leading-5 text-slate-500">Beim Absenden öffnet sich Ihr E-Mail-Programm mit den Angaben.</p>
+            <button className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-emerald-800 px-5 text-sm font-semibold text-white transition hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2" type="submit">Nachricht senden <ArrowRight aria-hidden="true" size={16} /></button>
+          </div>
+        </form>
       </div>
     </section>
   )
