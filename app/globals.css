@@ -14,26 +14,117 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-border: var(--brand-border);
+  --color-area-primary: var(--area-primary);
+  --color-area-primary-hover: var(--area-primary-hover);
+  --color-area-accent: var(--area-accent);
+  --color-area-accent-hover: var(--area-accent-hover);
+  --color-area-accent-light: var(--area-accent-light);
+  --color-area-soft: var(--area-soft);
+  --color-area-subtle: var(--area-subtle);
+  --color-area-surface: var(--area-surface);
+  --color-area-border: var(--area-border);
+  --color-area-deep: var(--area-deep);
+  --color-area-muted: var(--area-muted);
+  --color-area-on-primary: var(--area-on-primary);
+  --color-area-accent-foreground: var(--area-accent-foreground);
+  --color-technik-primary: var(--technik-primary);
+  --color-technik-accent: var(--technik-accent);
+  --color-ki-primary: var(--ki-primary);
+  --color-ki-deep: var(--ki-deep);
+  --color-ki-accent: var(--ki-accent);
+  --color-natur-primary: var(--natur-primary);
+  --color-natur-deep: var(--natur-deep);
+  --color-natur-accent: var(--natur-accent);
+  --color-earth-primary: var(--earth-primary);
+  --color-earth-deep: var(--earth-deep);
+  --color-earth-muted: var(--earth-muted);
+  --color-earth-soft: var(--earth-soft);
+  --color-earth-subtle: var(--earth-subtle);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-warning-border: var(--warning-border);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning-deep: var(--warning-deep);
   --radius: 0.75rem;
 }
 
 :root {
   color-scheme: light;
-  --background: #f7f6f0;
-  --foreground: #1c3029;
-  --card: #fffefa;
-  --card-foreground: #1c3029;
-  --primary: #215b4c;
+  --brand-deep: #172b3a;
+  --brand-primary: #355875;
+  --brand-accent: #4c8db1;
+  --brand-soft: #f4f7fa;
+  --brand-subtle: #e8eef3;
+  --brand-muted: #5c6f80;
+  --brand-border: #d8e1e9;
+  --technik-deep: #153b5b;
+  --technik-primary: #276c93;
+  --technik-accent: #47a9b5;
+  --technik-accent-hover: #358c9a;
+  --technik-accent-light: #c7e7eb;
+  --technik-soft: #f1f7f9;
+  --technik-subtle: #e4f0f3;
+  --technik-border: #d0e1e7;
+  --ki-deep: #1d2453;
+  --ki-primary: #6157b8;
+  --ki-primary-hover: #4c4399;
+  --ki-accent: #8978df;
+  --ki-accent-light: #d3ccf7;
+  --ki-soft: #f5f3fd;
+  --ki-subtle: #ebe8fa;
+  --ki-border: #ddd8f1;
+  --natur-deep: #173d31;
+  --natur-primary: #2d6848;
+  --natur-accent: #698c68;
+  --natur-accent-hover: #557554;
+  --natur-accent-light: #c7d7bb;
+  --natur-soft: #f2f5ee;
+  --natur-subtle: #e7eee2;
+  --natur-border: #d6e0d2;
+  --earth-deep: #5b4930;
+  --earth-muted: #76674f;
+  --earth-primary: #a47e4e;
+  --earth-soft: #fbf8f1;
+  --earth-subtle: #f0e8d8;
+  --earth-border: #e4d8c2;
+  --warning-deep: #57340d;
+  --warning-foreground: #805710;
+  --warning-soft: #fff8e8;
+  --warning-subtle: #faedcb;
+  --warning-border: #ecd8aa;
+  --background: var(--brand-soft);
+  --foreground: var(--brand-deep);
+  --card: #ffffff;
+  --card-foreground: var(--brand-deep);
+  --primary: var(--brand-primary);
   --primary-foreground: #ffffff;
-  --muted: #efeee6;
-  --muted-foreground: #68766d;
-  --border: #e5e6dc;
-  --green-900: #143d34;
-  --green-800: #1c5144;
-  --green-700: #286955;
-  --green-100: #e4eee5;
-  --sand-100: #f0ecdd;
-  --accent: #d6a85c;
+  --muted: var(--brand-soft);
+  --muted-foreground: var(--brand-muted);
+  --border: var(--brand-border);
+  --area-primary: var(--brand-primary);
+  --area-primary-hover: var(--brand-deep);
+  --area-accent: var(--brand-accent);
+  --area-accent-hover: #2b6b8d;
+  --area-accent-light: #c8dce8;
+  --area-soft: var(--brand-soft);
+  --area-subtle: var(--brand-subtle);
+  --area-surface: var(--card);
+  --area-border: var(--brand-border);
+  --area-deep: var(--brand-deep);
+  --area-muted: var(--brand-muted);
+  --area-on-primary: #ffffff;
+  --area-accent-foreground: var(--brand-deep);
+  --green-900: var(--natur-deep);
+  --green-800: var(--natur-primary);
+  --green-700: var(--natur-accent-hover);
+  --green-100: var(--natur-subtle);
+  --sand-100: var(--earth-subtle);
+  --accent: var(--brand-accent);
   --radius: 0.75rem;
 }
 
@@ -43,7 +134,7 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
 a { color: inherit; text-decoration: none; }
   .ki-studio-inquiry, .ki-studio-inquiry:hover { color: #fff; }
 button { font: inherit; }
-::selection { background: #cadfcf; color: var(--green-900); }
+::selection { background: var(--brand-subtle); color: var(--brand-deep); }
 html { scroll-padding-top: 88px; }
 .page-wrap { width: min(1160px, calc(100% - 56px)); margin-inline: auto; }
 
@@ -598,3 +689,167 @@ body {
   .footer-main { grid-template-columns: 1fr; gap: 1.25rem; }
   .footer-links, .footer-contact { grid-column: auto; grid-row: auto; }
 }
+
+.brand-area-base {
+  --area-primary: var(--brand-primary);
+  --area-primary-hover: var(--brand-deep);
+  --area-accent: var(--brand-accent);
+  --area-accent-hover: #2b6b8d;
+  --area-accent-light: #c8dce8;
+  --area-soft: var(--brand-soft);
+  --area-subtle: var(--brand-subtle);
+  --area-surface: var(--card);
+  --area-border: var(--brand-border);
+  --area-deep: var(--brand-deep);
+  --area-muted: var(--brand-muted);
+  --area-on-primary: #ffffff;
+  --area-accent-foreground: var(--brand-deep);
+}
+
+.brand-area-technik {
+  --area-primary: var(--technik-primary);
+  --area-primary-hover: var(--technik-deep);
+  --area-accent: var(--technik-accent);
+  --area-accent-hover: var(--technik-accent-hover);
+  --area-accent-light: var(--technik-accent-light);
+  --area-soft: var(--technik-soft);
+  --area-subtle: var(--technik-subtle);
+  --area-surface: #ffffff;
+  --area-border: var(--technik-border);
+  --area-deep: var(--technik-deep);
+  --area-muted: #566f80;
+  --area-on-primary: #ffffff;
+  --area-accent-foreground: var(--technik-deep);
+}
+
+.brand-area-ki {
+  --area-primary: var(--ki-primary);
+  --area-primary-hover: var(--ki-primary-hover);
+  --area-accent: var(--ki-accent);
+  --area-accent-hover: var(--ki-primary-hover);
+  --area-accent-light: var(--ki-accent-light);
+  --area-soft: var(--ki-soft);
+  --area-subtle: var(--ki-subtle);
+  --area-surface: #ffffff;
+  --area-border: var(--ki-border);
+  --area-deep: var(--ki-deep);
+  --area-muted: #5d617a;
+  --area-on-primary: #ffffff;
+  --area-accent-foreground: var(--ki-deep);
+}
+
+.brand-area-natur {
+  --area-primary: var(--natur-primary);
+  --area-primary-hover: var(--natur-deep);
+  --area-accent: var(--earth-primary);
+  --area-accent-hover: #87663c;
+  --area-accent-light: #f0dfbd;
+  --area-soft: var(--natur-soft);
+  --area-subtle: var(--natur-subtle);
+  --area-surface: var(--earth-soft);
+  --area-border: var(--natur-border);
+  --area-deep: var(--natur-deep);
+  --area-muted: var(--earth-muted);
+  --area-on-primary: #ffffff;
+  --area-accent-foreground: var(--earth-deep);
+}
+
+.site-header { background: rgba(248, 250, 252, .94); border-color: var(--brand-border); }
+.brand-mark { border-color: var(--brand-border); }
+.brand-copy small, .brand-divider { color: var(--brand-muted); }
+.main-nav .nav-submenu { border-color: var(--brand-border); background: var(--card); }
+.main-nav .nav-submenu-link { color: var(--brand-muted); }
+.main-nav .nav-submenu-link:hover, .main-nav .nav-submenu-link:focus-visible { background: var(--brand-soft); color: var(--brand-primary); }
+.main-nav > button { color: var(--brand-deep); }
+.main-nav > button:hover, .main-nav > button.is-active, .main-nav .nav-link.is-active { color: var(--brand-primary); }
+.mobile-menu-toggle { color: var(--brand-deep); }
+.hero { background: var(--brand-deep); }
+.hero::before { background: radial-gradient(ellipse at 82% 22%, color-mix(in srgb, var(--brand-accent) 25%, transparent), transparent 36%), radial-gradient(ellipse at 3% 100%, color-mix(in srgb, var(--brand-primary) 22%, transparent), transparent 35%); }
+.hero-orbit { border-color: rgba(215, 230, 240, .13); }
+.hero h1 em { color: #c6d8e6; }
+.button-light { background: var(--brand-soft); color: var(--brand-deep); }
+.button-light:hover { background: var(--brand-subtle); }
+.button-dark, .button-action { border-color: var(--area-primary); background: var(--area-primary); color: var(--area-on-primary); }
+.button-dark:hover, .button-action:hover { border-color: var(--area-primary-hover); background: var(--area-primary-hover); color: var(--area-on-primary); }
+.section-intro h2 { color: var(--area-deep); }
+.section-lead { color: var(--area-muted); }
+.section-services, .section-wellbeing, .section-remote { background: var(--area-soft); }
+.service-card, .wellbeing-card, .remote-card, .academy-card { border-color: var(--area-border); background: var(--area-surface); }
+.service-card-featured { background: var(--area-subtle); }
+.service-icon, .wellbeing-icon, .offer-mark, .quick-link-icon { background: var(--area-subtle); color: var(--area-primary); }
+.service-detail, .appointment-note { border-color: var(--area-border); background: var(--area-subtle); color: var(--area-deep); }
+.check-list svg, .project-links a, .remote-link { color: var(--area-primary); }
+.project-links a { border-color: var(--area-border); }
+.project-links a:hover { background: var(--area-soft); }
+.qualification-wrap, .offer-card { border-color: var(--area-border); background: var(--area-soft); }
+.quick-link { border-color: var(--area-border); background: var(--area-surface); }
+.quick-link-nature { color: var(--area-accent); }
+.section-contact { background: var(--brand-deep); }
+.legal-grid h3 { color: var(--area-primary); }
+.legal-contact-line > div > a, .legal-contact-line > a { color: var(--area-primary); }
+.site-footer { background: var(--brand-soft); }
+.footer-main { border-color: var(--brand-border); }
+.footer-main > p, .footer-profile > p { color: var(--brand-muted); }
+.footer-main nav a, .footer-links button, .footer-contact { color: var(--brand-muted); }
+.footer-main nav a:hover, .footer-links button:hover, .site-footer a:hover { color: var(--brand-primary); }
+.footer-contact a, .footer-bottom a { color: var(--brand-primary); }
+
+.brand-area-technik .section-services,
+.brand-area-technik .section-remote,
+.brand-area-technik #datenrettung,
+.brand-area-technik #webseiten-webdesign { background: var(--area-soft); }
+.brand-area-technik .service-icon { color: var(--area-primary); }
+.brand-area-technik .service-detail { background: var(--area-subtle); }
+.brand-area-technik .service-card-featured { background: var(--area-subtle); }
+
+.brand-area-ki .holiday-gift-section,
+.brand-area-ki .ai-examples-carousel-section { background: var(--ki-deep); color: #f7f6ff; }
+.brand-area-ki .holiday-gift-copy h2,
+.brand-area-ki .ai-examples-carousel-title { color: #ffffff; }
+.brand-area-ki .holiday-gift-eyebrow,
+.brand-area-ki .holiday-song-panel h4,
+.brand-area-ki .seasonal-audio-label { color: var(--ki-accent-light); }
+.brand-area-ki .holiday-gift-copy > p,
+.brand-area-ki .holiday-gift-terms p,
+.brand-area-ki .holiday-gift-rights,
+.brand-area-ki .ai-examples-carousel-status { color: #d9d8ef; }
+.brand-area-ki .holiday-gift-terms,
+.brand-area-ki .holiday-song-panel { border-color: rgba(211, 204, 247, .28); background: rgba(10, 17, 53, .55); }
+.brand-area-ki .holiday-example-card,
+.brand-area-ki .ai-examples-carousel-card { border-color: var(--ki-border); background: var(--card); color: var(--ki-deep); }
+.brand-area-ki .holiday-example-card figcaption,
+.brand-area-ki .ai-examples-carousel-card figcaption { color: var(--ki-deep); }
+.brand-area-ki .holiday-video video,
+.brand-area-ki .holiday-song-lyrics,
+.brand-area-ki .ai-examples-carousel-media { background: var(--ki-deep); }
+.brand-area-ki .ai-examples-carousel-arrow { border-color: var(--ki-accent-light); background: var(--ki-primary); color: #ffffff; }
+.brand-area-ki .ai-examples-carousel-arrow:hover { background: var(--ki-primary-hover); }
+.brand-area-ki .ai-examples-carousel-dot::before { border-color: var(--ki-accent-light); }
+.brand-area-ki .ai-examples-carousel-dot[aria-current="true"]::before { border-color: var(--ki-accent-light); background: var(--ki-accent-light); }
+.brand-area-ki .alternative-motifs-section { border-color: var(--ki-border); background: var(--ki-soft); }
+.brand-area-ki .alternative-motifs-content p { color: var(--ki-deep); }
+.brand-area-ki .alternative-motifs-content p + p { color: var(--area-muted); }
+.seasonal-action-card.brand-area-ki { border-color: var(--area-border); background: var(--area-soft); color: var(--area-deep); }
+.seasonal-action-card.brand-area-ki .seasonal-action-badge,
+.seasonal-action-card.brand-area-ki .seasonal-highlight-icon { border-color: var(--area-border); background: var(--area-subtle); color: var(--area-primary); }
+.seasonal-action-card.brand-area-ki .seasonal-action-copy h2,
+.seasonal-action-card.brand-area-ki .seasonal-action-highlights strong { color: var(--area-deep); }
+.seasonal-action-card.brand-area-ki .seasonal-action-description,
+.seasonal-action-card.brand-area-ki .seasonal-action-highlights small { color: var(--area-muted); }
+.seasonal-action-card.brand-area-ki .seasonal-preview,
+.seasonal-action-card.brand-area-ki .seasonal-preview-video video { background: var(--ki-deep); }
+.seasonal-action-card.brand-area-ki .seasonal-preview-audio { background: linear-gradient(140deg, var(--ki-deep), var(--ki-primary)); }
+.seasonal-action-card.brand-area-ki .seasonal-audio-wave span { background: linear-gradient(var(--ki-accent-light), var(--ki-accent)); }
+.seasonal-action-card.brand-area-ki .seasonal-action-secondary { color: var(--area-primary); text-decoration-color: currentColor; }
+.seasonal-action-card.brand-area-ki .seasonal-action-secondary:hover { color: var(--area-primary-hover); }
+.ki-crosslink.brand-area-ki { border-color: var(--area-border); background: var(--area-soft); color: var(--area-deep); }
+.ki-crosslink.brand-area-ki p { color: var(--area-muted); }
+
+.brand-area-natur .section-wellbeing::before { border-color: var(--natur-border); }
+.brand-area-natur .appointment-note .appointment-dot { background: var(--natur-accent); }
+.brand-area-natur .qualification-wrap { background: var(--natur-subtle); }
+.brand-area-natur .offer-card { background: var(--natur-soft); }
+.brand-area-natur .offer-mark { background: var(--earth-subtle); color: var(--earth-primary); }
+.brand-area-natur .permission-note { color: var(--natur-primary) !important; }
+
+.footer-bottom { border-color: var(--brand-border); }
