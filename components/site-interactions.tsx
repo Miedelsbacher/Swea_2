@@ -27,7 +27,7 @@ export function SiteInteractions({ children }: { children: ReactNode }) {
         view.hidden = view.dataset.pageView !== page
       })
 
-      document.querySelectorAll<HTMLButtonElement>('.main-nav [data-page-nav]').forEach((button) => {
+      document.querySelectorAll<HTMLButtonElement>('.main-nav [data-nav-top]').forEach((button) => {
         const isCurrentPage = button.dataset.pageNav === page
         button.classList.toggle("is-active", isCurrentPage)
         if (isCurrentPage) {
@@ -35,6 +35,18 @@ export function SiteInteractions({ children }: { children: ReactNode }) {
         } else {
           button.removeAttribute("aria-current")
         }
+      })
+
+      document.querySelectorAll<HTMLDetailsElement>(".main-nav [data-nav-group]").forEach((group) => {
+        const isCurrentPage = group.dataset.navGroup === page
+        const trigger = group.querySelector("summary")
+        group.toggleAttribute("data-active", isCurrentPage)
+        if (isCurrentPage) {
+          trigger?.setAttribute("aria-current", "page")
+        } else {
+          trigger?.removeAttribute("aria-current")
+        }
+        group.open = false
       })
 
       const menuToggleButton = document.querySelector<HTMLButtonElement>("[data-menu-toggle]")
