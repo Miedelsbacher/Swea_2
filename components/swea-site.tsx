@@ -55,6 +55,7 @@ const navigation: NavigationItem[] = [
       { page: "edv", label: "Netzwerke", targetId: "netzwerke" },
       { page: "edv", label: "Datenrettung", targetId: "datenrettung" },
       { page: "edv", label: "Webseiten & Webdesign", targetId: "webseiten-webdesign" },
+      { page: "edv", label: "Sicherheit & Fernzugriff", targetId: "fernzugriff" },
     ],
   },
   {
@@ -705,6 +706,7 @@ function EdvView() {
       <ServicesSection />
       <DataRecoverySection />
       <WebsiteDesignSection />
+      <RemoteSection />
       <section className="page-wrap ki-crosslink" aria-labelledby="ki-crosslink-title">
         <div>
           <span className="eyebrow">KI-Studio &amp; Aktionen</span>
@@ -823,25 +825,59 @@ function WellbeingSection() {
 
 function RemoteSection() {
   const options = [
-    { name: "RustDesk", description: "Open-Source-Fernzugriff für Windows, macOS, Linux und mobile Geräte.", url: "https://rustdesk.com/download", label: "rustdesk.com/download" },
-    { name: "TeamViewer", description: "Fernwartung und Remote-Support mit TeamViewer.", url: "https://www.teamviewer.com/de/download/windows/", label: "teamviewer.com" },
+    { name: "RustDesk", description: "Fernzugriff für Windows, macOS, Linux und mobile Geräte.", url: "https://rustdesk.com/download", label: "rustdesk.com/download" },
+    { name: "TeamViewer", description: "Fernwartung und Unterstützung mit TeamViewer.", url: "https://www.teamviewer.com/de/download/windows/", label: "teamviewer.com" },
     { name: "Google Remote Desktop", description: "Unterstützung über den Google Chrome Remote Desktop.", url: "https://remotedesktop.google.com/support", label: "remotedesktop.google.com" },
+  ]
+  const steps = [
+    { title: "Vorher abstimmen", description: "Wir vereinbaren zuerst, ob Fernzugriff für Ihr Anliegen sinnvoll ist und welches Programm Sie verwenden." },
+    { title: "Sitzung selbst freigeben", description: "Sie öffnen das vereinbarte Programm und teilen den einmaligen Sitzungscode erst, wenn Sie bereit sind." },
+    { title: "Alles im Blick behalten", description: "Sie bleiben am Computer, sehen alle Schritte und können die Verbindung jederzeit beenden." },
   ]
 
   return (
-    <section className="section section-remote" id="fernzugriff">
+    <section aria-labelledby="remote-access-title" className="section section-remote" id="fernzugriff">
       <div className="page-wrap">
-        <SectionIntro eyebrow="Fernzugriff" title="Hilfe, auch wenn wir nicht vor Ort sind.">
-          Für die Unterstützung per Fernzugriff benötigen Sie gegebenenfalls eines der folgenden Programme. Bitte stimmen Sie den Einsatz vorab mit uns ab.
-        </SectionIntro>
-        <div className="remote-grid">
-          {options.map((option) => (
-            <a className="remote-card" href={option.url} key={option.name} rel="noreferrer" target="_blank">
-              <h3>{option.name}</h3>
-              <p>{option.description}</p>
-              <span className="remote-link">{option.label} <ExternalLink aria-hidden="true" size={14} /></span>
-            </a>
-          ))}
+        <div className="mb-8 max-w-3xl">
+          <span className="eyebrow">IT-Support · Ihre Sicherheit</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="remote-access-title">Sicherheit &amp; Fernzugriff</h2>
+          <p className="mt-4 text-base leading-7 text-slate-600">Wenn Hilfe aus der Ferne sinnvoll ist, stimmen wir den Ablauf vorher gemeinsam ab. Sie öffnen das vereinbarte Programm und entscheiden selbst, wann eine Sitzung beginnt und endet.</p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:items-start">
+          <aside aria-labelledby="remote-steps-title" className="rounded-2xl border border-emerald-200 bg-white p-5 shadow-sm sm:p-6">
+            <div className="flex items-start gap-3">
+              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-emerald-50 text-emerald-800"><ShieldCheck aria-hidden="true" size={20} /></span>
+              <h3 className="pt-1 text-lg font-semibold text-slate-900" id="remote-steps-title">So läuft eine Fernsitzung ab</h3>
+            </div>
+            <ol className="mt-5 grid gap-4">
+              {steps.map((step, index) => (
+                <li className="flex gap-3" key={step.title}>
+                  <span aria-hidden="true" className="grid size-7 shrink-0 place-items-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-900">{index + 1}</span>
+                  <div>
+                    <h4 className="text-sm font-semibold text-slate-900">{step.title}</h4>
+                    <p className="mt-1 text-sm leading-6 text-slate-600">{step.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-5 rounded-xl bg-emerald-950 p-4 text-sm font-semibold leading-6 text-white">Fernzugriffe erfolgen ausschließlich nach vorheriger Absprache und Ihrer ausdrücklichen Zustimmung. Sie behalten jederzeit die volle Kontrolle über Ihren Computer.</p>
+          </aside>
+
+          <div>
+            <h3 className="text-lg font-semibold text-slate-900">Mögliche Fernzugriff-Programme</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Nutzen Sie nur das Programm, das wir vorher gemeinsam vereinbart haben. Laden Sie es selbst über die jeweilige Originalseite herunter.</p>
+            <div className="mt-4 grid gap-3">
+              {options.map((option) => (
+                <a className="group flex flex-col rounded-xl border border-slate-200 bg-white p-4 transition hover:border-emerald-300 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" href={option.url} key={option.name} rel="noopener noreferrer" target="_blank">
+                  <h4 className="text-sm font-semibold text-slate-900">{option.name}</h4>
+                  <p className="mt-1 text-sm leading-6 text-slate-600">{option.description}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800">{option.label} <ExternalLink aria-hidden="true" size={14} /></span>
+                </a>
+              ))}
+            </div>
+            <p className="mt-3 text-xs leading-5 text-slate-500">Beenden Sie die Sitzung nach der Unterstützung. Dauerhafte Zugänge werden nicht ohne Ihre ausdrückliche Absprache eingerichtet.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -942,10 +978,11 @@ function ContactSection() {
 
 function LegalSection() {
   return (
-    <section className="legal-section page-wrap" id="impressum">
-      <div className="legal-heading"><span className="eyebrow">Rechtliches</span><h2>Impressum</h2></div>
+    <section aria-labelledby="legal-title" className="legal-section page-wrap" id="impressum">
+      <div className="legal-heading"><span className="eyebrow">Rechtliches · Platzhalter</span><h2 id="legal-title">Impressum nach MStV – wird aktualisiert</h2></div>
       <div className="legal-grid">
         <div className="legal-details">
+          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs leading-5 text-amber-950" role="note">Die Anbieter- und Verantwortlichkeitsangaben werden im Hinblick auf die Anforderungen des MStV geprüft und aktualisiert. Dies ist noch keine abschließend geprüfte Fassung.</div>
           <h3>Angaben gemäß § 5 DDG</h3>
           <p>Uwe Christian<br />Freiburgstr. 12<br />73614 Schorndorf</p>
           <div className="legal-contact-line"><span>Telefon</span><div><a href="tel:+497181253148">+49 7181 253148</a></div></div>
@@ -953,7 +990,6 @@ function LegalSection() {
           <div className="legal-contact-line"><span>E-Mail</span><div><a href="mailto:edv@swea.de">edv@swea.de</a></div></div>
           <div className="legal-contact-line"><span>Internet</span><a href="https://www.swea.de/">www.swea.de</a></div>
           <p><strong>Vertretungsberechtigter:</strong> Uwe Christian</p>
-          <p><strong>Inhaltlich Verantwortlicher gemäß § 55 Abs. 2 RStV:</strong> Uwe Christian</p>
         </div>
         <div className="legal-notes">
           <h3>Haftungshinweis</h3>
@@ -962,6 +998,18 @@ function LegalSection() {
           <p>Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br /><strong>DE352438907</strong></p>
           <h3>Bildnachweise</h3>
           <p>Urheber und Bildquelle: Uwe Christian. Alle Bilder stehen unter Copyright: Uwe Christian.</p>
+        </div>
+        <div className="grid gap-4 md:col-span-2 md:grid-cols-2">
+          <article className="rounded-xl border border-slate-200 bg-white p-5" id="datenschutzerklaerung">
+            <h3>Datenschutzerklärung</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Platzhalter für den vollständigen Rechtstext. Die Aktualisierung soll Vercel-Hosting sowie externe Medien und eingebundene Dienste berücksichtigen.</p>
+            <p className="mt-3 text-xs font-semibold text-amber-800">Noch keine vollständige Datenschutzerklärung.</p>
+          </article>
+          <article className="rounded-xl border border-slate-200 bg-white p-5" id="agb-individualprodukte">
+            <h3>AGB für individuell angefertigte Produkte</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Platzhalter für Bedingungen zu individuell angefertigten Produkten und personalisierten Bestellungen. Der vollständige Rechtstext wird ergänzt und geprüft.</p>
+            <p className="mt-3 text-xs font-semibold text-amber-800">Noch keine verbindlichen Produktbedingungen.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -1038,9 +1086,13 @@ function Footer() {
           <span>Freiburgstr. 12 · 73614 Schorndorf</span>
         </address>
       </div>
-      <div className="page-wrap footer-bottom">
+      <div className="page-wrap footer-bottom flex-col items-start sm:flex-row sm:items-center">
         <span>© 2026 Uwe Christian · www.swea.de</span>
-        <button className="text-xs font-semibold text-emerald-900 transition hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav="kontakt" data-target-id="impressum" type="button">Impressum</button>
+        <nav aria-label="Rechtliche Informationen" className="flex flex-wrap gap-x-4 gap-y-2">
+          <button className="text-xs font-semibold text-emerald-900 transition hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav="kontakt" data-target-id="impressum" type="button">Impressum nach MStV</button>
+          <button className="text-xs font-semibold text-emerald-900 transition hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav="kontakt" data-target-id="datenschutzerklaerung" type="button">Datenschutzerklärung</button>
+          <button className="text-xs font-semibold text-emerald-900 transition hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700" data-page-nav="kontakt" data-target-id="agb-individualprodukte" type="button">AGB für individuelle Produkte</button>
+        </nav>
       </div>
     </footer>
   )
@@ -1056,7 +1108,7 @@ export function SweaSite() {
         <div className="site-page-view" data-page-view="studio" hidden><KIStudioShowcase /><HolidayGiftSection /><AlternativeMotifsSection /><AIExamplesCarousel /></div>
         <div className="site-page-view" data-page-view="waldbaden" hidden><WellbeingSection /></div>
         <div className="site-page-view" data-page-view="about" hidden><AboutSection /></div>
-        <div className="site-page-view" data-page-view="kontakt" hidden><RemoteSection /><ContactSection /><LegalSection /></div>
+        <div className="site-page-view" data-page-view="kontakt" hidden><ContactSection /><LegalSection /></div>
       </main>
       <Footer />
     </SiteInteractions>
