@@ -139,7 +139,7 @@ function Hero() {
           <span className="eyebrow eyebrow-light"><span className="status-dot" /> EDV-Service &amp; Waldbaden · Schorndorf</span>
           <h1>Technik, die hilft.<br /><em>Ruhe, die bleibt.</em></h1>
           <p className="hero-description">
-            Persönlicher IT-Service, Computerhilfe, Netzwerke &amp; Webdesign – sowie neue Kraft durch Waldbaden in Schorndorf.
+            Persönliche Technikhilfe für Zuhause – von PC- und WLAN-Problemen bis zu Datenrettung, Smartphones und Smart Home. Vor Ort in Schorndorf und Umgebung oder per Fernzugriff; dazu Waldbaden zum Auftanken.
           </p>
           <div className="hero-actions">
             <button className="button button-light" data-page-nav="edv" type="button">SWEA Technik entdecken <ArrowRight aria-hidden="true" size={17} /></button>
@@ -230,7 +230,7 @@ function HomeView() {
               <span className="seasonal-action-badge">EDV-Sparte · Saisonales KI-Special</span>
               <h2 id="seasonal-action-title">Moderne KI-Technik, persönlich für Sie inszeniert.</h2>
               <p className="seasonal-action-description">
-                Hinter jedem beeindruckenden Bild, Video oder individuellen Song steckt moderne generative KI – präzise gesteuert mit unserem IT-Know-how. Ob als einzigartiges Weihnachtsgeschenk mit dem Gesicht Ihrer Liebsten, als persönlicher Song oder als kreatives Motiv für Ihr Unternehmen: Wir zeigen, was heute digital möglich ist.
+                Hinter jedem beeindruckenden Bild, Video oder individuellen Song steckt moderne generative KI – präzise gesteuert mit unserem IT-Know-how. Ob als einzigartiges Weihnachtsgeschenk mit dem Gesicht Ihrer Liebsten, als persönlicher Song oder als persönliches Motiv für Ihr Zuhause, Ihre Familie oder ein Geschenk: Wir zeigen, was heute digital möglich ist.
               </p>
             </div>
             <ul className="seasonal-action-highlights" aria-label="Möglichkeiten im KI-Studio">
@@ -252,7 +252,7 @@ function HomeView() {
                 Beispiele &amp; Weihnachtsaktion entdecken <ArrowRight aria-hidden="true" size={17} />
               </button>
               <button className="seasonal-action-secondary" data-page-nav="studio" type="button">
-                Auch für Firmenlogos &amp; ganzjährige Anlässe <ArrowUpRight aria-hidden="true" size={15} />
+                Lieblingsmotive &amp; persönliche Anlässe <ArrowUpRight aria-hidden="true" size={15} />
               </button>
             </div>
           </div>
@@ -272,8 +272,8 @@ function HomeView() {
               <div className="seasonal-audio-wave" aria-hidden="true">
                 {Array.from({ length: 18 }, (_, index) => <span key={index} />)}
               </div>
-              <span className="seasonal-audio-caption">Ein Jingle für Ihren Webauftritt oder für Ihre Firma</span>
-              <audio aria-label="Jingle für Ihren Webauftritt oder Ihre Firma abspielen" controls preload="metadata">
+              <span className="seasonal-audio-caption">Persönlicher Song oder Jingle für Ihren Lieblingsmoment</span>
+              <audio aria-label="Persönlichen Song oder Jingle abspielen" controls preload="metadata">
                 <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recording-00_08-EwnUnfEJYWHvA2WdNbv57q2zNqEeaY.mp3" type="audio/mpeg" />
                 Ihr Browser unterstützt die Audiowiedergabe nicht.
               </audio>
@@ -319,7 +319,7 @@ function KIStudioShowcase() {
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-emerald-800"><ImageIcon aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bild &amp; Design</span></div>
               <h3 className="text-xl font-semibold text-slate-900">KI-Bilder &amp; Porträts</h3>
-              <p className="mb-6 mt-2 text-sm leading-6 text-slate-600">Personalisierte Porträts, individuelle Unternehmensmotive und maßgeschneiderte Logos – abgestimmt auf Ihre Idee.</p>
+              <p className="mb-6 mt-2 text-sm leading-6 text-slate-600">Personalisierte Porträts, Motive mit Familie oder Haustieren und individuelle Lieblingsbilder – abgestimmt auf Ihre Idee.</p>
               <a className={inquiryClass} href="mailto:edv@swea.de?subject=Kreativprojekt%3A%20KI-Bilder%20%26%20Portr%C3%A4ts" aria-label="Kreativprojekt anfragen: KI-Bilder und Porträts">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
               </a>
@@ -368,7 +368,7 @@ function KIStudioShowcase() {
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-emerald-800"><Music2 aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Audio &amp; Musik</span></div>
               <h3 className="text-xl font-semibold text-slate-900">Individuelle Songs &amp; Jingles</h3>
-              <p className="mb-6 mt-2 text-sm leading-6 text-slate-600">Persönliche Musikgeschenke und unverwechselbares Audio-Branding für Ihr Unternehmen – hören Sie in eine echte Hörprobe rein.</p>
+              <p className="mb-6 mt-2 text-sm leading-6 text-slate-600">Persönliche Songs, kleine Jingles und Musikgeschenke – hören Sie in eine echte Hörprobe rein.</p>
               <a className={inquiryClass} href="mailto:edv@swea.de?subject=Kreativprojekt%3A%20Songs%20%26%20Jingles" aria-label="Kreativprojekt anfragen: Songs und Jingles">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
               </a>
@@ -484,7 +484,7 @@ function AlternativeMotifsSection() {
   return (
     <section aria-label="Motive ohne weihnachtlichen Bezug" className="alternative-motifs-section">
       <div className="page-wrap alternative-motifs-content">
-        <p>Selbstverständlich erstellen wir Motive auch ohne weihnachtlichen Bezug, zum Beispiel mit Ihren Liebsten, einem Firmenlogo oder anderen Motiven.</p>
+        <p>Selbstverständlich erstellen wir Motive auch ohne weihnachtlichen Bezug, zum Beispiel mit Ihren Liebsten, Ihrem Haustier, Ihrem Hobby oder einem anderen persönlichen Motiv.</p>
         <p>Es gelten die oben genannten Einschränkungen.</p>
       </div>
     </section>
@@ -492,78 +492,75 @@ function AlternativeMotifsSection() {
 }
 
 function ServicesSection() {
-  const cardClass = "rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6"
-  const iconClass = "grid size-11 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-800"
+  const cardClass = "flex h-full scroll-mt-24 flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-6"
+  const iconClass = "grid size-12 shrink-0 place-items-center rounded-xl bg-emerald-50 text-emerald-800"
+  const actionClass = "mt-auto inline-flex min-h-11 w-fit items-center gap-2 rounded-lg px-3 pt-6 text-sm font-semibold text-emerald-900 transition-colors hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2"
 
   return (
-    <section className="section section-services" id="dienstleistungen">
+    <section aria-labelledby="edv-services-title" className="section section-services" id="dienstleistungen">
       <div className="page-wrap">
-        <div className="mb-10 max-w-3xl">
-          <span className="eyebrow">EDV-Dienstleistungen · Schorndorf</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Persönlicher IT-Service &amp; Support in Schorndorf</h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">Praktische, persönliche Unterstützung für zu Hause und im Unternehmen – von der schnellen Computerhilfe bis zu individuellen IT-Lösungen.</p>
+        <div className="mb-9 max-w-3xl">
+          <span className="eyebrow">EDV-Hilfe für Zuhause · Schorndorf &amp; Umgebung</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="edv-services-title">Technikhilfe für Zuhause – persönlich und verständlich</h2>
+          <p className="mt-4 text-base leading-7 text-slate-600">Für Privatpersonen, Hausbesitzer und Haushalte in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
         </div>
 
-        <div className="grid items-start gap-7 lg:grid-cols-2 lg:gap-8">
-          <section aria-labelledby="private-services-title" className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 sm:p-7">
-            <div className="mb-5 flex items-center gap-3 border-b border-slate-200 pb-5">
-              <span className="grid size-11 place-items-center rounded-full bg-white text-slate-700 shadow-sm"><MonitorCog aria-hidden="true" size={21} /></span>
-              <div><h3 className="text-xl font-semibold text-slate-900" id="private-services-title">Privatkunden</h3><p className="text-sm text-slate-600">Hilfe für Ihre Technik zu Hause</p></div>
+        <div className="grid items-stretch gap-4 sm:grid-cols-2">
+          <article className={cardClass} id="computerhilfe">
+            <div className="mb-5 flex items-start gap-4">
+              <span className={iconClass}><MonitorCog aria-hidden="true" size={22} /></span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">PC &amp; Windows</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-slate-900">Computerhilfe &amp; Windows-Probleme</h3>
+              </div>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <article className={cardClass} id="computerhilfe">
-                <span className={iconClass}><MonitorCog aria-hidden="true" size={21} /></span>
-                <h4 className="mt-4 font-semibold text-slate-900">Computerhilfe &amp; Windows</h4>
-                <p className="mt-2 text-sm leading-6 text-slate-600">Fehlerbehebung vor Ort – verständlich erklärt und persönlich begleitet.</p>
-              </article>
-              <article className={cardClass}>
-                <span className={iconClass}><Wifi aria-hidden="true" size={21} /></span>
-                <h4 className="mt-4 font-semibold text-slate-900">WLAN &amp; Heimnetzwerke</h4>
-                <p className="mt-2 text-sm leading-6 text-slate-600">Stabile Verbindungen, passende Router und besserer Empfang im ganzen Zuhause.</p>
-              </article>
-              <article className={cardClass} id="datenrettung">
-                <span className={iconClass}><HardDrive aria-hidden="true" size={21} /></span>
-                <h4 className="mt-4 font-semibold text-slate-900">Datenrettung</h4>
-                <p className="mt-2 text-sm leading-6 text-slate-600">Professionelle Partner-Lösungen mit Erfolgsquoten von bis zu 90% – nach Prüfung des jeweiligen Datenträgers.</p>
-              </article>
-              <article className={cardClass}>
-                <span className={iconClass}><Smartphone aria-hidden="true" size={21} /></span>
-                <h4 className="mt-4 font-semibold text-slate-900">Smartphones &amp; Tablets</h4>
-                <p className="mt-2 text-sm leading-6 text-slate-600">Unterstützung bei Einrichtung, Bedienung, Datenübertragung und Problemen.</p>
-              </article>
-            </div>
-          </section>
+            <p className="text-sm leading-6 text-slate-600">Schnelle, geduldige Hilfe bei PC-Störungen, Windows-Fehlern und Installationen. Direkt bei Ihnen vor Ort oder, wenn es passt, per Fernzugriff.</p>
+            <button aria-label="Computerproblem schildern" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Problem schildern <ArrowRight aria-hidden="true" size={16} /></button>
+          </article>
 
-          <section aria-labelledby="business-services-title" className="rounded-2xl border border-emerald-900/10 bg-emerald-50/60 p-5 sm:p-7">
-            <div className="mb-5 flex items-center gap-3 border-b border-emerald-900/10 pb-5">
-              <span className="grid size-11 place-items-center rounded-full bg-white text-emerald-800 shadow-sm"><Router aria-hidden="true" size={21} /></span>
-              <div><h3 className="text-xl font-semibold text-slate-900" id="business-services-title">Unternehmen</h3><p className="text-sm text-slate-600">Technik, die mit Ihrem Betrieb wächst</p></div>
+          <article className={cardClass} id="netzwerke">
+            <div className="mb-5 flex items-start gap-4">
+              <span className={iconClass}><Wifi aria-hidden="true" size={22} /></span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">WLAN im ganzen Haus</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-slate-900">WLAN &amp; Heimnetzwerke</h3>
+              </div>
             </div>
-            <div className="grid gap-3">
-              <article className={`${cardClass} border-emerald-200`} id="netzwerke">
-                <div className="flex items-start gap-4">
-                  <span className={iconClass}><Router aria-hidden="true" size={21} /></span>
-                  <div><h4 className="font-semibold text-slate-900">Netzwerkinfrastruktur</h4><p className="mt-2 text-sm leading-6 text-slate-600">Bestehende Telefon- oder Satellitenleitungen clever weiternutzen und darüber leistungsstarke Netzwerke bis in den Gigabit-Bereich realisieren.</p></div>
-                </div>
-                <figure className="mt-5 flex min-h-40 flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-emerald-800/30 bg-gradient-to-br from-slate-100 to-emerald-100/70 px-4 py-6 text-center">
-                  <Router aria-hidden="true" className="text-emerald-800" size={26} />
-                  <figcaption className="text-sm font-medium text-slate-700">Platz für ein Vor-Ort-Foto</figcaption>
-                  <p className="text-xs text-slate-500">Verkabelung oder Hardware-Installation</p>
-                </figure>
-              </article>
-              <article className={cardClass}>
-                <div className="flex items-start gap-4"><span className={iconClass}><Code2 aria-hidden="true" size={21} /></span><div><h4 className="font-semibold text-slate-900">Individuelle Webentwicklung</h4><p className="mt-2 text-sm leading-6 text-slate-600">Responsive Webseiten und passgenaue digitale Lösungen – abgestimmt auf Ihre Anforderungen.</p></div></div>
-              </article>
-              <article className={cardClass}>
-                <div className="flex items-start gap-4"><span className={iconClass}><ImageIcon aria-hidden="true" size={21} /></span><div><h4 className="font-semibold text-slate-900">KI-Studio-Lösungen</h4><p className="mt-2 text-sm leading-6 text-slate-600">Kreative KI-Bilder, Videos und individuelle Inhalte für Ihren professionellen Auftritt.</p></div></div>
-              </article>
+            <p className="text-sm leading-6 text-slate-600">Router einrichten, Funklöcher schließen und Geräte zuverlässig verbinden. Vorhandene Leitungen und Kabel lassen sich oft clever weiternutzen – für eine starke Verbindung im ganzen Zuhause.</p>
+            <button aria-label="WLAN- oder Netzwerkproblem schildern" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Problem schildern <ArrowRight aria-hidden="true" size={16} /></button>
+          </article>
+
+          <article className={cardClass} id="datenrettung">
+            <div className="mb-5 flex items-start gap-4">
+              <span className={iconClass}><HardDrive aria-hidden="true" size={22} /></span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">Kostenlose Ersteinschätzung</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-slate-900">Datenrettung</h3>
+              </div>
             </div>
-          </section>
+            <p className="text-sm leading-6 text-slate-600">Verlorene Daten von Festplatten, USB-Sticks und Handys einschätzen lassen. Sie erfahren unverbindlich, welche nächsten Schritte für Ihr Gerät sinnvoll sind.</p>
+            <button aria-label="Datenrettung anfragen" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Ersteinschätzung anfragen <ArrowRight aria-hidden="true" size={16} /></button>
+          </article>
+
+          <article className={cardClass} id="smartphones-smart-home">
+            <div className="mb-5 flex items-start gap-4">
+              <span className={iconClass}><Smartphone aria-hidden="true" size={22} /></span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800">Alltag &amp; Zuhause</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-slate-900">Smartphones, Tablets &amp; Smart Home</h3>
+              </div>
+            </div>
+            <p className="text-sm leading-6 text-slate-600">Geduldige Unterstützung beim Einrichten, Verbinden und Bedienen Ihrer Geräte des täglichen Lebens – von Smartphone und Tablet bis zu Smart-Home-Geräten.</p>
+            <button aria-label="Hilfe zu Smartphone, Tablet oder Smart Home anfragen" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Hilfe anfragen <ArrowRight aria-hidden="true" size={16} /></button>
+          </article>
         </div>
 
-        <div className="mt-8 flex flex-col items-start justify-between gap-4 rounded-xl bg-slate-900 px-6 py-5 text-white sm:flex-row sm:items-center sm:px-8">
-          <div><h3 className="text-lg font-semibold">Sie haben eine Frage oder ein konkretes IT-Problem?</h3><p className="mt-1 text-sm text-slate-300">Beschreiben Sie kurz, wobei Sie Unterstützung brauchen.</p></div>
-          <button className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" data-page-nav="kontakt" type="button">IT-Problem schildern <ArrowRight aria-hidden="true" size={17} /></button>
+        <div className="mt-7 flex flex-col items-start justify-between gap-4 rounded-2xl bg-slate-900 px-6 py-5 text-white sm:flex-row sm:items-center sm:px-8">
+          <div>
+            <h3 className="text-lg font-semibold">Sie brauchen Unterstützung bei Ihrer Technik?</h3>
+            <p className="mt-1 text-sm leading-6 text-slate-300">Schildern Sie kurz Ihr Problem – wir besprechen gemeinsam den passenden nächsten Schritt.</p>
+          </div>
+          <button className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" data-page-nav="kontakt" data-target-id="kontakt" type="button">Jetzt Hilfe anfordern <ArrowRight aria-hidden="true" size={17} /></button>
         </div>
       </div>
     </section>
@@ -577,8 +574,8 @@ function EdvView() {
       <section className="page-wrap ki-crosslink" aria-labelledby="ki-crosslink-title">
         <div>
           <span className="eyebrow">KI-Studio &amp; Aktionen</span>
-          <h2 id="ki-crosslink-title">Bilder und Videos mit Ihrer persönlichen Idee.</h2>
-          <p>Individuelle KI-Produktion für Firmenlogos, Geschenke und saisonale Aktionen – nach Ihren Vorgaben gestaltet.</p>
+          <h2 id="ki-crosslink-title">Kreative Ideen für Menschen und Familien.</h2>
+          <p>Persönliche KI-Bilder, Videos und Geschenke – individuell gestaltet und passend zu Ihrer Idee oder zum Anlass.</p>
         </div>
         <button className="button button-dark" data-page-nav="studio" type="button">Zum KI-Studio <ArrowRight aria-hidden="true" size={17} /></button>
       </section>
@@ -634,7 +631,7 @@ function WellbeingSection() {
 
           <dl className="mt-6 divide-y divide-emerald-950/10 rounded-xl border border-emerald-950/10 bg-[#f4f2e9] px-4 sm:px-5" id="kursdetails">
             <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Gruppen</dt><dd className="text-sm leading-6 text-stone-700">Kleine Gruppen mit maximal 8 Personen</dd></div>
-            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Zielgruppe</dt><dd className="text-sm leading-6 text-stone-700">Für Anfänger, Einzelpersonen und Firmen/Teams</dd></div>
+            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Zielgruppe</dt><dd className="text-sm leading-6 text-stone-700">Für Einsteiger, Einzelpersonen sowie Freundes- und Familiengruppen</dd></div>
             <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-emerald-950">Leitung</dt><dd className="text-sm leading-6 text-stone-700">Zertifizierter Kursleiter mit Outdoor-Erste-Hilfe</dd></div>
           </dl>
 
@@ -683,7 +680,7 @@ function WellbeingSection() {
 
       <div className="page-wrap offer-card">
         <div className="offer-mark"><Leaf aria-hidden="true" size={22} /></div>
-        <div><span className="eyebrow">Angebote</span><h3>Ein guter Impuls für Ihr Team.</h3><p>Für Firmenevents wie Teambuilding oder Mitarbeiterschulungen – auf Wunsch auch online. Geeignet als kurzer Programmpunkt als aktive Pause, zum Tagesstart oder -abschluss. Oder auch als Halbtagesprogramm. Unser Angebot passt für kleinere Gruppen direkt im Wald oder als Vortrag für größere Belegschaften. Zögern Sie nicht – wir finden eine Lösung.</p></div>
+        <div><span className="eyebrow">Angebote</span><h3>Ein wohltuender Impuls für Ihre Gruppe.</h3><p>Für private Freundes-, Familien- und kleine Gruppen – auf Wunsch auch online. Das Waldbaden passt als kurze aktive Pause, zum Tagesstart oder -abschluss oder als Halbtagesprogramm. Gemeinsam finden wir einen passenden Termin und einen ruhigen Ort in der Umgebung.</p></div>
         <button className="button button-dark" data-page-nav="kontakt" type="button">Anfrage per E-Mail <ArrowUpRight aria-hidden="true" size={16} /></button>
       </div>
     </section>
