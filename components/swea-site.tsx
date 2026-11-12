@@ -54,6 +54,7 @@ const navigation: NavigationItem[] = [
       { page: "edv", label: "Computerhilfe", targetId: "computerhilfe" },
       { page: "edv", label: "Netzwerke", targetId: "netzwerke" },
       { page: "edv", label: "Datenrettung", targetId: "datenrettung" },
+      { page: "edv", label: "Webseiten & Webdesign", targetId: "webseiten-webdesign" },
     ],
   },
   {
@@ -567,10 +568,72 @@ function ServicesSection() {
   )
 }
 
+function WebsiteDesignSection() {
+  const benefits = [
+    {
+      icon: Check,
+      title: "Alles aus einer Hand",
+      description: "Von der Idee bis zum Start: Domain, E-Mail, Gestaltung und Umsetzung passend zu Ihrem Vorhaben.",
+    },
+    {
+      icon: Smartphone,
+      title: "Mobilfreundlich",
+      description: "Ihre Website passt sich Smartphone, Tablet und Computer an – klar lesbar und einfach zu bedienen.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Zuverlässig & sicher",
+      description: "Sorgfältige Einrichtung und verständliche Pflege helfen, Ihre Website zuverlässig und sicher zu halten.",
+    },
+    {
+      icon: Heart,
+      title: "Persönlich betreut",
+      description: "Uwe Christian ist Ihr direkter Ansprechpartner – von der ersten Idee bis zu Fragen nach dem Start.",
+    },
+  ]
+
+  return (
+    <section aria-labelledby="webseiten-webdesign-title" className="section bg-emerald-50/60" id="webseiten-webdesign">
+      <div className="page-wrap grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
+        <div className="max-w-2xl">
+          <span className="eyebrow">Webseiten &amp; Webdesign</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="webseiten-webdesign-title">
+            Ihre Website. Persönlich geplant und professionell umgesetzt.
+          </h2>
+          <p className="mt-4 text-base leading-7 text-slate-700">
+            Von der ersten Idee über Domain, E-Mail und Gestaltung bis zur fertigen Website – und langfristige Betreuung.
+          </p>
+          <p className="mt-4 max-w-xl text-sm leading-6 text-slate-600">
+            Alles aus einer Hand: Uwe Christian begleitet Sie persönlich durch jeden Schritt. Sie behalten einen festen Ansprechpartner und müssen sich nicht mit technischen Details beschäftigen.
+          </p>
+          <button className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-emerald-800 px-5 text-sm font-semibold text-white transition hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+            Website-Projekt besprechen <ArrowRight aria-hidden="true" size={17} />
+          </button>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          {benefits.map(({ icon: Icon, title, description }) => (
+            <article className="flex h-full gap-3 rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm sm:p-5" key={title}>
+              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-emerald-50 text-emerald-800">
+                <Icon aria-hidden="true" size={20} />
+              </span>
+              <div>
+                <h3 className="text-sm font-semibold text-slate-900">{title}</h3>
+                <p className="mt-1.5 text-sm leading-6 text-slate-600">{description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function EdvView() {
   return (
     <>
       <ServicesSection />
+      <WebsiteDesignSection />
       <section className="page-wrap ki-crosslink" aria-labelledby="ki-crosslink-title">
         <div>
           <span className="eyebrow">KI-Studio &amp; Aktionen</span>
@@ -784,7 +847,7 @@ function ContactSection() {
             <select className="min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/20" name="interest" defaultValue="" required>
               <option value="" disabled>Bitte wählen</option>
               <option value="IT-Service">IT-Service</option>
-              <option value="Webdesign">Webdesign</option>
+              <option value="Webseiten &amp; Webdesign">Webseiten &amp; Webdesign</option>
               <option value="KI-Studio">KI-Studio</option>
               <option value="Waldbaden">Waldbaden</option>
             </select>
