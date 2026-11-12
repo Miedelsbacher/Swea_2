@@ -139,7 +139,7 @@ function Hero() {
           <span className="eyebrow eyebrow-light"><span className="status-dot" /> EDV-Service &amp; Waldbaden · Schorndorf</span>
           <h1>Technik, die hilft.<br /><em>Ruhe, die bleibt.</em></h1>
           <p className="hero-description">
-            Persönlicher IT-Service, Computerhilfe, Netzwerke &amp; Webdesign – sowie neue Kraft durch Waldbaden in Schorndorf.
+            Persönliche Technikhilfe für Zuhause – von PC- und WLAN-Problemen bis zu Datenrettung, Smartphones und Smart Home. Vor Ort in Schorndorf und Umgebung oder per Fernzugriff; dazu Waldbaden zum Auftanken.
           </p>
           <div className="hero-actions">
             <button className="button button-light" data-page-nav="edv" type="button">SWEA Technik entdecken <ArrowRight aria-hidden="true" size={17} /></button>
