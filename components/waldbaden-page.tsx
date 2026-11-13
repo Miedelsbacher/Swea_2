@@ -157,13 +157,14 @@ function AboutInstructor() {
   return (
     <section aria-labelledby="kursleiter-title" className="section bg-area-surface" id="kursleiter">
       <div className="page-wrap grid items-start gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-12">
-        <figure className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-[1.75rem] bg-area-deep shadow-lg md:mx-0">
+        <figure className="relative mx-auto aspect-[11/10] w-full max-w-sm overflow-hidden rounded-[1.75rem] bg-area-deep shadow-lg md:mx-0">
           <Image
-            alt="Uwe Christian in seinem Büro vor einem Schild zu Waldbaden und Achtsamkeit"
-            className="object-cover object-[center_30%]"
+            alt="Uwe Christian im grünen Wald mit einem Schild für Waldbaden und Achtsamkeit"
+            className="object-cover object-center"
             fill
             sizes="(max-width: 767px) 90vw, 30vw"
-            src="/swea/uwe-christian-waldbaden.png"
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-K3uSI96ngLGPfVNg9oNnP1FTJkzmNU.webp"
+            unoptimized
           />
         </figure>
 
