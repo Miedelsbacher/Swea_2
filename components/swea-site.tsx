@@ -406,7 +406,7 @@ function KIStudioProcess() {
   const steps = [
     { title: "Anfrage", description: "Sie schildern Ihre Idee oder Ihren Anlass – über das Kontaktformular, per E-Mail oder telefonisch." },
     { title: "Abstimmung", description: "Wir besprechen Wunschergebnis, Umfang und benötigtes Material. Die konkrete Leistung halten wir im Angebot fest." },
-    { title: "Gestaltung", description: "Nach Ihrem schriftlichen Auftrag setzt Uwe Christian Ihre Idee um." },
+    { title: "Gestaltung", description: "Nach Ihrem schriftlichen Auftrag setzt Herr Christian Ihre Idee um." },
     { title: "Korrektur bzw. Freigabe", description: "Sie sehen das Ergebnis und geben es frei oder nennen Änderungswünsche. Wie weit Anpassungen möglich sind, richtet sich nach dem vereinbarten Angebot." },
     { title: "Digitale Übergabe", description: "Das freigegebene Ergebnis erhalten Sie als digitale Datei." },
   ]
@@ -598,8 +598,8 @@ function ServicesSection() {
       <div className="page-wrap">
         <div className="mb-9 max-w-3xl">
           <span className="eyebrow">EDV-Hilfe für Zuhause · Schorndorf &amp; Umgebung</span>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="edv-services-title">Technikhilfe für Zuhause – persönlich und verständlich</h1>
-          <p className="mt-4 text-base leading-7 text-area-muted">Für Privatpersonen, Hausbesitzer und Haushalte in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="edv-services-title">Technikhilfe – persönlich und verständlich</h1>
+          <p className="mt-4 text-base leading-7 text-area-muted">Für Privatpersonen, Hausbesitzer und Haushalte und Professionals in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
         </div>
 
         <div className="grid items-stretch gap-4 sm:grid-cols-2">
@@ -631,12 +631,12 @@ function ServicesSection() {
             <div className="mb-5 flex items-start gap-4">
               <span className={iconClass}><HardDrive aria-hidden="true" size={22} /></span>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">PREISWERTE Ersteinschätzung</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Mit Partner DataPhoenix</p>
                 <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Datenrettung</h3>
               </div>
             </div>
-            <p className="text-sm leading-6 text-area-muted">Verlorene Daten von Festplatten, USB-Sticks und Handys einschätzen lassen. Sie erfahren unverbindlich, welche nächsten Schritte für Ihr Gerät sinnvoll sind.</p>
-            <Link aria-label="Datenrettung anfragen" className={actionClass} data-nav-link href="/kontakt">Ersteinschätzung anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
+            <p className="text-sm leading-6 text-area-muted">Verlorene Daten von Festplatten, USB-Sticks und Handys: Wir organisieren die Diagnose und Datenrettung mit unserem Partner DataPhoenix. Sie entscheiden in jedem Schritt selbst, wie es weitergeht.</p>
+            <Link aria-label="Datenrettung anfragen" className={actionClass} data-nav-link href="#datenrettung-ablauf">Ablauf ansehen <ArrowRight aria-hidden="true" size={16} /></Link>
           </article>
 
           <article className={cardClass} id="smartphones-smart-home">
@@ -704,19 +704,80 @@ function DataRecoverySection() {
     },
   ]
 
+  const processSteps: { title: string; description: string; consent?: string }[] = [
+    {
+      title: "SWEA-Aufwandspauschale von 40 Euro",
+      description: "Unabhängig vom weiteren Verlauf berechnet SWEA für die Beauftragung eine Aufwandspauschale von 40 Euro für Bearbeitung und Abwicklung. Details dazu finden Sie unten.",
+    },
+    {
+      title: "Sie fragen die Datenrettung bei SWEA an",
+      description: "Schildern Sie kurz, um welchen Datenträger es geht und was passiert ist. Wir werden je nach Situation ohne externen Partner versuchen, die Daten preisgünstig mit eigenen Werkzeugen wieder herzustellen. Hierfür nutzen wir die Pauschale und unterbreiten ein Angebot, wenn wir selber tätig werden.",
+    },
+    {
+      title: "Einbindung des Partners und Ihre Zustimmung zur Untersuchung",
+      description: "Wir erläutern Ihnen, dass der externe Partner DataPhoenix eingebunden wird. Bevor Ihr Speichermedium weitergegeben wird, unterbreiten wir Ihnen eine unverbindliche Preisinformation und holen Ihre ausdrückliche Zustimmung zur Untersuchung durch DataPhoenix ein.",
+      consent: "Ihre Zustimmung · vor der Weitergabe",
+    },
+    {
+      title: "Übergabe zur Diagnose",
+      description: "Das Speichermedium wird zur Diagnose an DataPhoenix übergeben. Abholung beziehungsweise Versand erfolgen entsprechend der vereinbarten Abwicklung und Dringlichkeit.",
+    },
+    {
+      title: "Erste Diagnose durch DataPhoenix",
+      description: "DataPhoenix führt eine erste Diagnose durch. Diese ist noch durch die Aufwandspauschale abgedeckt.",
+    },
+    {
+      title: "Einschätzung der Chancen zur Datenwiederherstellung",
+      description: "Wir teilen die Einschätzung der Erfolgsaussichten und das weitere Vorgehen mit.",
+    },
+    {
+      title: "SWEA nennt Ihnen den endgültigen Preis",
+      description: "Sie erhalten von uns einen individuellen Kostenvoranschlag. Die Kalkulation richtet sich nach der gerätespezifischen Preisliste von DataPhoenix.",
+    },
+    {
+      title: "Ihre Zustimmung zur kostenpflichtigen Datenrettung",
+      description: "Erst nach Ihrer ausdrücklichen Zustimmung beauftragt SWEA die eigentliche Datenrettung bei DataPhoenix. Ohne diese Zustimmung wird keine kostenpflichtige Datenrettung beauftragt.",
+      consent: "Ihre gesonderte Zustimmung · vor der Beauftragung",
+    },
+    {
+      title: "Rückgabe des Speichermediums",
+      description: "Nach Abschluss der Arbeiten wird das Speichermedium entsprechend der vereinbarten Rückgabe an SWEA zurückgeführt und anschließend an Sie übergeben.",
+    },
+  ]
+
+  const responsibilities = [
+    {
+      title: "Obhut über das Speichermedium",
+      description: "Während der Diagnose und Bearbeitung befindet sich Ihr Speichermedium ausschließlich bei uns oder bei DataPhoenix.",
+    },
+    {
+      title: "Diagnose und Bearbeitung",
+      description: "Nach unserer eigenen Einschätzung und der Weitergabe findet die tiefergehende technische Diagnose und die mögliche Datenrettung bei DataPhoenix statt.",
+    },
+    {
+      title: "Organisation und Abwicklung",
+      description: "SWEA koordiniert den Ablauf, ist Ihr Ansprechpartner und teilt Ihnen Einschätzung und Preis mit.",
+    },
+    {
+      title: "Transport und Rücktransport",
+      description: "Abholung beziehungsweise Versand und die Rückführung erfolgen entsprechend der vereinbarten Abwicklung.",
+    },
+  ]
+
   return (
     <section aria-labelledby="datenrettung-title" className="section bg-area-soft" id="datenrettung">
-      <div className="page-wrap grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start lg:gap-12">
+      <div className="page-wrap">
+      <div className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start lg:gap-12">
         <div className="max-w-2xl">
           <span className="eyebrow">Datenrettung</span>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="datenrettung-title">
             Professionelle Datenrettung – Wenn es brenzlig wird.
           </h2>
           <p className="mt-4 text-base leading-7 text-area-muted">
-            In einfachen Fällen (Festplatte dreht sich noch oder Sie haben &quot;nur was gelöscht&quot;) können wir selbst die Datenwiederherstellung mit eigenen Tools durchführen. Hartnäckige Probleme geben wir nach Absprache weiter. Bei unterstützten Datenträgern und geeigneten Schadensbildern kann unser spezialisierter Partner Datenphoenix Erfolgsquoten von bis zu 92,5 % erreichen. Das beschreibt die Möglichkeiten unseres Partners in passenden Fällen – es ist keine Garantie für den Erfolg beim einzelnen Gerät. Die tatsächliche Erfolgsaussicht klärt die Diagnose.
+            Bei der Datenrettung arbeiten wir mit dem spezialisierten Partner DataPhoenix zusammen. Wir sind Ihr Ansprechpartner und organisieren den Ablauf; die technische Diagnose und die eigentliche Datenrettung übernimmt DataPhoenix. Zwei Entscheidungen treffen immer Sie: zuerst die Zustimmung zur Untersuchung durch den Partner, später die Zustimmung zur kostenpflichtigen Datenrettung.
           </p>
           <p className="mt-3 text-sm leading-6 text-area-muted">
-            Ob Festplatte, USB-Stick oder Handy: Sie erhalten eine klare Einschätzung, bevor Sie über weitere Schritte entscheiden.
+            Ob Festplatte, USB-Stick oder Handy: Sie erhalten eine Einschätzung und den endgültigen Preis, bevor Sie über die Datenrettung entscheiden.
           </p>
           <a
             aria-label="DatenPhoenix – Partner für Datenrettung (öffnet in neuem Tab)"
@@ -767,12 +828,107 @@ function DataRecoverySection() {
             ))}
           </ol>
 
-          <p className="mt-5 text-sm leading-6 text-area-muted">Wenn eine Laborprüfung nötig ist, erhalten Sie vor einer kostenpflichtigen Rettung ein individuelles Kostenangebot des spezialisierten Partners. Erst nach Ihrer Zustimmung wird weitergearbeitet.</p>
+          <p className="mt-5 text-sm leading-6 text-area-muted">Vor einer kostenpflichtigen Datenrettung erhalten Sie die Einschätzung und einen Preis. Erst nach Ihrer ausdrücklichen Zustimmung wird die Datenrettung beauftragt.</p>
 
           <Link className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" data-nav-link href="/kontakt">
-            Datenträger prüfen lassen <ArrowRight aria-hidden="true" size={17} />
+            Datenrettung anfragen <ArrowRight aria-hidden="true" size={17} />
           </Link>
         </aside>
+      </div>
+
+      <div className="mt-12 lg:mt-16" id="datenrettung-ablauf">
+        <div className="max-w-2xl">
+          <span className="eyebrow">Ablauf</span>
+          <h3 className="mt-3 text-2xl font-semibold tracking-tight text-area-deep sm:text-3xl" id="datenrettung-ablauf-title">
+            So läuft die Datenrettung mit DataPhoenix ab
+          </h3>
+          <p className="mt-3 text-base leading-7 text-area-muted">
+            In neun Schritten von Ihrer Anfrage bis zur Rückgabe. Die beiden hervorgehobenen Schritte sind Ihre Entscheidungen.
+          </p>
+        </div>
+
+        <ol aria-labelledby="datenrettung-ablauf-title" className="mt-8 grid gap-4 md:grid-cols-2">
+          {processSteps.map((step, index) => (
+            <li
+              className={
+                step.consent
+                  ? "flex gap-4 rounded-2xl border-2 border-area-primary bg-area-surface p-5 shadow-sm"
+                  : "flex gap-4 rounded-2xl border border-area-border bg-area-surface p-5"
+              }
+              key={step.title}
+            >
+              <span
+                aria-hidden="true"
+                className={
+                  step.consent
+                    ? "grid size-9 shrink-0 place-items-center rounded-full bg-area-primary text-sm font-bold text-white"
+                    : "grid size-9 shrink-0 place-items-center rounded-full bg-area-soft text-sm font-bold text-area-primary"
+                }
+              >
+                {index + 1}
+              </span>
+              <div>
+                {step.consent ? (
+                  <p className="mb-1 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-area-primary">
+                    <Check aria-hidden="true" size={14} /> {step.consent}
+                  </p>
+                ) : null}
+                <h4 className="text-base font-semibold leading-snug text-area-deep">
+                  <span className="sr-only">Schritt {index + 1}: </span>
+                  {step.title}
+                </h4>
+                <p className="mt-1.5 text-sm leading-6 text-area-muted">{step.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <div className="mt-8 grid gap-4 lg:grid-cols-2">
+          <aside aria-labelledby="datenrettung-gebuehr-title" className="rounded-2xl border border-area-border bg-area-surface p-6">
+            <h4 className="text-lg font-semibold leading-snug text-area-deep" id="datenrettung-gebuehr-title">
+              Die SWEA-Aufwandspauschale: 40 Euro
+            </h4>
+            <ul className="mt-3 grid gap-2 text-sm leading-6 text-area-muted">
+              <li className="flex gap-2"><Check aria-hidden="true" className="mt-1 shrink-0 text-area-primary" size={16} /> Es ist die eigene Vergütung von SWEA für Bearbeitung und Abwicklung.</li>
+              <li className="flex gap-2"><Check aria-hidden="true" className="mt-1 shrink-0 text-area-primary" size={16} /> Sie wird Ihnen vor Ihrer Beauftragung mitgeteilt.</li>
+            </ul>
+                      <p className="mt-3 text-sm leading-6 text-area-muted">
+              Die Pauschale wird in jedem Fall fällig und deckt unseren Aufwand für die Erstanalyse, die gegebenenfalls stattfindende Abklärung mit dem Partner und alle notwenigen Schritte und die Kommunikation mit Ihnen ab.
+            </p>
+          </aside>
+
+          <aside aria-labelledby="datenrettung-quote-title" className="rounded-2xl border border-area-border bg-area-surface p-6">
+            <h4 className="text-lg font-semibold leading-snug text-area-deep" id="datenrettung-quote-title">
+              Erfolgsaussichten
+            </h4>
+            <p className="mt-3 text-sm leading-6 text-area-muted">
+              Unser spezialisierter Partner DataPhoenix wirbt auf der eigenen Website mit einer Erfolgsquote von 92,5 %. Die tatsächlichen Wiederherstellungsmöglichkeiten hängen vom individuellen Schadensbild und dem jeweiligen Datenträger ab. Eine Erfolgsgarantie für den Einzelfall besteht nicht.
+            </p>
+            <p className="mt-3 text-xs leading-5 text-area-muted">Angabe von DataPhoenix, keine eigene Auswertung von SWEA.</p>
+          </aside>
+        </div>
+
+        <div className="mt-4 rounded-2xl border border-area-border bg-area-surface p-6">
+          <h4 className="text-lg font-semibold leading-snug text-area-deep">Wer macht was?</h4>
+          <dl className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {responsibilities.map((item) => (
+              <div key={item.title}>
+                <dt className="text-sm font-semibold text-area-deep">{item.title}</dt>
+                <dd className="mt-1 text-sm leading-6 text-area-muted">{item.description}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-4 text-sm leading-6 text-area-muted">
+            Zu Haftung und geltenden Bedingungen informieren wir Sie vor der Weitergabe Ihres Speichermediums.
+          </p>
+        </div>
+
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <Link className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" data-nav-link href="/kontakt">
+            Datenrettung anfragen <ArrowRight aria-hidden="true" size={17} />
+          </Link>
+        </div>
+      </div>
       </div>
     </section>
   )
@@ -798,7 +954,7 @@ function WebsiteDesignSection() {
     {
       icon: Heart,
       title: "Persönlich betreut",
-      description: "Uwe Christian ist Ihr direkter Ansprechpartner – von der ersten Idee bis zu Fragen nach dem Start.",
+      description: "Herr Christian ist Ihr direkter Ansprechpartner – von der ersten Idee bis zu Fragen nach dem Start.",
     },
   ]
 
@@ -814,7 +970,7 @@ function WebsiteDesignSection() {
             Von der ersten Idee über Domain, E-Mail und Gestaltung bis zur fertigen Website – und langfristige Betreuung.
           </p>
           <p className="mt-4 max-w-xl text-sm leading-6 text-area-muted">
-            Alles aus einer Hand: Uwe Christian begleitet Sie persönlich durch jeden Schritt. Sie behalten einen festen Ansprechpartner und müssen sich nicht mit technischen Details beschäftigen.
+            Alles aus einer Hand: Herr Christian begleitet Sie persönlich durch jeden Schritt. Sie behalten einen festen Ansprechpartner und müssen sich nicht mit technischen Details beschäftigen.
           </p>
           <Link className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 text-sm font-semibold text-white transition hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" data-nav-link href="/kontakt">
             Website-Projekt besprechen <ArrowRight aria-hidden="true" size={17} />
@@ -961,7 +1117,7 @@ function ContactSection() {
           <div>
             <span className="inline-flex rounded-full border border-area-border/25 bg-area-subtle/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/80">Kontakt in Schorndorf</span>
             <h1 id="contact-title" className="mt-4 max-w-lg text-3xl font-semibold tracking-tight text-white sm:text-4xl">Lassen Sie uns ins Gespräch kommen.</h1>
-            <p className="mt-3 max-w-lg text-sm leading-7 text-white/75">Ob IT-Frage, Webprojekt oder Waldbaden – Sie erreichen Uwe Christian direkt.</p>
+            <p className="mt-3 max-w-lg text-sm leading-7 text-white/75">Ob IT-Frage, Webprojekt oder Waldbaden – Sie erreichen Herrn Christian direkt.</p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
@@ -982,7 +1138,7 @@ function ContactSection() {
 
           <div className="flex items-start gap-3 border-l-2 border-area-border/65 pl-4 text-sm leading-6 text-white/80">
             <MapPin aria-hidden="true" className="mt-1 shrink-0 text-area-accent-light" size={18} />
-            <p>Direkter Kontakt zu Uwe Christian – ohne anonyme Hotline und unnötige Umwege in Schorndorf.</p>
+            <p>Direkter Kontakt zu Herrn Christian – ohne anonyme Hotline und unnötige Umwege in Schorndorf.</p>
           </div>
         </div>
 

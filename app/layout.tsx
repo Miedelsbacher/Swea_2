@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'SWEA – Technik, die hilft. Ruhe, die bleibt.',
     description:
-      'Persönlicher IT-Service, KI-Studio und zertifiziertes Waldbaden in Schorndorf und Umgebung. Mit Uwe Christian.',
+      'Persönlicher IT-Service, KI-Studio und zertifiziertes Waldbaden in Schorndorf und Umgebung. Mit Herrn Christian.',
     url: '/',
     siteName: 'SWEA',
     locale: 'de_DE',
