@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Menu, ShieldCheck, X } from "lucide-react"
+import { LegalModalTrigger } from "@/components/legal-modals"
 
 const navigation = [
   { href: "/", label: "Startseite" },
@@ -81,10 +82,10 @@ export function SiteFooter() {
           ))}
         </nav>
         <nav aria-label="Rechtliche Informationen" className="flex flex-wrap gap-x-3 gap-y-1">
-          <button className="inline-flex min-h-9 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-legal-modal-trigger="imprint-modal" type="button">Impressum</button>
-          <button className="inline-flex min-h-9 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-legal-modal-trigger="privacy-modal" type="button">Datenschutz</button>
-          <button className="inline-flex min-h-9 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-legal-modal-trigger="agb-modal" type="button">AGB</button>
-          <button className="inline-flex min-h-9 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-legal-modal-trigger="withdrawal-modal" type="button">Widerrufsbelehrung</button>
+          <LegalModalTrigger className="inline-flex min-h-9 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" dialogId="imprint-modal">Impressum</LegalModalTrigger>
+          <LegalModalTrigger className="inline-flex min-h-9 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" dialogId="privacy-modal">Datenschutz</LegalModalTrigger>
+          <LegalModalTrigger className="inline-flex min-h-9 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" dialogId="agb-modal">AGB</LegalModalTrigger>
+          <LegalModalTrigger className="inline-flex min-h-9 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" dialogId="withdrawal-modal">Widerrufsbelehrung</LegalModalTrigger>
         </nav>
       </div>
     </footer>

@@ -11,6 +11,26 @@ const orderedListClass = "list-decimal pl-5 text-sm leading-7 text-area-muted [&
 const listClass = "list-disc pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2"
 const linkClass = "font-semibold text-brand-primary underline decoration-brand-border underline-offset-2 hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
 
+export function LegalModalTrigger({ dialogId, className, children }: { dialogId: string; className: string; children: ReactNode }) {
+  return (
+    <button
+      className={className}
+      onClick={() => {
+        const target = document.getElementById(dialogId)
+        if (!(target instanceof HTMLDialogElement)) return
+
+        const openDialog = document.querySelector<HTMLDialogElement>("dialog[open]")
+        if (openDialog === target) return
+        openDialog?.close()
+        target.showModal()
+      }}
+      type="button"
+    >
+      {children}
+    </button>
+  )
+}
+
 function LegalDialog({ id, title, eyebrow, headerDetails, children }: { id: string; title: string; eyebrow: string; headerDetails?: ReactNode; children: ReactNode }) {
   return (
     <dialog
@@ -103,7 +123,7 @@ export function AGBModal() {
           <li>Verbraucher ist, wer den Vertrag zu Zwecken abschließt, die überwiegend weder seiner gewerblichen noch seiner selbständigen beruflichen Tätigkeit zugerechnet werden können (§ 13 BGB). Unternehmer ist, wer bei Vertragsschluss in Ausübung seiner gewerblichen oder selbständigen beruflichen Tätigkeit handelt (§ 14 BGB).</li>
           <li>Gesetzliche Rechte von Verbrauchern bleiben durch diese AGB unberührt. Das gilt auch dann, wenn einzelne Regelungen nur für Unternehmer bestimmt sind.</li>
           <li>Unternehmern steht kein gesetzliches Widerrufsrecht zu. Für sie gelten die Regelungen dieser AGB und des Angebots.</li>
-          <li>Verbrauchern kann bei Fernabsatzverträgen ein gesetzliches Widerrufsrecht zustehen. Einzelheiten, Folgen und das Muster-Widerrufsformular finden Sie in der <button className={linkClass} data-legal-modal-trigger="withdrawal-modal" type="button">Widerrufsbelehrung</button>. Ob das Widerrufsrecht im Einzelfall besteht oder vorzeitig erlischt, richtet sich nach den gesetzlichen Vorschriften.</li>
+          <li>Verbrauchern kann bei Fernabsatzverträgen ein gesetzliches Widerrufsrecht zustehen. Einzelheiten, Folgen und das Muster-Widerrufsformular finden Sie in der <LegalModalTrigger className={linkClass} dialogId="withdrawal-modal">Widerrufsbelehrung</LegalModalTrigger>. Ob das Widerrufsrecht im Einzelfall besteht oder vorzeitig erlischt, richtet sich nach den gesetzlichen Vorschriften.</li>
         </ol>
       </section>
 
@@ -119,7 +139,7 @@ export function AGBModal() {
 
       <section className={sectionClass}>
         <h3 className={headingClass}>6. Datenschutz</h3>
-        <p className={paragraphClass}>Personenbezogene Daten werden nach den gesetzlichen Bestimmungen der DSGVO und des DDG verarbeitet. Einzelheiten finden Sie in unserer <button className={linkClass} data-legal-modal-trigger="privacy-modal" type="button">Datenschutzerklärung</button>.</p>
+        <p className={paragraphClass}>Personenbezogene Daten werden nach den gesetzlichen Bestimmungen der DSGVO und des DDG verarbeitet. Einzelheiten finden Sie in unserer <LegalModalTrigger className={linkClass} dialogId="privacy-modal">Datenschutzerklärung</LegalModalTrigger>.</p>
       </section>
 
       <section className={sectionClass}>
@@ -175,7 +195,7 @@ export function AGBModal() {
             </ul>
           </li>
           <li>Die Haftung richtet sich nach Abschnitt 5. Für eigenes Verschulden sowie für das Verschulden von Personen, deren sich der Anbieter zur Erfüllung seiner Pflichten gegenüber dem Kunden bedient, haftet der Anbieter nach den gesetzlichen Vorschriften. A2 Nr. 4 und 5 zur Datensicherung bleiben unberührt.</li>
-          <li>Datenträger enthalten häufig personenbezogene Daten. Mit der Weitergabe erhält DataPhoenix im für Diagnose und Wiederherstellung erforderlichen Umfang Zugriff auf die gespeicherten Inhalte. Einzelheiten finden Sie in der <button className={linkClass} data-legal-modal-trigger="privacy-modal" type="button">Datenschutzerklärung</button>. Enthält der Datenträger besonders schutzbedürftige Daten, etwa Gesundheitsdaten oder Daten Dritter, soll der Kunde den Anbieter vor der Weitergabe darauf hinweisen.</li>
+          <li>Datenträger enthalten häufig personenbezogene Daten. Mit der Weitergabe erhält DataPhoenix im für Diagnose und Wiederherstellung erforderlichen Umfang Zugriff auf die gespeicherten Inhalte. Einzelheiten finden Sie in der <LegalModalTrigger className={linkClass} dialogId="privacy-modal">Datenschutzerklärung</LegalModalTrigger>. Enthält der Datenträger besonders schutzbedürftige Daten, etwa Gesundheitsdaten oder Daten Dritter, soll der Kunde den Anbieter vor der Weitergabe darauf hinweisen.</li>
         </ol>
         <h4 className={subheadingClass}>A4. Webdesign, Softwareerstellung und Nutzungsrechte</h4>
         <ol className={orderedListClass}>
