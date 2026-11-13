@@ -316,7 +316,7 @@ function HolidayGiftSection() {
             <ul>
               <li>Wir beginnen erst nach schriftlichem Auftrag und der Einwilligung der abgebildeten Person.</li>
               <li>Sexualisierte oder gewaltbeinhaltende Inhalte erstellen wir nicht. Wir prüfen jeden Auftrag individuell und behalten uns vor, Aufträge abzulehnen.</li>
-              <li>Die Bezahlung erfolgt im Voraus. Für individuell angefertigte Produkte gilt unsere Wiederrufsbelehrung.</li>
+              <li>Die Bezahlung erfolgt im Voraus. Für individuell angefertigte Produkte gilt unsere Widerrufsbelehrung.</li>
               <li>Sie erhalten eine Rechnung ohne ausgewiesene Mehrwertsteuer aufgrund der Kleinunternehmerregelung.</li>
               <li>Beispiele und angefertigte Motive unterliegen dem Urheberrecht; Nutzungsrechte werden individuell vereinbart.</li>
             </ul>
@@ -413,7 +413,7 @@ function AlternativeMotifsSection() {
     <section aria-label="Motive ohne weihnachtlichen Bezug" className="alternative-motifs-section">
       <div className="page-wrap alternative-motifs-content">
         <p>Selbstverständlich erstellen wir Motive auch ohne weihnachtlichen Bezug, zum Beispiel mit Ihren Liebsten, Ihrem Haustier, Ihrem Hobby oder einem anderen persönlichen Motiv.</p>
-        <p>Es gelten die oben genannten Einschränkungen, die Wiederrufsbelehrung und unsere AGB.</p>
+        <p>Es gelten die oben genannten Einschränkungen, die Widerrufsbelehrung und unsere AGB.</p>
       </div>
     </section>
   )
