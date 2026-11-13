@@ -1193,7 +1193,7 @@ function AboutSection() {
             <article className={`${cardClass} sm:col-span-2`} id="about-erfahrung">
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Erfahrung</span>
               <h3 className="mt-3 text-lg font-semibold text-area-deep">Technik und Natur im Blick</h3>
-              <p className="mt-2 text-sm leading-6 text-area-muted">Herr Christian ist Diplominformatiker und hat an der Universität Stuttgart studiert und abgeschlossen. Durch jahrzehntelange Erfahrung im professionellen EDV-Service verfügt er über eine gewaltige Expertise in Computerhilfe, Netzwerkthemen und Webprojekten bis zum zertifizierten Waldbaden.</p>
+              <p className="mt-2 text-sm leading-6 text-area-muted">Uwe Christian ist Diplom-Informatiker und hat an der Universität Stuttgart studiert. Er bringt jahrzehntelange Erfahrung im professionellen EDV-Service mit – bei Computerhilfe, Netzwerkthemen und Webprojekten. Im August 2023 hat er an der Deutschen Akademie für Waldbaden und Gesundheit die Ausbildung zum Kursleiter für Waldbaden (klassik intensiv) absolviert.</p>
             </article>
           </div>
         </div>
