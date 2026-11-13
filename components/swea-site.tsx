@@ -598,18 +598,6 @@ function ServicesSection() {
             <Link aria-label="WLAN- oder Netzwerkproblem schildern" className={actionClass} data-nav-link href="/kontakt">WLAN-Problem schildern <ArrowRight aria-hidden="true" size={16} /></Link>
           </article>
 
-          <article className={cardClass} id="datenrettung-karte">
-            <div className="mb-5 flex items-start gap-4">
-              <span className={iconClass}><HardDrive aria-hidden="true" size={22} /></span>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Mit Partner DataPhoenix</p>
-                <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Datenrettung</h3>
-              </div>
-            </div>
-            <p className="text-sm leading-6 text-area-muted">Verlorene Daten von Festplatten, USB-Sticks und Handys: Wir organisieren die Diagnose und Datenrettung mit unserem Partner DataPhoenix. Sie entscheiden in jedem Schritt selbst, wie es weitergeht.</p>
-            <Link aria-label="Datenrettung anfragen" className={actionClass} data-nav-link href="#datenrettung-ablauf">Ablauf ansehen <ArrowRight aria-hidden="true" size={16} /></Link>
-          </article>
-
           <article className={cardClass} id="smartphones-smart-home">
             <div className="mb-5 flex items-start gap-4">
               <span className={iconClass}><Smartphone aria-hidden="true" size={22} /></span>
@@ -634,17 +622,46 @@ function ServicesSection() {
             <Link aria-label="Hilfe bei Hardware anfragen" className={actionClass} data-nav-link href="/kontakt">Hardware-Hilfe anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
           </article>
 
-          <article className={cardClass} id="professionals">
+          <article className={cardClass} id="allgemeine-it-unterstuetzung">
             <div className="mb-5 flex items-start gap-4">
-              <span className={iconClass}><Code2 aria-hidden="true" size={22} /></span>
+              <span className={iconClass}><Heart aria-hidden="true" size={22} /></span>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Webseiten &amp; Wartung</p>
-                <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Hilfe für Professionals</h3>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Rund um Ihre Technik</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Allgemeine IT-Unterstützung</h3>
               </div>
             </div>
-            <p className="text-sm leading-6 text-area-muted">Wir führen gerne ein komplettes Redesign Ihrer Webseite durch oder bieten Wartungsverträge an</p>
-            <Link className={actionClass} data-nav-link href="/kontakt">Unterstützung für Profis anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
+            <p className="text-sm leading-6 text-area-muted">Ihr Anliegen passt in keine Kategorie? Schildern Sie es kurz – gemeinsam klären wir, wie wir Ihnen weiterhelfen können.</p>
+            <Link aria-label="Allgemeines IT-Anliegen schildern" className={actionClass} data-nav-link href="/kontakt">Anliegen schildern <ArrowRight aria-hidden="true" size={16} /></Link>
           </article>
+        </div>
+
+        <div className="mt-10">
+          <h2 className="text-xl font-semibold tracking-tight text-area-deep sm:text-2xl">Weitere Leistungen im IT-Service</h2>
+          <div className="mt-4 grid items-stretch gap-4 md:grid-cols-2">
+            <article className={cardClass} id="datenrettung-karte">
+              <div className="mb-5 flex items-start gap-4">
+                <span className={iconClass}><HardDrive aria-hidden="true" size={22} /></span>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Mit Partner DataPhoenix</p>
+                  <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Datenrettung</h3>
+                </div>
+              </div>
+              <p className="mb-5 text-sm leading-6 text-area-muted">Verlorene Daten von Festplatten, USB-Sticks und Handys: Wir organisieren die Diagnose und Datenrettung mit unserem Partner DataPhoenix. Sie entscheiden in jedem Schritt selbst, wie es weitergeht.</p>
+              <Link className={actionClass} data-nav-link href="/datenrettung">Datenrettung – Ablauf ansehen <ArrowRight aria-hidden="true" size={16} /></Link>
+            </article>
+
+            <article className={cardClass} id="webdesign-karte">
+              <div className="mb-5 flex items-start gap-4">
+                <span className={iconClass}><Code2 aria-hidden="true" size={22} /></span>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Webseiten &amp; Wartung</p>
+                  <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Webdesign</h3>
+                </div>
+              </div>
+              <p className="mb-5 text-sm leading-6 text-area-muted">Neue Website, Überarbeitung Ihrer bestehenden Webseite oder Wartung – persönlich geplant und betreut.</p>
+              <Link className={actionClass} data-nav-link href="/webdesign">Zum Webdesign <ArrowRight aria-hidden="true" size={16} /></Link>
+            </article>
+          </div>
         </div>
 
         <div className="mt-7 flex flex-col items-start justify-between gap-4 rounded-2xl bg-area-deep px-6 py-5 text-white sm:flex-row sm:items-center sm:px-8">
@@ -738,12 +755,13 @@ function DataRecoverySection() {
   return (
     <section aria-labelledby="datenrettung-title" className="section bg-area-soft" id="datenrettung">
       <div className="page-wrap">
+      <SubpageBackLink current="Datenrettung" />
       <div className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start lg:gap-12">
         <div className="max-w-2xl">
           <span className="eyebrow">Datenrettung</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="datenrettung-title">
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="datenrettung-title">
             Professionelle Datenrettung – Wenn es brenzlig wird.
-          </h2>
+          </h1>
           <p className="mt-4 text-base leading-7 text-area-muted">
             Bei der Datenrettung arbeiten wir mit dem spezialisierten Partner DataPhoenix zusammen. Wir sind Ihr Ansprechpartner und organisieren den Ablauf; die technische Diagnose und die eigentliche Datenrettung übernimmt im Wesentlichen DataPhoenix. Zwei Entscheidungen treffen immer Sie: zuerst die Zustimmung zur Untersuchung durch den Partner, später die Zustimmung zur kostenpflichtigen Datenrettung.
           </p>
@@ -932,14 +950,37 @@ function WebsiteDesignSection() {
     },
   ]
 
+  const services = [
+    {
+      icon: Code2,
+      eyebrow: "Webdesign",
+      title: "Neue Website",
+      description: "Von der ersten Idee über Domain, E-Mail und Gestaltung bis zur fertigen Website – passend zu Ihrem Vorhaben.",
+    },
+    {
+      icon: MonitorCog,
+      eyebrow: "Überarbeitung",
+      title: "Website-Überarbeitung",
+      description: "Wir führen gerne ein komplettes Redesign Ihrer bestehenden Webseite durch.",
+    },
+    {
+      icon: ShieldCheck,
+      eyebrow: "Wartung",
+      title: "Wartung & Betreuung",
+      description: "Mit einem Wartungsvertrag sorgen wir für die langfristige Betreuung und verständliche Pflege Ihrer Website.",
+    },
+  ]
+
   return (
     <section aria-labelledby="webseiten-webdesign-title" className="section bg-area-soft/60" id="webseiten-webdesign">
-      <div className="page-wrap grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
+      <div className="page-wrap">
+      <SubpageBackLink current="Webdesign" />
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
         <div className="max-w-2xl">
           <span className="eyebrow">Webseiten &amp; Webdesign</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="webseiten-webdesign-title">
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="webseiten-webdesign-title">
             Ihre Website. Persönlich geplant und professionell umgesetzt.
-          </h2>
+          </h1>
           <p className="mt-4 text-base leading-7 text-area-muted">
             Von der ersten Idee über Domain, E-Mail und Gestaltung bis zur fertigen Website – und langfristige Betreuung.
           </p>
@@ -965,7 +1006,58 @@ function WebsiteDesignSection() {
           ))}
         </div>
       </div>
+
+      <div className="mt-14">
+        <h2 className="text-2xl font-semibold tracking-tight text-area-deep sm:text-3xl">Unsere Leistungen rund um Ihre Website</h2>
+        <div className="mt-6 grid items-stretch gap-4 md:grid-cols-3">
+          {services.map(({ icon: Icon, eyebrow, title, description }) => (
+            <article className="flex h-full flex-col rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm sm:p-6" key={title}>
+              <div className="mb-4 flex items-start gap-4">
+                <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-area-soft text-area-primary">
+                  <Icon aria-hidden="true" size={22} />
+                </span>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">{eyebrow}</p>
+                  <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">{title}</h3>
+                </div>
+              </div>
+              <p className="text-sm leading-6 text-area-muted">{description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+      </div>
     </section>
+  )
+}
+
+function SubpageBackLink({ current }: { current: string }) {
+  return (
+    <nav aria-label="Brotkrümelnavigation" className="mb-8">
+      <ol className="flex flex-wrap items-center gap-2 text-sm text-area-muted">
+        <li>
+          <Link className="font-semibold text-area-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-nav-link href="/it-service">IT-Service</Link>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page">{current}</li>
+      </ol>
+    </nav>
+  )
+}
+
+export function DataRecoveryPageContent() {
+  return (
+    <div className="brand-area brand-area-technik">
+      <DataRecoverySection />
+    </div>
+  )
+}
+
+export function WebdesignPageContent() {
+  return (
+    <div className="brand-area brand-area-technik">
+      <WebsiteDesignSection />
+    </div>
   )
 }
 
@@ -973,8 +1065,6 @@ function EdvView() {
   return (
     <>
       <ServicesSection />
-      <DataRecoverySection />
-      <WebsiteDesignSection />
       <RemoteSection />
       <section className="page-wrap ki-crosslink brand-area brand-area-ki" aria-labelledby="ki-crosslink-title">
         <div>
