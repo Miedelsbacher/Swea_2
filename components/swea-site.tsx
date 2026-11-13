@@ -706,12 +706,16 @@ function DataRecoverySection() {
 
   const processSteps: { title: string; description: string; consent?: string }[] = [
     {
+      title: "SWEA-Aufwandspauschale von 40 Euro",
+      description: "Unabhängig vom weiteren Verlauf berechnet SWEA eine eigene Aufwandspauschale von 40 Euro für Bearbeitung und Abwicklung. Details dazu finden Sie unten.",
+    },
+    {
       title: "Sie fragen die Datenrettung bei SWEA an",
-      description: "Schildern Sie kurz, um welchen Datenträger es geht und was passiert ist. Wir werden je nach Situation ohne externen Partner versuchen, die Daten presigünstig mit eigenen Werkzeugen wieder herzustellen.",
+      description: "Schildern Sie kurz, um welchen Datenträger es geht und was passiert ist. Wir werden je nach Situation ohne externen Partner versuchen, die Daten preisgünstig mit eigenen Werkzeugen wieder herzustellen. Hierfür nutzen wir die Pauschale (siehe unten) und unterbreiten ein Angebot.",
     },
     {
       title: "Einbindung des Partners und Ihre Zustimmung zur Untersuchung",
-      description: "Wir erläutern Ihnen, dass der externe Partner DataPhoenix eingebunden wird. Bevor Ihr Speichermedium weitergegeben wird, unterbreiten wir Ihnen eine unverbindliche Preisinformation und holen wir Ihre ausdrückliche Zustimmung zur Untersuchung durch DataPhoenix ein.",
+      description: "Wir erläutern Ihnen, dass der externe Partner DataPhoenix eingebunden wird. Bevor Ihr Speichermedium weitergegeben wird, unterbreiten wir Ihnen eine unverbindliche Preisinformation und holen Ihre ausdrückliche Zustimmung zur Untersuchung durch DataPhoenix ein.",
       consent: "Ihre Zustimmung · vor der Weitergabe",
     },
     {
@@ -721,10 +725,6 @@ function DataRecoverySection() {
     {
       title: "Erste Diagnose durch DataPhoenix",
       description: "DataPhoenix führt eine erste Diagnose durch. Diese ist noch durch die Aufwandspauschale abgedeckt.",
-    },
-    {
-      title: "SWEA-Aufwandspauschale von 40 Euro",
-      description: "Unabhängig vom weiteren Verlauf berechnet SWEA eine eigene Aufwandspauschale von 40 Euro für Bearbeitung und Abwicklung. Details dazu finden Sie unten.",
     },
     {
       title: "Einschätzung der Chancen zur Datenwiederherstellung",
