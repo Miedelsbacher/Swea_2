@@ -24,6 +24,7 @@ import {
   Wifi,
 } from "lucide-react"
 import { AIExamplesCarousel } from "@/components/ai-examples-carousel"
+import { aiExampleImages, aiExampleVideos } from "@/components/ai-examples-data"
 import { ContactInquiryForm } from "@/components/contact-inquiry-form"
 import { WaldbadenPage } from "@/components/waldbaden-page"
 
@@ -261,77 +262,124 @@ function KIStudioServices() {
           </article>
         </div>
 
-        <ExamplesLink />
       </div>
     </section>
   )
 }
 
-function ExamplesLink() {
+const kiGalleryImages = [
+  {
+    src: "/swea/medien/ki-beispiel-1.jpeg",
+    alt: "Digitale Illustration eines lächelnden Mannes als weihnachtlicher Elf im verschneiten Wald",
+    caption: "Ein persönliches Elfenporträt",
+  },
+  {
+    src: "/swea/medien/ki-beispiel-2.jpeg",
+    alt: "Digitale Illustration eines grünen, zotteligen Wesens mit Weihnachtsmütze neben einem festlich geschmückten Baum",
+    caption: "Ein augenzwinkerndes Motiv",
+  },
+  {
+    src: "/swea/medien/ki-beispiel-3.jpeg",
+    alt: "Digitale Illustration eines Weihnachtsmanns, der Geschenke vor einem geschmückten Baum und Kamin ablegt",
+    caption: "Ein festlicher Moment als Bildidee",
+  },
+]
+
+const kiVideoExamples = [
+  {
+    src: "/swea/ai-examples/video-cf140fc6.mp4",
+    poster: "/swea/ai-examples/ki-studio-video-poster-happy-59.png",
+    alt: "Beispiel eines personalisierten Videoclips",
+    caption: "Videoclip",
+  },
+  {
+    src: "/swea/medien/ki-video.mp4",
+    poster: "/swea/ai-examples/ki-studio-example-video-poster.webp",
+    alt: "Beispielvideo mit weihnachtlichem Motiv",
+    caption: "Beispielvideo aus dem KI-Studio",
+  },
+  ...aiExampleVideos,
+]
+
+function ExampleCategoryHeading({ icon: Icon, id, label, title }: { icon: typeof ImageIcon; id: string; label: string; title: string }) {
   return (
-    <p className="mt-8 text-center">
-      <Link
-        className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-area-border bg-area-surface px-5 py-2.5 text-sm font-semibold text-area-deep transition-colors hover:border-area-primary hover:text-area-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2"
-        data-nav-link
-        href="/ki-studio/beispiele"
-      >
-        Beispiele ansehen <ArrowRight aria-hidden="true" size={16} />
-      </Link>
-      <span className="mt-2 block text-xs text-area-muted">Bilder, Videos, Hörproben und Songtext</span>
-    </p>
+    <div className="mb-6 flex items-center gap-3">
+      <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-area-subtle text-area-primary">
+        <Icon aria-hidden="true" size={20} />
+      </span>
+      <div>
+        <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">{label}</span>
+        <h3 className="text-xl font-semibold leading-7 text-area-deep sm:text-2xl" id={id}>{title}</h3>
+      </div>
+    </div>
   )
 }
 
-function KIStudioMediaExamples() {
-  const cardClass = "flex h-full flex-col overflow-hidden rounded-2xl border border-area-border bg-area-surface shadow-sm"
-
+function KIStudioExamples() {
   return (
-    <section aria-labelledby="ki-medienbeispiele-title" className="py-14 sm:py-20" id="medienbeispiele">
+    <section aria-labelledby="ki-beispiele-title" className="bg-area-soft pt-14 sm:pt-20" id="beispiele">
       <div className="page-wrap">
-        <div className="mx-auto mb-10 max-w-3xl text-center">
-          <span className="eyebrow">Medienbeispiele</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-medienbeispiele-title">
-            Bild, Video und Jingle
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <span className="eyebrow">Beispiele</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-beispiele-title">
+            Beispiele aus dem KI-Studio
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-area-muted">
+            Die gezeigten Beispiele sind Arbeiten von SWEA. Bitte laden Sie sie nicht herunter und verbreiten Sie sie nicht weiter.
+          </p>
         </div>
 
-        <div className="grid items-stretch gap-5 md:grid-cols-3 md:gap-6">
-          <figure className={cardClass}>
-            <div className="relative min-h-44 aspect-[16/10] overflow-hidden bg-area-subtle">
-              <Image
-                alt="Digitales Bild einer Fee in einem geheimnisvollen Wald neben einem großen grünen Drachen"
-                className="object-cover"
-                fill
-                loading="lazy"
-                sizes="(max-width: 767px) 100vw, 33vw"
-                src="/swea/ai-examples/ki-studio-image-dragon.jpg"
-              />
-            </div>
-            <figcaption className="flex items-center gap-2 p-4 text-sm font-semibold text-area-deep"><ImageIcon aria-hidden="true" className="text-area-primary" size={17} /> Digitales Bild</figcaption>
-          </figure>
+        <section aria-labelledby="ki-beispiele-bilder" id="beispiele-bilder">
+          <ExampleCategoryHeading icon={ImageIcon} id="ki-beispiele-bilder" label="Bilder &amp; Grafiken" title="Digitale Bilder &amp; Grafiken" />
+          <ul aria-label="Beispiele für individuell gestaltete Motive" className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {kiGalleryImages.map((example) => (
+              <li key={example.src}>
+                <figure className="overflow-hidden rounded-2xl border border-area-border bg-area-surface shadow-sm">
+                  <div className="relative aspect-[3/4] bg-area-subtle">
+                    <Image alt={example.alt} className="object-cover" fill loading="lazy" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" src={example.src} />
+                  </div>
+                  <figcaption className="p-4 text-sm font-semibold leading-6 text-area-deep">{example.caption}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
 
-          <figure className={cardClass}>
-            <div className="relative min-h-44 aspect-[16/10] overflow-hidden bg-area-deep">
-              <video
-                aria-label="Beispiel eines personalisierten Videoclips"
-                className="h-full w-full object-cover"
-                controls
-                playsInline
-                preload="none"
-                poster="/swea/ai-examples/ki-studio-video-poster-happy-59.png"
-              >
-                <source src="/swea/ai-examples/video-cf140fc6.mp4" type="video/mp4" />
-                Ihr Browser unterstützt die Videowiedergabe nicht.
-              </video>
-            </div>
-            <figcaption className="flex items-center gap-2 p-4 text-sm font-semibold text-area-deep"><Video aria-hidden="true" className="text-area-primary" size={17} /> Videoclip</figcaption>
-          </figure>
+      <AIExamplesCarousel examples={aiExampleImages} title="Weitere digitale Bilder und Logo-Entwürfe" />
 
-          <figure className={cardClass}>
-            <div className="relative flex min-h-44 aspect-[16/10] flex-col justify-between bg-area-deep p-5 text-white sm:p-6">
-              <div className="flex items-center">
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-white/80"><Music2 aria-hidden="true" size={17} /> SWEA Audio Studio</span>
-              </div>
+      <div className="page-wrap">
+        <section aria-labelledby="ki-beispiele-videos" className="pt-4" id="beispiele-videos">
+          <ExampleCategoryHeading icon={Video} id="ki-beispiele-videos" label="Bewegtbild" title="Videos" />
+          <ul aria-label="Beispielvideos aus dem KI-Studio" className="grid gap-5 sm:grid-cols-2">
+            {kiVideoExamples.map((example) => (
+              <li key={example.src}>
+                <figure className="overflow-hidden rounded-2xl border border-area-border bg-area-surface shadow-sm">
+                  <video
+                    aria-label={example.alt}
+                    className="aspect-video w-full bg-area-deep object-contain"
+                    controls
+                    playsInline
+                    poster={example.poster}
+                    preload="none"
+                  >
+                    <source src={example.src} type="video/mp4" />
+                    Ihr Browser unterstützt die Videowiedergabe nicht.
+                  </video>
+                  <figcaption className="flex items-center gap-2 p-4 text-sm font-semibold text-area-deep">
+                    <Video aria-hidden="true" className="text-area-primary" size={17} /> {example.caption}
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section aria-labelledby="ki-beispiele-audio" className="pt-14 sm:pt-16" id="beispiele-audio">
+          <ExampleCategoryHeading icon={Music2} id="ki-beispiele-audio" label="Audio &amp; Musik" title="Songs, Jingles &amp; Audiomaterial" />
+          <figure className="max-w-xl overflow-hidden rounded-2xl border border-area-border bg-area-surface shadow-sm">
+            <div className="flex flex-col gap-4 bg-area-deep p-5 text-white sm:p-6">
+              <span className="inline-flex items-center gap-2 text-sm font-medium text-white/80"><Music2 aria-hidden="true" size={17} /> SWEA Audio Studio</span>
               <div aria-hidden="true" className="flex h-12 items-center justify-center gap-1.5">
                 {[18, 30, 22, 40, 27, 36, 16, 31, 44, 23, 34, 18, 39, 25, 15, 32, 21, 40, 27, 16, 34, 23, 38, 19].map((height, index) => (
                   <span className="w-1 rounded-full bg-area-accent-light/80" key={index} style={{ height }} />
@@ -344,56 +392,10 @@ function KIStudioMediaExamples() {
             </div>
             <figcaption className="flex items-center gap-2 p-4 text-sm font-semibold text-area-deep"><Music2 aria-hidden="true" className="text-area-primary" size={17} /> Jingle als Hörprobe</figcaption>
           </figure>
-        </div>
+        </section>
       </div>
-    </section>
-  )
-}
 
-function KIStudioExamplesIntro() {
-  return (
-    <section aria-labelledby="ki-beispiele-title" className="bg-area-soft py-14 sm:py-20">
-      <div className="page-wrap">
-        <nav aria-label="Brotkrümelnavigation" className="mb-8">
-          <ol className="flex flex-wrap items-center gap-2 text-sm text-area-muted">
-            <li>
-              <Link className="font-semibold text-area-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-nav-link href="/ki-studio">KI-Studio</Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li aria-current="page">Beispiele</li>
-          </ol>
-        </nav>
-        <div className="max-w-3xl">
-          <span className="eyebrow">KI-Studio · Beispiele</span>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-beispiele-title">
-            Beispiele aus dem KI-Studio
-          </h1>
-          <p className="mt-4 text-base leading-7 text-area-muted">
-            Hier finden Sie Bilder, Videos, Hörproben und einen vollständigen Songtext aus dem SWEA KI-Studio. Alle Beispiele sind digitale Medien – SWEA stellt keine physischen Produkte her und nimmt keine Druckaufträge an.
-          </p>
-          <p className="mt-3 text-sm leading-6 text-area-muted">
-            Die gezeigten Beispiele sind Arbeiten von SWEA. Kundenaufträge werden nur mit Ihrer gesonderten Zustimmung als Referenz veröffentlicht.
-          </p>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function KIStudioExamplesClosing() {
-  return (
-    <section aria-labelledby="ki-beispiele-closing-title" className="page-wrap ki-crosslink brand-area brand-area-ki" id="anfrage">
-      <div>
-        <span className="eyebrow">Ihr Projekt</span>
-        <h2 id="ki-beispiele-closing-title">Eigene Idee im Kopf?</h2>
-        <p>Ablauf, Nutzungsrechte und Voraussetzungen finden Sie auf der Seite des KI-Studios.</p>
-        <p className="mt-3">
-          <Link className="inline-flex items-center gap-2 font-semibold text-area-deep underline-offset-4 hover:underline" data-nav-link href="/ki-studio">Zurück zum KI-Studio</Link>
-        </p>
-      </div>
-      <Link className="button button-dark min-h-12" href="/kontakt">
-        Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={17} />
-      </Link>
+      <HolidaySongSection />
     </section>
   )
 }
@@ -414,71 +416,6 @@ function KIStudioCustomWork() {
             Je nach Projekt bringen Sie Fotos, Stichworte, Lebensstationen für einen Liedtext oder Hinweise zum gewünschten Stil mit. Welche Angaben nötig sind, klären wir im Gespräch. Umfang und Gestaltung stimmen wir individuell ab; die konkrete Leistung wird im jeweiligen Angebot vereinbart. Das fertige Ergebnis erhalten Sie als digitale Datei.
           </p>
         </div>
-      </div>
-    </section>
-  )
-}
-
-function KIStudioGallery() {
-  const examples = [
-    {
-      src: "/swea/medien/ki-beispiel-1.jpeg",
-      alt: "Digitale Illustration eines lächelnden Mannes als weihnachtlicher Elf im verschneiten Wald",
-      caption: "Ein persönliches Elfenporträt",
-    },
-    {
-      src: "/swea/medien/ki-beispiel-2.jpeg",
-      alt: "Digitale Illustration eines grünen, zotteligen Wesens mit Weihnachtsmütze neben einem festlich geschmückten Baum",
-      caption: "Ein augenzwinkerndes Motiv",
-    },
-    {
-      src: "/swea/medien/ki-beispiel-3.jpeg",
-      alt: "Digitale Illustration eines Weihnachtsmanns, der Geschenke vor einem geschmückten Baum und Kamin ablegt",
-      caption: "Ein festlicher Moment als Bildidee",
-    },
-  ]
-
-  return (
-    <section aria-labelledby="ki-galerie-title" className="bg-area-soft py-14 sm:py-20" id="galerie">
-      <div className="page-wrap">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="eyebrow">Galerie</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-galerie-title">
-            Individuell gestaltete Motive
-          </h2>
-        </div>
-
-        <ul aria-label="Beispiele für individuell gestaltete Motive" className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {examples.map((example) => (
-            <li key={example.src}>
-              <figure className="overflow-hidden rounded-2xl border border-area-border bg-area-surface shadow-sm">
-                <div className="relative aspect-[3/4] bg-area-subtle">
-                  <Image alt={example.alt} className="object-cover" fill loading="lazy" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" src={example.src} />
-                </div>
-                <figcaption className="p-4 text-sm font-semibold leading-6 text-area-deep">{example.caption}</figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
-
-        <figure className="mx-auto mt-8 max-w-3xl">
-          <video
-            aria-label="Beispielvideo mit weihnachtlichem Motiv"
-            className="aspect-video w-full rounded-2xl border border-area-border bg-area-deep object-contain shadow-sm"
-            controls
-            playsInline
-            poster="/swea/ai-examples/ki-studio-example-video-poster.webp"
-            preload="none"
-          >
-            <source src="/swea/medien/ki-video.mp4" type="video/mp4" />
-            Ihr Browser unterstützt die Videowiedergabe nicht.
-          </video>
-          <figcaption className="mt-3 text-center text-sm text-area-muted">Beispielvideo aus dem KI-Studio</figcaption>
-        </figure>
-
-        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-5 text-area-muted">
-          Die gezeigten Beispiele sind Arbeiten von SWEA. Bitte laden Sie sie nicht herunter und verbreiten Sie sie nicht weiter.
-        </p>
       </div>
     </section>
   )
@@ -1396,24 +1333,12 @@ export function KIStudioPageContent() {
     <div className="brand-area brand-area-ki">
       <KIStudioIntro />
       <KIStudioServices />
+      <KIStudioExamples />
       <KIStudioCustomWork />
       <KIStudioProcess />
       <KIStudioUsage />
       <KIStudioLegalNotes />
       <KIStudioClosingCTA />
-    </div>
-  )
-}
-
-export function KIStudioExamplesPageContent() {
-  return (
-    <div className="brand-area brand-area-ki">
-      <KIStudioExamplesIntro />
-      <KIStudioMediaExamples />
-      <HolidaySongSection />
-      <KIStudioGallery />
-      <AIExamplesCarousel />
-      <KIStudioExamplesClosing />
     </div>
   )
 }
