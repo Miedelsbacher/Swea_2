@@ -182,7 +182,7 @@ export function HomePageContent() {
               </div>
               <span className="seasonal-audio-caption">Persönlicher Song oder Jingle für Ihren Lieblingsmoment</span>
               <audio aria-label="Persönlichen Song oder Jingle abspielen" controls preload="none">
-                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recording-00_08-EwnUnfEJYWHvA2WdNbv57q2zNqEeaY.mp3" type="audio/mpeg" />
+                <source src="/swea/medien/hoerprobe-recording-00_08.mp3" type="audio/mpeg" />
                 Ihr Browser unterstützt die Audiowiedergabe nicht.
               </audio>
             </div>
@@ -334,17 +334,17 @@ function KIStudioServices() {
 function KIStudioCustomWork() {
   const examples = [
     {
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_9fpkh09fpkh09fpk-u46EuM8FAmxDDJLVBAyrfhZ7DpMmQp.jpeg",
+      src: "/swea/medien/ki-beispiel-1.jpeg",
       alt: "Digitale Illustration eines lächelnden Mannes als weihnachtlicher Elf im verschneiten Wald",
       caption: "Ein persönliches Elfenporträt",
     },
     {
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2e7ew72e7ew72e7e-5JvNidQs7Az5bmt39FO5wAn0wu9e5w.jpeg",
+      src: "/swea/medien/ki-beispiel-2.jpeg",
       alt: "Digitale Illustration eines grünen, zotteligen Wesens mit Weihnachtsmütze neben einem festlich geschmückten Baum",
       caption: "Ein augenzwinkerndes Motiv",
     },
     {
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2yjiwu2yjiwu2yji-qs4gsrL98qp5pHHERuqd4n8IcKQ1Bo.jpeg",
+      src: "/swea/medien/ki-beispiel-3.jpeg",
       alt: "Digitale Illustration eines Weihnachtsmanns, der Geschenke vor einem geschmückten Baum und Kamin ablegt",
       caption: "Ein festlicher Moment als Bildidee",
     },
@@ -388,7 +388,7 @@ function KIStudioCustomWork() {
             poster="/swea/ai-examples/ki-studio-example-video-poster.webp"
             preload="none"
           >
-            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gemini_generated_video_77d5f778-sMKmnjJYAQSuujDbiD1O9RztT92LSZ.mp4" type="video/mp4" />
+            <source src="/swea/medien/ki-video.mp4" type="video/mp4" />
             Ihr Browser unterstützt die Videowiedergabe nicht.
           </video>
           <figcaption className="mt-3 text-center text-sm text-area-muted">Beispielvideo aus dem KI-Studio</figcaption>
@@ -558,14 +558,14 @@ function HolidaySongSection() {
               <div className="holiday-song-panel">
                 <h4>Der Uwe machts - Schlagerversion</h4>
                 <audio aria-label="Song Der Uwe machts - Schlagerversion abspielen" controls preload="none">
-                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Der%20Uwe%20machts%20SCHLAGER-cOeHT2pVFhOJl0tGyMux94SueVdG0R.mp3" type="audio/mpeg" />
+                  <source src="/swea/medien/song-schlager.mp3" type="audio/mpeg" />
                   Ihr Browser unterstützt die Audiowiedergabe nicht.
                 </audio>
               </div>
               <div className="holiday-song-panel">
                 <h4>Der Uwe machts - Hardrockversion</h4>
                 <audio aria-label="Song Der Uwe machts - Hardrockversion abspielen" controls preload="none">
-                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Der%20Uwe%20machts%20HARDROCK-1X0kBybCGXA9ixuaEXo4Fi9tJqLtqJ.mp3" type="audio/mpeg" />
+                  <source src="/swea/medien/song-hardrock.mp3" type="audio/mpeg" />
                   Ihr Browser unterstützt die Audiowiedergabe nicht.
                 </audio>
               </div>
@@ -791,7 +791,7 @@ function DataRecoverySection() {
               className="h-auto w-full max-w-[20rem]"
               height={89}
               loading="lazy"
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1RIAJoydF7VOcUREbvFhXeT5rFewD7.png"
+              src="/swea/medien/bild-image.png"
               unoptimized
               width={625}
             />

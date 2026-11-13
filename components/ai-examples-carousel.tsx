@@ -11,7 +11,7 @@ type CarouselExample =
 const examples: CarouselExample[] = [
   {
     type: "image",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image_a2d15da5-A1LgawnFkKpW61Ww6j1g789nyYkPfH.jpg",
+    src: "/swea/medien/ki-carousel-image.jpg",
     alt: "Aufwendig verziertes Reiterhof-Wappen mit Pferden, Löwen und grünen sowie goldenen Logo-Varianten auf dunklem Holz",
     caption: "Logo- und Markenvarianten für einen Reiterhof",
   },
