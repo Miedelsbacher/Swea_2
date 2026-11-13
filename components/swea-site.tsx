@@ -1,12 +1,10 @@
-"use client"
-
 import Image from "next/image"
+import Link from "next/link"
 import {
   ArrowDown,
   ArrowRight,
   ArrowUpRight,
   Check,
-  ChevronDown,
   Clock3,
   Code2,
   ExternalLink,
@@ -18,119 +16,15 @@ import {
   Leaf,
   MapPin,
   Mail,
-  Menu,
   MonitorCog,
   Phone,
   Router,
   ShieldCheck,
   Smartphone,
   Wifi,
-  X,
 } from "lucide-react"
 import { AIExamplesCarousel } from "@/components/ai-examples-carousel"
-import { LegalModals } from "@/components/legal-modals"
-import { SiteInteractions } from "@/components/site-interactions"
-
-const antonIconSrc = "/swea/anton.jpg"
-
-type PageId = "start" | "edv" | "studio" | "waldbaden" | "about" | "kontakt"
-
-type NavigationLink = {
-  label: string
-  page: PageId
-  targetId: string
-}
-
-type NavigationItem = NavigationLink & {
-  children?: NavigationLink[]
-}
-
-const navigation: NavigationItem[] = [
-  { page: "start", label: "Startseite", targetId: "start" },
-  {
-    page: "edv",
-    label: "IT & EDV-Service",
-    targetId: "dienstleistungen",
-    children: [
-      { page: "edv", label: "Computerhilfe", targetId: "computerhilfe" },
-      { page: "edv", label: "Netzwerke", targetId: "netzwerke" },
-      { page: "edv", label: "Datenrettung", targetId: "datenrettung" },
-      { page: "edv", label: "Webseiten & Webdesign", targetId: "webseiten-webdesign" },
-      { page: "edv", label: "Sicherheit & Fernzugriff", targetId: "fernzugriff" },
-    ],
-  },
-  {
-    page: "studio",
-    label: "KI-Studio",
-    targetId: "ki-studio-title",
-    children: [
-      { page: "studio", label: "KI-Angebote", targetId: "ki-studio-title" },
-      { page: "studio", label: "Saisonale Angebote & Aktionen", targetId: "weihnachtsgeschenke" },
-    ],
-  },
-  {
-    page: "waldbaden",
-    label: "Waldbaden",
-    targetId: "kursdetails",
-    children: [
-      { page: "waldbaden", label: "Termine anfragen", targetId: "termine" },
-      { page: "waldbaden", label: "Kursdetails", targetId: "kursdetails" },
-    ],
-  },
-  {
-    page: "about",
-    label: "Über SWEA",
-    targetId: "ueber-swea",
-    children: [
-      { page: "about", label: "Person", targetId: "about-person" },
-      { page: "about", label: "Arbeitsweise", targetId: "about-arbeitsweise" },
-      { page: "about", label: "Erfahrung", targetId: "about-erfahrung" },
-    ],
-  },
-  { page: "kontakt", label: "Kontakt", targetId: "kontakt" },
-]
-
-function Header() {
-  return (
-    <header className="site-header">
-      <div className="header-inner">
-        <button aria-label="SWEA – zur Startseite" className="brand brand-button" data-page-nav="start" data-nav-top data-target-id="start" type="button">
-          <span className="brand-mark"><Image alt="" fill priority sizes="39px" src={antonIconSrc} /></span>
-          <span className="brand-copy">
-            <strong>SWEA</strong>
-            <span aria-hidden="true" className="brand-divider">|</span>
-            <small>Uwe Christian · Schorndorf</small>
-          </span>
-        </button>
-        <button aria-controls="primary-navigation" aria-expanded="false" aria-label="Menü öffnen" className="mobile-menu-toggle" data-menu-toggle type="button">
-          <Menu aria-hidden="true" data-menu-icon="open" size={22} />
-          <X aria-hidden="true" data-menu-icon="close" size={22} />
-        </button>
-        <nav aria-label="Hauptnavigation" className="main-nav" id="primary-navigation">
-          {navigation.map((item) => item.children ? (
-            <details className="nav-dropdown" data-nav-group={item.page} key={item.page}>
-              <summary className="nav-trigger inline-flex cursor-pointer items-center gap-1.5 rounded-md px-2 py-2 text-[13px] font-semibold text-area-deep transition hover:bg-area-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary">
-                {item.label}<ChevronDown aria-hidden="true" size={15} />
-              </summary>
-              <div className="nav-submenu">
-                {item.children.map((child) => (
-                  <button className="nav-submenu-link" data-nav-subitem data-page-nav={child.page} data-target-id={child.targetId} key={child.targetId} type="button">{child.label}</button>
-                ))}
-              </div>
-            </details>
-          ) : (
-            <button aria-current={item.page === "start" ? "page" : undefined} className="nav-link inline-flex items-center rounded-md px-2 py-2 text-[13px] font-semibold text-area-deep transition hover:bg-area-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-nav-top data-page-nav={item.page} data-target-id={item.targetId} key={item.page} type="button">
-              {item.label}
-            </button>
-          ))}
-        </nav>
-        <button className="header-contact-cta inline-flex min-h-10 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-area-primary px-3 text-xs font-semibold text-white transition hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2 sm:px-4 sm:text-sm" data-page-nav="kontakt" data-target-id="kontakt" type="button">
-          Kontakt<ArrowRight aria-hidden="true" size={15} />
-        </button>
-      </div>
-    </header>
-  )
-}
+import { ContactInquiryForm } from "@/components/contact-inquiry-form"
 
 function Hero() {
   return (
@@ -140,13 +34,13 @@ function Hero() {
       <div className="hero-inner page-wrap">
         <div className="hero-copy">
           <span className="eyebrow eyebrow-light"><span className="status-dot" /> EDV-Service &amp; Waldbaden · Schorndorf</span>
-          <h1>Technik, die hilft.<br /><em>Ruhe, die bleibt.</em></h1>
+          <h1>SWEA –<br />Technik, die hilft.<br /><em>Ruhe, die bleibt.</em></h1>
           <p className="hero-description">
             Persönliche Technikhilfe für Zuhause – von PC- und WLAN-Problemen bis zu Datenrettung, Smartphones und Smart Home. Vor Ort in Schorndorf und Umgebung oder per Fernzugriff; dazu Waldbaden zum Auftanken.
           </p>
           <div className="hero-actions">
-            <button className="button button-light" data-page-nav="kontakt" data-target-id="kontakt" type="button">IT-Problem schildern <ArrowRight aria-hidden="true" size={17} /></button>
-            <button className="button button-outline-light" data-page-nav="waldbaden" data-target-id="kursdetails" type="button">Waldbaden entdecken</button>
+            <Link className="button button-light" href="/kontakt">IT-Problem schildern <ArrowRight aria-hidden="true" size={17} /></Link>
+            <Link className="button button-outline-light" href="/waldbaden">Waldbaden entdecken</Link>
           </div>
           <div className="hero-proof"><MapPin aria-hidden="true" size={16} /> Persönlich für Sie da in Schorndorf und Umgebung</div>
         </div>
@@ -207,21 +101,26 @@ Ein Mann von Tat und Begeisterung!`
 function QuickLinks() {
   return (
     <section aria-label="Unsere Bereiche" className="quick-links page-wrap" id="bereiche">
-      <button className="quick-link brand-area brand-area-technik" data-page-nav="edv" type="button">
+      <Link className="quick-link brand-area brand-area-technik" data-nav-link href="/it-service">
         <span className="quick-link-icon"><MonitorCog aria-hidden="true" size={21} /></span>
-        <span><strong>EDV-Dienstleistungen:</strong><small>Technik, die den Alltag leichter macht</small></span>
+        <span><strong>IT-Service:</strong><small>Technik, die den Alltag leichter macht</small></span>
         <ArrowUpRight aria-hidden="true" className="quick-arrow" size={18} />
-      </button>
-      <button className="quick-link brand-area brand-area-natur" data-page-nav="waldbaden" type="button">
+      </Link>
+      <Link className="quick-link brand-area brand-area-natur" data-nav-link href="/waldbaden">
         <span className="quick-link-icon quick-link-nature"><Leaf aria-hidden="true" size={21} /></span>
-        <span><strong>EDV-Erholung:</strong><small>Achtsamkeit und Waldbaden</small></span>
+        <span><strong>Waldbaden:</strong><small>Achtsamkeit in der Natur</small></span>
         <ArrowUpRight aria-hidden="true" className="quick-arrow" size={18} />
-      </button>
+      </Link>
+      <Link className="quick-link brand-area brand-area-ki" data-nav-link href="/ki-studio">
+        <span className="quick-link-icon quick-link-creative"><ImageIcon aria-hidden="true" size={21} /></span>
+        <span><strong>KI-Studio:</strong><small>Bilder, Videos und persönliche Songs</small></span>
+        <ArrowUpRight aria-hidden="true" className="quick-arrow" size={18} />
+      </Link>
     </section>
   )
 }
 
-function HomeView() {
+export function HomePageContent() {
   return (
     <>
       <Hero />
@@ -251,12 +150,12 @@ function HomeView() {
               </li>
             </ul>
             <div className="seasonal-action-actions">
-              <button className="button button-action" data-page-nav="studio" type="button">
+              <Link className="button button-action" data-nav-link href="/ki-studio">
                 Beispiele &amp; Weihnachtsaktion entdecken <ArrowRight aria-hidden="true" size={17} />
-              </button>
-              <button className="seasonal-action-secondary" data-page-nav="studio" type="button">
+              </Link>
+              <Link className="seasonal-action-secondary" data-nav-link href="/ki-studio">
                 Lieblingsmotive &amp; persönliche Anlässe <ArrowUpRight aria-hidden="true" size={15} />
-              </button>
+              </Link>
             </div>
           </div>
           <div className="seasonal-action-collage" aria-label="Vorschau zu KI-Bild, Video und Song">
@@ -284,6 +183,7 @@ function HomeView() {
           </div>
         </div>
       </section>
+      <AboutSection />
     </>
   )
 }
@@ -297,9 +197,9 @@ function KIStudioShowcase() {
       <div className="page-wrap">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
           <span className="eyebrow">KI-Studio · Schorndorf</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-studio-title">
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-studio-title">
             KI-Studio – Kreative Ideen, individuell umgesetzt.
-          </h2>
+          </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-area-muted">
             Personalisierte Medienproduktion von Uwe Christian in Schorndorf.
           </p>
@@ -317,16 +217,16 @@ function KIStudioShowcase() {
                 src="/swea/ai-examples/elf-portrait.jpeg"
               />
               <span className="absolute right-3 top-3 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">
-                Ab 15€
+                Ab 15 €
               </span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><ImageIcon aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bild &amp; Design</span></div>
               <h3 className="text-xl font-semibold text-area-deep">KI-Bilder &amp; Porträts</h3>
               <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Personalisierte Porträts, Motive mit Familie oder Haustieren und individuelle Lieblingsbilder – abgestimmt auf Ihre Idee.</p>
-              <a className={inquiryClass} href="mailto:edv@swea.de?subject=Kreativprojekt%3A%20KI-Bilder%20%26%20Portr%C3%A4ts" aria-label="Kreativprojekt anfragen: KI-Bilder und Porträts">
+              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: KI-Bilder und Porträts">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
-              </a>
+              </Link>
             </div>
           </article>
 
@@ -347,10 +247,11 @@ function KIStudioShowcase() {
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><Video aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bewegtbild</span></div>
               <h3 className="text-xl font-semibold text-area-deep">KI-Videos</h3>
-              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
-              <a className={inquiryClass} href="mailto:edv@swea.de?subject=Kreativprojekt%3A%20KI-Videos" aria-label="Kreativprojekt anfragen: KI-Videos">
+              <p className="mt-2 text-sm font-semibold text-area-primary">Individuelles Angebot nach Aufwand</p>
+              <p className="mb-6 mt-1 text-sm leading-6 text-area-muted">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
+              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: KI-Videos">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
-              </a>
+              </Link>
             </div>
           </article>
 
@@ -373,10 +274,11 @@ function KIStudioShowcase() {
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><Music2 aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Audio &amp; Musik</span></div>
               <h3 className="text-xl font-semibold text-area-deep">Individuelle Songs &amp; Jingles</h3>
-              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Persönliche Songs, kleine Jingles und Musikgeschenke – hören Sie in eine echte Hörprobe rein.</p>
-              <a className={inquiryClass} href="mailto:edv@swea.de?subject=Kreativprojekt%3A%20Songs%20%26%20Jingles" aria-label="Kreativprojekt anfragen: Songs und Jingles">
+              <p className="mt-2 text-sm font-semibold text-area-primary">Individuelles Angebot nach Umfang</p>
+              <p className="mb-6 mt-1 text-sm leading-6 text-area-muted">Persönliche Songs, kleine Jingles und Musikgeschenke – hören Sie in eine echte Hörprobe rein.</p>
+              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: Songs und Jingles">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
-              </a>
+              </Link>
             </div>
           </article>
         </div>
@@ -393,9 +295,9 @@ function KIStudioClosingCTA() {
         <h2 id="ki-closing-title">Sie haben eine Idee für ein persönliches Kreativprojekt?</h2>
         <p>Schildern Sie kurz Ihren Anlass – Uwe Christian bespricht mit Ihnen, was sich daraus gestalten lässt.</p>
       </div>
-      <a className="button button-dark min-h-12" href="mailto:edv@swea.de?subject=Kreativprojekt%20anfragen">
+      <Link className="button button-dark min-h-12" href="/kontakt">
         Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={17} />
-      </a>
+      </Link>
     </section>
   )
 }
@@ -521,7 +423,7 @@ function ServicesSection() {
       <div className="page-wrap">
         <div className="mb-9 max-w-3xl">
           <span className="eyebrow">EDV-Hilfe für Zuhause · Schorndorf &amp; Umgebung</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="edv-services-title">Technikhilfe für Zuhause – persönlich und verständlich</h2>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="edv-services-title">Technikhilfe für Zuhause – persönlich und verständlich</h1>
           <p className="mt-4 text-base leading-7 text-area-muted">Für Privatpersonen, Hausbesitzer und Haushalte in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
         </div>
 
@@ -535,7 +437,7 @@ function ServicesSection() {
               </div>
             </div>
             <p className="text-sm leading-6 text-area-muted">Schnelle, geduldige Hilfe bei PC-Störungen, Windows-Fehlern und Installationen. Direkt bei Ihnen vor Ort oder, wenn es passt, per Fernzugriff.</p>
-            <button aria-label="Computerproblem schildern" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">IT-Problem schildern <ArrowRight aria-hidden="true" size={16} /></button>
+            <Link aria-label="Computerproblem schildern" className={actionClass} data-nav-link href="/kontakt">IT-Problem schildern <ArrowRight aria-hidden="true" size={16} /></Link>
           </article>
 
           <article className={cardClass} id="netzwerke">
@@ -546,8 +448,8 @@ function ServicesSection() {
                 <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">WLAN &amp; Heimnetzwerke</h3>
               </div>
             </div>
-            <p className="text-sm leading-6 text-area-muted">Router einrichten, Funklöcher schließen und Geräte zuverlässig verbinden. Vorhandene Leitungen und Kabel lassen sich oft clever weiternutzen – für eine starke Verbindung im ganzen Zuhause.</p>
-            <button aria-label="WLAN- oder Netzwerkproblem schildern" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">WLAN-Problem schildern <ArrowRight aria-hidden="true" size={16} /></button>
+            <p className="text-sm leading-6 text-area-muted">Router einrichten, Funklöcher schließen und Geräte zuverlässig verbinden. Je nach Verkabelung lassen sich vorhandene Telefon- oder Koaxialleitungen – etwa Sat-Leitungen – mit geeigneten Adaptern fürs Heimnetz nutzen.</p>
+            <Link aria-label="WLAN- oder Netzwerkproblem schildern" className={actionClass} data-nav-link href="/kontakt">WLAN-Problem schildern <ArrowRight aria-hidden="true" size={16} /></Link>
           </article>
 
           <article className={cardClass} id="datenrettung-karte">
@@ -559,7 +461,7 @@ function ServicesSection() {
               </div>
             </div>
             <p className="text-sm leading-6 text-area-muted">Verlorene Daten von Festplatten, USB-Sticks und Handys einschätzen lassen. Sie erfahren unverbindlich, welche nächsten Schritte für Ihr Gerät sinnvoll sind.</p>
-            <button aria-label="Datenrettung anfragen" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Ersteinschätzung anfragen <ArrowRight aria-hidden="true" size={16} /></button>
+            <Link aria-label="Datenrettung anfragen" className={actionClass} data-nav-link href="/kontakt">Ersteinschätzung anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
           </article>
 
           <article className={cardClass} id="smartphones-smart-home">
@@ -571,7 +473,19 @@ function ServicesSection() {
               </div>
             </div>
             <p className="text-sm leading-6 text-area-muted">Geduldige Unterstützung beim Einrichten, Verbinden und Bedienen Ihrer Geräte des täglichen Lebens – von Smartphone und Tablet bis zu Smart-Home-Geräten.</p>
-            <button aria-label="Hilfe zu Smartphone, Tablet oder Smart Home anfragen" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Hilfe anfragen <ArrowRight aria-hidden="true" size={16} /></button>
+            <Link aria-label="Hilfe zu Smartphone, Tablet oder Smart Home anfragen" className={actionClass} data-nav-link href="/kontakt">Hilfe anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
+          </article>
+
+          <article className={cardClass} id="hardwarehilfe">
+            <div className="mb-5 flex items-start gap-4">
+              <span className={iconClass}><HardDrive aria-hidden="true" size={22} /></span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Geräte &amp; Komponenten</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Hardware-Hilfe</h3>
+              </div>
+            </div>
+            <p className="text-sm leading-6 text-area-muted">Unterstützung bei passenden Ersatzteilen, Anschluss und Einrichtung von Geräten sowie der Einschätzung, ob sich eine Reparatur lohnt.</p>
+            <Link aria-label="Hilfe bei Hardware anfragen" className={actionClass} data-nav-link href="/kontakt">Hardware-Hilfe anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
           </article>
         </div>
 
@@ -580,7 +494,7 @@ function ServicesSection() {
             <h3 className="text-lg font-semibold">Sie brauchen Unterstützung bei Ihrer Technik?</h3>
             <p className="mt-1 text-sm leading-6 text-white/80">Schildern Sie kurz Ihr Problem – wir besprechen gemeinsam den passenden nächsten Schritt.</p>
           </div>
-          <button className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-area-accent px-5 py-2.5 text-sm font-semibold text-area-accent-foreground transition-colors hover:bg-area-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent" data-page-nav="kontakt" data-target-id="kontakt" type="button">Jetzt Hilfe anfordern <ArrowRight aria-hidden="true" size={17} /></button>
+          <Link className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-area-accent px-5 py-2.5 text-sm font-semibold text-area-accent-foreground transition-colors hover:bg-area-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent" data-nav-link href="/kontakt">Jetzt Hilfe anfordern <ArrowRight aria-hidden="true" size={17} /></Link>
         </div>
       </div>
     </section>
@@ -590,16 +504,16 @@ function ServicesSection() {
 function DataRecoverySection() {
   const steps = [
     {
-      title: "Kostenlose Ersteinschätzung",
-      description: "Sie schildern kurz, was passiert ist und welcher Datenträger betroffen ist.",
+      title: "Datenträger ausschalten und nicht weiter nutzen",
+      description: "Bei einem defekten Gerät möglichst sofort die Stromzufuhr trennen, sofern das sicher möglich ist.",
     },
     {
-      title: "Unverbindliche Diagnose",
-      description: "Spezialisierte Partner prüfen den Schaden und die Möglichkeiten – ohne Verpflichtung.",
+      title: "Keine Reparaturversuche starten",
+      description: "Vermeiden Sie weitere Startversuche, Rettungssoftware und das Öffnen des Geräts.",
     },
     {
-      title: "Beratung zum weiteren Vorgehen",
-      description: "Sie erhalten eine klare Empfehlung und können anschließend in Ruhe entscheiden.",
+      title: "Unverändert lassen und Kontakt aufnehmen",
+      description: "Beschreiben Sie kurz, was passiert ist. Gemeinsam klären wir den nächsten sinnvollen Schritt.",
     },
   ]
 
@@ -634,7 +548,8 @@ function DataRecoverySection() {
             </div>
           </div>
 
-          <ol aria-label="Ablauf der Datenrettung" className="mt-6 grid gap-3">
+          <h4 className="mt-6 text-sm font-semibold text-area-deep">Erste Hilfe bei Datenverlust</h4>
+          <ol aria-label="Erste Hilfe bei Datenverlust in drei Schritten" className="mt-3 grid gap-3">
             {steps.map((step, index) => (
               <li className="flex gap-3 rounded-xl border border-warning-border bg-area-surface p-4" key={step.title}>
                 <span aria-hidden="true" className="grid size-8 shrink-0 place-items-center rounded-full bg-warning-subtle text-sm font-bold text-warning-deep">
@@ -648,9 +563,11 @@ function DataRecoverySection() {
             ))}
           </ol>
 
-          <button className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+          <p className="mt-5 text-sm leading-6 text-area-muted">Wenn eine Laborprüfung nötig ist, erhalten Sie vor einer kostenpflichtigen Rettung ein individuelles Kostenangebot des spezialisierten Partners. Erst nach Ihrer Zustimmung wird weitergearbeitet.</p>
+
+          <Link className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" data-nav-link href="/kontakt">
             Datenträger prüfen lassen <ArrowRight aria-hidden="true" size={17} />
-          </button>
+          </Link>
         </aside>
       </div>
     </section>
@@ -695,9 +612,9 @@ function WebsiteDesignSection() {
           <p className="mt-4 max-w-xl text-sm leading-6 text-area-muted">
             Alles aus einer Hand: Uwe Christian begleitet Sie persönlich durch jeden Schritt. Sie behalten einen festen Ansprechpartner und müssen sich nicht mit technischen Details beschäftigen.
           </p>
-          <button className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 text-sm font-semibold text-white transition hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+          <Link className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 text-sm font-semibold text-white transition hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" data-nav-link href="/kontakt">
             Website-Projekt besprechen <ArrowRight aria-hidden="true" size={17} />
-          </button>
+          </Link>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2">
@@ -731,7 +648,7 @@ function EdvView() {
           <h2 id="ki-crosslink-title">Kreative Ideen für Menschen und Familien.</h2>
           <p>Persönliche KI-Bilder, Videos und Geschenke – individuell gestaltet und passend zu Ihrer Idee oder zum Anlass.</p>
         </div>
-        <button className="button button-dark" data-page-nav="studio" type="button">Zum KI-Studio <ArrowRight aria-hidden="true" size={17} /></button>
+        <Link className="button button-dark" data-nav-link href="/ki-studio">Zum KI-Studio <ArrowRight aria-hidden="true" size={17} /></Link>
       </section>
     </>
   )
@@ -779,7 +696,7 @@ function WellbeingSection() {
 
         <div className="rounded-[1.75rem] border border-area-deep/10 bg-earth-soft p-6 shadow-sm sm:p-8">
           <span className="inline-flex items-center gap-2 rounded-full bg-area-subtle px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-area-deep"><Leaf aria-hidden="true" size={14} /> Waldbaden &amp; Achtsamkeit</span>
-          <h2 className="mt-5 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl">Mit Shinrin-Yoku im Wald ankommen.</h2>
+          <h1 className="mt-5 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl">Waldbaden in Schorndorf: Mit Shinrin-Yoku im Wald ankommen.</h1>
           <p className="mt-4 text-base leading-7 text-earth-deep">Shinrin-Yoku – das bewusste Eintauchen in die Atmosphäre des Waldes – lädt dazu ein, mit allen Sinnen langsamer zu werden. In achtsamen Übungen nehmen wir die Natur wahr und schaffen Raum für Ruhe, neue Klarheit und Abstand vom Alltag.</p>
           <p className="mt-3 text-sm leading-6 text-earth-muted">Uwe Christian ist zertifizierter Kursleiter bei der Akademie für Waldbaden. Mit seiner Qualifikation in Outdoor-Erste-Hilfe ist er auf die besonderen Anforderungen geführter Angebote in der Natur vorbereitet.</p>
 
@@ -789,9 +706,9 @@ function WellbeingSection() {
             <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-area-deep">Leitung</dt><dd className="text-sm leading-6 text-earth-deep">Zertifizierter Kursleiter mit Outdoor-Erste-Hilfe</dd></div>
           </dl>
 
-          <button className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-area-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2 sm:w-auto" data-page-nav="kontakt" data-target-id="kontakt" id="termine" type="button">
+          <Link className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-area-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2 sm:w-auto" id="termine" data-nav-link href="/kontakt">
             Unverbindlichen Termin anfragen <ArrowRight aria-hidden="true" size={17} />
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -835,7 +752,7 @@ function WellbeingSection() {
       <div className="page-wrap offer-card">
         <div className="offer-mark"><Leaf aria-hidden="true" size={22} /></div>
         <div><span className="eyebrow">Angebote</span><h3>Ein wohltuender Impuls für Ihre Gruppe.</h3><p>Für private Freundes-, Familien- und kleine Gruppen – auf Wunsch auch online. Das Waldbaden passt als kurze aktive Pause, zum Tagesstart oder -abschluss oder als Halbtagesprogramm. Gemeinsam finden wir einen passenden Termin und einen ruhigen Ort in der Umgebung.</p></div>
-        <button className="button button-dark min-h-12" data-page-nav="kontakt" data-target-id="kontakt" type="button">Termin anfragen <ArrowRight aria-hidden="true" size={16} /></button>
+        <Link className="button button-dark min-h-12" data-nav-link href="/kontakt">Termin anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
       </div>
     </section>
   )
@@ -909,9 +826,9 @@ function RemoteSection() {
             <h3 className="text-lg font-semibold">Sie brauchen Hilfe mit Ihrem Computer oder Netzwerk?</h3>
             <p className="mt-1 text-sm leading-6 text-white/80">Schildern Sie Ihr IT-Problem direkt – gemeinsam finden wir den passenden nächsten Schritt.</p>
           </div>
-          <button className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-area-accent px-5 py-3 text-sm font-semibold text-area-accent-foreground transition-colors hover:bg-area-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent sm:w-auto" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+          <Link className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-area-accent px-5 py-3 text-sm font-semibold text-area-accent-foreground transition-colors hover:bg-area-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent sm:w-auto" data-nav-link href="/kontakt">
             IT-Problem schildern <ArrowRight aria-hidden="true" size={17} />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
@@ -925,7 +842,7 @@ function ContactSection() {
         <div className="flex flex-col gap-7">
           <div>
             <span className="inline-flex rounded-full border border-area-border/25 bg-area-subtle/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/80">Kontakt in Schorndorf</span>
-            <h2 id="contact-title" className="mt-4 max-w-lg text-3xl font-semibold tracking-tight text-white sm:text-4xl">Lassen Sie uns ins Gespräch kommen.</h2>
+            <h1 id="contact-title" className="mt-4 max-w-lg text-3xl font-semibold tracking-tight text-white sm:text-4xl">Lassen Sie uns ins Gespräch kommen.</h1>
             <p className="mt-3 max-w-lg text-sm leading-7 text-white/75">Ob IT-Frage, Webprojekt oder Waldbaden – Sie erreichen Uwe Christian direkt.</p>
           </div>
 
@@ -951,60 +868,7 @@ function ContactSection() {
           </div>
         </div>
 
-        <form
-          className="grid gap-5 rounded-2xl border border-area-border bg-area-surface p-5 text-area-deep shadow-2xl shadow-black/10 sm:p-8"
-          onSubmit={(event) => {
-            event.preventDefault()
-            const formData = new FormData(event.currentTarget)
-            const name = String(formData.get("name"))
-            const email = String(formData.get("email"))
-            const interest = String(formData.get("interest"))
-            const message = String(formData.get("message"))
-            const recipient = interest === "Waldbaden" ? "wb@swea.de" : "edv@swea.de"
-            const subject = encodeURIComponent(`SWEA-Anfrage: ${interest}`)
-            const body = encodeURIComponent(`Name: ${name}\nE-Mail: ${email}\nBereich: ${interest}\n\n${message}`)
-            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`
-          }}
-        >
-          <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-area-primary">Schreiben Sie uns</span>
-            <h3 className="mt-2 text-2xl font-semibold tracking-tight text-area-deep">Was können wir für Sie tun?</h3>
-            <p className="mt-2 text-sm leading-6 text-area-muted">Wählen Sie ein Thema und schildern Sie kurz Ihr Anliegen.</p>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm font-medium text-area-deep">
-              <span>Name</span>
-              <input className="min-h-11 w-full rounded-lg border border-area-border bg-area-surface px-3 text-sm outline-none transition placeholder:text-area-muted focus:border-area-primary focus:ring-2 focus:ring-area-primary/20" name="name" type="text" autoComplete="name" placeholder="Ihr Name" required />
-            </label>
-            <label className="grid gap-2 text-sm font-medium text-area-deep">
-              <span>E-Mail</span>
-              <input className="min-h-11 w-full rounded-lg border border-area-border bg-area-surface px-3 text-sm outline-none transition placeholder:text-area-muted focus:border-area-primary focus:ring-2 focus:ring-area-primary/20" name="email" type="email" autoComplete="email" placeholder="name@beispiel.de" required />
-            </label>
-          </div>
-
-          <label className="grid gap-2 text-sm font-medium text-area-deep">
-            <span>Bereich</span>
-            <select className="min-h-11 w-full rounded-lg border border-area-border bg-area-surface px-3 text-sm outline-none transition focus:border-area-primary focus:ring-2 focus:ring-area-primary/20" name="interest" defaultValue="" required>
-              <option value="" disabled>Bitte wählen</option>
-              <option value="IT-Service">IT-Service</option>
-              <option value="Datenrettung">Datenrettung</option>
-              <option value="Webseiten &amp; Webdesign">Webseiten &amp; Webdesign</option>
-              <option value="KI-Studio">KI-Studio</option>
-              <option value="Waldbaden">Waldbaden</option>
-            </select>
-          </label>
-
-          <label className="grid gap-2 text-sm font-medium text-area-deep">
-            <span>Nachricht</span>
-            <textarea className="min-h-32 w-full resize-y rounded-lg border border-area-border bg-area-surface px-3 py-3 text-sm leading-6 outline-none transition placeholder:text-area-muted focus:border-area-primary focus:ring-2 focus:ring-area-primary/20" name="message" placeholder="Worum geht es?" maxLength={5000} required />
-          </label>
-
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs leading-5 text-area-muted">Beim Absenden öffnet sich Ihr E-Mail-Programm mit den Angaben.</p>
-            <button className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 text-sm font-semibold text-white transition hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" type="submit">Nachricht senden <ArrowRight aria-hidden="true" size={16} /></button>
-          </div>
-        </form>
+        <ContactInquiryForm />
       </div>
     </section>
   )
@@ -1063,68 +927,48 @@ function AboutSection() {
             <h3 className="mt-1 text-lg font-semibold">Was können wir für Sie tun?</h3>
             <p className="mt-1 text-sm leading-6 text-white/80">Beschreiben Sie Ihr Anliegen – wir finden gemeinsam den passenden nächsten Schritt.</p>
           </div>
-          <button className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-area-accent px-5 py-3 text-sm font-semibold text-area-accent-foreground transition-colors hover:bg-area-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent sm:w-auto" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+          <Link className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-area-accent px-5 py-3 text-sm font-semibold text-area-accent-foreground transition-colors hover:bg-area-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent sm:w-auto" data-nav-link href="/kontakt">
             Kontakt aufnehmen <ArrowRight aria-hidden="true" size={17} />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
   )
 }
 
-function Footer() {
+
+export function ITServicePageContent() {
   return (
-    <footer className="site-footer">
-      <div className="page-wrap grid gap-8 border-b border-brand-border py-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] sm:items-center lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,.8fr)] lg:gap-12">
-        <div>
-          <button aria-label="SWEA – zur Startseite" className="brand brand-button footer-brand" data-page-nav="start" data-target-id="start" type="button">
-            <span className="brand-mark"><Image alt="" fill sizes="34px" src={antonIconSrc} /></span>
-            <span className="brand-copy"><strong>SWEA</strong><span aria-hidden="true" className="brand-divider">|</span><small>Uwe Christian · Schorndorf</small></span>
-          </button>
-          <p className="mt-3 max-w-xs text-sm leading-6 text-area-muted">Persönlicher IT-Service und Achtsamkeit in der Natur.</p>
-          <span className="mt-4 inline-flex max-w-sm items-center gap-2 rounded-full border border-brand-border bg-brand-surface px-3 py-2 text-xs font-semibold leading-5 text-brand-deep">
-            <ShieldCheck aria-hidden="true" className="shrink-0" size={16} />
-            Fernwartung verschlüsselt und nur mit Ihrer aktiven Freigabe
-          </span>
-        </div>
-        <address className="flex flex-col items-start gap-1.5 not-italic text-sm text-area-muted sm:justify-self-end sm:w-full sm:max-w-sm">
-          <h2 className="mb-1 text-sm font-semibold text-area-deep">Kontakt</h2>
-          <p className="font-medium text-area-deep">Uwe Christian</p>
-          <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="tel:+497181253147">07181 / 253147</a>
-          <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:edv@swea.de">edv@swea.de</a>
-          <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:wb@swea.de">wb@swea.de</a>
-          <p className="mt-1 leading-6">Freiburgstr. 12 · 73614 Schorndorf</p>
-        </address>
-      </div>
-      <div className="page-wrap footer-bottom flex-col items-start sm:flex-row sm:items-center">
-        <div className="flex flex-col gap-1 text-sm text-brand-deep sm:gap-1.5">
-          <span>© {new Date().getFullYear()} Uwe Christian. Alle Rechte vorbehalten.</span>
-          <span className="text-xs font-medium text-brand-muted sm:text-sm">Kleinunternehmerregelung nach § 19 UStG: Es wird keine Umsatzsteuer ausgewiesen.</span>
-        </div>
-        <nav aria-label="Rechtliche Informationen" className="flex flex-wrap gap-x-3 gap-y-2">
-          <button className="inline-flex min-h-11 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-legal-modal-trigger="imprint-modal" type="button">Impressum</button>
-          <button className="inline-flex min-h-11 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-legal-modal-trigger="privacy-modal" type="button">Datenschutz</button>
-          <button className="inline-flex min-h-11 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-legal-modal-trigger="withdrawal-modal" type="button">Widerrufsbelehrung</button>
-        </nav>
-      </div>
-    </footer>
+    <div className="brand-area brand-area-technik">
+      <EdvView />
+    </div>
   )
 }
 
-export function SweaSite() {
+export function WaldbadenPageContent() {
   return (
-    <SiteInteractions>
-      <Header />
-      <main id="main-content">
-        <div className="site-page-view brand-area brand-area-base" data-page-view="start"><HomeView /></div>
-        <div className="site-page-view brand-area brand-area-technik" data-page-view="edv" hidden><EdvView /></div>
-        <div className="site-page-view brand-area brand-area-ki" data-page-view="studio" hidden><KIStudioShowcase /><HolidayGiftSection /><AlternativeMotifsSection /><AIExamplesCarousel /><KIStudioClosingCTA /></div>
-        <div className="site-page-view brand-area brand-area-natur" data-page-view="waldbaden" hidden><WellbeingSection /></div>
-        <div className="site-page-view brand-area brand-area-base" data-page-view="about" hidden><AboutSection /></div>
-        <div className="site-page-view brand-area brand-area-base" data-page-view="kontakt" hidden><ContactSection /></div>
-      </main>
-      <LegalModals />
-      <Footer />
-    </SiteInteractions>
+    <div className="brand-area brand-area-natur">
+      <WellbeingSection />
+    </div>
+  )
+}
+
+export function KIStudioPageContent() {
+  return (
+    <div className="brand-area brand-area-ki">
+      <KIStudioShowcase />
+      <HolidayGiftSection />
+      <AlternativeMotifsSection />
+      <AIExamplesCarousel />
+      <KIStudioClosingCTA />
+    </div>
+  )
+}
+
+export function ContactPageContent() {
+  return (
+    <div className="brand-area brand-area-base">
+      <ContactSection />
+    </div>
   )
 }
