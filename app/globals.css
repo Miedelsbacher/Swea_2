@@ -844,6 +844,7 @@ body {
 .ki-crosslink.brand-area-ki p { color: var(--area-muted); }
 
 .brand-area-natur .section-wellbeing::before { border-color: var(--natur-border); }
+.brand-area-natur .section { padding-block: clamp(3.5rem, 5vw, 4.5rem); }
 .brand-area-natur .appointment-note .appointment-dot { background: var(--natur-accent); }
 .brand-area-natur .qualification-wrap { background: var(--natur-subtle); }
 .brand-area-natur .offer-card { background: var(--natur-soft); }
@@ -854,6 +855,7 @@ body {
 
 @media (max-width: 700px) {
   .section { padding-block: clamp(3.5rem, 10vw, 4rem); }
+  .brand-area-natur .section { padding-block: 3rem; }
   .hero-inner { padding-block: 2.75rem 3rem; }
   .hero h1 { font-size: clamp(2.4rem, 10.5vw, 3.25rem); line-height: 1.08; }
   .hero-description { font-size: 0.9375rem; line-height: 1.65; }
