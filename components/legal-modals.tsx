@@ -62,14 +62,13 @@ export function AGBModal() {
       <section className={sectionClass}>
         <h3 className={headingClass}>1. Geltungsbereich und Geschäftsbereiche</h3>
         <ol className={orderedListClass}>
-          <li>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge, Dienstleistungen und Angebote zwischen Uwe Christian (swea.de), Freiburgstr. 12, 73614 Schorndorf (nachfolgend „Anbieter“) und seinen Kunden, Verbraucherinnen und Verbrauchern sowie Unternehmerinnen und Unternehmern.</li>
+          <li>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge, Dienstleistungen und Angebote zwischen Uwe Christian (swea.de), Freiburgstr. 12, 73614 Schorndorf (nachfolgend „Anbieter“) und seinen Kunden (nachfolgend „Kunde“), also Verbraucherinnen und Verbrauchern sowie Unternehmerinnen und Unternehmern.</li>
           <li>
-            Der Anbieter erbringt ausschließlich Dienstleistungen, keine Warenverkäufe. Diese gliedern sich in vier Leistungsbereiche, die in den Besonderen Bestimmungen (Teile A bis C) geregelt sind:
+            Der Anbieter erbringt ausschließlich Dienstleistungen, keine Warenverkäufe. Diese gliedern sich in drei Geschäftsbereiche, die in den Besonderen Bestimmungen (Teile A bis C) geregelt sind:
             <ul className={`${listClass} mt-2`}>
-              <li><strong className="text-area-deep">IT und Webdesign (Teil A):</strong> IT-Dienstleistungen und technische Unterstützung sowie Webdesign und digitale Betreuung.</li>
-              <li><strong className="text-area-deep">Datenrettung (Teil A):</strong> Beratung und Abwicklung von Datenrettungsanfragen, Einbindung des externen, spezialisierten Partners DataPhoenix sowie Diagnose und gegebenenfalls Beauftragung einer Datenrettung nach ausdrücklicher Freigabe durch den Kunden.</li>
-              <li><strong className="text-area-deep">KI-Studio (Teil C):</strong> individuelle Erstellung digitaler Bilder und Grafiken, digitaler Videos sowie von Songs und Jingles und die digitale Bereitstellung der vereinbarten Ergebnisse.</li>
-              <li><strong className="text-area-deep">Waldbaden (Teil B):</strong> Veranstaltungen, Kurse und Angebote im Bereich Waldbaden, soweit sie zum tatsächlichen Angebot des Anbieters gehören.</li>
+              <li><strong className="text-area-deep">Teil A, IT, Webdesign und Datenrettung:</strong> IT-Dienstleistungen und technische Unterstützung, Webdesign und digitale Betreuung sowie die Abwicklung von Datenrettungsanfragen unter Einbindung des externen Partners DataPhoenix, jeweils nach ausdrücklicher Freigabe durch den Kunden.</li>
+              <li><strong className="text-area-deep">Teil B, Waldbaden:</strong> Veranstaltungen, Kurse und Angebote im Bereich Waldbaden, einschließlich Buchung, Teilnahme, Absage und Stornierung.</li>
+              <li><strong className="text-area-deep">Teil C, KI-Studio und digitale Medien:</strong> individuelle Erstellung digitaler Bilder und Grafiken, Videos sowie Songs und Jingles und die digitale Bereitstellung der vereinbarten Ergebnisse.</li>
             </ul>
           </li>
           <li>Die Allgemeinen Bestimmungen (Abschnitte 1 bis 7) gelten für alle Geschäftsbereiche. Die Teile A, B und C gelten ergänzend nur für den jeweiligen Geschäftsbereich. Bei Abweichungen gehen die Besonderen Bestimmungen vor, danach das jeweilige Angebot.</li>
@@ -103,6 +102,7 @@ export function AGBModal() {
         <ol className={orderedListClass}>
           <li>Verbraucher ist, wer den Vertrag zu Zwecken abschließt, die überwiegend weder seiner gewerblichen noch seiner selbständigen beruflichen Tätigkeit zugerechnet werden können (§ 13 BGB). Unternehmer ist, wer bei Vertragsschluss in Ausübung seiner gewerblichen oder selbständigen beruflichen Tätigkeit handelt (§ 14 BGB).</li>
           <li>Gesetzliche Rechte von Verbrauchern bleiben durch diese AGB unberührt. Das gilt auch dann, wenn einzelne Regelungen nur für Unternehmer bestimmt sind.</li>
+          <li>Unternehmern steht kein gesetzliches Widerrufsrecht zu. Für sie gelten die Regelungen dieser AGB und des Angebots.</li>
           <li>Verbrauchern kann bei Fernabsatzverträgen ein gesetzliches Widerrufsrecht zustehen. Einzelheiten, Folgen und das Muster-Widerrufsformular finden Sie in der <button className={linkClass} data-legal-modal-trigger="withdrawal-modal" type="button">Widerrufsbelehrung</button>. Ob das Widerrufsrecht im Einzelfall besteht oder vorzeitig erlischt, richtet sich nach den gesetzlichen Vorschriften.</li>
         </ol>
       </section>
@@ -112,8 +112,22 @@ export function AGBModal() {
         <ol className={orderedListClass}>
           <li>Der Anbieter haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit, die auf einer vorsätzlichen oder fahrlässigen Pflichtverletzung beruhen, sowie für sonstige Schäden, die auf einer vorsätzlichen oder grob fahrlässigen Pflichtverletzung beruhen.</li>
           <li>Für leichte Fahrlässigkeit haftet der Anbieter nur bei Verletzung einer wesentlichen Vertragspflicht (Kardinalpflicht), also einer Pflicht, deren Erfüllung die ordnungsgemäße Durchführung des Vertrags erst ermöglicht und auf deren Einhaltung der Kunde regelmäßig vertrauen darf. In diesem Fall ist die Haftung auf den vorhersehbaren, vertragstypischen Schaden begrenzt.</li>
-          <li>Die Haftung nach zwingenden gesetzlichen Vorschriften, insbesondere nach dem Produkthaftungsgesetz, sowie die Haftung aus einer ausdrücklich übernommenen Garantie bleiben unberührt.</li>
+          <li>Die Haftung nach zwingenden gesetzlichen Vorschriften sowie die Haftung aus einer ausdrücklich übernommenen Garantie bleiben unberührt.</li>
           <li>Regelungen zu Datensicherung und Datenverlust (A2), zu Gefahren im Wald (B3) und zu Inhalten von Kunden (C2) konkretisieren die Pflichten der Parteien. Sie schränken die vorstehende Haftung nicht ein.</li>
+        </ol>
+      </section>
+
+      <section className={sectionClass}>
+        <h3 className={headingClass}>6. Datenschutz</h3>
+        <p className={paragraphClass}>Personenbezogene Daten werden nach den gesetzlichen Bestimmungen der DSGVO und des DDG verarbeitet. Einzelheiten finden Sie in unserer <button className={linkClass} data-legal-modal-trigger="privacy-modal" type="button">Datenschutzerklärung</button>.</p>
+      </section>
+
+      <section className={sectionClass}>
+        <h3 className={headingClass}>7. Schlussbestimmungen und Gerichtsstand</h3>
+        <ol className={orderedListClass}>
+          <li>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Bei Verbrauchern gilt diese Rechtswahl nur insoweit, als dadurch nicht der Schutz durch zwingende Bestimmungen des Rechts des Staates entzogen wird, in dem der Verbraucher seinen gewöhnlichen Aufenthalt hat.</li>
+          <li>Sofern der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist, ist Gerichtsstand für alle Streitigkeiten aus Vertragsverhältnissen der Sitz des Anbieters (Schorndorf).</li>
+          <li>Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</li>
         </ol>
       </section>
 
@@ -193,20 +207,6 @@ export function AGBModal() {
         </ol>
         <h4 className={subheadingClass}>C5. Vergütung</h4>
         <p className={paragraphClass}>Die Bezahlung der Leistungen des KI-Studios erfolgt im Voraus. Der Anbieter stellt eine Rechnung ohne ausgewiesene Umsatzsteuer aus (siehe Abschnitt 3).</p>
-      </section>
-
-      <section className={sectionClass}>
-        <h3 className={headingClass}>6. Datenschutz</h3>
-        <p className={paragraphClass}>Personenbezogene Daten werden nach den gesetzlichen Bestimmungen der DSGVO und des DDG verarbeitet. Einzelheiten finden Sie in unserer <button className={linkClass} data-legal-modal-trigger="privacy-modal" type="button">Datenschutzerklärung</button>.</p>
-      </section>
-
-      <section className={sectionClass}>
-        <h3 className={headingClass}>7. Schlussbestimmungen und Gerichtsstand</h3>
-        <ol className={orderedListClass}>
-          <li>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Bei Verbrauchern gilt diese Rechtswahl nur insoweit, als dadurch nicht der Schutz durch zwingende Bestimmungen des Rechts des Staates entzogen wird, in dem der Verbraucher seinen gewöhnlichen Aufenthalt hat.</li>
-          <li>Sofern der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist, ist Gerichtsstand für alle Streitigkeiten aus Vertragsverhältnissen der Sitz des Anbieters (Schorndorf).</li>
-          <li>Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</li>
-        </ol>
       </section>
     </LegalDialog>
   )
