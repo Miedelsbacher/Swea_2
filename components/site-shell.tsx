@@ -52,7 +52,7 @@ export function SiteFooter() {
             <span className="brand-mark"><Image alt="" fill sizes="34px" src={antonIconSrc} /></span>
             <span className="brand-copy"><strong>SWEA</strong><span aria-hidden="true" className="brand-divider">|</span><small>Uwe Christian · Schorndorf</small></span>
           </Link>
-          <p className="mt-3 max-w-xs text-sm leading-6 text-area-muted">Persönlicher IT-Service und Achtsamkeit in der Natur.</p>
+          <p className="mt-3 max-w-xs text-sm leading-6 text-area-muted">IT-Service, KI-Studio und Waldbaden in Schorndorf.</p>
           <span className="mt-4 inline-flex max-w-sm items-center gap-2 rounded-full border border-brand-border bg-brand-surface px-3 py-2 text-xs font-semibold leading-5 text-brand-deep">
             <ShieldCheck aria-hidden="true" className="shrink-0" size={16} />
             Fernwartung verschlüsselt und nur mit Ihrer aktiven Freigabe
@@ -65,6 +65,7 @@ export function SiteFooter() {
           <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:edv@swea.de">edv@swea.de</a>
           <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:wb@swea.de">wb@swea.de</a>
           <p className="mt-1 leading-6">Freiburgstr. 12 · 73614 Schorndorf</p>
+          <a className="inline-flex min-h-11 items-center font-medium text-area-deep underline decoration-area-border underline-offset-4 transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="https://www.swea.de/">www.swea.de</a>
         </address>
       </div>
       <div className="page-wrap footer-bottom flex-col items-start sm:flex-row sm:items-center">

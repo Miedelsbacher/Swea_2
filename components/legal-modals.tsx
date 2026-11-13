@@ -39,14 +39,18 @@ export function LegalModals() {
     <>
       <LegalDialog eyebrow="Datenschutz · Stand: 13. November 2026" id="privacy-modal" title="Datenschutzerklärung">
         <section className={sectionClass}>
+          <h3 className={headingClass}>Geltungsbereich</h3>
+          <p className={paragraphClass}>Diese Datenschutzerklärung gilt für den Internetauftritt unter <a className={linkClass} href="https://www.swea.de/" rel="noreferrer" target="_blank">www.swea.de</a>.</p>
+        </section>
+
+        <section className={sectionClass}>
           <h3 className={headingClass}>Verantwortlicher</h3>
           <p className={paragraphClass}>Verantwortlich für die Verarbeitung personenbezogener Daten ist Uwe Christian, Freiburgstr. 12, 73614 Schorndorf. Sie erreichen ihn unter <a className={linkClass} href="mailto:edv@swea.de">edv@swea.de</a> oder <a className={linkClass} href="mailto:wb@swea.de">wb@swea.de</a>, telefonisch unter <a className={linkClass} href="tel:+497181253147">+49 7181 253147</a>.</p>
         </section>
 
         <section className={sectionClass}>
           <h3 className={headingClass}>Hosting, Cloudflare und technische Protokolle</h3>
-          <p className={paragraphClass}>Die Domain swea.de wird über hosting.de gehostet. Cloudflare wird als Content Delivery Network (CDN) und Sicherheitsdienst eingesetzt, um Inhalte zuverlässig auszuliefern und die Website vor missbräuchlichen Zugriffen zu schützen. Dabei können insbesondere IP-Adresse, Datum und Uhrzeit, angeforderte Seite, Referrer sowie Browser- und Geräteinformationen in Server- und Sicherheitsprotokollen verarbeitet werden. Die Verarbeitung durch Cloudflare erfolgt insbesondere zur Gewährleistung der Sicherheit und Leistungsfähigkeit auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). Informationen zu den Anbietern und ihren Datenschutzbedingungen finden Sie bei <a className={linkClass} href="https://www.hosting.de/datenschutz/" rel="noreferrer" target="_blank">hosting.de</a> und <a className={linkClass} href="https://www.cloudflare.com/privacypolicy/" rel="noreferrer" target="_blank">Cloudflare</a>.</p>
-          <p className={paragraphClass}>Die technische Vorschau unter swea-2-pied.vercel.app wird über Vercel ausgeliefert; dabei verarbeitet Vercel die für die Bereitstellung und Sicherheit erforderlichen Verbindungsdaten. Einzelne Medien dieser Vorschau können über Vercel Blob geladen werden. Kundenprojekte werden hinsichtlich Hosting, Infrastruktur und eingesetzter Dienstleister individuell behandelt und in den jeweiligen Projektinformationen bzw. Vereinbarungen beschrieben.</p>
+          <p className={paragraphClass}>Die Website unter <a className={linkClass} href="https://www.swea.de/" rel="noreferrer" target="_blank">https://www.swea.de</a> wird bei hosting.de gehostet. Für die Domain swea.de wird Cloudflare zur DNS-Verwaltung sowie als Content Delivery Network (CDN) und Sicherheitsdienst eingesetzt. Dabei können insbesondere IP-Adresse, Datum und Uhrzeit, angeforderte Seite, Referrer sowie Browser- und Geräteinformationen in Server- und Sicherheitsprotokollen verarbeitet werden. Die Verarbeitung durch Cloudflare erfolgt insbesondere zur Gewährleistung der Sicherheit und Leistungsfähigkeit auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). Informationen zu den Anbietern und ihren Datenschutzbedingungen finden Sie bei <a className={linkClass} href="https://www.hosting.de/datenschutz/" rel="noreferrer" target="_blank">hosting.de</a> und <a className={linkClass} href="https://www.cloudflare.com/privacypolicy/" rel="noreferrer" target="_blank">Cloudflare</a>.</p>
           <p className={paragraphClass}>Protokolldaten werden nur so lange aufbewahrt, wie dies für Betrieb, Fehleranalyse und Abwehr von Angriffen erforderlich ist, und anschließend nach den Vorgaben des jeweiligen Anbieters gelöscht oder anonymisiert, soweit keine gesetzlichen Pflichten entgegenstehen.</p>
         </section>
 
@@ -128,6 +132,7 @@ export function LegalModals() {
       <LegalDialog eyebrow="Anbieterkennzeichnung" id="imprint-modal" title="Impressum">
         <section className={sectionClass}>
           <h3 className={headingClass}>Angaben gemäß § 5 DDG</h3>
+          <p className={paragraphClass}>Diese Anbieterkennzeichnung gilt für den Internetauftritt unter <a className={linkClass} href="https://www.swea.de/" rel="noreferrer" target="_blank">www.swea.de</a>.</p>
           <address className="not-italic text-sm leading-7 text-area-deep">
             <strong>Uwe Christian</strong><br />
             Freiburgstr. 12<br />
@@ -139,6 +144,7 @@ export function LegalModals() {
         <section className={sectionClass}>
           <h3 className={headingClass}>Umsatzsteuer und redaktionelle Inhalte</h3>
           <p className={paragraphClass}>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE352438907</p>
+          <p className={paragraphClass}>Gemäß § 19 UStG wird keine Umsatzsteuer ausgewiesen (Kleinunternehmerregelung).</p>
           <p className={paragraphClass}>Verantwortlich für journalistisch-redaktionelle Inhalte gemäß § 18 Abs. 2 MStV: Uwe Christian, Freiburgstr. 12, 73614 Schorndorf.</p>
         </section>
         <section className={sectionClass}>
