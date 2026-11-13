@@ -4,6 +4,7 @@ import {
   ArrowDown,
   ArrowRight,
   ArrowUpRight,
+  Briefcase,
   Check,
   Clock3,
   Code2,
@@ -18,6 +19,7 @@ import {
   Mail,
   MonitorCog,
   Phone,
+  Printer,
   Router,
   ShieldCheck,
   Smartphone,
@@ -192,20 +194,61 @@ export function HomePageContent() {
   )
 }
 
-function KIStudioShowcase() {
+function KIStudioIntro() {
+  const facts = [
+    { icon: Check, title: "Digitale Ergebnisse", description: "Sie erhalten Ihr fertiges Ergebnis als digitale Datei." },
+    { icon: Heart, title: "Individuell abgestimmt", description: "Umfang und Gestaltung besprechen wir gemeinsam mit Ihnen." },
+    { icon: ShieldCheck, title: "Klar vereinbart", description: "Die konkrete Leistung wird im jeweiligen Angebot festgehalten." },
+  ]
+
+  return (
+    <section aria-labelledby="ki-studio-title" className="bg-area-soft py-14 sm:py-20" id="einfuehrung">
+      <div className="page-wrap">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow">KI-Studio · Schorndorf</span>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-studio-title">
+            KI-Studio – digitale Medien nach Ihrer Idee.
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-area-muted">
+            Im SWEA KI-Studio entstehen individuelle digitale Bilder und Grafiken, Videos, Songs, Jingles und Audiomaterial. Sie schildern Ihre Idee oder Ihren Anlass, Uwe Christian setzt sie gemeinsam mit Ihnen kreativ um und übergibt Ihnen das fertige Ergebnis digital.
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-area-muted">
+            Es entstehen ausschließlich digitale Medien. SWEA stellt keine physischen Produkte her, verkauft keine bedruckten Waren und nimmt keine Druckaufträge an. Möchten Sie ein Ergebnis drucken oder anderweitig verarbeiten lassen, übernehmen Sie das selbst bei einem Anbieter Ihrer Wahl.
+          </p>
+        </div>
+
+        <ul className="mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-cols-3">
+          {facts.map(({ icon: Icon, title, description }) => (
+            <li className="flex gap-3 rounded-2xl border border-area-border bg-area-surface p-4 shadow-sm" key={title}>
+              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-area-soft text-area-primary">
+                <Icon aria-hidden="true" size={20} />
+              </span>
+              <div>
+                <h2 className="text-sm font-semibold text-area-deep">{title}</h2>
+                <p className="mt-1 text-sm leading-6 text-area-muted">{description}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
+
+function KIStudioServices() {
   const cardClass = "flex h-full flex-col overflow-hidden rounded-2xl border border-area-border bg-area-surface shadow-sm transition-shadow hover:shadow-lg"
   const inquiryClass = "ki-studio-inquiry mt-auto inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-area-deep px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-area-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2"
 
   return (
-    <section aria-labelledby="ki-studio-title" className="bg-area-soft py-14 sm:py-20">
+    <section aria-labelledby="ki-leistungen-title" className="py-14 sm:py-20" id="leistungen">
       <div className="page-wrap">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-          <span className="eyebrow">KI-Studio · Schorndorf</span>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-studio-title">
-            KI-Studio – Kreative Ideen, individuell umgesetzt.
-          </h1>
+          <span className="eyebrow">Leistungen</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-leistungen-title">
+            Welche digitalen Medien wir erstellen
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-area-muted">
-            Personalisierte Medienproduktion von Uwe Christian in Schorndorf.
+            Bilder, Videos und Audio – jeweils nach Ihren Vorgaben gestaltet und als digitale Datei bereitgestellt.
           </p>
         </div>
 
@@ -213,20 +256,20 @@ function KIStudioShowcase() {
           <article className={cardClass}>
             <div className="relative min-h-44 aspect-[16/10] overflow-hidden bg-area-subtle">
               <Image
-                alt="Fee in einem geheimnisvollen Wald neben einem großen grünen Drachen"
+                alt="Digitales Bild einer Fee in einem geheimnisvollen Wald neben einem großen grünen Drachen"
                 className="object-cover transition-transform duration-500 hover:scale-105"
                 fill
                 loading="lazy"
                 sizes="(max-width: 767px) 100vw, 33vw"
                 src="/swea/ai-examples/ki-studio-image-dragon.jpg"
               />
-              <span className="absolute right-3 top-3 z-10 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">ab 9€</span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
-              <div className="mb-3 flex items-center gap-2 text-area-primary"><ImageIcon aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bild &amp; Design</span></div>
-              <h3 className="h-14 text-xl font-semibold leading-7 text-area-deep">KI-Bilder &amp; Porträts</h3>
-              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Personalisierte Porträts, Motive mit Familie oder Haustieren und individuelle Lieblingsbilder – abgestimmt auf Ihre Idee.</p>
-              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: KI-Bilder und Porträts">
+              <div className="mb-3 flex items-center gap-2 text-area-primary"><ImageIcon aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bilder &amp; Grafiken</span></div>
+              <h3 className="text-xl font-semibold leading-7 text-area-deep">Digitale Bilder &amp; Grafiken</h3>
+              <p className="mt-2 text-sm leading-6 text-area-muted">Personalisierte Porträts, Motive mit Familie oder Haustieren, Illustrationen und Logo-Entwürfe – nach Ihrer Idee gestaltet.</p>
+              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Die Übergabe erfolgt als digitale Bilddatei.</p>
+              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: Digitale Bilder und Grafiken">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
               </Link>
             </div>
@@ -235,7 +278,7 @@ function KIStudioShowcase() {
           <article className={cardClass}>
             <div className="relative min-h-44 aspect-[16/10] overflow-hidden bg-area-deep">
               <video
-                aria-label="Beispiel eines personalisierten KI-Videoclips"
+                aria-label="Beispiel eines personalisierten Videoclips"
                 className="h-full w-full object-cover"
                 controls
                 playsInline
@@ -245,13 +288,13 @@ function KIStudioShowcase() {
                 <source src="/swea/ai-examples/video-cf140fc6.mp4" type="video/mp4" />
                 Ihr Browser unterstützt die Videowiedergabe nicht.
               </video>
-              <span className="absolute right-3 top-3 z-10 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">ab 15€</span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><Video aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bewegtbild</span></div>
-              <h3 className="h-14 text-xl font-semibold leading-7 text-area-deep">KI-Videos</h3>
-              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
-              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: KI-Videos">
+              <h3 className="text-xl font-semibold leading-7 text-area-deep">Videos</h3>
+              <p className="mt-2 text-sm leading-6 text-area-muted">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
+              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Die Übergabe erfolgt als digitale Videodatei.</p>
+              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: Videos">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
               </Link>
             </div>
@@ -267,17 +310,17 @@ function KIStudioShowcase() {
                   <span className="w-1 rounded-full bg-area-accent-light/80" key={index} style={{ height }} />
                 ))}
               </div>
-              <audio aria-label="KI-generierter Jingle als Hörprobe" className="w-full accent-area-accent" controls preload="none">
+              <audio aria-label="Beispiel-Jingle als Hörprobe" className="w-full accent-area-accent" controls preload="none">
                 <source src="/swea/ai-examples/ki-studio-jingle.mp3" type="audio/mpeg" />
                 Ihr Browser unterstützt die Audiowiedergabe nicht.
               </audio>
-              <span className="absolute right-3 top-3 z-10 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">ab 20€</span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><Music2 aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Audio &amp; Musik</span></div>
-              <h3 className="h-14 text-xl font-semibold leading-7 text-area-deep">Individuelle Songs &amp; Jingles</h3>
-              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Persönliche Songs, kleine Jingles und Musikgeschenke – hören Sie in eine echte Hörprobe rein.</p>
-              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: Songs und Jingles">
+              <h3 className="text-xl font-semibold leading-7 text-area-deep">Songs, Jingles &amp; Audiomaterial</h3>
+              <p className="mt-2 text-sm leading-6 text-area-muted">Persönliche Songs mit eigenem Liedtext, kurze Jingles und weiteres Audiomaterial nach Ihren Vorgaben.</p>
+              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Die Übergabe erfolgt als digitale Audiodatei.</p>
+              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: Songs, Jingles und Audiomaterial">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
               </Link>
             </div>
@@ -288,76 +331,211 @@ function KIStudioShowcase() {
   )
 }
 
-function KIStudioClosingCTA() {
+function KIStudioCustomWork() {
+  const examples = [
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_9fpkh09fpkh09fpk-u46EuM8FAmxDDJLVBAyrfhZ7DpMmQp.jpeg",
+      alt: "Digitale Illustration eines lächelnden Mannes als weihnachtlicher Elf im verschneiten Wald",
+      caption: "Ein persönliches Elfenporträt",
+    },
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2e7ew72e7ew72e7e-5JvNidQs7Az5bmt39FO5wAn0wu9e5w.jpeg",
+      alt: "Digitale Illustration eines grünen, zotteligen Wesens mit Weihnachtsmütze neben einem festlich geschmückten Baum",
+      caption: "Ein augenzwinkerndes Motiv",
+    },
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2yjiwu2yjiwu2yji-qs4gsrL98qp5pHHERuqd4n8IcKQ1Bo.jpeg",
+      alt: "Digitale Illustration eines Weihnachtsmanns, der Geschenke vor einem geschmückten Baum und Kamin ablegt",
+      caption: "Ein festlicher Moment als Bildidee",
+    },
+  ]
+
   return (
-    <section aria-labelledby="ki-closing-title" className="page-wrap ki-crosslink brand-area brand-area-ki">
-      <div>
-        <span className="eyebrow">Ihr nächster Schritt</span>
-        <h2 id="ki-closing-title">Sie haben eine Idee für ein persönliches Kreativprojekt?</h2>
-        <p>Schildern Sie kurz Ihren Anlass – Herr Christian bespricht mit Ihnen, was sich mit Ihren Vorgaben dafür gestalten lässt.</p>
+    <section aria-labelledby="ki-umsetzung-title" className="bg-area-soft py-14 sm:py-20" id="individuelle-umsetzung">
+      <div className="page-wrap">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow">Individuelle Umsetzung</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-umsetzung-title">
+            Ihre Idee ist der Ausgangspunkt.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-area-muted">
+            Jedes Projekt beginnt mit Ihrer Vorstellung: ein Anlass, eine Person, ein Haustier, ein Hobby, eine Geschichte oder eine Geschäftsidee. Daraus entwickeln wir gemeinsam ein Motiv, ein Video oder einen Song.
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-area-muted">
+            Je nach Projekt bringen Sie Fotos, Stichworte, Lebensstationen für einen Liedtext oder Hinweise zum gewünschten Stil mit. Welche Angaben nötig sind, klären wir im Gespräch. Umfang und Gestaltung stimmen wir individuell ab; die konkrete Leistung wird im jeweiligen Angebot vereinbart.
+          </p>
+        </div>
+
+        <ul aria-label="Beispiele für individuell gestaltete Motive" className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {examples.map((example) => (
+            <li key={example.src}>
+              <figure className="overflow-hidden rounded-2xl border border-area-border bg-area-surface shadow-sm">
+                <div className="relative aspect-[3/4] bg-area-subtle">
+                  <Image alt={example.alt} className="object-cover" fill loading="lazy" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" src={example.src} />
+                </div>
+                <figcaption className="p-4 text-sm font-semibold leading-6 text-area-deep">{example.caption}</figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+
+        <figure className="mx-auto mt-8 max-w-3xl">
+          <video
+            aria-label="Beispielvideo mit weihnachtlichem Motiv"
+            className="aspect-video w-full rounded-2xl border border-area-border bg-area-deep object-contain shadow-sm"
+            controls
+            playsInline
+            poster="/swea/ai-examples/ki-studio-example-video-poster.webp"
+            preload="none"
+          >
+            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gemini_generated_video_77d5f778-sMKmnjJYAQSuujDbiD1O9RztT92LSZ.mp4" type="video/mp4" />
+            Ihr Browser unterstützt die Videowiedergabe nicht.
+          </video>
+          <figcaption className="mt-3 text-center text-sm text-area-muted">Beispielvideo aus dem KI-Studio</figcaption>
+        </figure>
+
+        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-5 text-area-muted">
+          Die gezeigten Beispiele sind Arbeiten von SWEA. Bitte laden Sie sie nicht herunter und verbreiten Sie sie nicht weiter.
+        </p>
       </div>
-      <Link className="button button-dark min-h-12" href="/kontakt">
-        Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={17} />
-      </Link>
     </section>
   )
 }
 
-function HolidayGiftSection() {
+function KIStudioProcess() {
+  const steps = [
+    { title: "Anfrage", description: "Sie schildern Ihre Idee oder Ihren Anlass – über das Kontaktformular, per E-Mail oder telefonisch." },
+    { title: "Abstimmung", description: "Wir besprechen Wunschergebnis, Umfang und benötigtes Material. Die konkrete Leistung halten wir im Angebot fest." },
+    { title: "Gestaltung", description: "Nach Ihrem schriftlichen Auftrag setzt Uwe Christian Ihre Idee um." },
+    { title: "Korrektur bzw. Freigabe", description: "Sie sehen das Ergebnis und geben es frei oder nennen Änderungswünsche. Wie weit Anpassungen möglich sind, richtet sich nach dem vereinbarten Angebot." },
+    { title: "Digitale Übergabe", description: "Das freigegebene Ergebnis erhalten Sie als digitale Datei." },
+  ]
+
   return (
-    <section aria-labelledby="holiday-gift-title" className="holiday-gift-section" id="weihnachtsgeschenke">
-      <div aria-hidden="true" className="holiday-snow" />
-      <div className="page-wrap holiday-gift-content">
-        <div className="holiday-gift-copy">
-          <span className="holiday-gift-eyebrow">Persönlich gestaltet · mit weihnachtlichem Zauber</span>
-          <span className="holiday-gift-eyebrow">KI-Bilder, Videos &amp; eigene Songs</span>
-          <h2 id="holiday-gift-title">Das ultimative persönliche Weihnachtsgeschenk</h2>
-          <p>Persönliche KI-Bilder und Videos mit Ihrer Idee und den Menschen, die Sie beschenken möchten – auf Wunsch auch als individuelles Lied.</p>
-          <p>Als Geschenk, als Bild zum Aufhängen oder auf Tassen, Kissen und anderen individuellen Produkten. Ihre Vorstellungen besprechen wir gemeinsam.</p>
-          <div className="holiday-gift-terms">
-            <h3>Hinweise &amp; Voraussetzungen</h3>
-            <ul>
-              <li>Wir beginnen erst nach schriftlichem Auftrag und der Einwilligung der abgebildeten Person.</li>
-              <li>Sexualisierte oder gewaltbeinhaltende Inhalte erstellen wir nicht. Wir prüfen jeden Auftrag individuell und behalten uns vor, Aufträge abzulehnen.</li>
-              <li>Die Bezahlung erfolgt im Voraus. Für individuell angefertigte Produkte gilt unsere Widerrufsbelehrung.</li>
-              <li>Sie erhalten eine Rechnung ohne ausgewiesene Mehrwertsteuer aufgrund der Kleinunternehmerregelung.</li>
-              <li>Beispiele und angefertigte Motive unterliegen dem Urheberrecht; Nutzungsrechte werden individuell vereinbart.</li>
-            </ul>
-          </div>
+    <section aria-labelledby="ki-ablauf-title" className="py-14 sm:py-20" id="ablauf">
+      <div className="page-wrap">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <span className="eyebrow">Ablauf</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-ablauf-title">
+            Von der Anfrage zur digitalen Datei
+          </h2>
         </div>
 
-        <div aria-labelledby="holiday-examples-title" className="holiday-examples">
-          <h3 id="holiday-examples-title">Beispiele:</h3>
-          <div className="holiday-example-grid">
-            <figure className="holiday-example-card">
-              <Image alt="Illustration eines lächelnden Mannes als weihnachtlicher Elf im verschneiten Wald" height={1024} loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_9fpkh09fpkh09fpk-u46EuM8FAmxDDJLVBAyrfhZ7DpMmQp.jpeg" width={768} />
-              <figcaption>Ein persönliches Weihnachts-Elfenporträt</figcaption>
-            </figure>
-            <figure className="holiday-example-card">
-              <Image alt="Grünes, zotteliges Wesen mit Weihnachtsmütze neben einem festlich geschmückten Weihnachtsbaum" height={1024} loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2e7ew72e7ew72e7e-5JvNidQs7Az5bmt39FO5wAn0wu9e5w.jpeg" width={768} />
-              <figcaption>Ein augenzwinkerndes Weihnachtsmotiv</figcaption>
-            </figure>
-  <figure className="holiday-example-card">
-  <Image alt="Weihnachtsmann legt Geschenke vor einem geschmückten Baum und Kamin ab" height={1024} loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2yjiwu2yjiwu2yji-qs4gsrL98qp5pHHERuqd4n8IcKQ1Bo.jpeg" width={768} />
-  <figcaption>Ein festlicher Moment für die Bescherung</figcaption>
-  </figure>
-  <figure className="holiday-example-card">
-  <Image alt="Wohnzimmer mit personalisiertem Weihnachtsmannmotiv auf Decke und Kissen, gerahmtem Bild und Tasse" height={1024} loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_okqsgpokqsgpokqs-xLEInkCXyCv5HxEyRvcmhaUAvkY8Jk.jpeg" width={768} />
-  <figcaption>Personalisierte Weihnachtsmotive auf Decke, Kissen und Tasse</figcaption>
-  </figure>
-  </div>
-        </div>
-
-        <div aria-labelledby="holiday-video-title" className="holiday-video">
-          <h3 id="holiday-video-title">Beispielvideo</h3>
-          <video aria-label="Beispielvideo mit weihnachtlichem Motiv" controls playsInline preload="none" poster="/swea/ai-examples/ki-studio-example-video-poster.webp">
-            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gemini_generated_video_77d5f778-sMKmnjJYAQSuujDbiD1O9RztT92LSZ.mp4" type="video/mp4" />
-            Ihr Browser unterstützt die Videowiedergabe nicht.
-          </video>
-        </div>
-
-        <p className="holiday-gift-rights">Diese Beispiele sind Eigentum des Webseitenbetreibers und dürfen weder heruntergeladen noch per Hardcopy oder Foto oder auf anderen Wegen dupliziert oder verbreitet werden.</p>
+        <ol aria-label="Ablauf eines KI-Studio-Projekts in fünf Schritten" className="mx-auto grid max-w-4xl gap-3">
+          {steps.map((step, index) => (
+            <li className="flex gap-4 rounded-2xl border border-area-border bg-area-surface p-4 shadow-sm sm:p-5" key={step.title}>
+              <span aria-hidden="true" className="grid size-9 shrink-0 place-items-center rounded-full bg-area-subtle text-sm font-bold text-area-deep">{index + 1}</span>
+              <div>
+                <h3 className="text-base font-semibold text-area-deep">{step.title}</h3>
+                <p className="mt-1 text-sm leading-6 text-area-muted">{step.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
+    </section>
+  )
+}
+
+function KIStudioUsage() {
+  const usages = [
+    {
+      icon: Heart,
+      title: "Privat & persönlich",
+      description: "Als Geschenkidee, Videogruß oder Lied für eine liebe Person, als Erinnerung an einen besonderen Moment oder für Ihre eigenen Projekte und Feiern.",
+    },
+    {
+      icon: Briefcase,
+      title: "Geschäftlich",
+      description: "Zum Beispiel Logo-Entwürfe, Grafiken, kurze Clips oder ein Jingle für Ihr Unternehmen oder Ihr Vorhaben.",
+    },
+    {
+      icon: Printer,
+      title: "Drucken & Weiterverarbeiten",
+      description: "Wenn Sie ein Ergebnis drucken oder anderweitig verarbeiten lassen möchten, übernehmen Sie das selbst bei einem externen Anbieter. SWEA druckt nicht und liefert keine Waren.",
+    },
+  ]
+
+  return (
+    <section aria-labelledby="ki-nutzung-title" className="bg-area-soft py-14 sm:py-20" id="nutzungsmoeglichkeiten">
+      <div className="page-wrap">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <span className="eyebrow">Nutzungsmöglichkeiten</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-nutzung-title">
+            Wofür Sie Ihre Ergebnisse einsetzen können
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-area-muted">
+            Welche Nutzung im Einzelfall zulässig ist, hängt vom Auftrag ab. Nutzungsrechte werden nicht pauschal eingeräumt, sondern im vereinbarten Umfang festgelegt.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {usages.map(({ icon: Icon, title, description }) => (
+            <article className="flex h-full gap-3 rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm" key={title}>
+              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-area-soft text-area-primary">
+                <Icon aria-hidden="true" size={20} />
+              </span>
+              <div>
+                <h3 className="text-base font-semibold text-area-deep">{title}</h3>
+                <p className="mt-1.5 text-sm leading-6 text-area-muted">{description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function KIStudioLegalNotes() {
+  const notes = [
+    { title: "Auftrag und Einwilligung", text: "Wir beginnen erst nach schriftlichem Auftrag und der Einwilligung der abgebildeten Person." },
+    { title: "Ihr Material", text: "Fotos, Texte, Logos, Musik und sonstiges Material dürfen Sie uns nur übergeben, wenn Sie die erforderlichen Rechte daran besitzen." },
+    { title: "Urheberrecht", text: "Eigene kreative Beiträge von SWEA werden respektiert. Ein Urheberrechtsschutz besteht, soweit die gesetzlichen Voraussetzungen erfüllt sind – nicht jedes mit KI-Unterstützung erstellte Ergebnis ist automatisch geschützt." },
+    { title: "Nutzungsrechte", text: "Nutzungsrechte werden nicht uneingeschränkt, sondern nur im ausdrücklich vereinbarten Umfang eingeräumt." },
+    { title: "Referenzen und Werbung", text: "Aufträge und Ergebnisse veröffentlichen wir nicht als Referenz oder Werbung, ohne dass Sie gesondert zugestimmt haben." },
+    { title: "Inhalte", text: "Sexualisierte oder gewaltbeinhaltende Inhalte erstellen wir nicht. Wir prüfen jeden Auftrag individuell und behalten uns vor, Aufträge abzulehnen." },
+    { title: "Bezahlung und Rechnung", text: "Die Bezahlung erfolgt im Voraus. Sie erhalten eine Rechnung ohne ausgewiesene Mehrwertsteuer aufgrund der Kleinunternehmerregelung." },
+    { title: "AGB und Widerrufsbelehrung", text: "Es gelten außerdem unsere AGB und die Widerrufsbelehrung, die Sie im Fußbereich der Seite finden." },
+  ]
+
+  return (
+    <section aria-labelledby="ki-hinweise-title" className="py-14 sm:py-20" id="hinweise">
+      <div className="page-wrap">
+        <div className="mx-auto max-w-4xl rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm sm:p-8">
+          <div className="flex items-start gap-3">
+            <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-area-soft text-area-primary"><ShieldCheck aria-hidden="true" size={20} /></span>
+            <h2 className="pt-1 text-xl font-semibold text-area-deep sm:text-2xl" id="ki-hinweise-title">Hinweise &amp; Voraussetzungen</h2>
+          </div>
+          <dl className="mt-6 grid gap-x-8 gap-y-5 md:grid-cols-2">
+            {notes.map((note) => (
+              <div key={note.title}>
+                <dt className="text-sm font-semibold text-area-deep">{note.title}</dt>
+                <dd className="mt-1 text-sm leading-6 text-area-muted">{note.text}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function KIStudioClosingCTA() {
+  return (
+    <section aria-labelledby="ki-closing-title" className="page-wrap ki-crosslink brand-area brand-area-ki" id="anfrage">
+      <div>
+        <span className="eyebrow">Anfrage</span>
+        <h2 id="ki-closing-title">Sie haben eine Idee für ein digitales Kreativprojekt?</h2>
+        <p>Schildern Sie kurz Ihren Anlass – Herr Christian bespricht mit Ihnen, was sich mit Ihren Vorgaben dafür gestalten lässt.</p>
+        <p className="mt-3 flex flex-wrap gap-x-5 gap-y-1">
+          <a className="inline-flex items-center gap-2 font-semibold text-area-deep underline-offset-4 hover:underline" href="mailto:edv@swea.de"><Mail aria-hidden="true" size={15} /> edv@swea.de</a>
+          <a className="inline-flex items-center gap-2 font-semibold text-area-deep underline-offset-4 hover:underline" href="tel:+497181253147"><Phone aria-hidden="true" size={15} /> +49 7181 253147</a>
+        </p>
+      </div>
+      <Link className="button button-dark min-h-12" href="/kontakt">
+        Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={17} />
+      </Link>
     </section>
   )
 }
@@ -367,7 +545,7 @@ function HolidaySongSection() {
     <section aria-labelledby="holiday-song-title" className="holiday-song-section">
       <div className="page-wrap">
         <div className="holiday-song">
-          <h3 id="holiday-song-title">Oder darf es ein individuelles Lied sein?</h3>
+          <h3 id="holiday-song-title">Hörproben: Songs nach Maß</h3>
           <div className="holiday-song-grid">
             <div className="holiday-song-left-column">
               <div className="holiday-song-panel">
@@ -392,8 +570,8 @@ function HolidaySongSection() {
                 </audio>
               </div>
               <article aria-labelledby="holiday-custom-song-title" className="holiday-song-panel holiday-custom-song">
-                <h4 id="holiday-custom-song-title">Ihr individueller Lebens-Song</h4>
-                <p>Von der Lieferung von Lebensstationen über die Erstellung des Songtextes bis hin zu Ihrem Wunsch, wie es klingen soll - ein komplett eigenes Lied für eine liebe Person. Oder zu jedem anderen Anlass.</p>
+                <h4 id="holiday-custom-song-title">Ihr individueller Song</h4>
+                <p>Sie nennen Lebensstationen, Anlass und gewünschten Musikstil – daraus entstehen Songtext und Lied für eine liebe Person oder zu jedem anderen Anlass. Das fertige Lied erhalten Sie als digitale Audiodatei.</p>
               </article>
             </div>
             <div className="holiday-song-panel holiday-lyrics-panel">
@@ -410,18 +588,6 @@ function HolidaySongSection() {
     </section>
   )
 }
-
-function AlternativeMotifsSection() {
-  return (
-    <section aria-label="Motive ohne weihnachtlichen Bezug" className="alternative-motifs-section">
-      <div className="page-wrap alternative-motifs-content">
-        <p>Selbstverständlich erstellen wir Motive auch ohne weihnachtlichen Bezug, zum Beispiel mit Ihren Liebsten, Ihrem Haustier, Ihrem Hobby oder einem anderen persönlichen Motiv.</p>
-        <p>Es gelten die oben genannten Einschränkungen, die Widerrufsbelehrung und unsere AGB.</p>
-      </div>
-    </section>
-  )
-}
-
 function ServicesSection() {
   const cardClass = "flex h-full scroll-mt-24 flex-col rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-6"
   const iconClass = "grid size-12 shrink-0 place-items-center rounded-xl bg-area-soft text-area-primary"
@@ -908,11 +1074,14 @@ export function WaldbadenPageContent() {
 export function KIStudioPageContent() {
   return (
     <div className="brand-area brand-area-ki">
-      <KIStudioShowcase />
-      <HolidayGiftSection />
+      <KIStudioIntro />
+      <KIStudioServices />
       <HolidaySongSection />
-      <AlternativeMotifsSection />
+      <KIStudioCustomWork />
       <AIExamplesCarousel />
+      <KIStudioProcess />
+      <KIStudioUsage />
+      <KIStudioLegalNotes />
       <KIStudioClosingCTA />
     </div>
   )

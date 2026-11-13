@@ -119,7 +119,7 @@ export function AIExamplesCarousel() {
     <section aria-labelledby="ai-examples-carousel-title" aria-roledescription="Karussell" className="ai-examples-carousel-section">
       <div className="page-wrap ai-examples-carousel-content">
         <h2 className="ai-examples-carousel-title" id="ai-examples-carousel-title">
-          Weitere Beispiele für Logos, KI-Kunst, Videos und was wir sonst noch so machen
+          Weitere Beispiele für digitale Bilder, Logo-Entwürfe und Videos
         </h2>
 
         <div className="ai-examples-carousel-frame">
