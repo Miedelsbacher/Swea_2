@@ -598,8 +598,8 @@ function ServicesSection() {
       <div className="page-wrap">
         <div className="mb-9 max-w-3xl">
           <span className="eyebrow">EDV-Hilfe für Zuhause · Schorndorf &amp; Umgebung</span>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="edv-services-title">Technikhilfe für Zuhause – persönlich und verständlich</h1>
-          <p className="mt-4 text-base leading-7 text-area-muted">Für Privatpersonen, Hausbesitzer und Haushalte in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="edv-services-title">Technikhilfe – persönlich und verständlich</h1>
+          <p className="mt-4 text-base leading-7 text-area-muted">Für Privatpersonen, Hausbesitzer und Haushalte und Professionals in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
         </div>
 
         <div className="grid items-stretch gap-4 sm:grid-cols-2">
