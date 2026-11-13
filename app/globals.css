@@ -832,6 +832,7 @@ body {
 .seasonal-action-card.brand-area-ki .seasonal-action-highlights strong { color: var(--area-deep); }
 .seasonal-action-card.brand-area-ki .seasonal-action-description,
 .seasonal-action-card.brand-area-ki .seasonal-action-highlights small { color: var(--area-muted); }
+.seasonal-action-note { max-width: 65ch; margin: .85rem 0 0; padding-left: .85rem; border-left: 2px solid var(--area-border); color: var(--area-muted); font-size: .8125rem; line-height: 1.65; }
 .seasonal-action-card.brand-area-ki .seasonal-preview,
 .seasonal-action-card.brand-area-ki .seasonal-preview-video video { background: var(--ki-deep); }
 .seasonal-action-card.brand-area-ki .seasonal-preview-audio { background: linear-gradient(140deg, var(--ki-deep), var(--ki-primary)); }

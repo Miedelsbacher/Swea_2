@@ -130,48 +130,51 @@ export function HomePageContent() {
         <div className="seasonal-action-card brand-area brand-area-ki">
           <div className="seasonal-action-content">
             <div className="seasonal-action-copy">
-              <span className="seasonal-action-badge">EDV-Sparte · Saisonales KI-Special</span>
-              <h2 id="seasonal-action-title">Moderne KI-Technik, persönlich für Sie inszeniert.</h2>
+              <span className="seasonal-action-badge">KI-Studio · Digitale Medien nach Maß</span>
+              <h2 id="seasonal-action-title">Individuelle digitale Kreativität – von der Idee bis zum fertigen digitalen Ergebnis.</h2>
               <p className="seasonal-action-description">
-                Hinter jedem beeindruckenden Bild, Video oder individuellen Song steckt moderne generative KI – präzise gesteuert mit unserem IT-Know-how. Ob als einzigartiges Weihnachtsgeschenk mit dem Gesicht Ihrer Liebsten, als persönlicher Song oder als persönliches Motiv für Ihr Zuhause, Ihre Familie oder ein Geschenk: Wir zeigen, was heute digital möglich ist.
+                Im KI-Studio gestalten wir nach Ihren Vorstellungen digitale Bilder und Grafiken, Videos, Songs und Jingles. Sie schildern uns Ihre Idee oder den Anlass, wir entwickeln gemeinsam mit Ihnen die Umsetzung und stellen Ihnen das fertige Ergebnis als digitale Datei bereit – zur eigenen Verwendung, etwa als Geschenkidee, für Feiern oder für Ihre persönlichen Projekte.
+              </p>
+              <p className="seasonal-action-note">
+                Wir erstellen ausschließlich digitale Medien und verkaufen keine physischen Produkte. Möchten Sie ein Motiv drucken lassen, organisieren Sie dies selbst bei einem Anbieter Ihrer Wahl. Kundenergebnisse veröffentlichen wir nur mit Ihrer gesonderten Zustimmung.
               </p>
             </div>
             <ul className="seasonal-action-highlights" aria-label="Möglichkeiten im KI-Studio">
               <li>
                 <span className="seasonal-highlight-icon"><ImageIcon aria-hidden="true" size={17} /></span>
-                <span><strong>KI-Bildwelten &amp; Porträts</strong><small>Individuell erstellt für Drucke, Tassen oder Kissen.</small></span>
+                <span><strong>Digitale Bilder &amp; Grafiken</strong><small>Individuell gestaltet und als fertige Datei bereitgestellt.</small></span>
               </li>
               <li>
                 <span className="seasonal-highlight-icon"><Video aria-hidden="true" size={17} /></span>
-                <span><strong>Persönliche KI-Videos</strong><small>Emotionale Videogrüße und kreative Kurzclips.</small></span>
+                <span><strong>Videos</strong><small>Persönliche Videogrüße und kreative Kurzclips als digitale Datei.</small></span>
               </li>
               <li>
                 <span className="seasonal-highlight-icon"><Music2 aria-hidden="true" size={17} /></span>
-                <span><strong>Maßgeschneiderte Songs</strong><small>Eigener Liedtext und Musikstil nach Ihren Vorgaben.</small></span>
+                <span><strong>Songs &amp; Jingles</strong><small>Eigener Liedtext, Musikstil und Audiomaterial nach Ihren Vorgaben.</small></span>
               </li>
             </ul>
             <div className="seasonal-action-actions">
               <Link className="button button-action" data-nav-link href="/ki-studio">
-                Beispiele &amp; Weihnachtsaktion entdecken <ArrowRight aria-hidden="true" size={17} />
+                Beispiele im KI-Studio ansehen <ArrowRight aria-hidden="true" size={17} />
               </Link>
-              <Link className="seasonal-action-secondary" data-nav-link href="/ki-studio">
-                Lieblingsmotive &amp; persönliche Anlässe <ArrowUpRight aria-hidden="true" size={15} />
+              <Link className="seasonal-action-secondary" data-nav-link href="/kontakt">
+                Ihre Idee besprechen <ArrowUpRight aria-hidden="true" size={15} />
               </Link>
             </div>
           </div>
-          <div className="seasonal-action-collage" aria-label="Vorschau zu KI-Bild, Video und Song">
+          <div className="seasonal-action-collage" aria-label="Vorschau zu digitalem Bild, Video und Song">
             <figure className="seasonal-preview seasonal-preview-portrait">
               <picture>
                 <Image alt="Uwe Christian in seinem Büro am Schreibtisch" fill loading="lazy" sizes="(max-width: 900px) 48vw, 22vw" src="/swea/uwe-christian-home.png" />
               </picture>
-              <figcaption>Persönliches KI-Porträt</figcaption>
+              <figcaption>Digitales Bild nach Ihrer Idee</figcaption>
             </figure>
             <figure className="seasonal-preview seasonal-preview-video">
               <video aria-label="Persönlicher Video-Gruß" controls playsInline preload="none" poster="/swea/video-gruss-poster.webp" src="/swea/video-gruss.mp4" />
               <figcaption>Video-Gruß</figcaption>
             </figure>
             <div className="seasonal-preview seasonal-preview-audio">
-              <span className="seasonal-audio-label"><Music2 aria-hidden="true" size={15} /> Jingles</span>
+              <span className="seasonal-audio-label"><Music2 aria-hidden="true" size={15} /> Songs &amp; Jingles</span>
               <div className="seasonal-audio-wave" aria-hidden="true">
                 {Array.from({ length: 18 }, (_, index) => <span key={index} />)}
               </div>
