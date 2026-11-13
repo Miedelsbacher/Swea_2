@@ -3,7 +3,6 @@ import Link from "next/link"
 import {
   ArrowDown,
   ArrowRight,
-  ArrowUpRight,
   Briefcase,
   Check,
   Clock3,
@@ -20,7 +19,6 @@ import {
   MonitorCog,
   Phone,
   Printer,
-  Router,
   ShieldCheck,
   Smartphone,
   Wifi,
@@ -36,25 +34,20 @@ function Hero() {
       <div className="hero-orbit hero-orbit-two" />
       <div className="hero-inner page-wrap">
         <div className="hero-copy">
-          <span className="eyebrow eyebrow-light"><span className="status-dot" /> EDV-Service &amp; Waldbaden · Schorndorf</span>
+          <span className="eyebrow eyebrow-light"><span className="status-dot" /> IT-Service, KI-Studio &amp; Waldbaden · Schorndorf</span>
           <h1>SWEA –<br />Technik, die hilft.<br /><em>Ruhe, die bleibt.</em></h1>
-          <p className="hero-description">
-            Persönliche Technikhilfe für Zuhause – von PC- und WLAN-Problemen bis zu Datenrettung, Smartphones und Smart Home. Vor Ort in Schorndorf und Umgebung oder per Fernzugriff; dazu Waldbaden zum Auftanken.
-          </p>
           <div className="hero-actions">
-            <Link className="button button-light" href="/kontakt">IT-Problem schildern <ArrowRight aria-hidden="true" size={17} /></Link>
-            <Link className="button button-outline-light" href="/waldbaden">Waldbaden entdecken</Link>
+            <Link className="button button-light" href="/kontakt">Kontakt aufnehmen <ArrowRight aria-hidden="true" size={17} /></Link>
+            <a className="button button-outline-light" href="#bereiche">Angebote ansehen</a>
           </div>
-          <div className="hero-proof"><MapPin aria-hidden="true" size={16} /> Persönlich für Sie da in Schorndorf und Umgebung</div>
         </div>
         <figure className="hero-visual">
           <div className="hero-portrait-frame">
             <Image alt="Uwe Christian, persönlicher IT-Serviceanbieter in Schorndorf" src="/swea/uwe-christian-home.png" fill priority sizes="(max-width: 700px) 100vw, 46vw" />
           </div>
-          <figcaption className="hero-note"><span className="hero-note-mark"><Check aria-hidden="true" size={15} /></span><span><strong>Uwe Christian</strong><br />Ihr persönlicher Ansprechpartner</span></figcaption>
         </figure>
       </div>
-      <a aria-label="Weiter zu den Leistungen" className="hero-scroll" href="#bereiche"><ArrowDown aria-hidden="true" size={18} /></a>
+      <a aria-label="Weiter zu den Angeboten" className="hero-scroll" href="#bereiche"><ArrowDown aria-hidden="true" size={18} /></a>
     </section>
   )
 }
@@ -101,24 +94,62 @@ Er schuftet gern, er packt’s und lacht!
 Wird niemals krank, bleibt stets in Schwung,
 Ein Mann von Tat und Begeisterung!`
 
-function QuickLinks() {
+const offerCards = [
+  {
+    area: "brand-area-technik",
+    icon: MonitorCog,
+    title: "IT-Service",
+    description: "Hilfe bei PC, WLAN, Smartphone und Smart Home sowie bei Datenrettung – vor Ort in Schorndorf und Umgebung oder per Fernzugriff.",
+    href: "/it-service",
+    linkLabel: "Zum IT-Service",
+  },
+  {
+    area: "brand-area-ki",
+    icon: ImageIcon,
+    title: "KI-Studio",
+    description: "Individuelle digitale Bilder, Videos, Songs und Jingles nach Ihrer Idee. Sie erhalten das Ergebnis als digitale Datei – keine physischen Produkte.",
+    href: "/ki-studio",
+    linkLabel: "Zum KI-Studio",
+  },
+  {
+    area: "brand-area-natur",
+    icon: Leaf,
+    title: "Waldbaden",
+    description: "Achtsam Zeit in der Natur verbringen und zur Ruhe kommen – geführt von einem ausgebildeten Kursleiter für Waldbaden.",
+    href: "/waldbaden",
+    linkLabel: "Zum Waldbaden",
+  },
+]
+
+function OfferCards() {
   return (
-    <section aria-label="Unsere Bereiche" className="quick-links page-wrap" id="bereiche">
-      <Link className="quick-link brand-area brand-area-technik" data-nav-link href="/it-service">
-        <span className="quick-link-icon"><MonitorCog aria-hidden="true" size={21} /></span>
-        <span><strong>IT-Service:</strong><small>Technik, die den Alltag leichter macht</small></span>
-        <ArrowUpRight aria-hidden="true" className="quick-arrow" size={18} />
-      </Link>
-      <Link className="quick-link brand-area brand-area-natur" data-nav-link href="/waldbaden">
-        <span className="quick-link-icon quick-link-nature"><Leaf aria-hidden="true" size={21} /></span>
-        <span><strong>Waldbaden:</strong><small>Achtsamkeit in der Natur</small></span>
-        <ArrowUpRight aria-hidden="true" className="quick-arrow" size={18} />
-      </Link>
-      <Link className="quick-link brand-area brand-area-ki" data-nav-link href="/ki-studio">
-        <span className="quick-link-icon quick-link-creative"><ImageIcon aria-hidden="true" size={21} /></span>
-        <span><strong>KI-Studio:</strong><small>Bilder, Videos und persönliche Songs</small></span>
-        <ArrowUpRight aria-hidden="true" className="quick-arrow" size={18} />
-      </Link>
+    <section aria-labelledby="offers-title" className="section" id="bereiche">
+      <div className="page-wrap">
+        <div className="mx-auto mb-8 max-w-2xl text-center sm:mb-10">
+          <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl" id="offers-title">Drei Bereiche – ein Ansprechpartner</h2>
+          <p className="mt-3 text-base leading-7 text-muted-foreground">
+            SWEA verbindet persönlichen IT-Service, ein kreatives KI-Studio und Waldbaden in Schorndorf. Wählen Sie den Bereich, der zu Ihrem Anliegen passt.
+          </p>
+        </div>
+        <ul className="grid gap-4 md:grid-cols-3 md:gap-5">
+          {offerCards.map(({ area, icon: Icon, title, description, href, linkLabel }) => (
+            <li className={`${area} flex`} key={title}>
+              <Link
+                className="group flex w-full flex-col gap-4 rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent sm:p-6"
+                data-nav-link
+                href={href}
+              >
+                <span className="grid size-11 place-items-center rounded-lg bg-area-subtle text-area-primary"><Icon aria-hidden="true" size={22} /></span>
+                <h3 className="text-xl font-semibold text-area-deep">{title}</h3>
+                <p className="text-sm leading-6 text-area-muted">{description}</p>
+                <span className="mt-auto inline-flex items-center gap-2 pt-1 text-sm font-semibold text-area-primary group-hover:underline">
+                  {linkLabel} <ArrowRight aria-hidden="true" size={16} />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   )
 }
@@ -127,69 +158,9 @@ export function HomePageContent() {
   return (
     <>
       <Hero />
-      <QuickLinks />
-      <section aria-labelledby="seasonal-action-title" className="seasonal-action-wrap page-wrap">
-        <div className="seasonal-action-card brand-area brand-area-ki">
-          <div className="seasonal-action-content">
-            <div className="seasonal-action-copy">
-              <span className="seasonal-action-badge">KI-Studio · Digitale Medien nach Maß</span>
-              <h2 id="seasonal-action-title">Individuelle digitale Kreativität – von der Idee bis zum fertigen digitalen Ergebnis.</h2>
-              <p className="seasonal-action-description">
-                Im KI-Studio gestalten wir nach Ihren Vorstellungen digitale Bilder und Grafiken, Videos, Songs und Jingles. Sie schildern uns Ihre Idee oder den Anlass, wir entwickeln gemeinsam mit Ihnen die Umsetzung und stellen Ihnen das fertige Ergebnis als digitale Datei bereit – zur eigenen Verwendung, etwa als Geschenkidee, für Feiern oder für Ihre persönlichen Projekte.
-              </p>
-              <p className="seasonal-action-note">
-                Wir erstellen ausschließlich digitale Medien und verkaufen keine physischen Produkte. Möchten Sie ein Motiv drucken lassen, organisieren Sie dies selbst bei einem Anbieter Ihrer Wahl. Kundenergebnisse veröffentlichen wir nur mit Ihrer gesonderten Zustimmung.
-              </p>
-            </div>
-            <ul className="seasonal-action-highlights" aria-label="Möglichkeiten im KI-Studio">
-              <li>
-                <span className="seasonal-highlight-icon"><ImageIcon aria-hidden="true" size={17} /></span>
-                <span><strong>Digitale Bilder &amp; Grafiken</strong><small>Individuell gestaltet und als fertige Datei bereitgestellt.</small></span>
-              </li>
-              <li>
-                <span className="seasonal-highlight-icon"><Video aria-hidden="true" size={17} /></span>
-                <span><strong>Videos</strong><small>Persönliche Videogrüße und kreative Kurzclips als digitale Datei.</small></span>
-              </li>
-              <li>
-                <span className="seasonal-highlight-icon"><Music2 aria-hidden="true" size={17} /></span>
-                <span><strong>Songs &amp; Jingles</strong><small>Eigener Liedtext, Musikstil und Audiomaterial nach Ihren Vorgaben.</small></span>
-              </li>
-            </ul>
-            <div className="seasonal-action-actions">
-              <Link className="button button-action" data-nav-link href="/ki-studio">
-                Beispiele im KI-Studio ansehen <ArrowRight aria-hidden="true" size={17} />
-              </Link>
-              <Link className="seasonal-action-secondary" data-nav-link href="/kontakt">
-                Ihre Idee besprechen <ArrowUpRight aria-hidden="true" size={15} />
-              </Link>
-            </div>
-          </div>
-          <div className="seasonal-action-collage" aria-label="Vorschau zu digitalem Bild, Video und Song">
-            <figure className="seasonal-preview seasonal-preview-portrait">
-              <picture>
-                <Image alt="Uwe Christian in seinem Büro am Schreibtisch" fill loading="lazy" sizes="(max-width: 900px) 48vw, 22vw" src="/swea/uwe-christian-home.png" />
-              </picture>
-              <figcaption>Digitales Bild nach Ihrer Idee</figcaption>
-            </figure>
-            <figure className="seasonal-preview seasonal-preview-video">
-              <video aria-label="Persönlicher Video-Gruß" controls playsInline preload="none" poster="/swea/video-gruss-poster.webp" src="/swea/video-gruss.mp4" />
-              <figcaption>Video-Gruß</figcaption>
-            </figure>
-            <div className="seasonal-preview seasonal-preview-audio">
-              <span className="seasonal-audio-label"><Music2 aria-hidden="true" size={15} /> Songs &amp; Jingles</span>
-              <div className="seasonal-audio-wave" aria-hidden="true">
-                {Array.from({ length: 18 }, (_, index) => <span key={index} />)}
-              </div>
-              <span className="seasonal-audio-caption">Persönlicher Song oder Jingle für Ihren Lieblingsmoment</span>
-              <audio aria-label="Persönlichen Song oder Jingle abspielen" controls preload="none">
-                <source src="/swea/medien/hoerprobe-recording-00_08.mp3" type="audio/mpeg" />
-                Ihr Browser unterstützt die Audiowiedergabe nicht.
-              </audio>
-            </div>
-          </div>
-        </div>
-      </section>
+      <OfferCards />
       <AboutSection />
+      <HomeContactClosing />
     </>
   )
 }
@@ -1152,61 +1123,50 @@ function ContactSection() {
 }
 
 function AboutSection() {
-  const cardClass = "scroll-mt-24 rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm sm:p-6"
+  const qualifications = [
+    "Diplom-Informatiker, Studium an der Universität Stuttgart",
+    "Jahrzehntelange Erfahrung im professionellen EDV-Service",
+    "Kursleiter für Waldbaden (klassik intensiv) – Ausbildung an der Deutschen Akademie für Waldbaden und Gesundheit, August 2023",
+  ]
 
   return (
     <section aria-labelledby="about-title" className="section bg-area-soft" id="ueber-swea">
       <div className="page-wrap">
-        <div className="mb-8 max-w-3xl sm:mb-10">
-          <span className="eyebrow">Über SWEA · Schorndorf</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="about-title">Persönlich beraten. Verständlich begleiten.</h2>
-          <p className="mt-4 text-base leading-7 text-area-muted">SWEA verbindet persönlichen IT-Service mit kreativen digitalen Angeboten und achtsamer Zeit in der Natur.</p>
+        <div className="mx-auto max-w-3xl rounded-2xl border border-area-border bg-area-surface p-6 shadow-sm sm:p-8">
+          <span className="eyebrow">Über SWEA</span>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-area-deep sm:text-3xl" id="about-title">Uwe Christian – Ihr persönlicher Ansprechpartner</h2>
+          <p className="mt-3 text-base leading-7 text-area-muted">Ich höre zu, erkläre verständlich und suche mit Ihnen den passenden nächsten Schritt.</p>
+          <ul className="mt-5 grid gap-3">
+            {qualifications.map((item) => (
+              <li className="flex items-start gap-3 text-sm leading-6 text-area-deep" key={item}>
+                <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-area-subtle text-area-primary"><Check aria-hidden="true" size={13} /></span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
+      </div>
+    </section>
+  )
+}
 
-        <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-6">
-          <figure className="about-profile relative min-h-[22rem] overflow-hidden rounded-2xl bg-area-deep shadow-sm sm:min-h-[28rem]">
-            <Image
-              alt="Uwe Christian in seinem Büro in Schorndorf"
-              className="object-cover object-[center_31%]"
-              fill
-              sizes="(max-width: 1023px) 100vw, 40vw"
-              src="/swea/uwe-christian-home.png"
-            />
-            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-area-deep/85 via-transparent to-transparent" />
-            <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-5 text-white sm:p-6">
-              <strong className="text-lg font-semibold">Uwe Christian</strong>
-              <span className="text-sm text-white/85">Ihr persönlicher Ansprechpartner in Schorndorf</span>
-            </figcaption>
-          </figure>
-
-          <div className="about-card grid min-w-0 gap-4 sm:grid-cols-2">
-            <article className={cardClass} id="about-person">
-              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Person</span>
-              <h3 className="mt-3 text-lg font-semibold text-area-deep">Uwe Christian</h3>
-              <p className="mt-2 text-sm leading-6 text-area-muted">Ihr direkter Ansprechpartner in Schorndorf – vom ersten Gespräch bis zur passenden Unterstützung.</p>
-            </article>
-            <article className={cardClass} id="about-arbeitsweise">
-              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Arbeitsweise</span>
-              <h3 className="mt-3 text-lg font-semibold text-area-deep">Klar, persönlich, lösungsorientiert</h3>
-              <p className="mt-2 text-sm leading-6 text-area-muted">Erst verstehen, dann verständlich erklären und gemeinsam praktikable nächste Schritte finden.</p>
-            </article>
-            <article className={`${cardClass} sm:col-span-2`} id="about-erfahrung">
-              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Erfahrung</span>
-              <h3 className="mt-3 text-lg font-semibold text-area-deep">Technik und Natur im Blick</h3>
-              <p className="mt-2 text-sm leading-6 text-area-muted">Uwe Christian ist Diplom-Informatiker und hat an der Universität Stuttgart studiert. Er bringt jahrzehntelange Erfahrung im professionellen EDV-Service mit – bei Computerhilfe, Netzwerkthemen und Webprojekten. Im August 2023 hat er an der Deutschen Akademie für Waldbaden und Gesundheit die Ausbildung zum Kursleiter für Waldbaden (klassik intensiv) absolviert.</p>
-            </article>
-          </div>
-        </div>
-
-        <div className="mt-6 flex flex-col items-start justify-between gap-4 rounded-2xl bg-area-deep px-5 py-5 text-white sm:flex-row sm:items-center sm:px-7">
+function HomeContactClosing() {
+  return (
+    <section aria-labelledby="home-contact-title" className="section">
+      <div className="page-wrap">
+        <div className="flex flex-col items-start justify-between gap-5 rounded-2xl bg-area-deep px-5 py-6 text-white sm:px-8 lg:flex-row lg:items-center">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-accent-light">Direkt mit Uwe sprechen</span>
-            <h3 className="mt-1 text-lg font-semibold">Was können wir für Sie tun?</h3>
-            <p className="mt-1 text-sm leading-6 text-white/80">Beschreiben Sie Ihr Anliegen – wir finden gemeinsam den passenden nächsten Schritt.</p>
+            <h2 className="text-xl font-semibold sm:text-2xl" id="home-contact-title">Was können wir für Sie tun?</h2>
+            <p className="mt-2 text-sm leading-6 text-white/80">Beschreiben Sie kurz Ihr Anliegen – ich melde mich persönlich bei Ihnen.</p>
           </div>
-          <Link className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-area-accent px-5 py-3 text-sm font-semibold text-area-accent-foreground transition-colors hover:bg-area-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent sm:w-auto" data-nav-link href="/kontakt">
-            Kontakt aufnehmen <ArrowRight aria-hidden="true" size={17} />
-          </Link>
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
+            <Link className="inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-area-accent px-5 py-3 text-sm font-semibold text-area-accent-foreground transition-colors hover:bg-area-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent" data-nav-link href="/kontakt">
+              Kontakt aufnehmen <ArrowRight aria-hidden="true" size={17} />
+            </Link>
+            <a className="inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-white/30 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" href="tel:+497181253147">
+              <Phone aria-hidden="true" size={16} /> +49 7181 253147
+            </a>
+          </div>
         </div>
       </div>
     </section>
