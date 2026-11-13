@@ -1075,7 +1075,7 @@ function AboutSection() {
 function Footer() {
   return (
     <footer className="site-footer">
-      <div className="page-wrap grid gap-8 border-b border-brand-border py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:grid-cols-[minmax(180px,.85fr)_minmax(0,2fr)_minmax(180px,.85fr)]">
+      <div className="page-wrap grid gap-8 border-b border-brand-border py-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] sm:items-center lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,.8fr)] lg:gap-12">
         <div>
           <button aria-label="SWEA – zur Startseite" className="brand brand-button footer-brand" data-page-nav="start" data-target-id="start" type="button">
             <span className="brand-mark"><Image alt="" fill sizes="34px" src={antonIconSrc} /></span>
@@ -1087,30 +1087,13 @@ function Footer() {
             Fernwartung verschlüsselt und nur mit Ihrer aktiven Freigabe
           </span>
         </div>
-        <nav aria-label="Fußnavigation" className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3">
-          {navigation.map((item) => (
-            <div key={item.page}>
-              <button className="mb-2 text-left text-sm font-semibold text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-page-nav={item.page} data-target-id={item.targetId} type="button">
-                {item.label}
-              </button>
-              {item.children ? (
-                <ul className="grid list-none gap-1.5 p-0">
-                  {item.children.map((child) => (
-                    <li key={child.targetId}>
-                      <button className="text-left text-xs leading-5 text-area-muted transition hover:text-area-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-page-nav={child.page} data-target-id={child.targetId} type="button">{child.label}</button>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-            </div>
-          ))}
-        </nav>
-        <address className="flex flex-col items-start gap-2 not-italic text-sm text-area-muted">
-          <span className="eyebrow">Direktkontakt</span>
-          <a className="inline-flex min-h-11 items-center font-medium text-area-deep hover:text-area-primary-hover" href="mailto:edv@swea.de">edv@swea.de</a>
-          <a className="inline-flex min-h-11 items-center font-medium text-area-deep hover:text-area-primary-hover" href="mailto:wb@swea.de">wb@swea.de</a>
-          <a className="inline-flex min-h-11 items-center font-medium text-area-deep hover:text-area-primary-hover" href="tel:+497181253148">07181 / 253148</a>
-          <span>Freiburgstr. 12 · 73614 Schorndorf</span>
+        <address className="flex flex-col items-start gap-1.5 not-italic text-sm text-area-muted sm:justify-self-end sm:w-full sm:max-w-sm">
+          <h2 className="mb-1 text-sm font-semibold text-area-deep">Kontakt</h2>
+          <p className="font-medium text-area-deep">Uwe Christian</p>
+          <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="tel:+497181253148">07181 / 253148</a>
+          <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:edv@swea.de">edv@swea.de</a>
+          <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:wb@swea.de">wb@swea.de</a>
+          <p className="mt-1 leading-6">Freiburgstr. 12 · 73614 Schorndorf</p>
         </address>
       </div>
       <div className="page-wrap footer-bottom flex-col items-start sm:flex-row sm:items-center">
