@@ -720,7 +720,7 @@ function DataRecoverySection() {
     },
     {
       title: "Erste Diagnose durch DataPhoenix",
-      description: "DataPhoenix führt eine erste Diagnose durch. Diese ist noch durch die Aufwandspauschele abgedeckt.",
+      description: "DataPhoenix führt eine erste Diagnose durch. Diese ist noch durch die Aufwandspauschale abgedeckt.",
     },
     {
       title: "SWEA-Aufwandspauschale von 40 Euro",
@@ -892,8 +892,7 @@ function DataRecoverySection() {
               <li className="flex gap-2"><Check aria-hidden="true" className="mt-1 shrink-0 text-area-primary" size={16} /> Es ist die eigene Vergütung von SWEA für Bearbeitung und Abwicklung.</li>
               <li className="flex gap-2"><Check aria-hidden="true" className="mt-1 shrink-0 text-area-primary" size={16} /> Sie wird Ihnen vor Ihrer Beauftragung mitgeteilt.</li>
             </ul>
-            {/* OFFEN: Fälligkeit der Pauschale und ob sie bei Ablehnung des späteren Angebots geschuldet wird, muss SWEA festlegen. Bis dahin keine Aussage dazu. */}
-            <p className="mt-3 text-sm leading-6 text-area-muted">
+                      <p className="mt-3 text-sm leading-6 text-area-muted">
               Die Pauschale wird in jedem Fall fällig und deckt unseren Aufwand für die Erstanalyse, die gegebenenfalls stattfindende Abklärung mit dem Partner und alle notwenigen Schritte und die Kommunikation mit Ihnen ab.
             </p>
           </aside>
