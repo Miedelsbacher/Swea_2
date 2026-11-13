@@ -1,9 +1,21 @@
 "use client"
 
-import type { FormEvent } from "react"
+import { useEffect, useRef, type FormEvent } from "react"
 import { ArrowRight } from "lucide-react"
 
+const interestByTopic: Record<string, string> = {
+  waldbaden: "Waldbaden",
+}
+
 export function ContactInquiryForm() {
+  const interestRef = useRef<HTMLSelectElement>(null)
+
+  useEffect(() => {
+    const topic = new URLSearchParams(window.location.search).get("bereich")
+    const interest = topic ? interestByTopic[topic] : undefined
+    if (interest && interestRef.current) interestRef.current.value = interest
+  }, [])
+
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
@@ -42,7 +54,7 @@ export function ContactInquiryForm() {
 
       <label className="grid gap-2 text-sm font-medium text-area-deep">
         <span>Bereich</span>
-        <select className="min-h-11 w-full rounded-lg border border-area-border bg-area-surface px-3 text-sm outline-none transition focus:border-area-primary focus:ring-2 focus:ring-area-primary/20" name="interest" defaultValue="" required>
+        <select className="min-h-11 w-full rounded-lg border border-area-border bg-area-surface px-3 text-sm outline-none transition focus:border-area-primary focus:ring-2 focus:ring-area-primary/20" name="interest" defaultValue="" ref={interestRef} required>
           <option value="" disabled>Bitte wählen</option>
           <option value="IT-Service">IT-Service</option>
           <option value="Datenrettung">Datenrettung</option>

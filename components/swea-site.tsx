@@ -25,6 +25,7 @@ import {
 } from "lucide-react"
 import { AIExamplesCarousel } from "@/components/ai-examples-carousel"
 import { ContactInquiryForm } from "@/components/contact-inquiry-form"
+import { WaldbadenPage } from "@/components/waldbaden-page"
 
 function Hero() {
   return (
@@ -672,92 +673,6 @@ function SectionIntro({
   )
 }
 
-function WellbeingSection() {
-  return (
-    <section className="section section-wellbeing" id="waldbaden">
-      <div className="page-wrap grid items-center gap-8 md:grid-cols-[1.05fr_0.95fr] md:gap-10 lg:gap-14">
-        <figure className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-area-deep shadow-xl md:aspect-[4/5]">
-          <Image
-            alt="Wald und Streuobstwiesen am Frauenberg in Schorndorf"
-            className="object-cover"
-            fill
-            sizes="(max-width: 767px) 100vw, 50vw"
-            src="/swea/waldbaden-frauenberg.jpg"
-          />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-area-deep/85 via-area-deep/5 to-transparent" />
-          <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-5 text-white sm:p-6">
-            <span className="flex items-center gap-2 text-sm font-semibold"><MapPin aria-hidden="true" size={16} /> Frauenberg · Schorndorf</span>
-            <span className="text-xs leading-5 text-white/85">
-              Foto: <a href="https://commons.wikimedia.org/wiki/File:Autumn_Frauenberg_Schorndorf_2014.jpg" rel="noreferrer" target="_blank">Maxim Beniashvili / Wikimedia Commons</a>
-              {" · "}<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noreferrer" target="_blank">CC BY-SA 4.0</a> · Web-Zuschnitt
-            </span>
-          </figcaption>
-        </figure>
-
-        <div className="rounded-[1.75rem] border border-area-deep/10 bg-earth-soft p-6 shadow-sm sm:p-8">
-          <span className="inline-flex items-center gap-2 rounded-full bg-area-subtle px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-area-deep"><Leaf aria-hidden="true" size={14} /> Waldbaden &amp; Achtsamkeit</span>
-          <h1 className="mt-5 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl">Waldbaden in Schorndorf: Mit Shinrin-Yoku im Wald ankommen.</h1>
-          <p className="mt-4 text-base leading-7 text-earth-deep">Shinrin-Yoku – das bewusste Eintauchen in die Atmosphäre des Waldes – lädt dazu ein, mit allen Sinnen langsamer zu werden. In achtsamen Übungen nehmen wir die Natur wahr und schaffen Raum für Ruhe, neue Klarheit und Abstand vom Alltag.</p>
-          <p className="mt-3 text-sm leading-6 text-earth-muted">Uwe Christian ist zertifizierter Kursleiter bei der Akademie für Waldbaden. Mit seiner Qualifikation in Outdoor-Erste-Hilfe ist er auf die besonderen Anforderungen geführter Angebote in der Natur vorbereitet.</p>
-
-          <dl className="mt-6 divide-y divide-area-deep/10 rounded-xl border border-area-deep/10 bg-earth-subtle px-4 sm:px-5" id="kursdetails">
-            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-area-deep">Gruppen</dt><dd className="text-sm leading-6 text-earth-deep">Kleine Gruppen mit maximal 8 Personen</dd></div>
-            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-area-deep">Zielgruppe</dt><dd className="text-sm leading-6 text-earth-deep">Für Einsteiger, Einzelpersonen sowie Freundes- und Familiengruppen</dd></div>
-            <div className="grid gap-1 py-3 sm:grid-cols-[100px_1fr] sm:gap-3"><dt className="text-sm font-semibold text-area-deep">Leitung</dt><dd className="text-sm leading-6 text-earth-deep">Zertifizierter Kursleiter mit Outdoor-Erste-Hilfe</dd></div>
-          </dl>
-
-          <Link className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-area-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2 sm:w-auto" id="termine" data-nav-link href="/kontakt">
-            Unverbindlichen Termin anfragen <ArrowRight aria-hidden="true" size={17} />
-          </Link>
-        </div>
-      </div>
-
-      <div className="page-wrap wellbeing-grid">
-        <article className="wellbeing-card">
-          <span className="wellbeing-icon"><Heart aria-hidden="true" size={20} /></span>
-          <h3>Stressbewältigung</h3>
-          <p>Um im harten EDV-Alltag zu bestehen, ist es notwendig, aufkommenden Stress zu bewältigen. Durch diverse Übungen vermitteln wir Techniken, die sich im Alltag nutzen und integrieren lassen.</p>
-        </article>
-        <article className="wellbeing-card">
-          <span className="wellbeing-icon"><Leaf aria-hidden="true" size={20} /></span>
-          <h3>Waldbaden</h3>
-          <p>Als zertifizierter Kursleiter für Waldbaden und Achtsamkeit in der Natur biete ich Termine für gemeinsames und erholsames Waldbaden an.</p>
-        </article>
-        <article className="wellbeing-card">
-          <span className="wellbeing-icon"><ArrowDown aria-hidden="true" size={20} /></span>
-          <h3>Entschleunigung</h3>
-          <p>In der schnelllebigen Zeit der EDV biete ich Möglichkeiten, im Arbeitsalltag Entschleunigung zu erfahren und für den Arbeitsalltag zu konservieren.</p>
-        </article>
-        <article className="wellbeing-card">
-          <span className="wellbeing-icon"><ShieldCheck aria-hidden="true" size={20} /></span>
-          <h3>Achtsamkeit</h3>
-          <p>Das eigene Ich als sein wichtigstes Werkzeug zu begreifen und zu ergreifen ist die zentrale Technik, um Problemen entgegenzutreten. Lernen Sie mit mir, dies zu schaffen.</p>
-        </article>
-      </div>
-
-      <div className="page-wrap qualification-wrap">
-        <div className="qualification-copy">
-          <span className="eyebrow">Qualifikation &amp; Haltung</span>
-          <h3>Mit Erfahrung und Verantwortung in der Natur.</h3>
-          <p>Der Kursleiter, Herr Uwe Christian, ist zertifizierter Kursleiter für Waldbaden und Achtsamkeit. Die abgeschlossene Ausbildung wurde bei der Akademie für Waldbaden durchgeführt.</p>
-          <p>Ergänzend wurde ein Erste-Hilfe-Kurs Outdoor bei den Johannitern absolviert und abgeschlossen. Dazu kommt praktische Erfahrung aus diversen selbst besuchten und abgehaltenen Kursen.</p>
-          <p className="permission-note"><ShieldCheck aria-hidden="true" size={17} />Wir arbeiten ausschließlich an Orten, die uns vom Forst oder den Besitzern für den jeweiligen Termin gestattet wurden.</p>
-        </div>
-        <a className="academy-card" href="https://waldbaden-akademie.com/" rel="noreferrer" target="_blank">
-          <Image alt="Ausgebildet durch die Deutsche Akademie für Waldbaden und Gesundheit" height={219} src="/swea/waldbaden-akademie.jpg" width={225} />
-          <span>Ausgebildet durch die Akademie <ExternalLink aria-hidden="true" size={14} /></span>
-        </a>
-      </div>
-
-      <div className="page-wrap offer-card">
-        <div className="offer-mark"><Leaf aria-hidden="true" size={22} /></div>
-        <div><span className="eyebrow">Angebote</span><h3>Ein wohltuender Impuls für Ihre Gruppe.</h3><p>Für private Freundes-, Familien- und kleine Gruppen – auf Wunsch auch online. Das Waldbaden passt als kurze aktive Pause, zum Tagesstart oder -abschluss oder als Halbtagesprogramm. Gemeinsam finden wir einen passenden Termin und einen ruhigen Ort in der Umgebung.</p></div>
-        <Link className="button button-dark min-h-12" data-nav-link href="/kontakt">Termin anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
-      </div>
-    </section>
-  )
-}
-
 function RemoteSection() {
   const options = [
     { name: "RustDesk", description: "Fernzugriff für Windows, macOS, Linux und mobile Geräte.", url: "https://rustdesk.com/download", label: "rustdesk.com/download" },
@@ -948,7 +863,7 @@ export function ITServicePageContent() {
 export function WaldbadenPageContent() {
   return (
     <div className="brand-area brand-area-natur">
-      <WellbeingSection />
+      <WaldbadenPage />
     </div>
   )
 }
