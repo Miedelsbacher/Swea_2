@@ -227,9 +227,25 @@ export function AGBModal() {
         </ol>
         <h4 className={subheadingClass}>C4. Nutzungsrechte, Urheberrecht und Referenzen</h4>
         <ol className={orderedListClass}>
-          <li>Nutzungsrechte an den Ergebnissen werden nicht pauschal, sondern nur im ausdrücklich vereinbarten Umfang eingeräumt. Maßgeblich sind Angebot und Auftragsbestätigung.</li>
-          <li>Eigene kreative Beiträge des Anbieters werden respektiert. Ein Urheberrechtsschutz besteht nur, soweit die gesetzlichen Voraussetzungen erfüllt sind. Nicht jedes mit KI-Unterstützung erstellte Ergebnis ist automatisch urheberrechtlich geschützt. Der Anbieter sichert daher keinen Urheberrechtsschutz und keine Ausschließlichkeit der Ergebnisse zu, sofern dies nicht ausdrücklich vereinbart ist.</li>
-          <li>Aufträge und Ergebnisse veröffentlicht der Anbieter nicht als Referenz oder Werbung, ohne dass der Kunde gesondert zugestimmt hat. Einzelheiten regelt C2 Nr. 6.</li>
+          <li>Eigene kreative Beiträge des Anbieters, die bei der Erstellung der individuellen digitalen Medien entstehen, etwa Konzept, Auswahl, Anordnung, Bearbeitung und Gestaltung, können urheberrechtlich geschützt sein, soweit sie die gesetzlichen Voraussetzungen erfüllen. Soweit ein solcher Schutz besteht, verbleibt das Urheberrecht beim Anbieter. Der Kunde erhält daran Nutzungsrechte ausschließlich nach Nr. 4.</li>
+          <li>Nicht jedes mit KI-Unterstützung erstellte Ergebnis ist urheberrechtlich geschützt. Ob und in welchem Umfang ein Schutz besteht, hängt insbesondere von den menschlichen kreativen Beiträgen und ihrer konkreten Ausgestaltung ab. Der Anbieter beansprucht kein Urheberrecht an Ergebnisbestandteilen, die nicht geschützt sind, und sichert weder einen Urheberrechtsschutz noch eine Ausschließlichkeit der Ergebnisse zu, sofern dies nicht ausdrücklich vereinbart ist.</li>
+          <li>Rechte an Material, das der Kunde bereitstellt, etwa Fotos, Texte, Logos oder Musikstücke, verbleiben beim jeweiligen Rechteinhaber. Der Kunde räumt dem Anbieter die für die Durchführung des Auftrags erforderlichen einfachen Nutzungsrechte ein beziehungsweise stellt sicher, dass diese vom Rechteinhaber eingeräumt sind. Er stellt kein Material bereit, dessen Nutzung Rechte Dritter verletzt. Im Übrigen gilt C2.</li>
+          <li>
+            Der Kunde darf die vereinbarten Ergebnisse in dem Umfang nutzen, der sich aus dem Angebot oder der individuellen Vereinbarung ergibt. Dort wird insbesondere festgelegt, ob und in welchem Umfang folgende Nutzungsarten umfasst sind:
+            <ul className={listClass}>
+              <li>private Nutzung,</li>
+              <li>gewerbliche Nutzung,</li>
+              <li>Nutzung zu Werbezwecken,</li>
+              <li>Veröffentlichung auf eigenen Websites und Social-Media-Kanälen,</li>
+              <li>Weitergabe an Dritte,</li>
+              <li>Bearbeitung und Veränderung sowie</li>
+              <li>Unterlizenzierung.</li>
+            </ul>
+            Nicht ausdrücklich vereinbarte Nutzungsarten sind nicht umfasst. Ist nichts anderes vereinbart, erhält der Kunde ein einfaches, zeitlich unbeschränktes Nutzungsrecht für den im Auftrag erkennbar vorausgesetzten Zweck; die Rechte werden mit vollständiger Bezahlung eingeräumt. Eine vollständige Übertragung des Urheberrechts findet nicht statt.
+          </li>
+          <li>Der Besitz der übergebenen Dateien begründet weder ein Urheberrecht noch Nutzungsrechte über den vereinbarten Umfang hinaus. Nutzungsrechte sind unabhängig davon, auf welchem Datenträger oder über welchen Weg die Dateien übergeben werden (siehe C3).</li>
+          <li>Rechte Dritter, etwa an Marken, Werken, Musik, Bildern oder Persönlichkeitsmerkmalen realer Personen, werden durch die Einräumung von Nutzungsrechten nach Nr. 4 nicht berührt. Für die Rechtmäßigkeit seiner eigenen Nutzung im konkreten Verwendungszusammenhang ist der Kunde verantwortlich.</li>
+          <li>Aufträge und Ergebnisse verwendet der Anbieter nur mit gesonderter Zustimmung des Kunden als Referenz oder für Werbezwecke. Einzelheiten regelt C2 Nr. 6.</li>
         </ol>
         <h4 className={subheadingClass}>C5. Vergütung</h4>
         <p className={paragraphClass}>Die Bezahlung der Leistungen des KI-Studios erfolgt im Voraus. Der Anbieter stellt eine Rechnung ohne ausgewiesene Umsatzsteuer aus (siehe Abschnitt 3).</p>
