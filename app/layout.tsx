@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Lora } from 'next/font/google'
 import './globals.css'
+import { LegalModals } from '@/components/legal-modals'
+import { SiteInteractions } from '@/components/site-interactions'
+import { SiteFooter, SiteHeader } from '@/components/site-shell'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const lora = Lora({ subsets: ['latin'], variable: '--font-lora' })
@@ -9,17 +12,20 @@ const siteUrl = 'https://www.swea.de'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'SWEA – EDV-Service, KI-Studio & Waldbaden in Schorndorf',
+  title: {
+    default: 'SWEA – Technik, die hilft. Ruhe, die bleibt.',
+    template: '%s | SWEA in Schorndorf',
+  },
   description:
-    'Persönlicher IT-Service, KI-Bilder und Videos, individuelle Songs sowie Waldbaden und Achtsamkeit in Schorndorf. Uwe Christian – SWEA.',
+    'Persönlicher IT-Service für Zuhause, kreative KI-Porträts, Videos und Songs sowie zertifiziertes Waldbaden in Schorndorf. Uwe Christian – SWEA.',
   generator: 'SWEA',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'SWEA – EDV-Service, KI-Studio & Waldbaden in Schorndorf',
+    title: 'SWEA – Technik, die hilft. Ruhe, die bleibt.',
     description:
-      'IT-Service, persönliche KI-Produktion und Waldbaden in Schorndorf und Umgebung. Mit Uwe Christian.',
+      'Persönlicher IT-Service, KI-Studio und zertifiziertes Waldbaden in Schorndorf und Umgebung. Mit Uwe Christian.',
     url: '/',
     siteName: 'SWEA',
     locale: 'de_DE',
@@ -44,7 +50,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#f7f6f0',
+  themeColor: '#f6f5f0',
 }
 
 const businessJsonLd = {
@@ -95,7 +101,13 @@ export default function RootLayout({
             __html: JSON.stringify(businessJsonLd).replace(/</g, '\\u003c'),
           }}
         />
-        {children}
+        <SiteInteractions>
+          <SiteHeader />
+          <a className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-area-surface focus:px-4 focus:py-2 focus:text-area-deep focus:shadow-lg" href="#main-content">Zum Inhalt springen</a>
+          <main id="main-content">{children}</main>
+          <SiteFooter />
+          <LegalModals />
+        </SiteInteractions>
       </body>
     </html>
   )
