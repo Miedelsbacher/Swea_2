@@ -28,6 +28,7 @@ import {
   X,
 } from "lucide-react"
 import { AIExamplesCarousel } from "@/components/ai-examples-carousel"
+import { LegalModals } from "@/components/legal-modals"
 import { SiteInteractions } from "@/components/site-interactions"
 
 const antonIconSrc = "/swea/anton.jpg"
@@ -1007,103 +1008,6 @@ function ContactSection() {
   )
 }
 
-function LegalSection() {
-  const legalCardClass = "min-w-0 rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm sm:p-7"
-  const subsectionClass = "text-sm font-semibold text-area-deep"
-  const proseClass = "mt-2 text-sm leading-7 text-area-muted"
-  const legalLinkClass = "font-semibold text-brand-primary underline decoration-brand-border underline-offset-2 hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
-
-  return (
-    <section aria-labelledby="legal-title" className="page-wrap scroll-mt-24 py-12 sm:py-16 lg:py-20" id="impressum">
-      <header className="max-w-3xl">
-        <span className="eyebrow">Rechtliches · Stand: 13. November 2026</span>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="legal-title">Impressum &amp; Datenschutz</h2>
-        <p className="mt-3 text-sm leading-7 text-area-muted">Anbieterkennzeichnung, steuerliche Hinweise und Informationen zum Umgang mit personenbezogenen Daten.</p>
-      </header>
-
-      <div className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-        <div className="grid min-w-0 content-start gap-5">
-          <article className={legalCardClass}>
-            <span className="eyebrow">Anbieter</span>
-            <h3 className="mt-2 text-xl font-semibold text-area-deep">Impressum</h3>
-            <p className={proseClass}>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p>
-            <address className="mt-4 not-italic text-sm leading-6 text-area-deep">
-              <strong>Uwe Christian</strong><br />
-              Freiburgstr. 12<br />
-              73614 Schorndorf
-            </address>
-            <dl className="mt-4 grid gap-3 border-t border-area-border pt-4 text-sm sm:grid-cols-2">
-              <div><dt className="text-xs font-medium text-area-muted">Telefon</dt><dd className="mt-1"><a className={legalLinkClass} href="tel:+497181253148">+49 7181 253148</a></dd></div>
-              <div><dt className="text-xs font-medium text-area-muted">Telefax</dt><dd className="mt-1"><a className={legalLinkClass} href="tel:+497181253151">+49 7181 253151</a></dd></div>
-              <div><dt className="text-xs font-medium text-area-muted">E-Mail</dt><dd className="mt-1"><a className={legalLinkClass} href="mailto:edv@swea.de">edv@swea.de</a></dd></div>
-              <div><dt className="text-xs font-medium text-area-muted">Internet</dt><dd className="mt-1"><a className={legalLinkClass} href="https://www.swea.de/" rel="noopener noreferrer" target="_blank">www.swea.de</a></dd></div>
-            </dl>
-            <p className="mt-4 text-sm leading-6 text-area-muted"><strong className="text-area-deep">Inhaber:</strong> Uwe Christian</p>
-            <div className="mt-5 border-t border-area-border pt-4">
-              <h4 className={subsectionClass}>Verantwortlich für journalistisch-redaktionelle Inhalte gemäß § 18 Abs. 2 MStV</h4>
-              <p className={proseClass}>Uwe Christian, Freiburgstr. 12, 73614 Schorndorf.</p>
-            </div>
-          </article>
-
-          <article className={legalCardClass}>
-            <span className="eyebrow">Steuerliche Angaben</span>
-            <h3 className="mt-2 text-xl font-semibold text-area-deep">Umsatzsteuer</h3>
-            <p className={proseClass}>Als Kleinunternehmer im Sinne des § 19 UStG wird keine Umsatzsteuer ausgewiesen.</p>
-            <p className="mt-3 text-sm leading-6 text-area-muted"><strong className="text-area-deep">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:</strong><br />DE352438907</p>
-            <h4 className={`${subsectionClass} mt-5`}>Haftung für externe Links</h4>
-            <p className={proseClass}>Für Inhalte verlinkter externer Seiten sind ausschließlich deren jeweilige Betreiber verantwortlich.</p>
-            <h4 className={`${subsectionClass} mt-5`}>Bildnachweise</h4>
-            <p className={proseClass}>Urheber und Bildquelle: Uwe Christian. Alle Bilder stehen unter Copyright von Uwe Christian.</p>
-          </article>
-        </div>
-
-        <article aria-labelledby="privacy-title" className={legalCardClass} id="datenschutzerklaerung">
-          <span className="eyebrow">Ihre Daten</span>
-          <h3 className="mt-2 text-xl font-semibold text-area-deep" id="privacy-title">Datenschutzerklärung</h3>
-          <p className={proseClass}>Stand: 13. November 2026. Diese Hinweise informieren darüber, welche personenbezogenen Daten bei der Nutzung dieser Website verarbeitet werden.</p>
-
-          <div className="mt-6 grid gap-x-6 gap-y-6 sm:grid-cols-2">
-            <div>
-              <h4 className={subsectionClass}>Verantwortlicher</h4>
-              <p className={proseClass}>Uwe Christian, Freiburgstr. 12, 73614 Schorndorf. Kontakt: <a className={legalLinkClass} href="mailto:edv@swea.de">edv@swea.de</a>.</p>
-            </div>
-            <div>
-              <h4 className={subsectionClass}>Hosting durch Vercel</h4>
-              <p className={proseClass}>Diese Website wird über Vercel, Inc. bereitgestellt. Beim Seitenaufruf können technische Verbindungsdaten wie IP-Adresse, Zeitpunkt, angefragte URL, Referrer sowie Browser- und Geräteinformationen verarbeitet werden, damit die Website ausgeliefert, stabil betrieben und gegen Missbrauch geschützt werden kann. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Für Besucherdaten handelt Vercel als Auftragsverarbeiter; technische Service-Daten verarbeitet Vercel nach den eigenen Datenschutzhinweisen.</p>
-            </div>
-            <div>
-              <h4 className={subsectionClass}>Externe Medien und Links</h4>
-              <p className={proseClass}>Einzelne Bilder, Audio- und Videodateien werden über Vercel Blob unter <code className="break-all rounded bg-area-soft px-1 py-0.5 text-xs">public.blob.vercel-storage.com</code> geladen. Beim Abruf erhält Vercel technische Verbindungsdaten. Links zu TeamViewer, RustDesk, Google Remote Desktop und weiteren Anbietern sind nicht in diese Seite eingebettet. Erst beim Öffnen eines solchen Links gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
-            </div>
-            <div>
-              <h4 className={subsectionClass}>Kontakt und Anfragen</h4>
-              <p className={proseClass}>Das Kontaktformular übermittelt keine Formulardaten an unseren Webserver. Beim Absenden öffnet sich Ihr E-Mail-Programm mit den eingetragenen Angaben. Wenn Sie die E-Mail versenden, verarbeiten wir Name, E-Mail-Adresse, Anliegen und Nachricht zur Beantwortung und gegebenenfalls zur Anbahnung oder Durchführung eines Auftrags. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO; bei allgemeinen Anfragen Art. 6 Abs. 1 lit. f DSGVO.</p>
-            </div>
-            <div>
-              <h4 className={subsectionClass}>Analyse, Cookies und Speicherdauer</h4>
-              <p className={proseClass}>Auf dieser Website sind derzeit keine Analyse- oder Werbedienste eingebunden. Anfragen werden nur so lange gespeichert, wie es für die Bearbeitung erforderlich ist; gesetzliche Aufbewahrungspflichten bleiben unberührt. Technische Protokolldaten verarbeitet Vercel nach den eigenen Datenschutz- und Aufbewahrungsregeln.</p>
-            </div>
-            <div>
-              <h4 className={subsectionClass}>Drittlandverarbeitung</h4>
-              <p className={proseClass}>Vercel kann Daten auch in den USA oder anderen Ländern verarbeiten. Informationen zu den dabei eingesetzten Schutzmechanismen finden Sie in den <a className={legalLinkClass} href="https://vercel.com/legal/privacy-policy" rel="noopener noreferrer" target="_blank">Datenschutzhinweisen von Vercel</a> und im <a className={legalLinkClass} href="https://vercel.com/legal/dpa" rel="noopener noreferrer" target="_blank">Vercel Data Processing Addendum</a>.</p>
-            </div>
-            <div className="sm:col-span-2">
-              <h4 className={subsectionClass}>Ihre Rechte</h4>
-              <p className={proseClass}>Sie haben im Rahmen der gesetzlichen Voraussetzungen das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch und den Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, insbesondere beim <a className={legalLinkClass} href="https://www.baden-wuerttemberg.datenschutz.de/" rel="noopener noreferrer" target="_blank">Landesbeauftragten für den Datenschutz und die Informationsfreiheit Baden-Württemberg</a>. Zur Ausübung Ihrer Rechte genügt eine Nachricht an <a className={legalLinkClass} href="mailto:edv@swea.de">edv@swea.de</a>.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <article className={`${legalCardClass} mt-5`} id="agb-individualprodukte">
-        <h3 className="text-lg font-semibold text-area-deep">AGB für individuell angefertigte Produkte</h3>
-        <p className={proseClass}>Platzhalter für Bedingungen zu individuell angefertigten Produkten und personalisierten Bestellungen. Der vollständige Rechtstext wird ergänzt und geprüft.</p>
-        <p className="mt-3 text-xs font-semibold text-warning-foreground">Noch keine verbindlichen Produktbedingungen.</p>
-      </article>
-    </section>
-  )
-}
-
 function AboutSection() {
   const cardClass = "scroll-mt-24 rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm sm:p-6"
 
@@ -1176,6 +1080,10 @@ function Footer() {
             <span className="brand-copy"><strong>SWEA</strong><span aria-hidden="true" className="brand-divider">|</span><small>Uwe Christian · Schorndorf</small></span>
           </button>
           <p className="mt-3 max-w-xs text-sm leading-6 text-area-muted">Persönlicher IT-Service und Achtsamkeit in der Natur.</p>
+          <span className="mt-4 inline-flex max-w-sm items-center gap-2 rounded-full border border-brand-border bg-brand-surface px-3 py-2 text-xs font-semibold leading-5 text-brand-deep">
+            <ShieldCheck aria-hidden="true" className="shrink-0" size={16} />
+            Fernwartung verschlüsselt und nur mit Ihrer aktiven Freigabe
+          </span>
         </div>
         <nav aria-label="Fußnavigation" className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3">
           {navigation.map((item) => (
@@ -1209,9 +1117,9 @@ function Footer() {
           <span className="text-xs font-medium text-brand-muted sm:text-sm">Kleinunternehmerregelung nach § 19 UStG: Es wird keine Umsatzsteuer ausgewiesen.</span>
         </div>
         <nav aria-label="Rechtliche Informationen" className="flex flex-wrap gap-x-3 gap-y-2">
-          <button className="inline-flex min-h-11 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-page-nav="kontakt" data-target-id="impressum" type="button">Impressum</button>
-          <button className="inline-flex min-h-11 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-page-nav="kontakt" data-target-id="datenschutzerklaerung" type="button">Datenschutzerklärung</button>
-          <button className="inline-flex min-h-11 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-page-nav="kontakt" data-target-id="agb-individualprodukte" type="button">AGB für individuelle Produkte</button>
+          <button className="inline-flex min-h-11 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-legal-modal-trigger="imprint-modal" type="button">Impressum</button>
+          <button className="inline-flex min-h-11 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-legal-modal-trigger="privacy-modal" type="button">Datenschutz</button>
+          <button className="inline-flex min-h-11 items-center rounded px-1 text-sm font-semibold text-brand-primary underline decoration-brand-border underline-offset-4 transition hover:text-brand-deep hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2" data-legal-modal-trigger="withdrawal-modal" type="button">Widerrufsbelehrung</button>
         </nav>
       </div>
     </footer>
@@ -1228,8 +1136,9 @@ export function SweaSite() {
         <div className="site-page-view brand-area brand-area-ki" data-page-view="studio" hidden><KIStudioShowcase /><HolidayGiftSection /><AlternativeMotifsSection /><AIExamplesCarousel /><KIStudioClosingCTA /></div>
         <div className="site-page-view brand-area brand-area-natur" data-page-view="waldbaden" hidden><WellbeingSection /></div>
         <div className="site-page-view brand-area brand-area-base" data-page-view="about" hidden><AboutSection /></div>
-        <div className="site-page-view brand-area brand-area-base" data-page-view="kontakt" hidden><ContactSection /><LegalSection /></div>
+        <div className="site-page-view brand-area brand-area-base" data-page-view="kontakt" hidden><ContactSection /></div>
       </main>
+      <LegalModals />
       <Footer />
     </SiteInteractions>
   )
