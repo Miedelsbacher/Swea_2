@@ -493,6 +493,18 @@ function ServicesSection() {
             <p className="text-sm leading-6 text-area-muted">Unterstützung bei passenden Ersatzteilen, Anschluss und Einrichtung von Geräten sowie der Einschätzung, ob sich eine Reparatur lohnt.</p>
             <Link aria-label="Hilfe bei Hardware anfragen" className={actionClass} data-nav-link href="/kontakt">Hardware-Hilfe anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
           </article>
+
+          <article className={cardClass} id="professionals">
+            <div className="mb-5 flex items-start gap-4">
+              <span className={iconClass}><Code2 aria-hidden="true" size={22} /></span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Webseiten &amp; Wartung</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Hilfe für Professionals</h3>
+              </div>
+            </div>
+            <p className="text-sm leading-6 text-area-muted">Wir führen gerne ein komplettes Redesign Ihrer Webseite durch oder bieten Wartungsverträge an</p>
+            <Link className={actionClass} data-nav-link href="/kontakt">Unterstützung für Profis anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
+          </article>
         </div>
 
         <div className="mt-7 flex flex-col items-start justify-between gap-4 rounded-2xl bg-area-deep px-6 py-5 text-white sm:flex-row sm:items-center sm:px-8">
