@@ -222,7 +222,11 @@ export function AGBModal() {
         </ol>
         <h4 className={subheadingClass}>C3. Digitale Bereitstellung</h4>
         <ol className={orderedListClass}>
-          <li>Die fertigen Ergebnisse werden ausschließlich digital übergeben. Der Anbieter druckt nicht, produziert keine bedruckten Waren und versendet keine physischen Produkte.</li>
+          <li>Die vereinbarten Ergebnisse werden ausschließlich digital bereitgestellt. Die Lieferung körperlicher Gegenstände oder Datenträger ist nicht geschuldet.</li>
+          <li>Der konkrete Übergabeweg, etwa per Download-Link, E-Mail oder Freigabe in einem Cloud-Speicher, richtet sich nach der individuellen Vereinbarung mit dem Kunden.</li>
+          <li>Dateiformat und Umfang der Ergebnisse ergeben sich aus dem Angebot oder der Auftragsbestätigung.</li>
+          <li>Der Zeitpunkt der Bereitstellung richtet sich nach dem vereinbarten Leistungsumfang.</li>
+          <li>Die Bereitstellung oder Übermittlung einer Datei bedeutet nicht, dass dem Kunden sämtliche Rechte an dem Ergebnis übertragen werden. Welche Nutzungsrechte der Kunde erhält, richtet sich ausschließlich nach C4.</li>
           <li>Möchte der Kunde ein Ergebnis drucken oder anderweitig verarbeiten lassen, beauftragt er dafür selbst einen externen Anbieter.</li>
         </ol>
         <h4 className={subheadingClass}>C4. Nutzungsrechte, Urheberrecht und Referenzen</h4>
