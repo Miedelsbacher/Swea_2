@@ -162,7 +162,7 @@ export function HomePageContent() {
           <div className="seasonal-action-collage" aria-label="Vorschau zu KI-Bild, Video und Song">
             <figure className="seasonal-preview seasonal-preview-portrait">
               <picture>
-                <Image alt="Uwe Christian in seinem Büro am Schreibtisch" fill loading="lazy" sizes="(max-width: 900px) 48vw, 22vw" src="/swea/uwe-christian-portrait.png" />
+                <Image alt="Uwe Christian in seinem Büro am Schreibtisch" fill loading="lazy" sizes="(max-width: 900px) 48vw, 22vw" src="/swea/uwe-christian-home.png" />
               </picture>
               <figcaption>Persönliches KI-Porträt</figcaption>
             </figure>

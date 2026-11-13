@@ -212,11 +212,11 @@ function AboutInstructor() {
       <div className="page-wrap grid items-start gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-12">
         <figure className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-[1.75rem] bg-area-deep shadow-lg md:mx-0">
           <Image
-            alt="Uwe Christian, Kursleiter für Waldbaden und Achtsamkeit"
+            alt="Uwe Christian in seinem Büro vor einem Schild zu Waldbaden und Achtsamkeit"
             className="object-cover object-[center_30%]"
             fill
             sizes="(max-width: 767px) 90vw, 30vw"
-            src="/swea/uwe-christian-portrait.png"
+            src="/swea/uwe-christian-waldbaden.png"
           />
         </figure>
 
