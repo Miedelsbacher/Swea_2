@@ -52,12 +52,6 @@ const examples: CarouselExample[] = [
     caption: "Fee und Eisdrache",
   },
   {
-    type: "image",
-    src: "/swea/ai-examples/ki-medium-09-fairy-dragon.jpg",
-    alt: "Fee im blumigen Kleid neben einem großen grünen Drachen im Zauberwald",
-    caption: "Fee und grüner Drache",
-  },
-  {
     type: "video",
     src: "/swea/ai-examples/video-aad466b5.mp4",
     poster: "/swea/ai-examples/ki-medium-10-ice-dragon.webp",
