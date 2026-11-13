@@ -599,7 +599,7 @@ function ServicesSection() {
         <div className="mb-9 max-w-3xl">
           <span className="eyebrow">EDV-Hilfe für Zuhause · Schorndorf &amp; Umgebung</span>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="edv-services-title">Technikhilfe – persönlich und verständlich</h1>
-          <p className="mt-4 text-base leading-7 text-area-muted">Für Privatpersonen, Hausbesitzer und Haushalte und Professionals in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
+          <p className="mt-4 text-base leading-7 text-area-muted">Für Privatpersonen, Hausbesitzer, Haushalte und Professionals in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
         </div>
 
         <div className="grid items-stretch gap-4 sm:grid-cols-2">
@@ -732,7 +732,7 @@ function DataRecoverySection() {
     },
     {
       title: "SWEA nennt Ihnen den endgültigen Preis",
-      description: "Sie erhalten von uns einen individuellen Kostenvoranschlag. Die Kalkulation richtet sich nach der gerätespezifischen Preisliste von DataPhoenix.",
+      description: "Sie erhalten von uns einen individuellen Kostenvoranschlag. Die Kalkulation richtet sich nach einer gerätespezifischen Preisliste.",
     },
     {
       title: "Ihre Zustimmung zur kostenpflichtigen Datenrettung",
@@ -774,7 +774,7 @@ function DataRecoverySection() {
             Professionelle Datenrettung – Wenn es brenzlig wird.
           </h2>
           <p className="mt-4 text-base leading-7 text-area-muted">
-            Bei der Datenrettung arbeiten wir mit dem spezialisierten Partner DataPhoenix zusammen. Wir sind Ihr Ansprechpartner und organisieren den Ablauf; die technische Diagnose und die eigentliche Datenrettung übernimmt DataPhoenix. Zwei Entscheidungen treffen immer Sie: zuerst die Zustimmung zur Untersuchung durch den Partner, später die Zustimmung zur kostenpflichtigen Datenrettung.
+            Bei der Datenrettung arbeiten wir mit dem spezialisierten Partner DataPhoenix zusammen. Wir sind Ihr Ansprechpartner und organisieren den Ablauf; die technische Diagnose und die eigentliche Datenrettung übernimmt im Wesentlichen DataPhoenix. Zwei Entscheidungen treffen immer Sie: zuerst die Zustimmung zur Untersuchung durch den Partner, später die Zustimmung zur kostenpflichtigen Datenrettung.
           </p>
           <p className="mt-3 text-sm leading-6 text-area-muted">
             Ob Festplatte, USB-Stick oder Handy: Sie erhalten eine Einschätzung und den endgültigen Preis, bevor Sie über die Datenrettung entscheiden.

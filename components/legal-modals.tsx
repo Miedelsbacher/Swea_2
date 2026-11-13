@@ -11,6 +11,26 @@ const orderedListClass = "list-decimal pl-5 text-sm leading-7 text-area-muted [&
 const listClass = "list-disc pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2"
 const linkClass = "font-semibold text-brand-primary underline decoration-brand-border underline-offset-2 hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
 
+export function LegalModalTrigger({ dialogId, className, children }: { dialogId: string; className: string; children: ReactNode }) {
+  return (
+    <button
+      className={className}
+      onClick={() => {
+        const target = document.getElementById(dialogId)
+        if (!(target instanceof HTMLDialogElement)) return
+
+        const openDialog = document.querySelector<HTMLDialogElement>("dialog[open]")
+        if (openDialog === target) return
+        openDialog?.close()
+        target.showModal()
+      }}
+      type="button"
+    >
+      {children}
+    </button>
+  )
+}
+
 function LegalDialog({ id, title, eyebrow, headerDetails, children }: { id: string; title: string; eyebrow: string; headerDetails?: ReactNode; children: ReactNode }) {
   return (
     <dialog
@@ -103,7 +123,8 @@ export function AGBModal() {
           <li>Verbraucher ist, wer den Vertrag zu Zwecken abschließt, die überwiegend weder seiner gewerblichen noch seiner selbständigen beruflichen Tätigkeit zugerechnet werden können (§ 13 BGB). Unternehmer ist, wer bei Vertragsschluss in Ausübung seiner gewerblichen oder selbständigen beruflichen Tätigkeit handelt (§ 14 BGB).</li>
           <li>Gesetzliche Rechte von Verbrauchern bleiben durch diese AGB unberührt. Das gilt auch dann, wenn einzelne Regelungen nur für Unternehmer bestimmt sind.</li>
           <li>Unternehmern steht kein gesetzliches Widerrufsrecht zu. Für sie gelten die Regelungen dieser AGB und des Angebots.</li>
-          <li>Verbrauchern kann bei Fernabsatzverträgen ein gesetzliches Widerrufsrecht zustehen. Einzelheiten, Folgen und das Muster-Widerrufsformular finden Sie in der <button className={linkClass} data-legal-modal-trigger="withdrawal-modal" type="button">Widerrufsbelehrung</button>. Ob das Widerrufsrecht im Einzelfall besteht oder vorzeitig erlischt, richtet sich nach den gesetzlichen Vorschriften.</li>
+          <li>Verbrauchern kann bei Fernabsatzverträgen ein gesetzliches Widerrufsrecht zustehen. Einzelheiten, Folgen und das Muster-Widerrufsformular finden Sie in der <LegalModalTrigger className={linkClass} dialogId="withdrawal-modal">Widerrufsbelehrung</LegalModalTrigger>. Ob das Widerrufsrecht im Einzelfall besteht oder vorzeitig erlischt, richtet sich nach den gesetzlichen Vorschriften.</li>
+          <li>Bei Verträgen mit Verbrauchern über Waldbaden-Veranstaltungen kann das Widerrufsrecht nach § 312g Abs. 2 Nr. 9 BGB ausgeschlossen sein, wenn die Veranstaltung eine Dienstleistung im Zusammenhang mit einer Freizeitbetätigung ist und der verbindliche Vertrag einen konkreten Termin oder Zeitraum für ihre Erbringung vorsieht. Das kann etwa für eine verbindlich gebuchte After-Work-Veranstaltung oder einen Kurs mit festgelegtem Zeitraum gelten. Die Ausnahme gilt nicht pauschal für alle Waldbaden-Angebote. Bei flexiblen Angeboten oder wenn im verbindlichen Vertrag noch kein spezifischer Termin oder Zeitraum feststeht, wird sie nicht allein wegen der Bezeichnung „Waldbaden“ angewendet. Einzelheiten stehen in Teil B2 und in der Widerrufsbelehrung.</li>
         </ol>
       </section>
 
@@ -119,7 +140,7 @@ export function AGBModal() {
 
       <section className={sectionClass}>
         <h3 className={headingClass}>6. Datenschutz</h3>
-        <p className={paragraphClass}>Personenbezogene Daten werden nach den gesetzlichen Bestimmungen der DSGVO und des DDG verarbeitet. Einzelheiten finden Sie in unserer <button className={linkClass} data-legal-modal-trigger="privacy-modal" type="button">Datenschutzerklärung</button>.</p>
+        <p className={paragraphClass}>Personenbezogene Daten werden nach den gesetzlichen Bestimmungen der DSGVO und des DDG verarbeitet. Einzelheiten finden Sie in unserer <LegalModalTrigger className={linkClass} dialogId="privacy-modal">Datenschutzerklärung</LegalModalTrigger>.</p>
       </section>
 
       <section className={sectionClass}>
@@ -175,7 +196,7 @@ export function AGBModal() {
             </ul>
           </li>
           <li>Die Haftung richtet sich nach Abschnitt 5. Für eigenes Verschulden sowie für das Verschulden von Personen, deren sich der Anbieter zur Erfüllung seiner Pflichten gegenüber dem Kunden bedient, haftet der Anbieter nach den gesetzlichen Vorschriften. A2 Nr. 4 und 5 zur Datensicherung bleiben unberührt.</li>
-          <li>Datenträger enthalten häufig personenbezogene Daten. Mit der Weitergabe erhält DataPhoenix im für Diagnose und Wiederherstellung erforderlichen Umfang Zugriff auf die gespeicherten Inhalte. Einzelheiten finden Sie in der <button className={linkClass} data-legal-modal-trigger="privacy-modal" type="button">Datenschutzerklärung</button>. Enthält der Datenträger besonders schutzbedürftige Daten, etwa Gesundheitsdaten oder Daten Dritter, soll der Kunde den Anbieter vor der Weitergabe darauf hinweisen.</li>
+          <li>Datenträger enthalten häufig personenbezogene Daten. Mit der Weitergabe erhält DataPhoenix im für Diagnose und Wiederherstellung erforderlichen Umfang Zugriff auf die gespeicherten Inhalte. Einzelheiten finden Sie in der <LegalModalTrigger className={linkClass} dialogId="privacy-modal">Datenschutzerklärung</LegalModalTrigger>. Enthält der Datenträger besonders schutzbedürftige Daten, etwa Gesundheitsdaten oder Daten Dritter, soll der Kunde den Anbieter vor der Weitergabe darauf hinweisen.</li>
         </ol>
         <h4 className={subheadingClass}>A4. Webdesign, Softwareerstellung und Nutzungsrechte</h4>
         <ol className={orderedListClass}>
@@ -188,7 +209,7 @@ export function AGBModal() {
         <h3 className={headingClass}>Teil B: Waldbaden, Achtsamkeit und Entschleunigungskurse</h3>
         <h4 className={subheadingClass}>B1. Buchung, Teilnahme und Eigenverantwortung</h4>
         <ol className={orderedListClass}>
-          <li>Termine, Treffpunkt, Teilnehmerzahl und Preis ergeben sich aus der jeweiligen Kursbeschreibung, dem Angebot oder der Buchungsbestätigung. Der Vertrag kommt gemäß Abschnitt 2 zustande.</li>
+          <li>Termine, Treffpunkt, Teilnehmerzahl und Preis ergeben sich aus der jeweiligen Kursbeschreibung, dem Angebot oder der Buchungsbestätigung. Maßgeblich ist der Termin oder Zeitraum, der im verbindlichen Vertrag festgelegt ist. Eine unverbindliche Anfrage oder ein noch nicht angenommenes Angebot ist keine Buchung; der Vertrag kommt gemäß Abschnitt 2 zustande.</li>
           <li>Kurse, Wanderungen und Übungen finden vorwiegend in der freien Natur (Wald) statt. Die Teilnehmenden entscheiden eigenverantwortlich, ob ihre Gesundheit und Belastbarkeit eine Teilnahme zulassen.</li>
           <li>Den Anweisungen des Kursleiters im Wald ist zur eigenen Sicherheit und zum Schutz der Natur Folge zu leisten. Die Teilnehmenden sind für angemessene, wetterfeste Bekleidung und festes Schuhwerk selbst verantwortlich.</li>
           <li>Waldbaden und Achtsamkeitstraining stellen keine medizinische oder therapeutische Behandlung dar und ersetzen nicht die Diagnose oder Behandlung durch einen Arzt, Psychotherapeuten oder Heilpraktiker.</li>
@@ -210,7 +231,7 @@ export function AGBModal() {
           <li><strong className="text-area-deep">Absage durch den Anbieter:</strong> Der Anbieter kann eine Veranstaltung absagen, wenn eine in der Kursbeschreibung genannte Mindestteilnehmerzahl nicht erreicht wird. Er teilt dies dem Kunden spätestens 48 Stunden vor Veranstaltungsbeginn mit. Sagt der Anbieter eine Veranstaltung aus Gründen ab, die in seinem Verantwortungsbereich liegen, etwa wegen Krankheit des Kursleiters, informiert er den Kunden unverzüglich. In allen Fällen einer Absage durch den Anbieter werden bereits gezahlte Beträge vollständig und unverzüglich erstattet, sofern der Kunde nicht einen angebotenen Ersatztermin annimmt. Weitergehende Ansprüche des Kunden richten sich nach den gesetzlichen Vorschriften und Abschnitt 5.</li>
           <li><strong className="text-area-deep">Verschiebung durch den Anbieter:</strong> Der Anbieter kann einen Termin nur mit Zustimmung des Kunden verschieben. Bietet der Anbieter einen Ersatztermin an, kann der Kunde wählen, ob er den Ersatztermin wahrnimmt oder die vollständige Erstattung bereits gezahlter Beträge verlangt. Die Pauschalen nach Nr. 3 gelten für den ursprünglichen Termin nicht.</li>
           <li><strong className="text-area-deep">Höhere Gewalt und Sicherheitsgründe:</strong> Ist die Durchführung aufgrund von Umständen unmöglich oder unzumutbar, die keine Vertragspartei zu vertreten hat, etwa Sturm- oder Unwetterwarnung, Gewitter, behördliche Sperrungen des Waldgebiets oder vergleichbare Ereignisse, kann der Anbieter die Veranstaltung auch kurzfristig absagen oder abbrechen. Der Anbieter informiert den Kunden so früh wie möglich. Bereits gezahlte Beträge werden vollständig erstattet, sofern der Kunde nicht einen angebotenen Ersatztermin annimmt. Wird eine bereits begonnene Veranstaltung aus solchen Gründen abgebrochen, richtet sich die Vergütung nach den gesetzlichen Vorschriften; der Anbieter bietet in diesem Fall vorrangig einen Ersatztermin an.</li>
-          <li><strong className="text-area-deep">Gesetzliche Rechte:</strong> Ein etwaiges gesetzliches Widerrufsrecht von Verbrauchern sowie gesetzliche Rücktritts- und Kündigungsrechte beider Vertragsparteien bleiben unberührt (Abschnitt 4).</li>
+          <li><strong className="text-area-deep">Abgrenzung zu gesetzlichen Rechten:</strong> Die Stornierungsregelungen in B2 betreffen eine vertragliche Absage und gelten nicht für einen wirksamen gesetzlichen Widerruf. Ob ein Widerrufsrecht besteht oder nach § 312g Abs. 2 Nr. 9 BGB für eine verbindlich auf einen spezifischen Termin oder Zeitraum festgelegte Freizeitveranstaltung ausgeschlossen ist, richtet sich nach Abschnitt 4 und der Widerrufsbelehrung. Besteht ein Widerrufsrecht, gelten dessen gesetzliche Voraussetzungen und Folgen; die Pauschalen nach B2 schränken es nicht ein. Gesetzliche Rücktritts- und Kündigungsrechte beider Vertragsparteien bleiben ebenfalls unberührt.</li>
         </ol>
         <h4 className={subheadingClass}>B3. Typische Waldgefahren</h4>
         <p className={paragraphClass}>Zu den typischen Gefahren des Waldes zählen herabfallende Äste, Unebenheiten des Bodens, Insektenstiche und witterungsbedingte Einflüsse. Die Teilnehmenden werden darauf hingewiesen und achten darauf eigenverantwortlich. Die Haftung des Anbieters richtet sich auch hierfür nach Abschnitt 5.</p>
@@ -320,8 +341,17 @@ export function LegalModals() {
         </section>
 
         <section className={sectionClass}>
+          <h3 className={headingClass}>KI-Studio-Aufträge und übermittelte Inhalte</h3>
+          <p className={paragraphClass}>Für Anfragen und Aufträge im KI-Studio verarbeiten wir neben Kontakt- und Auftragsdaten auch die Inhalte, die Sie für Ihr Projekt bereitstellen. Dazu können Fotos, Videos, Sprachaufnahmen, Namen, Texte, persönliche Angaben, Logos und sonstige kreative Materialien gehören. Solche Inhalte können auch andere erkennbare Personen betreffen. Wir verwenden sie, um Ihre Anfrage zu beantworten, den Auftrag abzustimmen, die vereinbarten digitalen Bilder, Grafiken, Videos, Songs, Jingles oder sonstigen Audiodateien zu erstellen und zu übergeben sowie Rückfragen zum Auftrag zu bearbeiten.</p>
+          <p className={paragraphClass}>Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit die Verarbeitung zur Durchführung vorvertraglicher Maßnahmen oder des Auftrags erforderlich ist. Für eine darüber hinausgehende Nutzung, etwa als Referenz oder Werbung, holen wir eine gesonderte Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO ein. Gesetzliche Aufbewahrungspflichten für Abrechnungsunterlagen erfüllen wir auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO.</p>
+          <p className={paragraphClass}>Die Website enthält kein Uploadformular für Projektdateien; das Kontaktformular öffnet Ihr E-Mail-Programm und übermittelt seine Eingaben nicht an unseren Webserver. Auftragsmaterial wird über den im Einzelfall vereinbarten Weg übermittelt. Empfänger sind zunächst wir. Soweit für einen Auftrag ein externer KI- oder sonstiger technischer Dienst eingesetzt wird, erhält dieser nur die für den Auftrag erforderlichen Daten; wir informieren Sie vor einer Übermittlung über den konkreten Empfänger und die für diesen Dienst maßgeblichen Datenschutzinformationen. Ob ein Anbieter als Auftragsverarbeiter oder als eigenständig Verantwortlicher handelt, welche Unterauftragnehmer beteiligt sind, wo verarbeitet wird und ob Drittlandübermittlungen stattfinden, richtet sich nach dem konkret eingesetzten Dienst und den dazu geprüften Vertrags- und Datenschutzbedingungen. Hierzu machen wir keine pauschalen Zusicherungen.</p>
+          <p className={paragraphClass}>Bitte übermitteln Sie nur Inhalte, deren Nutzung Sie für den Auftrag gestatten dürfen. Wenn Materialien andere Personen zeigen oder deren Stimme enthalten, stellen Sie bitte sicher, dass die erforderlichen Informationen, Rechte und gegebenenfalls Einwilligungen vorliegen. Senden Sie besondere Kategorien personenbezogener Daten im Sinne von Art. 9 DSGVO bitte nur nach vorheriger Abstimmung mit uns.</p>
+          <p className={paragraphClass}>Wir bewahren Auftragsmaterial nur so lange auf, wie es für Anfrage, Durchführung und Nachbearbeitung des Auftrags erforderlich ist oder gesetzliche Pflichten beziehungsweise die Geltendmachung oder Abwehr von Ansprüchen dies erfordern. Für die konkrete Löschung bei externen Diensten gelten die Bedingungen des jeweils eingesetzten Anbieters; eine automatische Löschung nach einer pauschalen Frist sagen wir nicht zu.</p>
+        </section>
+
+        <section className={sectionClass}>
           <h3 className={headingClass}>Cookies, externe Medien und Speicherdauer</h3>
-          <p className={paragraphClass}>Diese Website bindet derzeit keine Analyse- oder Werbedienste ein. Einzelne Bilder, Audio- und Videodateien können von externen Speicherdiensten geladen werden; dabei erhält der jeweilige Anbieter technische Verbindungsdaten. Links zu Fernwartungs- oder anderen Drittanbietern sind nicht in die Website eingebettet. Erst wenn Sie einen solchen Link öffnen, gelten die Datenschutzbestimmungen des jeweiligen Anbieters. Anfragen löschen wir, sobald sie für die Bearbeitung nicht mehr erforderlich sind, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+          <p className={paragraphClass}>Diese Website bindet derzeit keine Analyse- oder Werbedienste ein. Einzelne öffentlich eingebundene Bilder, Audio- und Videodateien werden direkt von Vercel Blob unter vercel-storage.com geladen. Beim Abruf erhält Vercel als Anbieter technische Verbindungsdaten, insbesondere IP-Adresse, Zeitpunkt und angeforderte Datei. Dabei handelt es sich um statische Website-Medien, nicht um einen Uploadkanal für Ihre Projektdateien. Weitere externe Medien können ebenfalls technische Verbindungsdaten an den jeweiligen Anbieter übermitteln. Links zu Fernwartungs- oder anderen Drittanbietern sind nicht in die Website eingebettet; erst wenn Sie einen solchen Link öffnen, gelten die Datenschutzbestimmungen des jeweiligen Anbieters. Anfragen löschen wir, sobald sie für die Bearbeitung nicht mehr erforderlich sind, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
         </section>
 
         <section className={sectionClass}>
@@ -369,8 +399,13 @@ export function LegalModals() {
 
         <section className={sectionClass}>
           <h3 className={headingClass}>Dienstleistungen</h3>
-          <p className={paragraphClass}>Für Dienstleistungen, insbesondere IT-Service, Datenrettung und Waldbaden-Veranstaltungen, beträgt die Widerrufsfrist ebenfalls vierzehn Tage ab dem Tag des Vertragsschlusses. Ob das Widerrufsrecht bei Dienstleistungen ausnahmsweise nicht besteht, vorzeitig erlischt oder ob nach einem Widerruf Wertersatz für bereits erbrachte Leistungen zu leisten ist, richtet sich ausschließlich nach den gesetzlichen Vorschriften (insbesondere § 312g Abs. 2, § 356 Abs. 4 und § 357a Abs. 2 BGB). Die Regelungen zum vorzeitigen Erlöschen bei digitalen Inhalten gelten für Dienstleistungen nicht.</p>
-          <p className={paragraphClass}>Im Fall eines wirksamen Widerrufs erstatten wir erhaltene Zahlungen unverzüglich und spätestens binnen vierzehn Tagen ab Eingang Ihrer Widerrufserklärung mit demselben Zahlungsmittel, das Sie bei der Zahlung eingesetzt haben, sofern nichts anderes ausdrücklich vereinbart wurde.</p>
+          <p className={paragraphClass}>Für Dienstleistungen, insbesondere IT-Service, Datenrettung und Waldbaden-Veranstaltungen, beträgt die Widerrufsfrist bei einem Fernabsatzvertrag oder einem außerhalb von Geschäftsräumen geschlossenen Vertrag grundsätzlich vierzehn Tage ab dem Tag des Vertragsschlusses. Gesetzliche Ausnahmen und die gesetzlichen Folgen eines Widerrufs richten sich nach den jeweils anwendbaren Vorschriften, insbesondere §§ 312g Abs. 2, 356 Abs. 4 und 357a Abs. 2 BGB. Die Regelungen zum vorzeitigen Erlöschen bei digitalen Inhalten gelten für Dienstleistungen nicht.</p>
+          <p className={paragraphClass}>Im Fall eines wirksamen Widerrufs erstatten wir erhaltene Zahlungen unverzüglich und spätestens binnen vierzehn Tagen ab Eingang Ihrer Widerrufserklärung mit demselben Zahlungsmittel, das Sie bei der Zahlung eingesetzt haben, sofern nichts anderes ausdrücklich vereinbart wurde. Wertersatz für bis zum Widerruf erbrachte Dienstleistungen kann nur unter den gesetzlichen Voraussetzungen verlangt werden, insbesondere wenn Sie ausdrücklich verlangt haben, dass die Leistung vor Ablauf der Widerrufsfrist beginnt, und die erforderlichen Informationen erteilt wurden (§ 357a Abs. 2 BGB).</p>
+
+          <h4 className={subheadingClass}>Waldbaden-Veranstaltungen</h4>
+          <p className={paragraphClass}>Waldbaden-Veranstaltungen können Dienstleistungen im Zusammenhang mit einer Freizeitbetätigung sein. Wird eine solche Veranstaltung verbindlich für einen spezifischen Termin oder Zeitraum vereinbart, besteht für Verbraucher nach § 312g Abs. 2 Nr. 9 BGB kein gesetzliches Widerrufsrecht. Das kann insbesondere für ein fest terminiertes After-Work-Waldbaden, einen Kurs mit festgelegtem Zeitraum oder einen individuell vereinbarten privaten Gruppentermin gelten. Ob die Ausnahme greift, hängt von der konkreten Leistung und dem Inhalt des verbindlichen Vertrags ab; sie gilt nicht pauschal für alle Waldbaden-Angebote. Für Firmenevents kommt es außerdem darauf an, wer Vertragspartner ist und ob dieser als Verbraucher oder Unternehmer handelt.</p>
+          <p className={paragraphClass}>Ist im verbindlichen Vertrag kein spezifischer Termin oder Zeitraum festgelegt, greift diese Ausnahme nicht allein deshalb, weil es sich um Waldbaden handelt. Eine unverbindliche Anfrage oder ein noch nicht angenommenes Angebot ist noch kein Vertrag. Wird ein Vertrag zunächst ohne festen Termin geschlossen und später ein Termin vereinbart, muss die rechtliche Einordnung anhand der konkreten Vereinbarung geprüft werden; eine pauschale Aussage zum Widerrufsrecht ist dafür nicht möglich.</p>
+          <p className={paragraphClass}>Ein gesetzliches Widerrufsrecht ist von einer vertraglichen Stornierung zu unterscheiden. Soweit die Ausnahme nach § 312g Abs. 2 Nr. 9 BGB greift, kann eine freiwillige Absage nach den Stornierungsregelungen in Teil B2 kostenpflichtig sein. Besteht dagegen ein gesetzliches Widerrufsrecht und wird es wirksam ausgeübt, gelten die gesetzlichen Widerrufsfolgen, nicht die Stornierungspauschalen aus B2. Rücktritts- und Kündigungsrechte sowie eine Absage oder Verschiebung durch SWEA richten sich nach den gesetzlichen Vorschriften und den Regelungen in Teil B2.</p>
         </section>
 
         <section className={sectionClass}>
