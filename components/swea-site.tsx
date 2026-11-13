@@ -210,7 +210,7 @@ function KIStudioIntro() {
             KI-Studio – digitale Medien nach Ihrer Idee.
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-area-muted">
-            Im SWEA KI-Studio entstehen individuelle digitale Bilder und Grafiken, Videos, Songs, Jingles und Audiomaterial. Sie schildern Ihre Idee oder Ihren Anlass, Uwe Christian setzt sie gemeinsam mit Ihnen kreativ um und übergibt Ihnen das fertige Ergebnis digital.
+            Im SWEA KI-Studio entstehen individuelle digitale Bilder und Grafiken, Videos, Songs, Jingles und Audiomaterial. Sie schildern Ihre Idee oder Ihren Anlass, Herr Christian setzt sie gemeinsam mit Ihnen kreativ um und übergibt Ihnen das fertige Ergebnis digital.
           </p>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-area-muted">
             Es entstehen ausschließlich digitale Medien. SWEA stellt keine physischen Produkte her, verkauft keine bedruckten Waren und nimmt keine Druckaufträge an. Möchten Sie ein Ergebnis drucken oder anderweitig verarbeiten lassen, übernehmen Sie das selbst bei einem Anbieter Ihrer Wahl.
