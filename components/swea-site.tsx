@@ -537,6 +537,23 @@ function DataRecoverySection() {
           <p className="mt-3 text-sm leading-6 text-area-muted">
             Ob Festplatte, USB-Stick oder Handy: Sie erhalten eine klare Einschätzung, bevor Sie über weitere Schritte entscheiden.
           </p>
+          <a
+            aria-label="DatenPhoenix – Partner für Datenrettung (öffnet in neuem Tab)"
+            className="mt-6 inline-flex max-w-full rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2"
+            href="https://datenphoenix.de"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Image
+              alt="DatenPhoenix Logo"
+              className="h-auto w-full max-w-[20rem]"
+              height={89}
+              loading="lazy"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1RIAJoydF7VOcUREbvFhXeT5rFewD7.png"
+              unoptimized
+              width={625}
+            />
+          </a>
         </div>
 
         <aside aria-labelledby="datenrettung-warning-title" className="rounded-3xl border border-warning-border bg-warning-soft p-5 shadow-sm sm:p-7">
