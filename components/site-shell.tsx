@@ -59,14 +59,19 @@ export function SiteFooter() {
             Fernwartung verschlüsselt und nur mit Ihrer aktiven Freigabe
           </span>
         </div>
-        <address className="flex flex-col items-start gap-0.5 not-italic text-sm text-area-muted sm:justify-self-end sm:w-full sm:max-w-sm">
+        <address className="flex min-w-0 flex-col items-start gap-1.5 not-italic text-sm text-area-muted sm:justify-self-end sm:w-full sm:max-w-sm">
           <h2 className="mb-0 text-sm font-semibold text-area-deep">Kontakt</h2>
           <p className="font-medium text-area-deep">Uwe Christian</p>
-          <a className="inline-flex min-h-9 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="tel:+497181253147">07181 / 253147</a>
-          <a className="inline-flex min-h-9 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:edv@swea.de">edv@swea.de</a>
-          <a className="inline-flex min-h-9 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:wb@swea.de">wb@swea.de</a>
-          <p className="leading-5">Freiburgstr. 12 · 73614 Schorndorf</p>
-          <a className="inline-flex min-h-9 items-center font-medium text-area-deep underline decoration-area-border underline-offset-4 transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="https://www.swea.de/">www.swea.de</a>
+          <a className="inline-flex min-h-10 max-w-full flex-wrap items-center gap-1 font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="tel:+497181253147">
+            <span>Telefon:</span><span>+49 7181 253147</span>
+          </a>
+          <a className="inline-flex min-h-10 max-w-full flex-wrap items-center gap-1 font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:edv@swea.de">
+            <span>E-Mail:</span><span className="break-all">edv@swea.de</span>
+          </a>
+          <a className="inline-flex min-h-10 max-w-full flex-wrap items-center gap-1 font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:wb@swea.de">
+            <span>Weitere E-Mail:</span><span className="break-all">wb@swea.de</span>
+          </a>
+          <p className="max-w-full break-words leading-5"><span className="font-medium text-area-deep">Anschrift:</span> Freiburgstr. 12, 73614 Schorndorf</p>
         </address>
       </div>
       <div className="page-wrap footer-bottom flex-col items-start sm:flex-row sm:items-center">
