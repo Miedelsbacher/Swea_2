@@ -353,7 +353,17 @@ function HolidayGiftSection() {
           </video>
         </div>
 
-        <section aria-labelledby="holiday-song-title" className="holiday-song">
+        <p className="holiday-gift-rights">Diese Beispiele sind Eigentum des Webseitenbetreibers und dürfen weder heruntergeladen noch per Hardcopy oder Foto oder auf anderen Wegen dupliziert oder verbreitet werden.</p>
+      </div>
+    </section>
+  )
+}
+
+function HolidaySongSection() {
+  return (
+    <section aria-labelledby="holiday-song-title" className="holiday-song-section">
+      <div className="page-wrap">
+        <div className="holiday-song">
           <h3 id="holiday-song-title">Oder darf es ein individuelles Lied sein?</h3>
           <div className="holiday-song-grid">
             <div className="holiday-song-left-column">
@@ -392,9 +402,7 @@ function HolidayGiftSection() {
               </div>
             </div>
           </div>
-        </section>
-
-        <p className="holiday-gift-rights">Diese Beispiele sind Eigentum des Webseitenbetreibers und dürfen weder heruntergeladen noch per Hardcopy oder Foto oder auf anderen Wegen dupliziert oder verbreitet werden.</p>
+        </div>
       </div>
     </section>
   )
@@ -870,6 +878,7 @@ export function KIStudioPageContent() {
     <div className="brand-area brand-area-ki">
       <KIStudioShowcase />
       <HolidayGiftSection />
+      <HolidaySongSection />
       <AlternativeMotifsSection />
       <AIExamplesCarousel />
       <KIStudioClosingCTA />

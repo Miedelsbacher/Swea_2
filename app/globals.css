@@ -238,7 +238,8 @@ html { scroll-padding-top: 88px; }
 .holiday-example-card figcaption { padding: 12px 14px; font-size: 12px; font-weight: 600; line-height: 1.45; }
 .holiday-video { max-width: 850px; margin-right: auto; margin-left: auto; }
 .holiday-video video { display: block; width: 100%; height: auto; max-height: 620px; aspect-ratio: 16 / 9; object-fit: contain; border: 1px solid rgba(247,248,235,.35); border-radius: 8px; background: #0c261d; box-shadow: 0 18px 42px rgba(5, 27, 21, .25); }
-.holiday-song { max-width: 850px; margin: 38px auto 0; }
+.holiday-song-section { padding: 38px 0; border-top: 1px solid rgba(247,248,235,.22); background: #174d3d; color: #f6f5eb; }
+.holiday-song { max-width: 850px; margin: 0 auto; }
 .holiday-song > h3 { margin: 0 0 19px; color: #fffdf1; font-size: clamp(20px, 3vw, 26px); font-weight: 500; text-align: center; }
 .holiday-song-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 15px; align-items: start; }
 .holiday-song-left-column { display: grid; gap: 12px; }
@@ -261,7 +262,7 @@ html { scroll-padding-top: 88px; }
   .holiday-example-grid { grid-template-columns: 1fr; gap: 13px; }
   .holiday-example-card img { max-height: 540px; }
   .holiday-gift-rights { margin-top: 34px; font-size: 10px; }
-  .holiday-song { margin-top: 30px; }
+  .holiday-song-section { padding: 30px 0; }
   .holiday-song-grid { grid-template-columns: 1fr; gap: 12px; }
   .holiday-song-panel { padding: 15px; }
   .holiday-song-lyrics { max-height: 250px; }
@@ -794,6 +795,7 @@ body {
 .brand-area-technik .service-card-featured { background: var(--area-subtle); }
 
 .brand-area-ki .holiday-gift-section,
+.brand-area-ki .holiday-song-section,
 .brand-area-ki .ai-examples-carousel-section { background: var(--ki-deep); color: #f4f7f3; }
 .brand-area-ki .holiday-gift-copy h2,
 .brand-area-ki .ai-examples-carousel-title { color: #ffffff; }
