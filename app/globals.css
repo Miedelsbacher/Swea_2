@@ -377,14 +377,6 @@ html { scroll-padding-top: 88px; }
 .contact-phone-note p { margin: 0; font-size: 10px; line-height: 1.7; }
 .contact-phone-note a { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; color: #f0f2e8; font-size: 9px; font-weight: 700; }
 
-.legal-section { display: grid; grid-template-columns: 220px 1fr; gap: 55px; padding-top: 68px; padding-bottom: 70px; }
-.legal-heading h2 { margin: 9px 0; font-size: 34px; font-weight: 500; letter-spacing: -.04em; }
-.legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.legal-grid h3 { margin: 0 0 9px; color: #3c5548; font-size: 12px; font-weight: 700; }
-.legal-grid p { margin: 0 0 14px; color: #667369; font-size: 10px; line-height: 1.8; }
-.legal-contact-line { display: grid; grid-template-columns: 69px 1fr; gap: 8px; align-items: center; margin: 7px 0; color: #69766d; font-size: 10px; }
-.legal-contact-line > div > a, .legal-contact-line > a { color: #285d4d; font-weight: 600; }
-
 .site-footer { background: #eeede6; }
 .footer-main { display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; padding-top: 24px; padding-bottom: 22px; border-bottom: 1px solid #ddded4; }
 .footer-brand .brand-mark { width: 34px; height: 34px; }
@@ -464,9 +456,6 @@ html { scroll-padding-top: 88px; }
   .contact-options { grid-template-columns: 1fr; }
   .contact-phone-note { grid-column: auto; grid-template-columns: 20px 1fr; }
   .contact-phone-note a { grid-column: 2; justify-self: start; }
-  .legal-section { grid-template-columns: 1fr; gap: 14px; padding-top: 48px; padding-bottom: 48px; }
-  .legal-heading h2 { font-size: 29px; }
-  .legal-grid { grid-template-columns: 1fr; gap: 18px; }
   .footer-main { grid-template-columns: 1fr; gap: 14px; padding-top: 21px; }
   .footer-main nav { grid-column: auto; gap: 13px 18px; }
   .footer-bottom { padding-bottom: 16px; }
@@ -546,15 +535,11 @@ body {
 .holiday-lyrics-frame { position: relative; flex: 1; min-height: 14rem; }
 .holiday-lyrics-frame .holiday-song-lyrics { position: absolute; inset: 0; max-height: none; }
 .holiday-song-lyrics pre { font-size: 0.8125rem; }
-.contact-intro > p, .legal-grid p { max-width: 65ch; font-size: 0.8125rem; line-height: 1.75; }
-.contact-address, .legal-contact-line { font-variant-numeric: tabular-nums; }
-.contact-card .eyebrow { font-size: 0.6875rem; }
-.contact-method > a { font-size: 0.9375rem; }
-.legal-section { padding-block: clamp(4rem, 7vw, 6rem); }
-.legal-heading h2 { font-size: var(--type-h2); }
-.legal-grid h3 { font-size: 0.875rem; }
-.legal-grid p { font-size: 0.8125rem; }
-.legal-contact-line { grid-template-columns: 5.25rem minmax(0, 1fr); font-size: 0.8125rem; line-height: 1.6; }
+  .contact-intro > p { max-width: 65ch; font-size: 0.8125rem; line-height: 1.75; }
+  .contact-address { font-variant-numeric: tabular-nums; }
+  .contact-card .eyebrow { font-size: 0.6875rem; }
+  .contact-method > a { font-size: 0.9375rem; }
+
 .footer-main > p, .footer-main nav a { font-size: 0.8125rem; }
 .footer-bottom { font-size: 0.75rem; }
 
@@ -564,7 +549,6 @@ body {
   .holiday-gift-copy > p { font-size: 0.9375rem; }
   .holiday-lyrics-frame { flex: none; min-height: 0; }
   .holiday-lyrics-frame .holiday-song-lyrics { position: static; max-height: 250px; }
-  .legal-section { padding-block: 3.5rem; }
   .brand-copy { gap: 6px; }
   .brand-copy small { font-size: 0.625rem; }
   .footer-brand .brand-copy small { font-size: 0.625rem; }
@@ -782,8 +766,6 @@ body {
 .quick-link { border-color: var(--area-border); background: var(--area-surface); }
 .quick-link-nature { color: var(--area-accent); }
 .section-contact { background: var(--brand-deep); }
-.legal-grid h3 { color: var(--area-primary); }
-.legal-contact-line > div > a, .legal-contact-line > a { color: var(--area-primary); }
 .site-footer { background: var(--brand-soft); }
 .footer-main { border-color: var(--brand-border); }
 .footer-main > p, .footer-profile > p { color: var(--brand-muted); }
@@ -860,7 +842,7 @@ body {
   .hero-actions > .button { min-height: 48px; }
   .service-card, .about-profile, .about-card, .ki-crosslink { min-width: 0; }
   .offer-card .button { width: 100%; min-height: 48px; justify-self: stretch; }
-  .site-footer address > a, .legal-contact-line a { display: inline-flex; min-height: 44px; align-items: center; }
+  .site-footer address > a { display: inline-flex; min-height: 44px; align-items: center; }
   .ki-crosslink > .button { min-height: 48px; }
 }
 
