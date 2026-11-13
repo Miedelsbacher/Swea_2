@@ -16,13 +16,6 @@ const examples: CarouselExample[] = [
     caption: "Logo- und Markenvarianten für einen Reiterhof",
   },
   {
-    type: "video",
-    src: "/swea/ai-examples/video-cf140fc6.mp4",
-    poster: "/swea/ai-examples/video-cf140fc6-poster.webp",
-    alt: "Video mit bunt bedruckten, verpackten Mitgebseln und der Aufschrift Happy 59 Uwe",
-    caption: "Personalisierte Mitgebsel zum Geburtstag",
-  },
-  {
     type: "image",
     src: "/swea/ai-examples/elf-portrait.jpeg",
     alt: "Porträt einer Elfe mit Flügeln in einem sonnigen, blühenden Wald",
@@ -60,14 +53,14 @@ const examples: CarouselExample[] = [
   },
   {
     type: "image",
-    src: "/swea/ai-examples/fairy-ice-dragon-green.jpg",
-    alt: "Fee vor einem großen grünen Drachen in einem verwunschenen Wald",
+    src: "/swea/ai-examples/ki-medium-09-fairy-dragon.jpg",
+    alt: "Fee im blumigen Kleid neben einem großen grünen Drachen im Zauberwald",
     caption: "Fee und grüner Drache",
   },
   {
     type: "video",
     src: "/swea/ai-examples/video-aad466b5.mp4",
-    poster: "/swea/ai-examples/video-aad466b5-poster.webp",
+    poster: "/swea/ai-examples/ki-medium-10-ice-dragon.webp",
     alt: "Animation einer Fee, die einem großen Eisdrache im Wald begegnet",
     caption: "Animation: Fee und Eisdrache",
   },
@@ -92,7 +85,7 @@ const examples: CarouselExample[] = [
   {
     type: "video",
     src: "/swea/ai-examples/video-d74304dd.mp4",
-    poster: "/swea/ai-examples/video-d74304dd-poster.webp",
+    poster: "/swea/ai-examples/ki-medium-14-deer.webp",
     alt: "Video mit einem Hirsch in einem herbstlichen Wald",
     caption: "Ein Hirsch im Herbstwald",
   },

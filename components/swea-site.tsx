@@ -210,12 +210,12 @@ function KIStudioShowcase() {
           <article className={cardClass}>
             <div className="relative aspect-[16/10] overflow-hidden bg-area-subtle">
               <Image
-                alt="Beispiel eines individuell gestalteten KI-Porträts im Märchenwald"
+                alt="Fee in einem geheimnisvollen Wald neben einem großen grünen Drachen"
                 className="object-cover transition-transform duration-500 hover:scale-105"
                 fill
                 loading="lazy"
                 sizes="(max-width: 767px) 100vw, 33vw"
-                src="/swea/ai-examples/elf-portrait.jpeg"
+                src="/swea/ai-examples/ki-studio-image-dragon.jpg"
               />
               <span className="absolute right-3 top-3 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">
                 Ab 15 €
@@ -239,7 +239,7 @@ function KIStudioShowcase() {
                 controls
                 playsInline
                 preload="none"
-                poster="/swea/ai-examples/video-cf140fc6-poster.webp"
+                poster="/swea/ai-examples/ki-studio-video-poster-happy-59.png"
               >
                 <source src="/swea/ai-examples/video-cf140fc6.mp4" type="video/mp4" />
                 Ihr Browser unterstützt die Videowiedergabe nicht.
@@ -267,8 +267,8 @@ function KIStudioShowcase() {
                   <span className="w-1 rounded-full bg-area-accent-light/80" key={index} style={{ height }} />
                 ))}
               </div>
-              <audio aria-label="KI-generierter Song als Hörprobe" className="w-full accent-area-accent" controls preload="none">
-                <source src="/swea/recording-03_13.mp3" type="audio/mpeg" />
+              <audio aria-label="KI-generierter Jingle als Hörprobe" className="w-full accent-area-accent" controls preload="none">
+                <source src="/swea/ai-examples/ki-studio-jingle.mp3" type="audio/mpeg" />
                 Ihr Browser unterstützt die Audiowiedergabe nicht.
               </audio>
             </div>
@@ -350,7 +350,7 @@ function HolidayGiftSection() {
 
         <div aria-labelledby="holiday-video-title" className="holiday-video">
           <h3 id="holiday-video-title">Beispielvideo</h3>
-          <video aria-label="Beispielvideo mit weihnachtlichem Motiv" controls playsInline preload="none" poster="/swea/holiday-video-poster.webp">
+          <video aria-label="Beispielvideo mit weihnachtlichem Motiv" controls playsInline preload="none" poster="/swea/ai-examples/ki-studio-example-video-poster.webp">
             <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gemini_generated_video_77d5f778-sMKmnjJYAQSuujDbiD1O9RztT92LSZ.mp4" type="video/mp4" />
             Ihr Browser unterstützt die Videowiedergabe nicht.
           </video>
