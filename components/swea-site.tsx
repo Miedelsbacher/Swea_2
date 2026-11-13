@@ -711,28 +711,28 @@ function DataRecoverySection() {
     },
     {
       title: "Einbindung des Partners und Ihre Zustimmung zur Untersuchung",
-      description: "Wir erläutern Ihnen, dass der externe Partner DataPhoenix eingebunden wird. Bevor Ihr Speichermedium weitergegeben wird, holen wir Ihre ausdrückliche Zustimmung zur Untersuchung durch DataPhoenix ein.",
+      description: "Wir erläutern Ihnen, dass der externe Partner DataPhoenix eingebunden wird. Bevor Ihr Speichermedium weitergegeben wird, unterbreiten wir Ihnen eine unverbindliche Preisinformation und holen wir Ihre ausdrückliche Zustimmung zur Untersuchung durch DataPhoenix ein.",
       consent: "Ihre Zustimmung · vor der Weitergabe",
     },
     {
       title: "Übergabe zur Diagnose",
-      description: "Das Speichermedium wird zur Diagnose an DataPhoenix übergeben. Abholung beziehungsweise Versand erfolgen entsprechend der vereinbarten Abwicklung.",
+      description: "Das Speichermedium wird zur Diagnose an DataPhoenix übergeben. Abholung beziehungsweise Versand erfolgen entsprechend der vereinbarten Abwicklung und Dringlichkeit.",
     },
     {
       title: "Erste Diagnose durch DataPhoenix",
-      description: "DataPhoenix führt eine erste Diagnose durch. Im Rahmen der Partnervereinbarung ist diese Diagnose für SWEA kostenfrei.",
+      description: "DataPhoenix führt eine erste Diagnose durch. Diese ist noch durch die Aufwandspauschele abgedeckt.",
     },
     {
       title: "SWEA-Aufwandspauschale von 40 Euro",
       description: "Unabhängig vom weiteren Verlauf berechnet SWEA eine eigene Aufwandspauschale von 40 Euro für Bearbeitung und Abwicklung. Details dazu finden Sie unten.",
     },
     {
-      title: "Einschätzung und individueller Kostenvoranschlag",
-      description: "DataPhoenix teilt die Einschätzung der Erfolgsaussichten und einen individuellen Kostenvoranschlag mit. Die Kalkulation richtet sich nach der gerätespezifischen Preisliste von DataPhoenix.",
+      title: "Einschätzung der Chancen zur Datenwiederherstellung",
+      description: "Wir teilen die Einschätzung der Erfolgsaussichten und das weitere Vorgehen mit.",
     },
     {
       title: "SWEA nennt Ihnen den endgültigen Preis",
-      description: "Sie erfahren von uns den endgültigen Preis einschließlich der SWEA-Marge – bevor Sie über die Datenrettung entscheiden.",
+      description: "Sie erhalten von uns einen individuellen Kostenvoranschlag. Die Kalkulation richtet sich nach der gerätespezifischen Preisliste von DataPhoenix.",
     },
     {
       title: "Ihre Zustimmung zur kostenpflichtigen Datenrettung",
@@ -748,11 +748,11 @@ function DataRecoverySection() {
   const responsibilities = [
     {
       title: "Obhut über das Speichermedium",
-      description: "Während der Diagnose und Bearbeitung befindet sich Ihr Speichermedium bei DataPhoenix.",
+      description: "Während der Diagnose und Bearbeitung befindet sich Ihr Speichermedium ausschließlich bei uns oder bei DataPhoenix.",
     },
     {
       title: "Diagnose und Bearbeitung",
-      description: "Die technische Diagnose und die Datenrettung führt DataPhoenix durch.",
+      description: "Nach unserer eigenen Einschätzung und der Weitergabe findet die tiefergehende technische Diagnose und die mögliche Datenrettung bei DataPhoenix statt.",
     },
     {
       title: "Organisation und Abwicklung",
@@ -890,12 +890,11 @@ function DataRecoverySection() {
             </h4>
             <ul className="mt-3 grid gap-2 text-sm leading-6 text-area-muted">
               <li className="flex gap-2"><Check aria-hidden="true" className="mt-1 shrink-0 text-area-primary" size={16} /> Es ist die eigene Vergütung von SWEA für Bearbeitung und Abwicklung.</li>
-              <li className="flex gap-2"><Check aria-hidden="true" className="mt-1 shrink-0 text-area-primary" size={16} /> Sie ist nicht die Diagnosegebühr von DataPhoenix: DataPhoenix berechnet SWEA für die erste Diagnose im Rahmen der Partnervereinbarung nichts.</li>
               <li className="flex gap-2"><Check aria-hidden="true" className="mt-1 shrink-0 text-area-primary" size={16} /> Sie wird Ihnen vor Ihrer Beauftragung mitgeteilt.</li>
             </ul>
             {/* OFFEN: Fälligkeit der Pauschale und ob sie bei Ablehnung des späteren Angebots geschuldet wird, muss SWEA festlegen. Bis dahin keine Aussage dazu. */}
             <p className="mt-3 text-sm leading-6 text-area-muted">
-              Zu Fälligkeit und Abrechnung für den Fall, dass Sie das spätere Angebot ablehnen, erhalten Sie von uns vor Ihrer Beauftragung eine verbindliche Auskunft.
+              Die Pauschale wird in jedem Fall fällig und deckt unseren Aufwand für die Erstanalyse, die gegebenenfalls stattfindende Abklärung mit dem Partner und alle notwenigen Schritte und die Kommunikation mit Ihnen ab.
             </p>
           </aside>
 
