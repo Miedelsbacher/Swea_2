@@ -140,6 +140,18 @@ export function AGBModal() {
         </ol>
         <h4 className={subheadingClass}>A2. Mitwirkung und Datensicherung</h4>
         <ol className={orderedListClass}>
+          <li>
+            Der Kunde stellt dem Anbieter alle für die vereinbarte Leistung erforderlichen Informationen rechtzeitig zur Verfügung. Dazu gehört insbesondere, dass er
+            <ul className={listClass}>
+              <li>notwendige Unterlagen, Dateien und Materialien vollständig übermittelt,</li>
+              <li>erforderliche Zugänge oder Freigaben ermöglicht,</li>
+              <li>seine Angaben auf Richtigkeit und Vollständigkeit prüft,</li>
+              <li>Rückfragen und Freigabeanforderungen des Anbieters innerhalb angemessener Zeit beantwortet und</li>
+              <li>Änderungen oder neue Anforderungen rechtzeitig mitteilt.</li>
+            </ul>
+          </li>
+          <li>Der Kunde stellt sicher, dass er zur Bereitstellung und zur vereinbarten Nutzung der übermittelten Materialien berechtigt ist. Das betrifft insbesondere Fotos und Bilder, Texte und Dokumente, Logos und Grafiken, Videos und Tonaufnahmen sowie Musik und sonstige kreative Inhalte. Sind auf dem Material Personen erkennbar oder hörbar, müssen deren erforderliche Einwilligungen vorliegen.</li>
+          <li>Fehlen Informationen oder ist eine Mitwirkung des Kunden erforderlich, weist der Anbieter den Kunden darauf hin und setzt, falls erforderlich, eine angemessene Frist. Verzögerungen aufgrund fehlender oder verspäteter Mitwirkung können sich auf vereinbarte Termine auswirken. Dadurch entstehender Mehraufwand wird nur berechnet, soweit dies vereinbart ist oder sich aus dem Gesetz ergibt. Die gesetzlichen Rechte beider Vertragsparteien bleiben unberührt.</li>
           <li>Der Kunde soll vor Arbeiten an seiner Hard- oder Software, etwa Vor-Ort-Service, Fernwartung oder Reparaturen, eine vollständige und funktionsfähige Datensicherung (Backup) durchführen. Die Datensicherung gehört nur dann zur Leistung des Anbieters, wenn sie ausdrücklich beauftragt wurde.</li>
           <li>Eine unterlassene Datensicherung kann bei der Bemessung von Schadensersatzansprüchen nach den gesetzlichen Regeln zum Mitverschulden berücksichtigt werden. Im Übrigen richtet sich die Haftung nach Abschnitt 5.</li>
         </ol>
