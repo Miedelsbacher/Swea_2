@@ -34,11 +34,11 @@ function WaldbadenHero() {
             <Leaf aria-hidden="true" size={14} /> Waldbaden &amp; Achtsamkeit
           </span>
           <h1 className="mt-5 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl lg:text-5xl" id="waldbaden-title">
-            After Work – Waldbaden und Achtsamkeit
+            Waldbaden und Achtsamkeit
           </h1>
-          <p className="mt-3 text-xl font-medium text-area-primary">Die kleine Auszeit nach der Arbeit.</p>
+          <p className="mt-3 text-xl font-medium text-area-primary">Die kleine Auszeit in der Natur.</p>
           <p className="mt-5 max-w-xl text-base leading-7 text-area-muted">
-            Der Arbeitstag ist geschafft – aber die Gedanken sind noch mittendrin? Manchmal braucht es einen bewussten Abstand, um wieder bei sich anzukommen. Beim After-Work-Waldbaden nehmen Sie sich Zeit, den Alltag hinter sich zu lassen und die Natur aufmerksam und mit allen Sinnen wahrzunehmen.
+            Der Arbeitstag ist geschafft – aber die Gedanken sind noch mittendrin? Manchmal braucht es einen bewussten Abstand, um wieder bei sich anzukommen. Zum Beispiel beim After-Work-Waldbaden. Nehmen Sie sich Zeit, den Alltag hinter sich zu lassen und die Natur aufmerksam und mit allen Sinnen wahrzunehmen.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a className={primaryButton} href="#fuer-wen">
@@ -94,10 +94,10 @@ function Audience() {
         <div className="mb-8 max-w-3xl">
           <Eyebrow>Für wen?</Eyebrow>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="zielgruppe-title">
-            Für berufstätige Menschen, die zur Ruhe kommen möchten.
+            Für Menschen, die zur Ruhe kommen möchten.
           </h2>
           <p className="mt-4 text-base leading-7 text-area-muted">
-            Das Angebot richtet sich besonders an Berufstätige um die 40 und darüber hinaus – eine Altersgrenze gibt es nicht. Sie müssen weder sportlich sein noch Vorkenntnisse im Waldbaden mitbringen.
+            Das Angebot richtet sich besonders an Menschen um die 40 und darüber hinaus – eine Altersgrenze gibt es nicht. Sie müssen weder sportlich sein noch Vorkenntnisse im Waldbaden mitbringen.
           </p>
         </div>
         <ul className="grid gap-4 md:grid-cols-3">
@@ -189,7 +189,7 @@ function AboutInstructor() {
             target="_blank"
           >
             <Image alt="Deutsche Akademie für Waldbaden und Gesundheit" className="size-16 object-contain" height={219} src="/swea/waldbaden-akademie.jpg" width={225} />
-            <span className="flex items-center gap-2">Ausgebildet durch die Akademie <ExternalLink aria-hidden="true" size={14} /></span>
+            <span className="flex items-center gap-2">Ausgebildet durch die Deutsche Akademie für Waldbaden &amp; Gesundheit <ExternalLink aria-hidden="true" size={14} /></span>
           </a>
         </div>
       </div>
