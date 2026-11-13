@@ -599,7 +599,7 @@ function ServicesSection() {
         <div className="mb-9 max-w-3xl">
           <span className="eyebrow">EDV-Hilfe für Zuhause · Schorndorf &amp; Umgebung</span>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="edv-services-title">Technikhilfe – persönlich und verständlich</h1>
-          <p className="mt-4 text-base leading-7 text-area-muted">Für Privatpersonen, Hausbesitzer, Haushalte und Professionals in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
+          <p className="mt-4 text-base leading-7 text-area-muted">Für Privatkundinnen und Privatkunden in Schorndorf und Umgebung – im eigenen Zuhause ebenso wie im Homeoffice. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
         </div>
 
         <div className="grid items-stretch gap-4 sm:grid-cols-2">
@@ -893,7 +893,10 @@ function DataRecoverySection() {
               <li className="flex gap-2"><Check aria-hidden="true" className="mt-1 shrink-0 text-area-primary" size={16} /> Sie wird Ihnen vor Ihrer Beauftragung mitgeteilt.</li>
             </ul>
                       <p className="mt-3 text-sm leading-6 text-area-muted">
-              Die Pauschale wird in jedem Fall fällig und deckt unseren Aufwand für die Erstanalyse, die gegebenenfalls stattfindende Abklärung mit dem Partner und alle notwenigen Schritte und die Kommunikation mit Ihnen ab.
+              Die Pauschale wird in jedem Fall fällig und deckt unseren Aufwand für die Erstanalyse, die gegebenenfalls stattfindende Abklärung mit dem Partner, alle dafür notwendigen Schritte und die Kommunikation mit Ihnen ab.
+            </p>
+            <p className="mt-3 text-sm leading-6 text-area-muted">
+              Versuchen wir, Ihre Daten zunächst selbst mit eigenen Werkzeugen wiederherzustellen, ist diese technische Arbeit nicht in der Pauschale enthalten. Dafür erhalten Sie vorab ein separates Angebot; die Arbeiten beginnen erst, wenn Sie diesem Angebot zugestimmt haben.
             </p>
           </aside>
 
@@ -1004,9 +1007,9 @@ function EdvView() {
       <RemoteSection />
       <section className="page-wrap ki-crosslink brand-area brand-area-ki" aria-labelledby="ki-crosslink-title">
         <div>
-          <span className="eyebrow">KI-Studio &amp; Aktionen</span>
-          <h2 id="ki-crosslink-title">Kreative Ideen für Menschen und Familien.</h2>
-          <p>Persönliche KI-Bilder, Videos und Geschenke – individuell gestaltet und passend zu Ihrer Idee oder zum Anlass.</p>
+          <span className="eyebrow">SWEA KI-Studio</span>
+          <h2 id="ki-crosslink-title">Digitale Medien nach Ihrer Idee.</h2>
+          <p>Im SWEA KI-Studio entstehen individuelle digitale Bilder, Videos, Songs und Jingles – passend zu Ihrer Idee oder Ihrem Anlass. Sie erhalten das Ergebnis als digitale Datei; physische Geschenke, Druckprodukte oder Waren bieten wir nicht an.</p>
         </div>
         <Link className="button button-dark" data-nav-link href="/ki-studio">Zum KI-Studio <ArrowRight aria-hidden="true" size={17} /></Link>
       </section>
