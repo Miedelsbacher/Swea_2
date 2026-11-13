@@ -47,7 +47,7 @@ function Hero() {
         </div>
         <figure className="hero-visual">
           <div className="hero-portrait-frame">
-            <Image alt="Uwe Christian, persönlicher IT-Serviceanbieter in Schorndorf" src="/swea/uwe-christian-portrait.png" fill priority sizes="(max-width: 700px) 100vw, 46vw" />
+            <Image alt="Uwe Christian, persönlicher IT-Serviceanbieter in Schorndorf" src="/swea/uwe-christian-home.png" fill priority sizes="(max-width: 700px) 100vw, 46vw" />
           </div>
           <figcaption className="hero-note"><span className="hero-note-mark"><Check aria-hidden="true" size={15} /></span><span><strong>Uwe Christian</strong><br />Ihr persönlicher Ansprechpartner</span></figcaption>
         </figure>
@@ -805,10 +805,10 @@ function AboutSection() {
           <figure className="about-profile relative min-h-[22rem] overflow-hidden rounded-2xl bg-area-deep shadow-sm sm:min-h-[28rem]">
             <Image
               alt="Uwe Christian in seinem Büro in Schorndorf"
-              className="object-cover object-[center_34%]"
+              className="object-cover object-[center_31%]"
               fill
               sizes="(max-width: 1023px) 100vw, 40vw"
-              src="/swea/uwe-christian-portrait.png"
+              src="/swea/uwe-christian-home.png"
             />
             <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-area-deep/85 via-transparent to-transparent" />
             <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-5 text-white sm:p-6">
