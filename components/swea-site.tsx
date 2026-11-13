@@ -315,7 +315,7 @@ function KIStudioShowcase() {
                 src="/swea/ai-examples/elf-portrait.jpeg"
               />
               <span className="absolute right-3 top-3 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">
-                Ab 30 €
+                Ab 15€
               </span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
