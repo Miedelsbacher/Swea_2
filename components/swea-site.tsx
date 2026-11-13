@@ -225,16 +225,6 @@ function KIStudioServices() {
 
         <div className="grid items-stretch gap-5 md:grid-cols-3 md:gap-6">
           <article className={cardClass}>
-            <div className="relative min-h-44 aspect-[16/10] overflow-hidden bg-area-subtle">
-              <Image
-                alt="Digitales Bild einer Fee in einem geheimnisvollen Wald neben einem großen grünen Drachen"
-                className="object-cover transition-transform duration-500 hover:scale-105"
-                fill
-                loading="lazy"
-                sizes="(max-width: 767px) 100vw, 33vw"
-                src="/swea/ai-examples/ki-studio-image-dragon.jpg"
-              />
-            </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><ImageIcon aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bilder &amp; Grafiken</span></div>
               <h3 className="text-xl font-semibold leading-7 text-area-deep">Digitale Bilder &amp; Grafiken</h3>
@@ -247,6 +237,80 @@ function KIStudioServices() {
           </article>
 
           <article className={cardClass}>
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <div className="mb-3 flex items-center gap-2 text-area-primary"><Video aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bewegtbild</span></div>
+              <h3 className="text-xl font-semibold leading-7 text-area-deep">Videos</h3>
+              <p className="mt-2 text-sm leading-6 text-area-muted">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
+              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Die Übergabe erfolgt als digitale Videodatei.</p>
+              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: Videos">
+                Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
+              </Link>
+            </div>
+          </article>
+
+          <article className={cardClass}>
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <div className="mb-3 flex items-center gap-2 text-area-primary"><Music2 aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Audio &amp; Musik</span></div>
+              <h3 className="text-xl font-semibold leading-7 text-area-deep">Songs, Jingles &amp; Audiomaterial</h3>
+              <p className="mt-2 text-sm leading-6 text-area-muted">Persönliche Songs mit eigenem Liedtext, kurze Jingles und weiteres Audiomaterial nach Ihren Vorgaben.</p>
+              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Die Übergabe erfolgt als digitale Audiodatei.</p>
+              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: Songs, Jingles und Audiomaterial">
+                Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
+              </Link>
+            </div>
+          </article>
+        </div>
+
+        <ExamplesLink />
+      </div>
+    </section>
+  )
+}
+
+function ExamplesLink() {
+  return (
+    <p className="mt-8 text-center">
+      <Link
+        className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-area-border bg-area-surface px-5 py-2.5 text-sm font-semibold text-area-deep transition-colors hover:border-area-primary hover:text-area-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2"
+        data-nav-link
+        href="/ki-studio/beispiele"
+      >
+        Beispiele ansehen <ArrowRight aria-hidden="true" size={16} />
+      </Link>
+      <span className="mt-2 block text-xs text-area-muted">Bilder, Videos, Hörproben und Songtext</span>
+    </p>
+  )
+}
+
+function KIStudioMediaExamples() {
+  const cardClass = "flex h-full flex-col overflow-hidden rounded-2xl border border-area-border bg-area-surface shadow-sm"
+
+  return (
+    <section aria-labelledby="ki-medienbeispiele-title" className="py-14 sm:py-20" id="medienbeispiele">
+      <div className="page-wrap">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <span className="eyebrow">Medienbeispiele</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-medienbeispiele-title">
+            Bild, Video und Jingle
+          </h2>
+        </div>
+
+        <div className="grid items-stretch gap-5 md:grid-cols-3 md:gap-6">
+          <figure className={cardClass}>
+            <div className="relative min-h-44 aspect-[16/10] overflow-hidden bg-area-subtle">
+              <Image
+                alt="Digitales Bild einer Fee in einem geheimnisvollen Wald neben einem großen grünen Drachen"
+                className="object-cover"
+                fill
+                loading="lazy"
+                sizes="(max-width: 767px) 100vw, 33vw"
+                src="/swea/ai-examples/ki-studio-image-dragon.jpg"
+              />
+            </div>
+            <figcaption className="flex items-center gap-2 p-4 text-sm font-semibold text-area-deep"><ImageIcon aria-hidden="true" className="text-area-primary" size={17} /> Digitales Bild</figcaption>
+          </figure>
+
+          <figure className={cardClass}>
             <div className="relative min-h-44 aspect-[16/10] overflow-hidden bg-area-deep">
               <video
                 aria-label="Beispiel eines personalisierten Videoclips"
@@ -260,18 +324,10 @@ function KIStudioServices() {
                 Ihr Browser unterstützt die Videowiedergabe nicht.
               </video>
             </div>
-            <div className="flex flex-1 flex-col p-5 sm:p-6">
-              <div className="mb-3 flex items-center gap-2 text-area-primary"><Video aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bewegtbild</span></div>
-              <h3 className="text-xl font-semibold leading-7 text-area-deep">Videos</h3>
-              <p className="mt-2 text-sm leading-6 text-area-muted">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
-              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Die Übergabe erfolgt als digitale Videodatei.</p>
-              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: Videos">
-                Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
-              </Link>
-            </div>
-          </article>
+            <figcaption className="flex items-center gap-2 p-4 text-sm font-semibold text-area-deep"><Video aria-hidden="true" className="text-area-primary" size={17} /> Videoclip</figcaption>
+          </figure>
 
-          <article className={cardClass}>
+          <figure className={cardClass}>
             <div className="relative flex min-h-44 aspect-[16/10] flex-col justify-between bg-area-deep p-5 text-white sm:p-6">
               <div className="flex items-center">
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-white/80"><Music2 aria-hidden="true" size={17} /> SWEA Audio Studio</span>
@@ -286,23 +342,84 @@ function KIStudioServices() {
                 Ihr Browser unterstützt die Audiowiedergabe nicht.
               </audio>
             </div>
-            <div className="flex flex-1 flex-col p-5 sm:p-6">
-              <div className="mb-3 flex items-center gap-2 text-area-primary"><Music2 aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Audio &amp; Musik</span></div>
-              <h3 className="text-xl font-semibold leading-7 text-area-deep">Songs, Jingles &amp; Audiomaterial</h3>
-              <p className="mt-2 text-sm leading-6 text-area-muted">Persönliche Songs mit eigenem Liedtext, kurze Jingles und weiteres Audiomaterial nach Ihren Vorgaben.</p>
-              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Die Übergabe erfolgt als digitale Audiodatei.</p>
-              <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: Songs, Jingles und Audiomaterial">
-                Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
-              </Link>
-            </div>
-          </article>
+            <figcaption className="flex items-center gap-2 p-4 text-sm font-semibold text-area-deep"><Music2 aria-hidden="true" className="text-area-primary" size={17} /> Jingle als Hörprobe</figcaption>
+          </figure>
         </div>
       </div>
     </section>
   )
 }
 
+function KIStudioExamplesIntro() {
+  return (
+    <section aria-labelledby="ki-beispiele-title" className="bg-area-soft py-14 sm:py-20">
+      <div className="page-wrap">
+        <nav aria-label="Brotkrümelnavigation" className="mb-8">
+          <ol className="flex flex-wrap items-center gap-2 text-sm text-area-muted">
+            <li>
+              <Link className="font-semibold text-area-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" data-nav-link href="/ki-studio">KI-Studio</Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">Beispiele</li>
+          </ol>
+        </nav>
+        <div className="max-w-3xl">
+          <span className="eyebrow">KI-Studio · Beispiele</span>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-beispiele-title">
+            Beispiele aus dem KI-Studio
+          </h1>
+          <p className="mt-4 text-base leading-7 text-area-muted">
+            Hier finden Sie Bilder, Videos, Hörproben und einen vollständigen Songtext aus dem SWEA KI-Studio. Alle Beispiele sind digitale Medien – SWEA stellt keine physischen Produkte her und nimmt keine Druckaufträge an.
+          </p>
+          <p className="mt-3 text-sm leading-6 text-area-muted">
+            Die gezeigten Beispiele sind Arbeiten von SWEA. Kundenaufträge werden nur mit Ihrer gesonderten Zustimmung als Referenz veröffentlicht.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function KIStudioExamplesClosing() {
+  return (
+    <section aria-labelledby="ki-beispiele-closing-title" className="page-wrap ki-crosslink brand-area brand-area-ki" id="anfrage">
+      <div>
+        <span className="eyebrow">Ihr Projekt</span>
+        <h2 id="ki-beispiele-closing-title">Eigene Idee im Kopf?</h2>
+        <p>Ablauf, Nutzungsrechte und Voraussetzungen finden Sie auf der Seite des KI-Studios.</p>
+        <p className="mt-3">
+          <Link className="inline-flex items-center gap-2 font-semibold text-area-deep underline-offset-4 hover:underline" data-nav-link href="/ki-studio">Zurück zum KI-Studio</Link>
+        </p>
+      </div>
+      <Link className="button button-dark min-h-12" href="/kontakt">
+        Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={17} />
+      </Link>
+    </section>
+  )
+}
+
 function KIStudioCustomWork() {
+  return (
+    <section aria-labelledby="ki-umsetzung-title" className="bg-area-soft py-14 sm:py-20" id="individuelle-umsetzung">
+      <div className="page-wrap">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow">Individuelle Umsetzung</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-umsetzung-title">
+            Ihre Idee ist der Ausgangspunkt.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-area-muted">
+            Jedes Projekt beginnt mit Ihrer Vorstellung: ein Anlass, eine Person, ein Haustier, ein Hobby, eine Geschichte oder eine Geschäftsidee. Daraus entwickeln wir gemeinsam ein Motiv, ein Video oder einen Song.
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-area-muted">
+            Je nach Projekt bringen Sie Fotos, Stichworte, Lebensstationen für einen Liedtext oder Hinweise zum gewünschten Stil mit. Welche Angaben nötig sind, klären wir im Gespräch. Umfang und Gestaltung stimmen wir individuell ab; die konkrete Leistung wird im jeweiligen Angebot vereinbart. Das fertige Ergebnis erhalten Sie als digitale Datei.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function KIStudioGallery() {
   const examples = [
     {
       src: "/swea/medien/ki-beispiel-1.jpeg",
@@ -322,19 +439,13 @@ function KIStudioCustomWork() {
   ]
 
   return (
-    <section aria-labelledby="ki-umsetzung-title" className="bg-area-soft py-14 sm:py-20" id="individuelle-umsetzung">
+    <section aria-labelledby="ki-galerie-title" className="bg-area-soft py-14 sm:py-20" id="galerie">
       <div className="page-wrap">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="eyebrow">Individuelle Umsetzung</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-umsetzung-title">
-            Ihre Idee ist der Ausgangspunkt.
+          <span className="eyebrow">Galerie</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="ki-galerie-title">
+            Individuell gestaltete Motive
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-area-muted">
-            Jedes Projekt beginnt mit Ihrer Vorstellung: ein Anlass, eine Person, ein Haustier, ein Hobby, eine Geschichte oder eine Geschäftsidee. Daraus entwickeln wir gemeinsam ein Motiv, ein Video oder einen Song.
-          </p>
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-area-muted">
-            Je nach Projekt bringen Sie Fotos, Stichworte, Lebensstationen für einen Liedtext oder Hinweise zum gewünschten Stil mit. Welche Angaben nötig sind, klären wir im Gespräch. Umfang und Gestaltung stimmen wir individuell ab; die konkrete Leistung wird im jeweiligen Angebot vereinbart.
-          </p>
         </div>
 
         <ul aria-label="Beispiele für individuell gestaltete Motive" className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -1285,13 +1396,24 @@ export function KIStudioPageContent() {
     <div className="brand-area brand-area-ki">
       <KIStudioIntro />
       <KIStudioServices />
-      <HolidaySongSection />
       <KIStudioCustomWork />
-      <AIExamplesCarousel />
       <KIStudioProcess />
       <KIStudioUsage />
       <KIStudioLegalNotes />
       <KIStudioClosingCTA />
+    </div>
+  )
+}
+
+export function KIStudioExamplesPageContent() {
+  return (
+    <div className="brand-area brand-area-ki">
+      <KIStudioExamplesIntro />
+      <KIStudioMediaExamples />
+      <HolidaySongSection />
+      <KIStudioGallery />
+      <AIExamplesCarousel />
+      <KIStudioExamplesClosing />
     </div>
   )
 }
