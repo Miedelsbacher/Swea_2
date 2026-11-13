@@ -40,7 +40,7 @@ export function LegalModals() {
       <LegalDialog eyebrow="Datenschutz · Stand: 13. November 2026" id="privacy-modal" title="Datenschutzerklärung">
         <section className={sectionClass}>
           <h3 className={headingClass}>Verantwortlicher</h3>
-          <p className={paragraphClass}>Verantwortlich für die Verarbeitung personenbezogener Daten ist Uwe Christian, Freiburgstr. 12, 73614 Schorndorf. Sie erreichen ihn unter <a className={linkClass} href="mailto:edv@swea.de">edv@swea.de</a> oder <a className={linkClass} href="mailto:wb@swea.de">wb@swea.de</a>, telefonisch unter <a className={linkClass} href="tel:+497181253148">+49 7181 253148</a>.</p>
+          <p className={paragraphClass}>Verantwortlich für die Verarbeitung personenbezogener Daten ist Uwe Christian, Freiburgstr. 12, 73614 Schorndorf. Sie erreichen ihn unter <a className={linkClass} href="mailto:edv@swea.de">edv@swea.de</a> oder <a className={linkClass} href="mailto:wb@swea.de">wb@swea.de</a>, telefonisch unter <a className={linkClass} href="tel:+497181253147">+49 7181 253147</a>.</p>
         </section>
 
         <section className={sectionClass}>
@@ -133,7 +133,7 @@ export function LegalModals() {
             Freiburgstr. 12<br />
             73614 Schorndorf
           </address>
-          <p className={paragraphClass}>Telefon: <a className={linkClass} href="tel:+497181253148">+49 7181 253148</a><br />Telefax: <a className={linkClass} href="tel:+497181253151">+49 7181 253151</a><br />E-Mail: <a className={linkClass} href="mailto:edv@swea.de">edv@swea.de</a><br />Weitere E-Mail: <a className={linkClass} href="mailto:wb@swea.de">wb@swea.de</a><br />Internet: <a className={linkClass} href="https://www.swea.de/" rel="noreferrer" target="_blank">www.swea.de</a></p>
+          <p className={paragraphClass}>Telefon: <a className={linkClass} href="tel:+497181253147">+49 7181 253147</a><br />Telefax: <a className={linkClass} href="tel:+497181253151">+49 7181 253151</a><br />E-Mail: <a className={linkClass} href="mailto:edv@swea.de">edv@swea.de</a><br />Weitere E-Mail: <a className={linkClass} href="mailto:wb@swea.de">wb@swea.de</a><br />Internet: <a className={linkClass} href="https://www.swea.de/" rel="noreferrer" target="_blank">www.swea.de</a></p>
           <p className={paragraphClass}><strong className="text-area-deep">Inhaber:</strong> Uwe Christian</p>
         </section>
         <section className={sectionClass}>

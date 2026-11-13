@@ -930,9 +930,9 @@ function ContactSection() {
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
-            <a href="tel:+497181253148" className="group flex items-center gap-3 rounded-xl border border-white/10 bg-area-surface/[0.06] p-4 transition hover:bg-area-surface/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-accent">
+            <a href="tel:+497181253147" className="group flex items-center gap-3 rounded-xl border border-white/10 bg-area-surface/[0.06] p-4 transition hover:bg-area-surface/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-accent">
               <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-area-subtle/10 text-white/80"><Phone aria-hidden="true" size={18} /></span>
-              <span className="min-w-0"><span className="block text-xs text-white/70">Telefon</span><span className="block break-words text-sm font-semibold text-white">+49 7181 253148</span></span>
+              <span className="min-w-0"><span className="block text-xs text-white/70">Telefon</span><span className="block break-words text-sm font-semibold text-white">+49 7181 253147</span></span>
             </a>
             <a href="mailto:edv@swea.de" className="group flex items-center gap-3 rounded-xl border border-white/10 bg-area-surface/[0.06] p-4 transition hover:bg-area-surface/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-accent">
               <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-area-subtle/10 text-white/80"><Mail aria-hidden="true" size={18} /></span>
@@ -1090,7 +1090,7 @@ function Footer() {
         <address className="flex flex-col items-start gap-1.5 not-italic text-sm text-area-muted sm:justify-self-end sm:w-full sm:max-w-sm">
           <h2 className="mb-1 text-sm font-semibold text-area-deep">Kontakt</h2>
           <p className="font-medium text-area-deep">Uwe Christian</p>
-          <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="tel:+497181253148">07181 / 253148</a>
+          <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="tel:+497181253147">07181 / 253147</a>
           <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:edv@swea.de">edv@swea.de</a>
           <a className="inline-flex min-h-11 items-center font-medium text-area-deep transition hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary" href="mailto:wb@swea.de">wb@swea.de</a>
           <p className="mt-1 leading-6">Freiburgstr. 12 · 73614 Schorndorf</p>
