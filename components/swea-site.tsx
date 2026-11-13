@@ -707,7 +707,7 @@ function DataRecoverySection() {
   const processSteps: { title: string; description: string; consent?: string }[] = [
     {
       title: "Sie fragen die Datenrettung bei SWEA an",
-      description: "Schildern Sie kurz, um welchen Datenträger es geht und was passiert ist.",
+      description: "Schildern Sie kurz, um welchen Datenträger es geht und was passiert ist. Wir werden je nach Situation ohne externen Partner versuchen, die Daten presigünstig mit eigenen Werkzeugen wieder herzustellen.",
     },
     {
       title: "Einbindung des Partners und Ihre Zustimmung zur Untersuchung",
