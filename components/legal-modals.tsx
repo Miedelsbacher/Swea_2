@@ -334,18 +334,43 @@ export function LegalModals() {
       <LegalDialog eyebrow="Verbraucherinformationen" id="withdrawal-modal" title="Widerrufsbelehrung & AGB-Hinweise">
         <section className={sectionClass}>
           <h3 className={headingClass}>Widerrufsrecht für Verbraucher</h3>
-          <p className={paragraphClass}>Wenn Sie Verbraucher im Sinne des § 13 BGB sind, können Sie einen Fernabsatzvertrag grundsätzlich innerhalb von 14 Tagen ohne Angabe von Gründen widerrufen. Bei Dienstleistungen und digitalen Inhalten, die nicht auf einem körperlichen Datenträger geliefert werden, beginnt die Frist grundsätzlich mit Vertragsschluss. Sie beginnt am Folgetag und endet nach 14 Tagen. SWEA verkauft und versendet keine Waren.</p>
-          <p className={paragraphClass}>Um zu widerrufen, informieren Sie Uwe Christian mit einer eindeutigen Erklärung (zum Beispiel per Brief oder E-Mail) über Ihren Entschluss. Zur Wahrung der Frist reicht es aus, dass Sie die Erklärung vor Ablauf der Widerrufsfrist absenden.</p>
+          <p className={paragraphClass}>Wenn Sie Verbraucher im Sinne des § 13 BGB sind und den Vertrag mit SWEA ausschließlich über Fernkommunikationsmittel (zum Beispiel per E-Mail, Telefon oder Kontaktformular) oder außerhalb unserer Geschäftsräume geschlossen haben, steht Ihnen grundsätzlich ein gesetzliches Widerrufsrecht zu. Unternehmern steht kein gesetzliches Widerrufsrecht zu.</p>
+          <p className={paragraphClass}>Wie das Widerrufsrecht im Einzelnen ausgestaltet ist, hängt von der Art des Vertrags ab. Für digitale Inhalte aus dem KI-Studio und für Dienstleistungen (IT-Service, Datenrettung, Waldbaden) gelten deshalb die getrennten Hinweise unten. SWEA verkauft und versendet keine Waren.</p>
+          <p className={paragraphClass}>Um zu widerrufen, informieren Sie Uwe Christian, Freiburgstr. 12, 73614 Schorndorf, E-Mail: <a className={linkClass} href="mailto:edv@swea.de">edv@swea.de</a>, mit einer eindeutigen Erklärung (zum Beispiel per Brief oder E-Mail) über Ihren Entschluss, den Vertrag zu widerrufen. Sie können dafür das unten stehende Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist. Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung vor Ablauf der Widerrufsfrist absenden.</p>
         </section>
 
         <section className={sectionClass}>
-          <h3 className={headingClass}>Folgen des Widerrufs</h3>
-          <p className={paragraphClass}>Im Fall eines wirksamen Widerrufs erstatten wir erhaltene Zahlungen grundsätzlich innerhalb von 14 Tagen ab Eingang Ihrer Widerrufserklärung mit demselben Zahlungsmittel, das Sie bei der Zahlung eingesetzt haben, sofern nichts anderes vereinbart wurde.</p>
+          <h3 className={headingClass}>Digitale Inhalte aus dem KI-Studio</h3>
+          <p className={paragraphClass}>Dieser Abschnitt gilt für Verträge über die Erstellung und Bereitstellung digitaler Inhalte, also Bilder und Grafiken, Videos, Songs, Jingles und Audiomaterial. Diese Ergebnisse werden ausschließlich digital übermittelt, etwa per E-Mail oder Download-Link, und nicht auf einem körperlichen Datenträger geliefert (Teil C3 der AGB).</p>
+
+          <h4 className={subheadingClass}>Widerrufsfrist</h4>
+          <p className={paragraphClass}>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsschlusses. Dass die Inhalte individuell nach Ihren Vorgaben erstellt werden, schließt das Widerrufsrecht bei digitalen Inhalten nicht aus.</p>
+
+          <h4 className={subheadingClass}>Folgen des Widerrufs</h4>
+          <p className={paragraphClass}>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet. Für bereits erstellte oder übermittelte digitale Inhalte müssen Sie keinen Wertersatz leisten (§ 357a Abs. 3 BGB).</p>
+
+          <h4 className={subheadingClass}>Vorzeitiges Erlöschen des Widerrufsrechts</h4>
+          <p className={paragraphClass}>Ihr Widerrufsrecht erlischt vor Ablauf der vierzehn Tage nur, wenn alle folgenden Voraussetzungen erfüllt sind (§ 356 Abs. 5 BGB):</p>
+          <ol className="grid list-decimal gap-2 pl-5 text-sm leading-7 text-area-muted">
+            <li>Sie haben ausdrücklich zugestimmt, dass SWEA vor Ablauf der Widerrufsfrist mit der Erstellung und Bereitstellung der digitalen Inhalte beginnt,</li>
+            <li>Sie haben bestätigt, dass Ihnen bekannt ist, dass Sie durch diese Zustimmung mit Beginn der Vertragserfüllung Ihr Widerrufsrecht verlieren,</li>
+            <li>SWEA hat Ihnen eine Vertragsbestätigung auf einem dauerhaften Datenträger, zum Beispiel per E-Mail, zur Verfügung gestellt, in der Ihre Zustimmung und Ihre Bestätigung festgehalten sind (§ 312f BGB), und</li>
+            <li>SWEA hat danach mit der Vertragserfüllung begonnen.</li>
+          </ol>
+          <p className={paragraphClass}>Fehlt eine dieser Voraussetzungen, bleibt Ihr Widerrufsrecht für die gesamte Widerrufsfrist bestehen.</p>
+
+          <h4 className={subheadingClass}>Ablauf bei SWEA</h4>
+          <p className={paragraphClass}>SWEA betreibt keinen Webshop und keinen Online-Checkout. Aufträge werden individuell vereinbart, in der Regel per E-Mail. Möchten Sie, dass mit der Arbeit vor Ablauf der Widerrufsfrist begonnen wird, teilen Sie dies bitte ausdrücklich in Textform mit, zum Beispiel per E-Mail mit folgendem Wortlaut:</p>
+          <blockquote className="rounded-2xl border border-area-border bg-area-soft p-4 text-sm leading-7 text-area-deep sm:p-5">
+            {'„Ich verlange ausdrücklich, dass SWEA vor Ablauf der Widerrufsfrist mit der Erstellung und Bereitstellung der vereinbarten digitalen Inhalte beginnt. Mir ist bekannt, dass ich durch diese Zustimmung mit Beginn der Vertragserfüllung mein Widerrufsrecht verliere."'}
+          </blockquote>
+          <p className={paragraphClass}>Die Erklärung ist freiwillig und wird nicht vorausgefüllt oder unterstellt. Erst nachdem Ihre Erklärung vorliegt und Sie unsere Vertragsbestätigung erhalten haben, beginnt SWEA vorzeitig mit der Arbeit. Geben Sie keine Erklärung ab, beginnt SWEA mit der Erstellung grundsätzlich erst nach Ablauf der Widerrufsfrist, sofern nichts anderes vereinbart ist; Ihr Widerrufsrecht bleibt dann bis zum Fristende vollständig erhalten.</p>
         </section>
 
         <section className={sectionClass}>
-          <h3 className={headingClass}>Vorzeitiges Erlöschen bei digitalen Inhalten</h3>
-          <p className={paragraphClass}>Bei digitalen Inhalten, die nicht auf einem körperlichen Datenträger geliefert werden, erlischt das Widerrufsrecht vorzeitig erst, wenn wir mit der Vertragserfüllung begonnen haben, nachdem Sie ausdrücklich zugestimmt haben, dass wir vor Ablauf der Widerrufsfrist beginnen, Sie bestätigt haben, dass Ihnen der Verlust des Widerrufsrechts mit Beginn der Vertragserfüllung bekannt ist, und wir Ihnen eine Vertragsbestätigung zur Verfügung gestellt haben.</p>
+          <h3 className={headingClass}>Dienstleistungen</h3>
+          <p className={paragraphClass}>Für Dienstleistungen, insbesondere IT-Service, Datenrettung und Waldbaden-Veranstaltungen, beträgt die Widerrufsfrist ebenfalls vierzehn Tage ab dem Tag des Vertragsschlusses. Ob das Widerrufsrecht bei Dienstleistungen ausnahmsweise nicht besteht, vorzeitig erlischt oder ob nach einem Widerruf Wertersatz für bereits erbrachte Leistungen zu leisten ist, richtet sich ausschließlich nach den gesetzlichen Vorschriften (insbesondere § 312g Abs. 2, § 356 Abs. 4 und § 357a Abs. 2 BGB). Die Regelungen zum vorzeitigen Erlöschen bei digitalen Inhalten gelten für Dienstleistungen nicht.</p>
+          <p className={paragraphClass}>Im Fall eines wirksamen Widerrufs erstatten wir erhaltene Zahlungen unverzüglich und spätestens binnen vierzehn Tagen ab Eingang Ihrer Widerrufserklärung mit demselben Zahlungsmittel, das Sie bei der Zahlung eingesetzt haben, sofern nichts anderes ausdrücklich vereinbart wurde.</p>
         </section>
 
         <section className={sectionClass}>
