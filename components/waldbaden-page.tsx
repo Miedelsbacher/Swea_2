@@ -6,7 +6,6 @@ import {
   ExternalLink,
   Hourglass,
   Leaf,
-  MapPin,
   ShieldCheck,
   Sunset,
   TreePine,
@@ -55,20 +54,16 @@ function WaldbadenHero() {
 
         <figure className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-area-deep shadow-xl md:aspect-[4/5]">
           <Image
-            alt="Wald und Streuobstwiesen am Frauenberg in Schorndorf"
+            alt="Sonnenlicht fällt durch hohe Bäume auf einen Waldweg im Grünen"
             className="object-cover"
             fill
             priority
             sizes="(max-width: 767px) 100vw, 50vw"
-            src="/swea/waldbaden-frauenberg.jpg"
+            src="/swea/waldbaden-sunlit-forest.webp"
           />
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-area-deep/85 via-area-deep/5 to-transparent" />
-          <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-5 text-white sm:p-6">
-            <span className="flex items-center gap-2 text-sm font-semibold"><MapPin aria-hidden="true" size={16} /> Frauenberg · Schorndorf</span>
-            <span className="text-xs leading-5 text-white/85">
-              Foto: <a href="https://commons.wikimedia.org/wiki/File:Autumn_Frauenberg_Schorndorf_2014.jpg" rel="noreferrer" target="_blank">Maxim Beniashvili / Wikimedia Commons</a>
-              {" · "}<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noreferrer" target="_blank">CC BY-SA 4.0</a> · Web-Zuschnitt
-            </span>
+          <figcaption className="absolute inset-x-0 bottom-0 p-5 text-sm font-medium text-white sm:p-6">
+            Durchatmen und den Wald bewusst erleben.
           </figcaption>
         </figure>
       </div>
