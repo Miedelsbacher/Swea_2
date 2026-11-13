@@ -63,7 +63,15 @@ export function AGBModal() {
         <h3 className={headingClass}>1. Geltungsbereich und Geschäftsbereiche</h3>
         <ol className={orderedListClass}>
           <li>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge, Dienstleistungen und Angebote zwischen Uwe Christian (swea.de), Freiburgstr. 12, 73614 Schorndorf (nachfolgend „Anbieter“) und seinen Kunden, Verbraucherinnen und Verbrauchern sowie Unternehmerinnen und Unternehmern.</li>
-          <li>Der Anbieter erbringt Dienstleistungen in drei Geschäftsbereichen. Teil A umfasst IT-Dienstleistungen, Webdesign und digitale Betreuung sowie die Abwicklung von Datenrettungen unter Einbindung des externen Partners DataPhoenix. Teil B umfasst Waldbaden, Achtsamkeitstraining, Entschleunigungskurse sowie Gruppen- und Firmenveranstaltungen. Teil C umfasst das KI-Studio mit der Erstellung digitaler Medien.</li>
+          <li>
+            Der Anbieter erbringt ausschließlich Dienstleistungen, keine Warenverkäufe. Diese gliedern sich in vier Leistungsbereiche, die in den Besonderen Bestimmungen (Teile A bis C) geregelt sind:
+            <ul className={`${listClass} mt-2`}>
+              <li><strong className="text-area-deep">IT und Webdesign (Teil A):</strong> IT-Dienstleistungen und technische Unterstützung sowie Webdesign und digitale Betreuung.</li>
+              <li><strong className="text-area-deep">Datenrettung (Teil A):</strong> Beratung und Abwicklung von Datenrettungsanfragen, Einbindung des externen, spezialisierten Partners DataPhoenix sowie Diagnose und gegebenenfalls Beauftragung einer Datenrettung nach ausdrücklicher Freigabe durch den Kunden.</li>
+              <li><strong className="text-area-deep">KI-Studio (Teil C):</strong> individuelle Erstellung digitaler Bilder und Grafiken, digitaler Videos sowie von Songs und Jingles und die digitale Bereitstellung der vereinbarten Ergebnisse.</li>
+              <li><strong className="text-area-deep">Waldbaden (Teil B):</strong> Veranstaltungen, Kurse und Angebote im Bereich Waldbaden, soweit sie zum tatsächlichen Angebot des Anbieters gehören.</li>
+            </ul>
+          </li>
           <li>Die Allgemeinen Bestimmungen (Abschnitte 1 bis 7) gelten für alle Geschäftsbereiche. Die Teile A, B und C gelten ergänzend nur für den jeweiligen Geschäftsbereich. Bei Abweichungen gehen die Besonderen Bestimmungen vor, danach das jeweilige Angebot.</li>
           <li>Abweichende, entgegenstehende oder ergänzende Allgemeine Geschäftsbedingungen des Kunden werden nur dann Vertragsbestandteil, wenn der Anbieter ihrer Geltung ausdrücklich schriftlich zustimmt.</li>
         </ol>
@@ -75,7 +83,9 @@ export function AGBModal() {
           <li>Der Anbieter betreibt auf dieser Website keinen Online-Shop. Es gibt keinen Warenkorb, keinen Bestellvorgang und keine Online-Zahlung. Der Anbieter verkauft und versendet keine physischen Produkte.</li>
           <li>Die Darstellung der Leistungen auf der Website ist eine unverbindliche Information und kein verbindliches Angebot. Das Kontaktformular der Website öffnet lediglich das E-Mail-Programm des Kunden und begründet für sich keinen Vertrag.</li>
           <li>Verträge werden individuell angebahnt, etwa durch Anfrage des Kunden per E-Mail, Telefon oder auf einem anderen tatsächlich genutzten Kommunikationsweg. Ein Vertrag kommt zustande, wenn der Kunde ein Angebot des Anbieters annimmt oder der Anbieter eine Anfrage oder Buchung ausdrücklich bestätigt, jeweils in Textform, zum Beispiel per E-Mail.</li>
-          <li>Leistungsumfang, Preis, Termin beziehungsweise Bearbeitungszeit und gegebenenfalls Nutzungsrechte ergeben sich aus dem jeweiligen Angebot oder der Auftragsbestätigung. Individuelle Absprachen gehen diesen AGB vor.</li>
+          <li>Allgemeine Leistungsbeschreibungen auf der Website sind keine Zusage eines bestimmten Leistungsumfangs. Die konkrete Leistung ergibt sich aus dem jeweiligen Angebot oder der Auftragsbestätigung. Umfang, Preis, Leistungszeitraum beziehungsweise Bearbeitungszeit, besondere Anforderungen und gegebenenfalls Nutzungsrechte werden individuell vereinbart. Individuelle Absprachen gehen diesen AGB vor.</li>
+          <li>Änderungen des Leistungsumfangs und Zusatzleistungen bedürfen einer entsprechenden Vereinbarung in Textform.</li>
+          <li>Der Anbieter gibt keine pauschalen Erfolgsgarantien, insbesondere nicht für eine Datenrettung oder für mit KI-Unterstützung erstellte Ergebnisse. Eine Garantie besteht nur, wenn sie ausdrücklich in Textform vereinbart wurde.</li>
         </ol>
       </section>
 
