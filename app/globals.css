@@ -432,12 +432,9 @@ html { scroll-padding-top: 88px; }
   .hero-description { max-width: 470px; font-size: 14px; }
   .hero-actions { margin-top: 22px; }
   .hero-proof { margin-top: 19px; }
-.hero-visual { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 10px; width: min(100%, 450px); min-height: 0; margin: 0 auto; padding-bottom: 0; }
-.hero-image-card { position: relative; width: 100%; padding: 8px; transform: none; }
-.hero-image-it { top: auto; right: auto; z-index: auto; }
-.hero-image-nature { bottom: auto; left: auto; z-index: auto; margin-top: 14px; transform: none; }
-.hero-image-card:hover, .hero-image-card:focus-visible { transform: translateY(-4px); }
-.hero-note { position: relative; right: auto; bottom: auto; grid-column: 1 / -1; justify-self: end; margin-top: 1px; }
+  .hero-visual { display: flex; align-items: stretch; flex-direction: column; gap: 10px; width: min(100%, 450px); min-height: 0; margin: 0 auto; padding: 0; }
+  .hero-portrait-frame { width: 100%; }
+  .hero-note { position: relative; right: auto; bottom: auto; align-self: flex-end; margin-top: 1px; }
   .quick-links { grid-template-columns: 1fr; gap: 9px; padding-top: 17px; padding-bottom: 15px; }
   .section { padding: 56px 0; }
   .section-intro { margin-bottom: 25px; }
@@ -817,6 +814,7 @@ body {
 .brand-area-ki .holiday-song-panel { border-color: rgba(211, 204, 247, .28); background: rgba(10, 17, 53, .55); }
 .brand-area-ki .holiday-example-card,
 .brand-area-ki .ai-examples-carousel-card { border-color: var(--ki-border); background: var(--card); color: var(--ki-deep); }
+
 .brand-area-ki .holiday-example-card figcaption,
 .brand-area-ki .ai-examples-carousel-card figcaption { color: var(--ki-deep); }
 .brand-area-ki .holiday-video video,
@@ -853,3 +851,20 @@ body {
 .brand-area-natur .permission-note { color: var(--natur-primary) !important; }
 
 .footer-bottom { border-color: var(--brand-border); }
+
+@media (max-width: 700px) {
+  .section { padding-block: clamp(3.5rem, 10vw, 4rem); }
+  .hero-inner { padding-block: 2.75rem 3rem; }
+  .hero h1 { font-size: clamp(2.4rem, 10.5vw, 3.25rem); line-height: 1.08; }
+  .hero-description { font-size: 0.9375rem; line-height: 1.65; }
+  .hero-actions > .button { min-height: 48px; }
+  .service-card, .about-profile, .about-card, .ki-crosslink { min-width: 0; }
+  .offer-card .button { width: 100%; min-height: 48px; justify-self: stretch; }
+  .site-footer address > a, .legal-contact-line a { display: inline-flex; min-height: 44px; align-items: center; }
+  .ki-crosslink > .button { min-height: 48px; }
+}
+
+@media (max-width: 430px) {
+  .header-contact-cta { min-height: 44px; }
+  .mobile-menu-toggle { width: 44px; height: 44px; }
+}

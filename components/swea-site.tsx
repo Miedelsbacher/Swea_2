@@ -144,8 +144,8 @@ function Hero() {
             Persönliche Technikhilfe für Zuhause – von PC- und WLAN-Problemen bis zu Datenrettung, Smartphones und Smart Home. Vor Ort in Schorndorf und Umgebung oder per Fernzugriff; dazu Waldbaden zum Auftanken.
           </p>
           <div className="hero-actions">
-            <button className="button button-light" data-page-nav="edv" type="button">SWEA Technik entdecken <ArrowRight aria-hidden="true" size={17} /></button>
-            <button className="button button-outline-light" data-page-nav="waldbaden" type="button">SWEA Natur entdecken</button>
+            <button className="button button-light" data-page-nav="kontakt" data-target-id="kontakt" type="button">IT-Problem schildern <ArrowRight aria-hidden="true" size={17} /></button>
+            <button className="button button-outline-light" data-page-nav="waldbaden" data-target-id="kursdetails" type="button">Waldbaden entdecken</button>
           </div>
           <div className="hero-proof"><MapPin aria-hidden="true" size={16} /> Persönlich für Sie da in Schorndorf und Umgebung</div>
         </div>
@@ -289,7 +289,7 @@ function HomeView() {
 
 function KIStudioShowcase() {
   const cardClass = "flex h-full flex-col overflow-hidden rounded-2xl border border-area-border bg-area-surface shadow-sm transition-shadow hover:shadow-lg"
-  const inquiryClass = "ki-studio-inquiry mt-auto inline-flex w-full items-center justify-center gap-2 rounded-lg bg-area-deep px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-area-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2"
+  const inquiryClass = "ki-studio-inquiry mt-auto inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-area-deep px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-area-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2"
 
   return (
     <section aria-labelledby="ki-studio-title" className="bg-area-soft py-14 sm:py-20">
@@ -378,6 +378,21 @@ function KIStudioShowcase() {
           </article>
         </div>
       </div>
+    </section>
+  )
+}
+
+function KIStudioClosingCTA() {
+  return (
+    <section aria-labelledby="ki-closing-title" className="page-wrap ki-crosslink brand-area brand-area-ki">
+      <div>
+        <span className="eyebrow">Ihr nächster Schritt</span>
+        <h2 id="ki-closing-title">Sie haben eine Idee für ein persönliches Kreativprojekt?</h2>
+        <p>Schildern Sie kurz Ihren Anlass – Uwe Christian bespricht mit Ihnen, was sich daraus gestalten lässt.</p>
+      </div>
+      <a className="button button-dark min-h-12" href="mailto:edv@swea.de?subject=Kreativprojekt%20anfragen">
+        Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={17} />
+      </a>
     </section>
   )
 }
@@ -496,7 +511,7 @@ function AlternativeMotifsSection() {
 function ServicesSection() {
   const cardClass = "flex h-full scroll-mt-24 flex-col rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-6"
   const iconClass = "grid size-12 shrink-0 place-items-center rounded-xl bg-area-soft text-area-primary"
-  const actionClass = "mt-auto inline-flex min-h-11 w-fit items-center gap-2 rounded-lg px-3 pt-6 text-sm font-semibold text-area-deep transition-colors hover:text-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2"
+  const actionClass = "mt-auto inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-area-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2"
 
   return (
     <section aria-labelledby="edv-services-title" className="section section-services" id="dienstleistungen">
@@ -517,7 +532,7 @@ function ServicesSection() {
               </div>
             </div>
             <p className="text-sm leading-6 text-area-muted">Schnelle, geduldige Hilfe bei PC-Störungen, Windows-Fehlern und Installationen. Direkt bei Ihnen vor Ort oder, wenn es passt, per Fernzugriff.</p>
-            <button aria-label="Computerproblem schildern" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Problem schildern <ArrowRight aria-hidden="true" size={16} /></button>
+            <button aria-label="Computerproblem schildern" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">IT-Problem schildern <ArrowRight aria-hidden="true" size={16} /></button>
           </article>
 
           <article className={cardClass} id="netzwerke">
@@ -529,7 +544,7 @@ function ServicesSection() {
               </div>
             </div>
             <p className="text-sm leading-6 text-area-muted">Router einrichten, Funklöcher schließen und Geräte zuverlässig verbinden. Vorhandene Leitungen und Kabel lassen sich oft clever weiternutzen – für eine starke Verbindung im ganzen Zuhause.</p>
-            <button aria-label="WLAN- oder Netzwerkproblem schildern" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">Problem schildern <ArrowRight aria-hidden="true" size={16} /></button>
+            <button aria-label="WLAN- oder Netzwerkproblem schildern" className={actionClass} data-page-nav="kontakt" data-target-id="kontakt" type="button">WLAN-Problem schildern <ArrowRight aria-hidden="true" size={16} /></button>
           </article>
 
           <article className={cardClass} id="datenrettung-karte">
@@ -817,7 +832,7 @@ function WellbeingSection() {
       <div className="page-wrap offer-card">
         <div className="offer-mark"><Leaf aria-hidden="true" size={22} /></div>
         <div><span className="eyebrow">Angebote</span><h3>Ein wohltuender Impuls für Ihre Gruppe.</h3><p>Für private Freundes-, Familien- und kleine Gruppen – auf Wunsch auch online. Das Waldbaden passt als kurze aktive Pause, zum Tagesstart oder -abschluss oder als Halbtagesprogramm. Gemeinsam finden wir einen passenden Termin und einen ruhigen Ort in der Umgebung.</p></div>
-        <button className="button button-dark" data-page-nav="kontakt" type="button">Anfrage per E-Mail <ArrowUpRight aria-hidden="true" size={16} /></button>
+        <button className="button button-dark min-h-12" data-page-nav="kontakt" data-target-id="kontakt" type="button">Termin anfragen <ArrowRight aria-hidden="true" size={16} /></button>
       </div>
     </section>
   )
@@ -878,6 +893,16 @@ function RemoteSection() {
             </div>
             <p className="mt-3 text-xs leading-5 text-area-muted">Beenden Sie die Sitzung nach der Unterstützung. Dauerhafte Zugänge werden nicht ohne Ihre ausdrückliche Absprache eingerichtet.</p>
           </div>
+        </div>
+
+        <div className="mt-7 flex flex-col items-start justify-between gap-4 rounded-2xl bg-area-deep px-5 py-5 text-white sm:flex-row sm:items-center sm:px-7">
+          <div>
+            <h3 className="text-lg font-semibold">Sie brauchen Hilfe mit Ihrem Computer oder Netzwerk?</h3>
+            <p className="mt-1 text-sm leading-6 text-white/80">Schildern Sie Ihr IT-Problem direkt – gemeinsam finden wir den passenden nächsten Schritt.</p>
+          </div>
+          <button className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-area-accent px-5 py-3 text-sm font-semibold text-area-accent-foreground transition-colors hover:bg-area-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent sm:w-auto" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+            IT-Problem schildern <ArrowRight aria-hidden="true" size={17} />
+          </button>
         </div>
       </div>
     </section>
@@ -1017,32 +1042,61 @@ function LegalSection() {
 }
 
 function AboutSection() {
-  const cardClass = "scroll-mt-24 rounded-2xl border border-area-border bg-area-surface p-6 shadow-sm"
+  const cardClass = "scroll-mt-24 rounded-2xl border border-area-border bg-area-surface p-5 shadow-sm sm:p-6"
 
   return (
     <section aria-labelledby="about-title" className="section bg-area-soft" id="ueber-swea">
       <div className="page-wrap">
-        <div className="mb-10 max-w-3xl">
+        <div className="mb-8 max-w-3xl sm:mb-10">
           <span className="eyebrow">Über SWEA · Schorndorf</span>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="about-title">Persönlich beraten. Verständlich begleiten.</h2>
           <p className="mt-4 text-base leading-7 text-area-muted">SWEA verbindet persönlichen IT-Service mit kreativen digitalen Angeboten und achtsamer Zeit in der Natur.</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          <article className={cardClass} id="about-person">
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Person</span>
-            <h3 className="mt-3 text-lg font-semibold text-area-deep">Uwe Christian</h3>
-            <p className="mt-2 text-sm leading-6 text-area-muted">Ihr direkter Ansprechpartner in Schorndorf – vom ersten Gespräch bis zur passenden Unterstützung.</p>
-          </article>
-          <article className={cardClass} id="about-arbeitsweise">
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Arbeitsweise</span>
-            <h3 className="mt-3 text-lg font-semibold text-area-deep">Klar, persönlich, lösungsorientiert</h3>
-            <p className="mt-2 text-sm leading-6 text-area-muted">Erst verstehen, dann verständlich erklären und gemeinsam praktikable nächste Schritte finden.</p>
-          </article>
-          <article className={cardClass} id="about-erfahrung">
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Erfahrung</span>
-            <h3 className="mt-3 text-lg font-semibold text-area-deep">Technik und Natur im Blick</h3>
-            <p className="mt-2 text-sm leading-6 text-area-muted">Von Computerhilfe, Netzwerken und Webprojekten bis zum zertifizierten Waldbaden mit Outdoor-Erste-Hilfe.</p>
-          </article>
+
+        <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-6">
+          <figure className="about-profile relative min-h-[22rem] overflow-hidden rounded-2xl bg-area-deep shadow-sm sm:min-h-[28rem]">
+            <Image
+              alt="Uwe Christian in seinem Büro in Schorndorf"
+              className="object-cover object-[center_34%]"
+              fill
+              sizes="(max-width: 1023px) 100vw, 40vw"
+              src="/swea/uwe-christian-portrait.png"
+            />
+            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-area-deep/85 via-transparent to-transparent" />
+            <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-5 text-white sm:p-6">
+              <strong className="text-lg font-semibold">Uwe Christian</strong>
+              <span className="text-sm text-white/85">Ihr persönlicher Ansprechpartner in Schorndorf</span>
+            </figcaption>
+          </figure>
+
+          <div className="about-card grid min-w-0 gap-4 sm:grid-cols-2">
+            <article className={cardClass} id="about-person">
+              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Person</span>
+              <h3 className="mt-3 text-lg font-semibold text-area-deep">Uwe Christian</h3>
+              <p className="mt-2 text-sm leading-6 text-area-muted">Ihr direkter Ansprechpartner in Schorndorf – vom ersten Gespräch bis zur passenden Unterstützung.</p>
+            </article>
+            <article className={cardClass} id="about-arbeitsweise">
+              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Arbeitsweise</span>
+              <h3 className="mt-3 text-lg font-semibold text-area-deep">Klar, persönlich, lösungsorientiert</h3>
+              <p className="mt-2 text-sm leading-6 text-area-muted">Erst verstehen, dann verständlich erklären und gemeinsam praktikable nächste Schritte finden.</p>
+            </article>
+            <article className={`${cardClass} sm:col-span-2`} id="about-erfahrung">
+              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Erfahrung</span>
+              <h3 className="mt-3 text-lg font-semibold text-area-deep">Technik und Natur im Blick</h3>
+              <p className="mt-2 text-sm leading-6 text-area-muted">Von Computerhilfe, Netzwerken und Webprojekten bis zum zertifizierten Waldbaden mit Outdoor-Erste-Hilfe.</p>
+            </article>
+          </div>
+        </div>
+
+        <div className="mt-6 flex flex-col items-start justify-between gap-4 rounded-2xl bg-area-deep px-5 py-5 text-white sm:flex-row sm:items-center sm:px-7">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-accent-light">Direkt mit Uwe sprechen</span>
+            <h3 className="mt-1 text-lg font-semibold">Was können wir für Sie tun?</h3>
+            <p className="mt-1 text-sm leading-6 text-white/80">Beschreiben Sie Ihr Anliegen – wir finden gemeinsam den passenden nächsten Schritt.</p>
+          </div>
+          <button className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-area-accent px-5 py-3 text-sm font-semibold text-area-accent-foreground transition-colors hover:bg-area-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-area-accent sm:w-auto" data-page-nav="kontakt" data-target-id="kontakt" type="button">
+            Kontakt aufnehmen <ArrowRight aria-hidden="true" size={17} />
+          </button>
         </div>
       </div>
     </section>
@@ -1080,9 +1134,9 @@ function Footer() {
         </nav>
         <address className="flex flex-col items-start gap-2 not-italic text-sm text-area-muted">
           <span className="eyebrow">Direktkontakt</span>
-          <a className="font-medium text-area-deep hover:text-area-primary-hover" href="mailto:edv@swea.de">edv@swea.de</a>
-          <a className="font-medium text-area-deep hover:text-area-primary-hover" href="mailto:wb@swea.de">wb@swea.de</a>
-          <a className="font-medium text-area-deep hover:text-area-primary-hover" href="tel:+497181253148">07181 / 253148</a>
+          <a className="inline-flex min-h-11 items-center font-medium text-area-deep hover:text-area-primary-hover" href="mailto:edv@swea.de">edv@swea.de</a>
+          <a className="inline-flex min-h-11 items-center font-medium text-area-deep hover:text-area-primary-hover" href="mailto:wb@swea.de">wb@swea.de</a>
+          <a className="inline-flex min-h-11 items-center font-medium text-area-deep hover:text-area-primary-hover" href="tel:+497181253148">07181 / 253148</a>
           <span>Freiburgstr. 12 · 73614 Schorndorf</span>
         </address>
       </div>
@@ -1105,7 +1159,7 @@ export function SweaSite() {
       <main id="main-content">
         <div className="site-page-view brand-area brand-area-base" data-page-view="start"><HomeView /></div>
         <div className="site-page-view brand-area brand-area-technik" data-page-view="edv" hidden><EdvView /></div>
-        <div className="site-page-view brand-area brand-area-ki" data-page-view="studio" hidden><KIStudioShowcase /><HolidayGiftSection /><AlternativeMotifsSection /><AIExamplesCarousel /></div>
+        <div className="site-page-view brand-area brand-area-ki" data-page-view="studio" hidden><KIStudioShowcase /><HolidayGiftSection /><AlternativeMotifsSection /><AIExamplesCarousel /><KIStudioClosingCTA /></div>
         <div className="site-page-view brand-area brand-area-natur" data-page-view="waldbaden" hidden><WellbeingSection /></div>
         <div className="site-page-view brand-area brand-area-base" data-page-view="about" hidden><AboutSection /></div>
         <div className="site-page-view brand-area brand-area-base" data-page-view="kontakt" hidden><ContactSection /><LegalSection /></div>
