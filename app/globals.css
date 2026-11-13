@@ -601,7 +601,8 @@ body {
 .seasonal-action-secondary:hover { color: #1c5144; text-decoration-color: currentColor; }
 .seasonal-action-collage { position: relative; display: grid; grid-template-areas: "portrait video" "portrait audio"; grid-template-columns: 1.05fr .95fr; grid-template-rows: minmax(140px, 1fr) minmax(140px, 1fr); gap: .75rem; min-height: 310px; }
 .seasonal-preview { position: relative; min-width: 0; min-height: 0; margin: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.14); border-radius: 9px; background: #263d3a; box-shadow: 0 12px 24px rgba(4, 12, 18, .22); }
-.seasonal-preview img { object-fit: cover; }
+  .seasonal-preview picture { position: absolute; inset: 0; display: block; }
+  .seasonal-preview img { object-fit: cover; }
 .seasonal-preview::after { position: absolute; inset: 30% 0 0; background: linear-gradient(transparent, rgba(12, 20, 26, .78)); content: ""; pointer-events: none; }
 .seasonal-preview-portrait { grid-area: portrait; }
 .seasonal-preview-portrait img { object-position: 50% 35%; }

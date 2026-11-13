@@ -182,7 +182,7 @@ export function HomePageContent() {
               </div>
               <span className="seasonal-audio-caption">Persönlicher Song oder Jingle für Ihren Lieblingsmoment</span>
               <audio aria-label="Persönlichen Song oder Jingle abspielen" controls preload="none">
-                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recording-00_08-EwnUnfEJYWHvA2WdNbv57q2zNqEeaY.mp3" type="audio/mpeg" />
+                <source src="/swea/medien/hoerprobe-recording-00_08.mp3" type="audio/mpeg" />
                 Ihr Browser unterstützt die Audiowiedergabe nicht.
               </audio>
             </div>
@@ -334,17 +334,17 @@ function KIStudioServices() {
 function KIStudioCustomWork() {
   const examples = [
     {
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_9fpkh09fpkh09fpk-u46EuM8FAmxDDJLVBAyrfhZ7DpMmQp.jpeg",
+      src: "/swea/medien/ki-beispiel-1.jpeg",
       alt: "Digitale Illustration eines lächelnden Mannes als weihnachtlicher Elf im verschneiten Wald",
       caption: "Ein persönliches Elfenporträt",
     },
     {
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2e7ew72e7ew72e7e-5JvNidQs7Az5bmt39FO5wAn0wu9e5w.jpeg",
+      src: "/swea/medien/ki-beispiel-2.jpeg",
       alt: "Digitale Illustration eines grünen, zotteligen Wesens mit Weihnachtsmütze neben einem festlich geschmückten Baum",
       caption: "Ein augenzwinkerndes Motiv",
     },
     {
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2yjiwu2yjiwu2yji-qs4gsrL98qp5pHHERuqd4n8IcKQ1Bo.jpeg",
+      src: "/swea/medien/ki-beispiel-3.jpeg",
       alt: "Digitale Illustration eines Weihnachtsmanns, der Geschenke vor einem geschmückten Baum und Kamin ablegt",
       caption: "Ein festlicher Moment als Bildidee",
     },
@@ -388,7 +388,7 @@ function KIStudioCustomWork() {
             poster="/swea/ai-examples/ki-studio-example-video-poster.webp"
             preload="none"
           >
-            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gemini_generated_video_77d5f778-sMKmnjJYAQSuujDbiD1O9RztT92LSZ.mp4" type="video/mp4" />
+            <source src="/swea/medien/ki-video.mp4" type="video/mp4" />
             Ihr Browser unterstützt die Videowiedergabe nicht.
           </video>
           <figcaption className="mt-3 text-center text-sm text-area-muted">Beispielvideo aus dem KI-Studio</figcaption>
@@ -558,14 +558,14 @@ function HolidaySongSection() {
               <div className="holiday-song-panel">
                 <h4>Der Uwe machts - Schlagerversion</h4>
                 <audio aria-label="Song Der Uwe machts - Schlagerversion abspielen" controls preload="none">
-                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Der%20Uwe%20machts%20SCHLAGER-cOeHT2pVFhOJl0tGyMux94SueVdG0R.mp3" type="audio/mpeg" />
+                  <source src="/swea/medien/song-schlager.mp3" type="audio/mpeg" />
                   Ihr Browser unterstützt die Audiowiedergabe nicht.
                 </audio>
               </div>
               <div className="holiday-song-panel">
                 <h4>Der Uwe machts - Hardrockversion</h4>
                 <audio aria-label="Song Der Uwe machts - Hardrockversion abspielen" controls preload="none">
-                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Der%20Uwe%20machts%20HARDROCK-1X0kBybCGXA9ixuaEXo4Fi9tJqLtqJ.mp3" type="audio/mpeg" />
+                  <source src="/swea/medien/song-hardrock.mp3" type="audio/mpeg" />
                   Ihr Browser unterstützt die Audiowiedergabe nicht.
                 </audio>
               </div>
@@ -599,7 +599,7 @@ function ServicesSection() {
         <div className="mb-9 max-w-3xl">
           <span className="eyebrow">EDV-Hilfe für Zuhause · Schorndorf &amp; Umgebung</span>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight text-area-deep sm:text-4xl" id="edv-services-title">Technikhilfe – persönlich und verständlich</h1>
-          <p className="mt-4 text-base leading-7 text-area-muted">Für Privatpersonen, Hausbesitzer, Haushalte und Professionals in Schorndorf und Umgebung. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
+          <p className="mt-4 text-base leading-7 text-area-muted">Für Privatkundinnen und Privatkunden in Schorndorf und Umgebung – im eigenen Zuhause ebenso wie im Homeoffice. Freundliche Unterstützung vor Ort oder per Fernzugriff – passend zu Ihrem Anliegen.</p>
         </div>
 
         <div className="grid items-stretch gap-4 sm:grid-cols-2">
@@ -791,7 +791,7 @@ function DataRecoverySection() {
               className="h-auto w-full max-w-[20rem]"
               height={89}
               loading="lazy"
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1RIAJoydF7VOcUREbvFhXeT5rFewD7.png"
+              src="/swea/medien/bild-image.png"
               unoptimized
               width={625}
             />
@@ -893,7 +893,10 @@ function DataRecoverySection() {
               <li className="flex gap-2"><Check aria-hidden="true" className="mt-1 shrink-0 text-area-primary" size={16} /> Sie wird Ihnen vor Ihrer Beauftragung mitgeteilt.</li>
             </ul>
                       <p className="mt-3 text-sm leading-6 text-area-muted">
-              Die Pauschale wird in jedem Fall fällig und deckt unseren Aufwand für die Erstanalyse, die gegebenenfalls stattfindende Abklärung mit dem Partner und alle notwenigen Schritte und die Kommunikation mit Ihnen ab.
+              Die Pauschale wird in jedem Fall fällig und deckt unseren Aufwand für die Erstanalyse, die gegebenenfalls stattfindende Abklärung mit dem Partner, alle dafür notwendigen Schritte und die Kommunikation mit Ihnen ab.
+            </p>
+            <p className="mt-3 text-sm leading-6 text-area-muted">
+              Versuchen wir, Ihre Daten zunächst selbst mit eigenen Werkzeugen wiederherzustellen, ist diese technische Arbeit nicht in der Pauschale enthalten. Dafür erhalten Sie vorab ein separates Angebot; die Arbeiten beginnen erst, wenn Sie diesem Angebot zugestimmt haben.
             </p>
           </aside>
 
@@ -1004,9 +1007,9 @@ function EdvView() {
       <RemoteSection />
       <section className="page-wrap ki-crosslink brand-area brand-area-ki" aria-labelledby="ki-crosslink-title">
         <div>
-          <span className="eyebrow">KI-Studio &amp; Aktionen</span>
-          <h2 id="ki-crosslink-title">Kreative Ideen für Menschen und Familien.</h2>
-          <p>Persönliche KI-Bilder, Videos und Geschenke – individuell gestaltet und passend zu Ihrer Idee oder zum Anlass.</p>
+          <span className="eyebrow">SWEA KI-Studio</span>
+          <h2 id="ki-crosslink-title">Digitale Medien nach Ihrer Idee.</h2>
+          <p>Im SWEA KI-Studio entstehen individuelle digitale Bilder, Videos, Songs und Jingles – passend zu Ihrer Idee oder Ihrem Anlass. Sie erhalten das Ergebnis als digitale Datei; physische Geschenke, Druckprodukte oder Waren bieten wir nicht an.</p>
         </div>
         <Link className="button button-dark" data-nav-link href="/ki-studio">Zum KI-Studio <ArrowRight aria-hidden="true" size={17} /></Link>
       </section>
@@ -1190,7 +1193,7 @@ function AboutSection() {
             <article className={`${cardClass} sm:col-span-2`} id="about-erfahrung">
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Erfahrung</span>
               <h3 className="mt-3 text-lg font-semibold text-area-deep">Technik und Natur im Blick</h3>
-              <p className="mt-2 text-sm leading-6 text-area-muted">Herr Christian ist Diplominformatiker und hat an der Universität Stuttgart studiert und abgeschlossen. Durch jahrzehntelange Erfahrung im professionellen EDV-Service verfügt er über eine gewaltige Expertise in Computerhilfe, Netzwerkthemen und Webprojekten bis zum zertifizierten Waldbaden.</p>
+              <p className="mt-2 text-sm leading-6 text-area-muted">Uwe Christian ist Diplom-Informatiker und hat an der Universität Stuttgart studiert. Er bringt jahrzehntelange Erfahrung im professionellen EDV-Service mit – bei Computerhilfe, Netzwerkthemen und Webprojekten. Im August 2023 hat er an der Deutschen Akademie für Waldbaden und Gesundheit die Ausbildung zum Kursleiter für Waldbaden (klassik intensiv) absolviert.</p>
             </article>
           </div>
         </div>
