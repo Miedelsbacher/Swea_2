@@ -8,7 +8,7 @@ const headingClass = "text-sm font-semibold text-area-deep"
 const paragraphClass = "text-sm leading-7 text-area-muted"
 const linkClass = "font-semibold text-brand-primary underline decoration-brand-border underline-offset-2 hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
 
-function LegalDialog({ id, title, eyebrow, children }: { id: string; title: string; eyebrow: string; children: ReactNode }) {
+function LegalDialog({ id, title, eyebrow, headerDetails, children }: { id: string; title: string; eyebrow: string; headerDetails?: ReactNode; children: ReactNode }) {
   return (
     <dialog
       aria-labelledby={`${id}-title`}
@@ -19,9 +19,10 @@ function LegalDialog({ id, title, eyebrow, children }: { id: string; title: stri
       }}
     >
       <div className="sticky top-0 z-10 flex items-start justify-between gap-5 border-b border-area-border bg-area-surface/95 px-5 py-5 backdrop-blur sm:px-8">
-        <div>
+        <div className="min-w-0">
           <span className="eyebrow">{eyebrow}</span>
           <h2 className="mt-2 text-2xl font-semibold tracking-tight text-area-deep sm:text-3xl" id={`${id}-title`}>{title}</h2>
+          {headerDetails}
         </div>
         <form method="dialog">
           <button aria-label={`${title} schließen`} className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-area-border text-area-deep transition hover:bg-area-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" type="submit">
@@ -34,9 +35,112 @@ function LegalDialog({ id, title, eyebrow, children }: { id: string; title: stri
   )
 }
 
+export function AGBModal() {
+  return (
+    <LegalDialog
+      eyebrow="Vertragsbedingungen"
+      headerDetails={(
+        <address className="mt-2 not-italic text-xs leading-5 text-area-muted sm:text-sm sm:leading-6">
+          <strong className="text-area-deep">Uwe Christian</strong> · Freiburgstr. 12 · 73614 Schorndorf<br />
+          E-Mail: <a className={linkClass} href="mailto:edv@swea.de">edv@swea.de</a> / <a className={linkClass} href="mailto:wb@swea.de">wb@swea.de</a>
+        </address>
+      )}
+      id="agb-modal"
+      title="Allgemeine Geschäftsbedingungen"
+    >
+      <section className={sectionClass}>
+        <h3 className={headingClass}>1. Geltungsbereich und Vertragspartner</h3>
+        <ol className="list-decimal pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2">
+          <li>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge, Dienstleistungen und Angebote zwischen Uwe Christian (swea.de), Freiburgstr. 12, 73614 Schorndorf (nachfolgend „Anbieter“) und seinen Kunden, Verbraucherinnen und Verbrauchern sowie Unternehmerinnen und Unternehmern.</li>
+          <li>Der Anbieter betreibt zwei unterschiedliche Geschäftsbereiche: Teil A umfasst IT-, EDV- und Webdesign-Dienstleistungen, Hardware- und Softwareberatung, Individualprogrammierung und Datenwiederherstellung. Teil B umfasst Waldbaden, Achtsamkeitstraining, Entschleunigungskurse sowie Gruppen- und Firmenveranstaltungen.</li>
+          <li>Abweichende, entgegenstehende oder ergänzende Allgemeine Geschäftsbedingungen des Kunden werden nur dann Vertragsbestandteil, wenn der Anbieter ihrer Geltung ausdrücklich schriftlich zustimmt.</li>
+        </ol>
+      </section>
+
+      <section className={sectionClass}>
+        <h3 className={headingClass}>2. Kleinunternehmerregelung</h3>
+        <p className={paragraphClass}>Der Anbieter ist Kleinunternehmer im Sinne von § 19 UStG. Es wird daher keine Umsatzsteuer berechnet und auf Rechnungen nicht ausgewiesen.</p>
+      </section>
+
+      <section className={sectionClass}>
+        <h3 className={headingClass}>3. Preise, Zahlungsbedingungen und Eigentumsvorbehalt</h3>
+        <ol className="list-decimal pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2">
+          <li>Es gelten die zum Zeitpunkt des Vertragsschlusses vereinbarten Preise. Sofern nicht anders angegeben, handelt es sich um Endpreise.</li>
+          <li>Rechnungsbeträge sind, sofern nicht schriftlich etwas anderes vereinbart wurde, innerhalb von 14 Tagen nach Rechnungsstellung ohne Abzug zahlbar.</li>
+          <li>Bis zur vollständigen Bezahlung aller Forderungen bleibt gelieferte Hardware, Software oder sonstige Ware Eigentum des Anbieters.</li>
+        </ol>
+      </section>
+
+      <section className={sectionClass}>
+        <h3 className={headingClass}>Teil A: IT-, EDV- und Webdesign-Dienstleistungen, Software</h3>
+        <h4 className="text-sm font-semibold text-area-deep">A1. Leistungsumfang</h4>
+        <ol className="list-decimal pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2">
+          <li>Der Umfang der EDV-Dienstleistungen, etwa Vor-Ort-Support, Fernwartung, Netzwerk- oder WLAN-Einrichtung, Hardware-Beratung, Individualprogrammierung und Webdesign, ergibt sich aus dem jeweiligen Angebot oder der Auftragsbestätigung.</li>
+          <li>Soweit der Anbieter Dienstleistungen erbringt, wird kein bestimmter Erfolg geschuldet, sofern dies nicht ausdrücklich, zum Beispiel bei der Erstellung einer Website oder Individualsoftware als Werkvertrag, vereinbart ist.</li>
+        </ol>
+        <h4 className="text-sm font-semibold text-area-deep">A2. Mitwirkung und Datensicherung</h4>
+        <ol className="list-decimal pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2">
+          <li>Der Kunde ist verpflichtet, vor Arbeiten an seiner Hard- oder Software, etwa Vor-Ort-Service, Fernwartung oder Reparaturen, eine vollständige und funktionsfähige Datensicherung (Backup) durchzuführen.</li>
+          <li>Der Anbieter übernimmt keine Haftung für Datenverluste, die darauf zurückzuführen sind, dass der Kunde seiner Pflicht zur ordnungsgemäßen Datensicherung nicht nachgekommen ist, es sei denn, die Datensicherung war ausdrücklich Gegenstand des beauftragten Dienstes.</li>
+        </ol>
+        <h4 className="text-sm font-semibold text-area-deep">A3. Datenrettung und Wiederherstellung</h4>
+        <ol className="list-decimal pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2">
+          <li>Die Überprüfung im Rahmen des Diagnoseservices für Datenrettungen erfolgt unverbindlich.</li>
+          <li>Die Abwicklung von Datenrettungen kann unter Einbindung spezialisierter Partnerunternehmen erfolgen. Der Anbieter schuldet hierbei ein bemühtes Tätigwerden, kann jedoch keine Garantie für das Gelingen der Datenwiederherstellung übernehmen.</li>
+        </ol>
+        <h4 className="text-sm font-semibold text-area-deep">A4. Webdesign, Softwareerstellung und Nutzungsrechte</h4>
+        <ol className="list-decimal pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2">
+          <li>Der Kunde stellt dem Anbieter Inhalte wie Bilder, Texte und Logos zur Verfügung und garantiert, dass er über die entsprechenden Nutzungsrechte verfügt und keine Rechte Dritter verletzt.</li>
+          <li>Bis zur vollständigen Bezahlung der Vergütung verbleiben sämtliche Urheber- und Nutzungsrechte an individuell erstellten Websites, Layouts, Programmierungen oder Skripten beim Anbieter. Nach vollständiger Bezahlung erhält der Kunde das vertraglich vereinbarte einfache Nutzungsrecht.</li>
+        </ol>
+      </section>
+
+      <section className={sectionClass}>
+        <h3 className={headingClass}>Teil B: Waldbaden, Achtsamkeit und Entschleunigungskurse</h3>
+        <h4 className="text-sm font-semibold text-area-deep">B1. Teilnahmevoraussetzungen und Eigenverantwortung</h4>
+        <ol className="list-decimal pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2">
+          <li>Kurse, Wanderungen und Übungen im Rahmen des Waldbadens und der Achtsamkeit finden vorwiegend in der freien Natur (Wald) statt. Die Teilnahme erfolgt auf eigene Gefahr und eigene Verantwortung.</li>
+          <li>Den Anweisungen des Kursleiters im Wald ist zur eigenen Sicherheit und zum Schutz der Natur Folge zu leisten. Die Teilnehmenden sind für angemessene, wetterfeste Bekleidung und festes Schuhwerk selbst verantwortlich.</li>
+          <li>Waldbaden und Achtsamkeitstraining stellen keine medizinische oder therapeutische Behandlung dar und ersetzen nicht die Diagnose oder Behandlung durch einen Arzt, Psychotherapeuten oder Heilpraktiker.</li>
+        </ol>
+        <h4 className="text-sm font-semibold text-area-deep">B2. Absage, Rücktritt und Stornierung</h4>
+        <p className={paragraphClass}>Für Einzelpersonen und Kleingruppen gelten folgende Stornierungsbedingungen:</p>
+        <ul className="list-disc pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2">
+          <li>Bis einschließlich 7 Tage vor Kursbeginn ist eine kostenfreie Stornierung möglich.</li>
+          <li>Bei einer Stornierung ab 6 Tagen bis einschließlich 48 Stunden vor Kursbeginn werden 50 % des vereinbarten Preises fällig.</li>
+          <li>Bei einer Stornierung weniger als 48 Stunden vor Kursbeginn oder bei Nichterscheinen wird der volle Kursbeitrag fällig. Dem Kunden steht der Nachweis frei, dass ein geringerer Schaden entstanden ist.</li>
+        </ul>
+        <p className={paragraphClass}><strong className="text-area-deep">Firmenevents und individuelle Gruppenbuchungen:</strong> Stornobedingungen richten sich nach den im jeweiligen Einzelangebot getroffenen Vereinbarungen.</p>
+        <p className={paragraphClass}><strong className="text-area-deep">Absage durch den Anbieter:</strong> Bei extremen Wetterlagen, etwa Sturmwarnung, Gewitter oder Unwettergefahr, bei Krankheit des Kursleiters oder in sonstigen Fällen höherer Gewalt kann der Anbieter Termine aus Sicherheitsgründen auch kurzfristig absagen. In diesem Fall wird ein Ersatztermin vereinbart oder bereits gezahlte Gebühren werden vollständig erstattet. Weitergehende Ansprüche des Kunden sind ausgeschlossen, soweit gesetzlich zulässig.</p>
+        <h4 className="text-sm font-semibold text-area-deep">B3. Haftung und typische Waldgefahren</h4>
+        <ol className="list-decimal pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2">
+          <li>Der Anbieter haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit, die auf einer vorsätzlichen oder fahrlässigen Pflichtverletzung beruhen, sowie für sonstige Schäden, die auf einer vorsätzlichen oder grob fahrlässigen Pflichtverletzung beruhen.</li>
+          <li>Für leichte Fahrlässigkeit haftet der Anbieter nur bei Verletzung einer wesentlichen Vertragspflicht (Kardinalpflicht). In diesem Fall ist die Haftung auf den vorhersehbaren, vertragstypischen Schaden begrenzt.</li>
+          <li>Für typische Gefahren des Waldes, etwa herabfallende Äste, Unebenheiten des Bodens, Insektenstiche und witterungsbedingte Einflüsse, haftet der Anbieter nur im Rahmen der vorstehenden gesetzlichen Haftungsregelungen.</li>
+        </ol>
+      </section>
+
+      <section className={sectionClass}>
+        <h3 className={headingClass}>4. Datenschutz</h3>
+        <p className={paragraphClass}>Personenbezogene Daten werden nach den gesetzlichen Bestimmungen der DSGVO und des DDG verarbeitet. Einzelheiten finden Sie in unserer <button className={linkClass} data-legal-modal-trigger="privacy-modal" type="button">Datenschutzerklärung</button>.</p>
+      </section>
+
+      <section className={sectionClass}>
+        <h3 className={headingClass}>5. Schlussbestimmungen und Gerichtsstand</h3>
+        <ol className="list-decimal pl-5 text-sm leading-7 text-area-muted [&>li+li]:mt-2">
+          <li>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Bei Verbrauchern gilt diese Rechtswahl nur insoweit, als dadurch nicht der Schutz durch zwingende Bestimmungen des Rechts des Staates entzogen wird, in dem der Verbraucher seinen gewöhnlichen Aufenthalt hat.</li>
+          <li>Sofern der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist, ist Gerichtsstand für alle Streitigkeiten aus Vertragsverhältnissen der Sitz des Anbieters (Schorndorf).</li>
+          <li>Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</li>
+        </ol>
+      </section>
+    </LegalDialog>
+  )
+}
+
 export function LegalModals() {
   return (
     <>
+      <AGBModal />
       <LegalDialog eyebrow="Datenschutz · Stand: 13. November 2026" id="privacy-modal" title="Datenschutzerklärung">
         <section className={sectionClass}>
           <h3 className={headingClass}>Geltungsbereich</h3>

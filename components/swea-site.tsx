@@ -450,7 +450,7 @@ function ServicesSection() {
             <div className="mb-5 flex items-start gap-4">
               <span className={iconClass}><Wifi aria-hidden="true" size={22} /></span>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">WLAN im ganzen Haus</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Netz im ganzen Haus</p>
                 <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">WLAN &amp; Heimnetzwerke</h3>
               </div>
             </div>
@@ -462,7 +462,7 @@ function ServicesSection() {
             <div className="mb-5 flex items-start gap-4">
               <span className={iconClass}><HardDrive aria-hidden="true" size={22} /></span>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Kostenlose Ersteinschätzung</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">PREISWERTE Ersteinschätzung</p>
                 <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Datenrettung</h3>
               </div>
             </div>
@@ -492,6 +492,18 @@ function ServicesSection() {
             </div>
             <p className="text-sm leading-6 text-area-muted">Unterstützung bei passenden Ersatzteilen, Anschluss und Einrichtung von Geräten sowie der Einschätzung, ob sich eine Reparatur lohnt.</p>
             <Link aria-label="Hilfe bei Hardware anfragen" className={actionClass} data-nav-link href="/kontakt">Hardware-Hilfe anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
+          </article>
+
+          <article className={cardClass} id="professionals">
+            <div className="mb-5 flex items-start gap-4">
+              <span className={iconClass}><Code2 aria-hidden="true" size={22} /></span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Webseiten &amp; Wartung</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Hilfe für Professionals</h3>
+              </div>
+            </div>
+            <p className="text-sm leading-6 text-area-muted">Wir führen gerne ein komplettes Redesign Ihrer Webseite durch oder bieten Wartungsverträge an</p>
+            <Link className={actionClass} data-nav-link href="/kontakt">Unterstützung für Profis anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
           </article>
         </div>
 
@@ -532,11 +544,28 @@ function DataRecoverySection() {
             Professionelle Datenrettung – Wenn es brenzlig wird.
           </h2>
           <p className="mt-4 text-base leading-7 text-area-muted">
-            Bei unterstützten Datenträgern und geeigneten Schadensbildern können unsere spezialisierten Partner Erfolgsquoten von bis zu 90 % erreichen. Das beschreibt die Möglichkeiten unserer Partner in passenden Fällen – es ist keine Garantie für den Erfolg beim einzelnen Gerät. Die tatsächliche Erfolgsaussicht klärt die Diagnose.
+            In einfachen Fällen (Festplatte dreht sich noch oder Sie haben &quot;nur was gelöscht&quot;) können wir selbst die Datenwiederherstellung mit eigenen Tools durchführen. Hartnäckige Probleme geben wir nach Absprache weiter. Bei unterstützten Datenträgern und geeigneten Schadensbildern kann unser spezialisierter Partner Datenphoenix Erfolgsquoten von bis zu 92,5 % erreichen. Das beschreibt die Möglichkeiten unseres Partners in passenden Fällen – es ist keine Garantie für den Erfolg beim einzelnen Gerät. Die tatsächliche Erfolgsaussicht klärt die Diagnose.
           </p>
           <p className="mt-3 text-sm leading-6 text-area-muted">
             Ob Festplatte, USB-Stick oder Handy: Sie erhalten eine klare Einschätzung, bevor Sie über weitere Schritte entscheiden.
           </p>
+          <a
+            aria-label="DatenPhoenix – Partner für Datenrettung (öffnet in neuem Tab)"
+            className="mt-6 inline-flex max-w-full rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2"
+            href="https://datenphoenix.de"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Image
+              alt="DatenPhoenix Logo"
+              className="h-auto w-full max-w-[20rem]"
+              height={89}
+              loading="lazy"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1RIAJoydF7VOcUREbvFhXeT5rFewD7.png"
+              unoptimized
+              width={625}
+            />
+          </a>
         </div>
 
         <aside aria-labelledby="datenrettung-warning-title" className="rounded-3xl border border-warning-border bg-warning-soft p-5 shadow-sm sm:p-7">
@@ -836,7 +865,7 @@ function AboutSection() {
             <article className={`${cardClass} sm:col-span-2`} id="about-erfahrung">
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-area-primary">Erfahrung</span>
               <h3 className="mt-3 text-lg font-semibold text-area-deep">Technik und Natur im Blick</h3>
-              <p className="mt-2 text-sm leading-6 text-area-muted">Von Computerhilfe, Netzwerken und Webprojekten bis zum zertifizierten Waldbaden mit Outdoor-Erste-Hilfe.</p>
+              <p className="mt-2 text-sm leading-6 text-area-muted">Herr Christian ist Diplominformatiker und hat an der Universität Stuttgart studiert und abgeschlossen. Durch jahrzehntelange Erfahrung im professionellen EDV-Service verfügt er über eine gewaltige Expertise in Computerhilfe, Netzwerkthemen und Webprojekten bis zum zertifizierten Waldbaden.</p>
             </article>
           </div>
         </div>
