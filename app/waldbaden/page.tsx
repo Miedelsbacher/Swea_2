@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { WaldbadenPageContent } from "@/components/swea-site"
 
 export const metadata: Metadata = {
-  title: "Waldbaden in Schorndorf – Shinrin-Yoku & Achtsamkeit",
+  title: "After-Work-Waldbaden in Schorndorf – Achtsamkeit im Wald",
   description:
-    "Zertifiziertes Waldbaden in Schorndorf: Shinrin-Yoku und Achtsamkeit in der Natur, persönlich geleitet von Uwe Christian. Kleine Gruppen mit maximal 8 Personen.",
+    "After Work – Waldbaden und Achtsamkeit: die kleine Auszeit nach der Arbeit. Achtsamkeit im Wald in Schorndorf und im Rems-Murr-Kreis, in kleinen Gruppen geleitet von Uwe Christian.",
   alternates: { canonical: "/waldbaden" },
 }
 
