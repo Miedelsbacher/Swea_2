@@ -47,7 +47,7 @@ function Hero() {
         </div>
         <figure className="hero-visual">
           <div className="hero-portrait-frame">
-            <Image alt="Uwe Christian, persönlicher IT-Serviceanbieter in Schorndorf" src="/swea/uwe-christian-portrait.png" fill priority sizes="(max-width: 700px) 100vw, 46vw" />
+            <Image alt="Uwe Christian, persönlicher IT-Serviceanbieter in Schorndorf" src="/swea/uwe-christian-home.png" fill priority sizes="(max-width: 700px) 100vw, 46vw" />
           </div>
           <figcaption className="hero-note"><span className="hero-note-mark"><Check aria-hidden="true" size={15} /></span><span><strong>Uwe Christian</strong><br />Ihr persönlicher Ansprechpartner</span></figcaption>
         </figure>
@@ -162,7 +162,7 @@ export function HomePageContent() {
           <div className="seasonal-action-collage" aria-label="Vorschau zu KI-Bild, Video und Song">
             <figure className="seasonal-preview seasonal-preview-portrait">
               <picture>
-                <Image alt="Uwe Christian in seinem Büro am Schreibtisch" fill loading="lazy" sizes="(max-width: 900px) 48vw, 22vw" src="/swea/uwe-christian-portrait.png" />
+                <Image alt="Uwe Christian in seinem Büro am Schreibtisch" fill loading="lazy" sizes="(max-width: 900px) 48vw, 22vw" src="/swea/uwe-christian-home.png" />
               </picture>
               <figcaption>Persönliches KI-Porträt</figcaption>
             </figure>
@@ -208,22 +208,20 @@ function KIStudioShowcase() {
 
         <div className="grid items-stretch gap-5 md:grid-cols-3 md:gap-6">
           <article className={cardClass}>
-            <div className="relative aspect-[16/10] overflow-hidden bg-area-subtle">
+            <div className="relative min-h-44 aspect-[16/10] overflow-hidden bg-area-subtle">
               <Image
-                alt="Beispiel eines individuell gestalteten KI-Porträts im Märchenwald"
+                alt="Fee in einem geheimnisvollen Wald neben einem großen grünen Drachen"
                 className="object-cover transition-transform duration-500 hover:scale-105"
                 fill
                 loading="lazy"
                 sizes="(max-width: 767px) 100vw, 33vw"
-                src="/swea/ai-examples/elf-portrait.jpeg"
+                src="/swea/ai-examples/ki-studio-image-dragon.jpg"
               />
-              <span className="absolute right-3 top-3 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">
-                Ab 15 €
-              </span>
+              <span className="absolute right-3 top-3 z-10 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">ab 9€</span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><ImageIcon aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bild &amp; Design</span></div>
-              <h3 className="text-xl font-semibold text-area-deep">KI-Bilder &amp; Porträts</h3>
+              <h3 className="h-14 text-xl font-semibold leading-7 text-area-deep">KI-Bilder &amp; Porträts</h3>
               <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Personalisierte Porträts, Motive mit Familie oder Haustieren und individuelle Lieblingsbilder – abgestimmt auf Ihre Idee.</p>
               <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: KI-Bilder und Porträts">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
@@ -232,24 +230,24 @@ function KIStudioShowcase() {
           </article>
 
           <article className={cardClass}>
-            <div className="relative aspect-video overflow-hidden bg-area-deep">
+            <div className="relative min-h-44 aspect-[16/10] overflow-hidden bg-area-deep">
               <video
                 aria-label="Beispiel eines personalisierten KI-Videoclips"
                 className="h-full w-full object-cover"
                 controls
                 playsInline
                 preload="none"
-                poster="/swea/ai-examples/video-cf140fc6-poster.webp"
+                poster="/swea/ai-examples/ki-studio-video-poster-happy-59.png"
               >
                 <source src="/swea/ai-examples/video-cf140fc6.mp4" type="video/mp4" />
                 Ihr Browser unterstützt die Videowiedergabe nicht.
               </video>
+              <span className="absolute right-3 top-3 z-10 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">ab 15€</span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><Video aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bewegtbild</span></div>
-              <h3 className="text-xl font-semibold text-area-deep">KI-Videos</h3>
-              <p className="mt-2 text-sm font-semibold text-area-primary">Individuelles Angebot nach Aufwand</p>
-              <p className="mb-6 mt-1 text-sm leading-6 text-area-muted">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
+              <h3 className="h-14 text-xl font-semibold leading-7 text-area-deep">KI-Videos</h3>
+              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
               <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: KI-Videos">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
               </Link>
@@ -257,26 +255,25 @@ function KIStudioShowcase() {
           </article>
 
           <article className={cardClass}>
-            <div className="flex aspect-[16/10] flex-col justify-between bg-area-deep p-5 text-white sm:p-6">
-              <div className="flex items-center justify-between">
+            <div className="relative flex min-h-44 aspect-[16/10] flex-col justify-between bg-area-deep p-5 text-white sm:p-6">
+              <div className="flex items-center">
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-white/80"><Music2 aria-hidden="true" size={17} /> SWEA Audio Studio</span>
-                <span className="rounded-full bg-area-accent/15 px-2.5 py-1 text-xs font-medium text-area-accent-light">Hörprobe</span>
               </div>
               <div aria-hidden="true" className="flex h-12 items-center justify-center gap-1.5">
                 {[18, 30, 22, 40, 27, 36, 16, 31, 44, 23, 34, 18, 39, 25, 15, 32, 21, 40, 27, 16, 34, 23, 38, 19].map((height, index) => (
                   <span className="w-1 rounded-full bg-area-accent-light/80" key={index} style={{ height }} />
                 ))}
               </div>
-              <audio aria-label="KI-generierter Song als Hörprobe" className="w-full accent-area-accent" controls preload="none">
-                <source src="/swea/recording-03_13.mp3" type="audio/mpeg" />
+              <audio aria-label="KI-generierter Jingle als Hörprobe" className="w-full accent-area-accent" controls preload="none">
+                <source src="/swea/ai-examples/ki-studio-jingle.mp3" type="audio/mpeg" />
                 Ihr Browser unterstützt die Audiowiedergabe nicht.
               </audio>
+              <span className="absolute right-3 top-3 z-10 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">ab 20€</span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><Music2 aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Audio &amp; Musik</span></div>
-              <h3 className="text-xl font-semibold text-area-deep">Individuelle Songs &amp; Jingles</h3>
-              <p className="mt-2 text-sm font-semibold text-area-primary">Individuelles Angebot nach Umfang</p>
-              <p className="mb-6 mt-1 text-sm leading-6 text-area-muted">Persönliche Songs, kleine Jingles und Musikgeschenke – hören Sie in eine echte Hörprobe rein.</p>
+              <h3 className="h-14 text-xl font-semibold leading-7 text-area-deep">Individuelle Songs &amp; Jingles</h3>
+              <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Persönliche Songs, kleine Jingles und Musikgeschenke – hören Sie in eine echte Hörprobe rein.</p>
               <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: Songs und Jingles">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
               </Link>
@@ -294,7 +291,7 @@ function KIStudioClosingCTA() {
       <div>
         <span className="eyebrow">Ihr nächster Schritt</span>
         <h2 id="ki-closing-title">Sie haben eine Idee für ein persönliches Kreativprojekt?</h2>
-        <p>Schildern Sie kurz Ihren Anlass – Uwe Christian bespricht mit Ihnen, was sich daraus gestalten lässt.</p>
+        <p>Schildern Sie kurz Ihren Anlass – Herr Christian bespricht mit Ihnen, was sich daraus gestalten lässt.</p>
       </div>
       <Link className="button button-dark min-h-12" href="/kontakt">
         Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={17} />
@@ -318,8 +315,8 @@ function HolidayGiftSection() {
             <h3>Hinweise &amp; Voraussetzungen</h3>
             <ul>
               <li>Wir beginnen erst nach schriftlichem Auftrag und der Einwilligung der abgebildeten Person.</li>
-              <li>Sexualisierte oder gewaltbeinhaltende Inhalte erstellen wir nicht. Wir prüfen jeden Auftrag individuell.</li>
-              <li>Die Bezahlung erfolgt im Voraus. Für individuell angefertigte Produkte ist eine Erstattung ausgeschlossen.</li>
+              <li>Sexualisierte oder gewaltbeinhaltende Inhalte erstellen wir nicht. Wir prüfen jeden Auftrag individuell und behalten uns vor, Aufträge abzulehnen.</li>
+              <li>Die Bezahlung erfolgt im Voraus. Für individuell angefertigte Produkte gilt unsere Widerrufsbelehrung.</li>
               <li>Sie erhalten eine Rechnung ohne ausgewiesene Mehrwertsteuer aufgrund der Kleinunternehmerregelung.</li>
               <li>Beispiele und angefertigte Motive unterliegen dem Urheberrecht; Nutzungsrechte werden individuell vereinbart.</li>
             </ul>
@@ -350,13 +347,23 @@ function HolidayGiftSection() {
 
         <div aria-labelledby="holiday-video-title" className="holiday-video">
           <h3 id="holiday-video-title">Beispielvideo</h3>
-          <video aria-label="Beispielvideo mit weihnachtlichem Motiv" controls playsInline preload="none" poster="/swea/holiday-video-poster.webp">
+          <video aria-label="Beispielvideo mit weihnachtlichem Motiv" controls playsInline preload="none" poster="/swea/ai-examples/ki-studio-example-video-poster.webp">
             <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gemini_generated_video_77d5f778-sMKmnjJYAQSuujDbiD1O9RztT92LSZ.mp4" type="video/mp4" />
             Ihr Browser unterstützt die Videowiedergabe nicht.
           </video>
         </div>
 
-        <section aria-labelledby="holiday-song-title" className="holiday-song">
+        <p className="holiday-gift-rights">Diese Beispiele sind Eigentum des Webseitenbetreibers und dürfen weder heruntergeladen noch per Hardcopy oder Foto oder auf anderen Wegen dupliziert oder verbreitet werden.</p>
+      </div>
+    </section>
+  )
+}
+
+function HolidaySongSection() {
+  return (
+    <section aria-labelledby="holiday-song-title" className="holiday-song-section">
+      <div className="page-wrap">
+        <div className="holiday-song">
           <h3 id="holiday-song-title">Oder darf es ein individuelles Lied sein?</h3>
           <div className="holiday-song-grid">
             <div className="holiday-song-left-column">
@@ -395,9 +402,7 @@ function HolidayGiftSection() {
               </div>
             </div>
           </div>
-        </section>
-
-        <p className="holiday-gift-rights">Diese Beispiele sind Eigentum des Webseitenbetreibers und dürfen weder heruntergeladen noch per Hardcopy oder Foto oder auf anderen Wegen dupliziert oder verbreitet werden.</p>
+        </div>
       </div>
     </section>
   )
@@ -408,7 +413,7 @@ function AlternativeMotifsSection() {
     <section aria-label="Motive ohne weihnachtlichen Bezug" className="alternative-motifs-section">
       <div className="page-wrap alternative-motifs-content">
         <p>Selbstverständlich erstellen wir Motive auch ohne weihnachtlichen Bezug, zum Beispiel mit Ihren Liebsten, Ihrem Haustier, Ihrem Hobby oder einem anderen persönlichen Motiv.</p>
-        <p>Es gelten die oben genannten Einschränkungen.</p>
+        <p>Es gelten die oben genannten Einschränkungen, die Widerrufsbelehrung und unsere AGB.</p>
       </div>
     </section>
   )
@@ -805,10 +810,10 @@ function AboutSection() {
           <figure className="about-profile relative min-h-[22rem] overflow-hidden rounded-2xl bg-area-deep shadow-sm sm:min-h-[28rem]">
             <Image
               alt="Uwe Christian in seinem Büro in Schorndorf"
-              className="object-cover object-[center_34%]"
+              className="object-cover object-[center_31%]"
               fill
               sizes="(max-width: 1023px) 100vw, 40vw"
-              src="/swea/uwe-christian-portrait.png"
+              src="/swea/uwe-christian-home.png"
             />
             <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-area-deep/85 via-transparent to-transparent" />
             <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-5 text-white sm:p-6">
@@ -873,6 +878,7 @@ export function KIStudioPageContent() {
     <div className="brand-area brand-area-ki">
       <KIStudioShowcase />
       <HolidayGiftSection />
+      <HolidaySongSection />
       <AlternativeMotifsSection />
       <AIExamplesCarousel />
       <KIStudioClosingCTA />
