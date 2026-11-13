@@ -217,11 +217,11 @@ function KIStudioShowcase() {
                 sizes="(max-width: 767px) 100vw, 33vw"
                 src="/swea/ai-examples/ki-studio-image-dragon.jpg"
               />
+              <span className="absolute right-3 top-3 z-10 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">ab 9€</span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><ImageIcon aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bild &amp; Design</span></div>
               <h3 className="h-14 text-xl font-semibold leading-7 text-area-deep">KI-Bilder &amp; Porträts</h3>
-              <p className="mt-2 h-5 text-sm font-semibold text-area-primary">ab 9€</p>
               <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Personalisierte Porträts, Motive mit Familie oder Haustieren und individuelle Lieblingsbilder – abgestimmt auf Ihre Idee.</p>
               <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: KI-Bilder und Porträts">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
@@ -242,11 +242,11 @@ function KIStudioShowcase() {
                 <source src="/swea/ai-examples/video-cf140fc6.mp4" type="video/mp4" />
                 Ihr Browser unterstützt die Videowiedergabe nicht.
               </video>
+              <span className="absolute right-3 top-3 z-10 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">ab 15€</span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><Video aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Bewegtbild</span></div>
               <h3 className="h-14 text-xl font-semibold leading-7 text-area-deep">KI-Videos</h3>
-              <p className="mt-2 h-5 text-sm font-semibold text-area-primary">ab 15€</p>
               <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Persönliche Videogrüße und kurze Clips, die besondere Momente, Ideen oder Ihre Marke in Szene setzen.</p>
               <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: KI-Videos">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
@@ -255,7 +255,7 @@ function KIStudioShowcase() {
           </article>
 
           <article className={cardClass}>
-            <div className="flex min-h-44 aspect-[16/10] flex-col justify-between bg-area-deep p-5 text-white sm:p-6">
+            <div className="relative flex min-h-44 aspect-[16/10] flex-col justify-between bg-area-deep p-5 text-white sm:p-6">
               <div className="flex items-center">
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-white/80"><Music2 aria-hidden="true" size={17} /> SWEA Audio Studio</span>
               </div>
@@ -268,11 +268,11 @@ function KIStudioShowcase() {
                 <source src="/swea/ai-examples/ki-studio-jingle.mp3" type="audio/mpeg" />
                 Ihr Browser unterstützt die Audiowiedergabe nicht.
               </audio>
+              <span className="absolute right-3 top-3 z-10 rounded-full bg-area-surface/95 px-3 py-1.5 text-sm font-semibold text-area-deep shadow-sm">ab 20€</span>
             </div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="mb-3 flex items-center gap-2 text-area-primary"><Music2 aria-hidden="true" size={18} /><span className="text-xs font-semibold uppercase tracking-[0.14em]">Audio &amp; Musik</span></div>
               <h3 className="h-14 text-xl font-semibold leading-7 text-area-deep">Individuelle Songs &amp; Jingles</h3>
-              <p className="mt-2 h-5 text-sm font-semibold text-area-primary">ab 20€</p>
               <p className="mb-6 mt-2 text-sm leading-6 text-area-muted">Persönliche Songs, kleine Jingles und Musikgeschenke – hören Sie in eine echte Hörprobe rein.</p>
               <Link className={inquiryClass} href="/kontakt" aria-label="Kreativprojekt anfragen: Songs und Jingles">
                 Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={16} />
