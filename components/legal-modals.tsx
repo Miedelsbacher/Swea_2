@@ -150,7 +150,7 @@ export function AGBModal() {
               <li>Änderungen oder neue Anforderungen rechtzeitig mitteilt.</li>
             </ul>
           </li>
-          <li>Der Kunde stellt sicher, dass er zur Bereitstellung und zur vereinbarten Nutzung der übermittelten Materialien berechtigt ist. Das betrifft insbesondere Fotos und Bilder, Texte und Dokumente, Logos und Grafiken, Videos und Tonaufnahmen sowie Musik und sonstige kreative Inhalte. Sind auf dem Material Personen erkennbar oder hörbar, müssen deren erforderliche Einwilligungen vorliegen.</li>
+          <li>Der Kunde stellt sicher, dass er zur Bereitstellung und zur vereinbarten Nutzung der übermittelten Materialien berechtigt ist. Das betrifft insbesondere Fotos und Bilder, Texte und Dokumente, Logos und Grafiken, Videos und Tonaufnahmen sowie Musik und sonstige kreative Inhalte. Sind auf dem Material Personen erkennbar oder hörbar, gelten C2 Nr. 2 bis 7 entsprechend.</li>
           <li>Fehlen Informationen oder ist eine Mitwirkung des Kunden erforderlich, weist der Anbieter den Kunden darauf hin und setzt, falls erforderlich, eine angemessene Frist. Verzögerungen aufgrund fehlender oder verspäteter Mitwirkung können sich auf vereinbarte Termine auswirken. Dadurch entstehender Mehraufwand wird nur berechnet, soweit dies vereinbart ist oder sich aus dem Gesetz ergibt. Die gesetzlichen Rechte beider Vertragsparteien bleiben unberührt.</li>
           <li>Der Kunde soll vor Arbeiten an seiner Hard- oder Software, etwa Vor-Ort-Service, Fernwartung oder Reparaturen, eine vollständige und funktionsfähige Datensicherung (Backup) durchführen. Die Datensicherung gehört nur dann zur Leistung des Anbieters, wenn sie ausdrücklich beauftragt wurde.</li>
           <li>Eine unterlassene Datensicherung kann bei der Bemessung von Schadensersatzansprüchen nach den gesetzlichen Regeln zum Mitverschulden berücksichtigt werden. Im Übrigen richtet sich die Haftung nach Abschnitt 5.</li>
@@ -198,13 +198,27 @@ export function AGBModal() {
         <h4 className={subheadingClass}>C1. Leistungsumfang und Auftrag</h4>
         <ol className={orderedListClass}>
           <li>Das KI-Studio erstellt individuelle digitale Medien, nämlich digitale Bilder und Grafiken, Videos, Songs, Jingles und sonstiges Audiomaterial. Art, Umfang und Ergebnis ergeben sich aus dem Angebot oder der Auftragsbestätigung.</li>
-          <li>Der Anbieter beginnt erst nach dem schriftlichen Auftrag des Kunden. Sollen Personen abgebildet oder ihre Stimme beziehungsweise ihr Aussehen verwendet werden, beginnt der Anbieter erst nach der Einwilligung dieser Person.</li>
+          <li>Der Anbieter beginnt erst nach dem schriftlichen Auftrag des Kunden. Sollen Personen abgebildet oder ihre Stimme beziehungsweise ihr Aussehen verwendet werden, beginnt der Anbieter erst, wenn die nach C2 erforderlichen Einwilligungen vorliegen.</li>
           <li>Sexualisierte oder gewaltbeinhaltende Inhalte erstellt der Anbieter nicht. Er prüft jeden Auftrag individuell und kann Aufträge ablehnen.</li>
         </ol>
-        <h4 className={subheadingClass}>C2. Material und Inhalte des Kunden</h4>
+        <h4 className={subheadingClass}>C2. Material des Kunden, Persönlichkeitsrechte und personenbezogene Inhalte</h4>
         <ol className={orderedListClass}>
           <li>Fotos, Texte, Logos, Musik und sonstiges Material darf der Kunde nur übergeben, wenn er die erforderlichen Rechte daran besitzt und keine Rechte Dritter verletzt werden.</li>
-          <li>Der Kunde stellt sicher, dass Personen, die auf übergebenem Material erkennbar sind oder deren Stimme verwendet wird, in die vorgesehene Verwendung eingewilligt haben.</li>
+          <li>
+            Die folgenden Regelungen gelten für Material, auf dem Personen erkennbar oder hörbar sind. Dazu gehören insbesondere
+            <ul className={listClass}>
+              <li>Fotos,</li>
+              <li>Videos,</li>
+              <li>Sprachaufnahmen und</li>
+              <li>sonstige personenbezogene Inhalte.</li>
+            </ul>
+            Sie gelten entsprechend, wenn Aussehen oder Stimme einer realen Person in einem Ergebnis wiedergegeben oder nachgebildet werden sollen.
+          </li>
+          <li>Der Kunde übergibt solches Material nur, wenn er dazu berechtigt ist und die für die vorgesehene Verwendung erforderlichen Einwilligungen der abgebildeten oder hörbaren Personen vorliegen. Er beachtet dabei insbesondere das Recht am eigenen Bild und das allgemeine Persönlichkeitsrecht, zu dem auch der Schutz der eigenen Stimme gehört.</li>
+          <li>Bei Minderjährigen ist die Einwilligung der Sorgeberechtigten erforderlich. Ist die minderjährige Person bereits alt und reif genug, um die Bedeutung der Verwendung zu verstehen, ist zusätzlich ihre eigene Einwilligung erforderlich.</li>
+          <li>Der Anbieter verwendet das bereitgestellte Material ausschließlich zur Durchführung des vereinbarten Auftrags und nur in dem dafür erforderlichen Umfang. Eine Verwendung zu anderen Zwecken findet nicht statt.</li>
+          <li>Aus der Auftragserteilung folgt keine Erlaubnis, das Material oder die fertigen Ergebnisse zu veröffentlichen, insbesondere nicht auf der Website des Anbieters, in Social-Media-Kanälen, in Werbematerialien, in Portfolios oder auf Referenzseiten. Eine solche Veröffentlichung erfolgt nur mit einer gesonderten, freiwilligen Zustimmung des Kunden und, soweit Personen erkennbar oder hörbar sind, zusätzlich mit deren Einwilligung beziehungsweise der Einwilligung der Sorgeberechtigten. Verweigert der Kunde die Zustimmung, hat das keinen Einfluss auf den Auftrag.</li>
+          <li>Folgende Erklärungen und Grundlagen stehen jeweils für sich und ersetzen einander nicht: die Einwilligung der betroffenen Personen in die Verwendung im Rahmen des Auftrags, die Zustimmung zur Veröffentlichung, die datenschutzrechtliche Rechtsgrundlage für die Verarbeitung personenbezogener Daten sowie die urheber- oder persönlichkeitsrechtliche Erlaubnis zur Nutzung. Die Auftragserteilung ersetzt insbesondere weder die Einwilligung abgebildeter oder hörbarer Personen noch die Zustimmung zur Veröffentlichung. Für den Datenschutz gilt Abschnitt 6, für die Nutzungsrechte an den Ergebnissen gilt C4.</li>
         </ol>
         <h4 className={subheadingClass}>C3. Digitale Bereitstellung</h4>
         <ol className={orderedListClass}>
@@ -215,7 +229,7 @@ export function AGBModal() {
         <ol className={orderedListClass}>
           <li>Nutzungsrechte an den Ergebnissen werden nicht pauschal, sondern nur im ausdrücklich vereinbarten Umfang eingeräumt. Maßgeblich sind Angebot und Auftragsbestätigung.</li>
           <li>Eigene kreative Beiträge des Anbieters werden respektiert. Ein Urheberrechtsschutz besteht nur, soweit die gesetzlichen Voraussetzungen erfüllt sind. Nicht jedes mit KI-Unterstützung erstellte Ergebnis ist automatisch urheberrechtlich geschützt. Der Anbieter sichert daher keinen Urheberrechtsschutz und keine Ausschließlichkeit der Ergebnisse zu, sofern dies nicht ausdrücklich vereinbart ist.</li>
-          <li>Aufträge und Ergebnisse veröffentlicht der Anbieter nicht als Referenz oder Werbung, ohne dass der Kunde gesondert zugestimmt hat.</li>
+          <li>Aufträge und Ergebnisse veröffentlicht der Anbieter nicht als Referenz oder Werbung, ohne dass der Kunde gesondert zugestimmt hat. Einzelheiten regelt C2 Nr. 6.</li>
         </ol>
         <h4 className={subheadingClass}>C5. Vergütung</h4>
         <p className={paragraphClass}>Die Bezahlung der Leistungen des KI-Studios erfolgt im Voraus. Der Anbieter stellt eine Rechnung ohne ausgewiesene Umsatzsteuer aus (siehe Abschnitt 3).</p>
