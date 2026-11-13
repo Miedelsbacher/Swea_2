@@ -262,12 +262,12 @@ function HomeView() {
           <div className="seasonal-action-collage" aria-label="Vorschau zu KI-Bild, Video und Song">
             <figure className="seasonal-preview seasonal-preview-portrait">
               <picture>
-                <Image alt="Uwe Christian in seinem Büro am Schreibtisch" fill sizes="(max-width: 900px) 48vw, 22vw" src="/swea/uwe-christian-portrait.png" />
+                <Image alt="Uwe Christian in seinem Büro am Schreibtisch" fill loading="lazy" sizes="(max-width: 900px) 48vw, 22vw" src="/swea/uwe-christian-portrait.png" />
               </picture>
               <figcaption>Persönliches KI-Porträt</figcaption>
             </figure>
             <figure className="seasonal-preview seasonal-preview-video">
-              <video aria-label="Persönlicher Video-Gruß" controls playsInline preload="metadata" src="/swea/video-gruss.mp4" poster="/swea/video-gruss-poster.png" />
+              <video aria-label="Persönlicher Video-Gruß" controls playsInline preload="none" poster="/swea/video-gruss-poster.webp" src="/swea/video-gruss.mp4" />
               <figcaption>Video-Gruß</figcaption>
             </figure>
             <div className="seasonal-preview seasonal-preview-audio">
@@ -276,7 +276,7 @@ function HomeView() {
                 {Array.from({ length: 18 }, (_, index) => <span key={index} />)}
               </div>
               <span className="seasonal-audio-caption">Persönlicher Song oder Jingle für Ihren Lieblingsmoment</span>
-              <audio aria-label="Persönlichen Song oder Jingle abspielen" controls preload="metadata">
+              <audio aria-label="Persönlichen Song oder Jingle abspielen" controls preload="none">
                 <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recording-00_08-EwnUnfEJYWHvA2WdNbv57q2zNqEeaY.mp3" type="audio/mpeg" />
                 Ihr Browser unterstützt die Audiowiedergabe nicht.
               </audio>
@@ -312,6 +312,7 @@ function KIStudioShowcase() {
                 alt="Beispiel eines individuell gestalteten KI-Porträts im Märchenwald"
                 className="object-cover transition-transform duration-500 hover:scale-105"
                 fill
+                loading="lazy"
                 sizes="(max-width: 767px) 100vw, 33vw"
                 src="/swea/ai-examples/elf-portrait.jpeg"
               />
@@ -330,13 +331,14 @@ function KIStudioShowcase() {
           </article>
 
           <article className={cardClass}>
-            <div className="relative aspect-[16/10] overflow-hidden bg-area-deep">
+            <div className="relative aspect-video overflow-hidden bg-area-deep">
               <video
                 aria-label="Beispiel eines personalisierten KI-Videoclips"
                 className="h-full w-full object-cover"
                 controls
                 playsInline
-                preload="metadata"
+                preload="none"
+                poster="/swea/ai-examples/video-cf140fc6-poster.webp"
               >
                 <source src="/swea/ai-examples/video-cf140fc6.mp4" type="video/mp4" />
                 Ihr Browser unterstützt die Videowiedergabe nicht.
@@ -363,7 +365,7 @@ function KIStudioShowcase() {
                   <span className="w-1 rounded-full bg-area-accent-light/80" key={index} style={{ height }} />
                 ))}
               </div>
-              <audio aria-label="KI-generierter Song als Hörprobe" className="w-full accent-area-accent" controls preload="metadata">
+              <audio aria-label="KI-generierter Song als Hörprobe" className="w-full accent-area-accent" controls preload="none">
                 <source src="/swea/recording-03_13.mp3" type="audio/mpeg" />
                 Ihr Browser unterstützt die Audiowiedergabe nicht.
               </audio>
@@ -425,19 +427,19 @@ function HolidayGiftSection() {
           <h3 id="holiday-examples-title">Beispiele:</h3>
           <div className="holiday-example-grid">
             <figure className="holiday-example-card">
-              <Image alt="Illustration eines lächelnden Mannes als weihnachtlicher Elf im verschneiten Wald" height={1024} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_9fpkh09fpkh09fpk-u46EuM8FAmxDDJLVBAyrfhZ7DpMmQp.jpeg" width={768} />
+              <Image alt="Illustration eines lächelnden Mannes als weihnachtlicher Elf im verschneiten Wald" height={1024} loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_9fpkh09fpkh09fpk-u46EuM8FAmxDDJLVBAyrfhZ7DpMmQp.jpeg" width={768} />
               <figcaption>Ein persönliches Weihnachts-Elfenporträt</figcaption>
             </figure>
             <figure className="holiday-example-card">
-              <Image alt="Grünes, zotteliges Wesen mit Weihnachtsmütze neben einem festlich geschmückten Weihnachtsbaum" height={1024} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2e7ew72e7ew72e7e-5JvNidQs7Az5bmt39FO5wAn0wu9e5w.jpeg" width={768} />
+              <Image alt="Grünes, zotteliges Wesen mit Weihnachtsmütze neben einem festlich geschmückten Weihnachtsbaum" height={1024} loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2e7ew72e7ew72e7e-5JvNidQs7Az5bmt39FO5wAn0wu9e5w.jpeg" width={768} />
               <figcaption>Ein augenzwinkerndes Weihnachtsmotiv</figcaption>
             </figure>
   <figure className="holiday-example-card">
-  <Image alt="Weihnachtsmann legt Geschenke vor einem geschmückten Baum und Kamin ab" height={1024} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2yjiwu2yjiwu2yji-qs4gsrL98qp5pHHERuqd4n8IcKQ1Bo.jpeg" width={768} />
+  <Image alt="Weihnachtsmann legt Geschenke vor einem geschmückten Baum und Kamin ab" height={1024} loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_2yjiwu2yjiwu2yji-qs4gsrL98qp5pHHERuqd4n8IcKQ1Bo.jpeg" width={768} />
   <figcaption>Ein festlicher Moment für die Bescherung</figcaption>
   </figure>
   <figure className="holiday-example-card">
-  <Image alt="Wohnzimmer mit personalisiertem Weihnachtsmannmotiv auf Decke und Kissen, gerahmtem Bild und Tasse" height={1024} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_okqsgpokqsgpokqs-xLEInkCXyCv5HxEyRvcmhaUAvkY8Jk.jpeg" width={768} />
+  <Image alt="Wohnzimmer mit personalisiertem Weihnachtsmannmotiv auf Decke und Kissen, gerahmtem Bild und Tasse" height={1024} loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_okqsgpokqsgpokqs-xLEInkCXyCv5HxEyRvcmhaUAvkY8Jk.jpeg" width={768} />
   <figcaption>Personalisierte Weihnachtsmotive auf Decke, Kissen und Tasse</figcaption>
   </figure>
   </div>
@@ -445,7 +447,7 @@ function HolidayGiftSection() {
 
         <div aria-labelledby="holiday-video-title" className="holiday-video">
           <h3 id="holiday-video-title">Beispielvideo</h3>
-          <video aria-label="Beispielvideo mit weihnachtlichem Motiv" controls playsInline preload="metadata">
+          <video aria-label="Beispielvideo mit weihnachtlichem Motiv" controls playsInline preload="none" poster="/swea/holiday-video-poster.webp">
             <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gemini_generated_video_77d5f778-sMKmnjJYAQSuujDbiD1O9RztT92LSZ.mp4" type="video/mp4" />
             Ihr Browser unterstützt die Videowiedergabe nicht.
           </video>

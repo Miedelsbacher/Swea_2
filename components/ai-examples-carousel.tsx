@@ -4,7 +4,11 @@ import { useState } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
-const examples = [
+type CarouselExample =
+  | { type: "image"; src: string; alt: string; caption: string }
+  | { type: "video"; src: string; poster: string; alt: string; caption: string }
+
+const examples: CarouselExample[] = [
   {
     type: "image",
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image_a2d15da5-A1LgawnFkKpW61Ww6j1g789nyYkPfH.jpg",
@@ -14,6 +18,7 @@ const examples = [
   {
     type: "video",
     src: "/swea/ai-examples/video-cf140fc6.mp4",
+    poster: "/swea/ai-examples/video-cf140fc6-poster.webp",
     alt: "Video mit bunt bedruckten, verpackten Mitgebseln und der Aufschrift Happy 59 Uwe",
     caption: "Personalisierte Mitgebsel zum Geburtstag",
   },
@@ -62,6 +67,7 @@ const examples = [
   {
     type: "video",
     src: "/swea/ai-examples/video-aad466b5.mp4",
+    poster: "/swea/ai-examples/video-aad466b5-poster.webp",
     alt: "Animation einer Fee, die einem großen Eisdrache im Wald begegnet",
     caption: "Animation: Fee und Eisdrache",
   },
@@ -86,6 +92,7 @@ const examples = [
   {
     type: "video",
     src: "/swea/ai-examples/video-d74304dd.mp4",
+    poster: "/swea/ai-examples/video-d74304dd-poster.webp",
     alt: "Video mit einem Hirsch in einem herbstlichen Wald",
     caption: "Ein Hirsch im Herbstwald",
   },
@@ -138,7 +145,8 @@ export function AIExamplesCarousel() {
                   controls
                   key={activeExample.src}
                   playsInline
-                  preload="metadata"
+                  preload="none"
+                  poster={activeExample.poster}
                 >
                   <source src={activeExample.src} type="video/mp4" />
                   Dein Browser unterstützt dieses Video nicht.
@@ -147,6 +155,7 @@ export function AIExamplesCarousel() {
                 <Image
                   alt={activeExample.alt}
                   fill
+                  loading="lazy"
                   sizes="(max-width: 700px) 88vw, 850px"
                   unoptimized
                   src={activeExample.src}
@@ -156,10 +165,10 @@ export function AIExamplesCarousel() {
             <figcaption>{activeExample.caption}</figcaption>
           </figure>
 
-          <button aria-label="Vorheriges Beispiel" className="ai-examples-carousel-arrow is-previous" onClick={showPrevious} type="button">
+          <button aria-label="Vorheriges Beispiel" className="ai-examples-carousel-arrow is-previous" onClick={showPrevious} type="button" title="Vorheriges Beispiel">
             <ChevronLeft aria-hidden="true" size={22} />
           </button>
-          <button aria-label="Nächstes Beispiel" className="ai-examples-carousel-arrow is-next" onClick={showNext} type="button">
+          <button aria-label="Nächstes Beispiel" className="ai-examples-carousel-arrow is-next" onClick={showNext} type="button" title="Nächstes Beispiel">
             <ChevronRight aria-hidden="true" size={22} />
           </button>
         </div>
