@@ -291,7 +291,7 @@ function KIStudioClosingCTA() {
       <div>
         <span className="eyebrow">Ihr nächster Schritt</span>
         <h2 id="ki-closing-title">Sie haben eine Idee für ein persönliches Kreativprojekt?</h2>
-        <p>Schildern Sie kurz Ihren Anlass – Herr Christian bespricht mit Ihnen, was sich daraus gestalten lässt.</p>
+        <p>Schildern Sie kurz Ihren Anlass – Herr Christian bespricht mit Ihnen, was sich mit Ihren Vorgaben dafür gestalten lässt.</p>
       </div>
       <Link className="button button-dark min-h-12" href="/kontakt">
         Kreativprojekt anfragen <ArrowRight aria-hidden="true" size={17} />
