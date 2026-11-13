@@ -208,7 +208,7 @@ function KIStudioShowcase() {
 
         <div className="grid items-stretch gap-5 md:grid-cols-3 md:gap-6">
           <article className={cardClass}>
-            <div className="relative aspect-[16/10] overflow-hidden bg-area-subtle">
+            <div className="relative min-h-44 aspect-[16/10] overflow-hidden bg-area-subtle">
               <Image
                 alt="Fee in einem geheimnisvollen Wald neben einem großen grünen Drachen"
                 className="object-cover transition-transform duration-500 hover:scale-105"
@@ -230,7 +230,7 @@ function KIStudioShowcase() {
           </article>
 
           <article className={cardClass}>
-            <div className="relative aspect-[16/10] overflow-hidden bg-area-deep">
+            <div className="relative min-h-44 aspect-[16/10] overflow-hidden bg-area-deep">
               <video
                 aria-label="Beispiel eines personalisierten KI-Videoclips"
                 className="h-full w-full object-cover"
@@ -255,7 +255,7 @@ function KIStudioShowcase() {
           </article>
 
           <article className={cardClass}>
-            <div className="flex aspect-[16/10] flex-col justify-between bg-area-deep p-5 text-white sm:p-6">
+            <div className="flex min-h-44 aspect-[16/10] flex-col justify-between bg-area-deep p-5 text-white sm:p-6">
               <div className="flex items-center">
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-white/80"><Music2 aria-hidden="true" size={17} /> SWEA Audio Studio</span>
               </div>
