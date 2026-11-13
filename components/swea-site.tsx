@@ -490,7 +490,7 @@ function ServicesSection() {
                 <h3 className="mt-1 text-lg font-semibold leading-snug text-area-deep">Hardware-Hilfe</h3>
               </div>
             </div>
-            <p className="text-sm leading-6 text-area-muted">Unterstützung bei passenden Ersatzteilen, Anschluss und Einrichtung von Geräten sowie der Einschätzung, ob sich eine Reparatur lohnt.</p>
+            <p className="text-sm leading-6 text-area-muted">Unterstützung bei Einkaufsentscheidungen, Auswahl, Anschluss und Einrichtung von Geräten sowie der Einschätzung, ob sich eine Reparatur lohnt.</p>
             <Link aria-label="Hilfe bei Hardware anfragen" className={actionClass} data-nav-link href="/kontakt">Hardware-Hilfe anfragen <ArrowRight aria-hidden="true" size={16} /></Link>
           </article>
 
