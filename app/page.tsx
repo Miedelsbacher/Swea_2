@@ -4,7 +4,7 @@ import { HomePageContent } from "@/components/swea-site"
 export const metadata: Metadata = {
   title: "Technik, die hilft. Ruhe, die bleibt.",
   description:
-    "SWEA verbindet persönlichen IT-Service, ein kreatives KI-Studio und Waldbaden in Schorndorf. Lernen Sie Uwe Christian und die Angebote vor Ort kennen.",
+    "SWEA verbindet persönlichen IT-Service, ein kreatives KI-Studio und Waldbaden in Schorndorf. Lernen Sie Herrn Christian und die Angebote vor Ort kennen.",
   alternates: { canonical: "/" },
 }
 

@@ -406,7 +406,7 @@ function KIStudioProcess() {
   const steps = [
     { title: "Anfrage", description: "Sie schildern Ihre Idee oder Ihren Anlass – über das Kontaktformular, per E-Mail oder telefonisch." },
     { title: "Abstimmung", description: "Wir besprechen Wunschergebnis, Umfang und benötigtes Material. Die konkrete Leistung halten wir im Angebot fest." },
-    { title: "Gestaltung", description: "Nach Ihrem schriftlichen Auftrag setzt Uwe Christian Ihre Idee um." },
+    { title: "Gestaltung", description: "Nach Ihrem schriftlichen Auftrag setzt Herr Christian Ihre Idee um." },
     { title: "Korrektur bzw. Freigabe", description: "Sie sehen das Ergebnis und geben es frei oder nennen Änderungswünsche. Wie weit Anpassungen möglich sind, richtet sich nach dem vereinbarten Angebot." },
     { title: "Digitale Übergabe", description: "Das freigegebene Ergebnis erhalten Sie als digitale Datei." },
   ]
@@ -956,7 +956,7 @@ function WebsiteDesignSection() {
     {
       icon: Heart,
       title: "Persönlich betreut",
-      description: "Uwe Christian ist Ihr direkter Ansprechpartner – von der ersten Idee bis zu Fragen nach dem Start.",
+      description: "Herr Christian ist Ihr direkter Ansprechpartner – von der ersten Idee bis zu Fragen nach dem Start.",
     },
   ]
 
@@ -972,7 +972,7 @@ function WebsiteDesignSection() {
             Von der ersten Idee über Domain, E-Mail und Gestaltung bis zur fertigen Website – und langfristige Betreuung.
           </p>
           <p className="mt-4 max-w-xl text-sm leading-6 text-area-muted">
-            Alles aus einer Hand: Uwe Christian begleitet Sie persönlich durch jeden Schritt. Sie behalten einen festen Ansprechpartner und müssen sich nicht mit technischen Details beschäftigen.
+            Alles aus einer Hand: Herr Christian begleitet Sie persönlich durch jeden Schritt. Sie behalten einen festen Ansprechpartner und müssen sich nicht mit technischen Details beschäftigen.
           </p>
           <Link className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-area-primary px-5 text-sm font-semibold text-white transition hover:bg-area-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-area-primary focus-visible:ring-offset-2" data-nav-link href="/kontakt">
             Website-Projekt besprechen <ArrowRight aria-hidden="true" size={17} />
@@ -1119,7 +1119,7 @@ function ContactSection() {
           <div>
             <span className="inline-flex rounded-full border border-area-border/25 bg-area-subtle/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/80">Kontakt in Schorndorf</span>
             <h1 id="contact-title" className="mt-4 max-w-lg text-3xl font-semibold tracking-tight text-white sm:text-4xl">Lassen Sie uns ins Gespräch kommen.</h1>
-            <p className="mt-3 max-w-lg text-sm leading-7 text-white/75">Ob IT-Frage, Webprojekt oder Waldbaden – Sie erreichen Uwe Christian direkt.</p>
+            <p className="mt-3 max-w-lg text-sm leading-7 text-white/75">Ob IT-Frage, Webprojekt oder Waldbaden – Sie erreichen Herrn Christian direkt.</p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
@@ -1140,7 +1140,7 @@ function ContactSection() {
 
           <div className="flex items-start gap-3 border-l-2 border-area-border/65 pl-4 text-sm leading-6 text-white/80">
             <MapPin aria-hidden="true" className="mt-1 shrink-0 text-area-accent-light" size={18} />
-            <p>Direkter Kontakt zu Uwe Christian – ohne anonyme Hotline und unnötige Umwege in Schorndorf.</p>
+            <p>Direkter Kontakt zu Herrn Christian – ohne anonyme Hotline und unnötige Umwege in Schorndorf.</p>
           </div>
         </div>
 
