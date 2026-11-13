@@ -532,7 +532,7 @@ function DataRecoverySection() {
             Professionelle Datenrettung – Wenn es brenzlig wird.
           </h2>
           <p className="mt-4 text-base leading-7 text-area-muted">
-            Bei unterstützten Datenträgern und geeigneten Schadensbildern kann unser spezialisierter Partner Datenphoenix Erfolgsquoten von bis zu 92,5 % erreichen. Das beschreibt die Möglichkeiten unseres Partners in passenden Fällen – es ist keine Garantie für den Erfolg beim einzelnen Gerät. Die tatsächliche Erfolgsaussicht klärt die Diagnose.
+            In einfachen Fällen (Festplatte dreht sich noch oder Sie haben &quot;nur was gelöscht&quot;) können wir selbst die Datenwiederherstellung mit eigenen Tools durchführen. Hartnäckige Probleme geben wir nach Absprache weiter. Bei unterstützten Datenträgern und geeigneten Schadensbildern kann unser spezialisierter Partner Datenphoenix Erfolgsquoten von bis zu 92,5 % erreichen. Das beschreibt die Möglichkeiten unseres Partners in passenden Fällen – es ist keine Garantie für den Erfolg beim einzelnen Gerät. Die tatsächliche Erfolgsaussicht klärt die Diagnose.
           </p>
           <p className="mt-3 text-sm leading-6 text-area-muted">
             Ob Festplatte, USB-Stick oder Handy: Sie erhalten eine klare Einschätzung, bevor Sie über weitere Schritte entscheiden.
