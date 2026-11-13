@@ -44,7 +44,15 @@ function Hero() {
         </div>
         <figure className="hero-visual">
           <div className="hero-portrait-frame">
-            <Image alt="Uwe Christian, persönlicher IT-Serviceanbieter in Schorndorf" src="/swea/uwe-christian-home.png" fill priority sizes="(max-width: 700px) 100vw, 46vw" />
+            <Image
+              alt="Uwe Christian an seinem Schreibtisch im SWEA-Büro"
+              className="object-cover object-center"
+              fill
+              priority
+              sizes="(max-width: 700px) 100vw, 46vw"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-sn04qaKs56eEnWexMF6W53tmlZE3XX.webp"
+              unoptimized
+            />
           </div>
         </figure>
       </div>
