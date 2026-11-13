@@ -8,6 +8,14 @@ export function SiteInteractions({ children }: { children: ReactNode }) {
       const target = event.target
       if (!(target instanceof Element)) return
 
+      const legalTrigger = target.closest<HTMLButtonElement>("[data-legal-modal-trigger]")
+      if (legalTrigger) {
+        const dialogId = legalTrigger.dataset.legalModalTrigger
+        const dialog = dialogId ? document.getElementById(dialogId) : null
+        if (dialog instanceof HTMLDialogElement && !dialog.open) dialog.showModal()
+        return
+      }
+
       const menuToggle = target.closest<HTMLButtonElement>("[data-menu-toggle]")
       if (menuToggle) {
         const isOpen = menuToggle.getAttribute("aria-expanded") !== "true"
