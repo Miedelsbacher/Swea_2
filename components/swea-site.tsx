@@ -707,11 +707,11 @@ function DataRecoverySection() {
   const processSteps: { title: string; description: string; consent?: string }[] = [
     {
       title: "SWEA-Aufwandspauschale von 40 Euro",
-      description: "Unabhängig vom weiteren Verlauf berechnet SWEA eine eigene Aufwandspauschale von 40 Euro für Bearbeitung und Abwicklung. Details dazu finden Sie unten.",
+      description: "Unabhängig vom weiteren Verlauf berechnet SWEA für die Beauftragung eine Aufwandspauschale von 40 Euro für Bearbeitung und Abwicklung. Details dazu finden Sie unten.",
     },
     {
       title: "Sie fragen die Datenrettung bei SWEA an",
-      description: "Schildern Sie kurz, um welchen Datenträger es geht und was passiert ist. Wir werden je nach Situation ohne externen Partner versuchen, die Daten preisgünstig mit eigenen Werkzeugen wieder herzustellen. Hierfür nutzen wir die Pauschale (siehe unten) und unterbreiten ein Angebot.",
+      description: "Schildern Sie kurz, um welchen Datenträger es geht und was passiert ist. Wir werden je nach Situation ohne externen Partner versuchen, die Daten preisgünstig mit eigenen Werkzeugen wieder herzustellen. Hierfür nutzen wir die Pauschale und unterbreiten ein Angebot, wenn wir selber tätig werden.",
     },
     {
       title: "Einbindung des Partners und Ihre Zustimmung zur Untersuchung",
