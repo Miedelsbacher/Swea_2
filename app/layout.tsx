@@ -54,7 +54,7 @@ const businessJsonLd = {
   name: 'SWEA – Uwe Christian',
   url: siteUrl,
   image: `${siteUrl}/swea/edv-large.png`,
-  telephone: '+49 7181 253148',
+  telephone: '+49 7181 253147',
   faxNumber: '+49 7181 253151',
   email: 'edv@swea.de',
   description:
